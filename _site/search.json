@@ -81,35 +81,35 @@
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html",
     "title": "4,222 Introduction to Programming",
     "section": "",
-    "text": "Create a directory for the course on your computer: Introduction_to_programming using the terminal. This directory will be your local directory containing your exercises, course materials, and group project. We suggest that we all work with the same directory names to make collaboration and debugging easier.\nTo create the directory, use command prompt or powershell to first navigate to the path you want to create the directory using cd, then create the directory using mkdir.\nWe will have the following folder structure throughout the course. Notice our personal preference for snake case.\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\nwhere Introduction_to_programming is the main folder, github_course_materials will be created next week with git, and group_project will contain students’ own work.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nFor instance, in Powershell, starting from my home directory ~, which is C:/Users/aurel:\nC:\\Users\\aurel&gt;cd OneDrive/Documents\n\nC:\\Users\\aurel\\OneDrive\\Documents&gt;mkdir Introduction_to_programming\n\nC:\\Users\\aurel\\OneDrive\\Documents&gt;cd Introduction_to_programming\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;mkdir github_course_materials\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;mkdir exercises\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;cd exercises\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\\exercises&gt;mkdir week_01\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\\exercises&gt;mkdir week_02\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\\exercises&gt;cd ..\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;dir\n Volume in drive C is Windows-SSD\n Volume Serial Number is 2E13-E362\n\n Directory of C:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\n\n14/02/2026  10:28    &lt;DIR&gt;          .\n14/02/2026  10:27    &lt;DIR&gt;          ..\n14/02/2026  10:28    &lt;DIR&gt;          exercises\n14/02/2026  10:28    &lt;DIR&gt;          github_course_materials\n               0 File(s)              0 bytes\n               4 Dir(s)  304’672’137’216 bytes free"
+    "text": "Create a directory for the course on your computer: Introduction_to_programming using the terminal. This directory will be your local directory containing your exercises, course materials, and group project. We suggest that we all work with the same directory names to make collaboration and debugging easier.\nTo create the directory, use command prompt or powershell to first navigate to the path you want to create the directory using cd, then create the directory using mkdir.\nWe will have the following folder structure throughout the course. Notice our personal preference for snake case.\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\nwhere Introduction_to_programming is the main folder, github_course_materials will be created next week with git, and group_project will contain students’ own work.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nFor instance, in Powershell, starting from my home directory ~, which is C:/Users/aurel:\nC:\\Users\\aurel&gt;cd OneDrive/Documents\n\nC:\\Users\\aurel\\OneDrive\\Documents&gt;mkdir Introduction_to_programming\n\nC:\\Users\\aurel\\OneDrive\\Documents&gt;cd Introduction_to_programming\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;mkdir github_course_materials\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;mkdir exercises\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;cd exercises\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\\exercises&gt;mkdir week_01\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\\exercises&gt;mkdir week_02\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\\exercises&gt;cd ..\n\nC:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming&gt;dir\n Volume in drive C is Windows-SSD\n Volume Serial Number is 2E13-E362\n\n Directory of C:\\Users\\aurel\\OneDrive\\Documents\\Introduction_to_programming\n\n14/02/2026  10:28    &lt;DIR&gt;          .\n14/02/2026  10:27    &lt;DIR&gt;          ..\n14/02/2026  10:28    &lt;DIR&gt;          exercises\n14/02/2026  10:28    &lt;DIR&gt;          github_course_materials\n               0 File(s)              0 bytes\n               4 Dir(s)  304’672’137’216 bytes free"
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#open-vscode-in-your-course-directory",
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html#open-vscode-in-your-course-directory",
     "title": "4,222 Introduction to Programming",
     "section": "2.1. Open VSCode in your course directory",
-    "text": "2.1. Open VSCode in your course directory\nYou should always make VS Code start from the directory your are working in. You can do this in the following ways:\n\nEither use your terminal and navigate to Introduction_to_programming using cd. Then use code . to open VS code in your directory.\nYou can also open VS Code, and then use File/Open Folder.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to open VS Code from the terminal:"
+    "text": "2.1. Open VSCode in your course directory\nYou should always make VS Code start from the directory your are working in. You can do this in the following ways:\n\nEither use your terminal and navigate to Introduction_to_programming using cd. Then use code . to open VS code in your directory.\nYou can also open VS Code, and then use File/Open Folder.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to open VS Code from the terminal:"
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#open-a-terminal-in-vscode",
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html#open-a-terminal-in-vscode",
     "title": "4,222 Introduction to Programming",
     "section": "2.2. Open a terminal in VSCode",
-    "text": "2.2. Open a terminal in VSCode\nAn advantage of using VS Code is that you can use the terminal directly in VS Code. This allows you to have your code and your terminal in the same window, which is very convenient.\nIn VS Code, open a terminal. Notice that you can choose between powershell or command prompt in Windowns, or bash in MacOs. In the terminal, understand where you are located. Find your current path directory using pwd or cd.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to open a terminal in VS Code:"
+    "text": "2.2. Open a terminal in VSCode\nAn advantage of using VS Code is that you can use the terminal directly in VS Code. This allows you to have your code and your terminal in the same window, which is very convenient.\nIn VS Code, open a terminal. Notice that you can choose between powershell or command prompt in Windowns, or bash in MacOs. In the terminal, understand where you are located. Find your current path directory using pwd or cd.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to open a terminal in VS Code:"
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#get-familiar-with-vs-code",
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html#get-familiar-with-vs-code",
     "title": "4,222 Introduction to Programming",
     "section": "2.3. Get familiar with VS Code",
-    "text": "2.3. Get familiar with VS Code\nTake time to explore VS Code. Notice the left bar. In this bar, the first tab is to access all your files and folders within your directory (the directory in which VSCode is rooted). There is also a tab for extensions, etc.\nInstall the following extensions (these help Python work better in VS Code):\n\nPython (Microsoft)\nPylance (Microsoft)\nRuff\nJupyter\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session."
+    "text": "2.3. Get familiar with VS Code\nTake time to explore VS Code. Notice the left bar. In this bar, the first tab is to access all your files and folders within your directory (the directory in which VSCode is rooted). There is also a tab for extensions, etc.\nInstall the following extensions (these help Python work better in VS Code):\n\nPython (Microsoft)\nPylance (Microsoft)\nRuff\nJupyter\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session."
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#create-and-remove-a-file",
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html#create-and-remove-a-file",
     "title": "4,222 Introduction to Programming",
     "section": "2.4. Create and remove a file",
-    "text": "2.4. Create and remove a file\nUsing your terminal, create a file “hello.txt” in the exercises/week_01 folder. Remove the file “hello.txt”. After this, move your working directory back to Introduction_to_programming.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming&gt; cd exercises/week_01\n\n# Solution 1 for bash users (git bash or MacOS): create the file hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; touch hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; rm hello.txt\n\n# Solution 2 for Command Prompt users in Windows: create the file hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; echo. &gt; hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; del hello.txt\n\n# Move back to Introduction_to_programming\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; cd ../.."
+    "text": "2.4. Create and remove a file\nUsing your terminal, create a file “hello.txt” in the exercises/week_01 folder. Remove the file “hello.txt”. After this, move your working directory back to Introduction_to_programming.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming&gt; cd exercises/week_01\n\n# Solution 1 for bash users (git bash or MacOS): create the file hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; touch hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; rm hello.txt\n\n# Solution 2 for Command Prompt users in Windows: create the file hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; echo. &gt; hello.txt\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; del hello.txt\n\n# Move back to Introduction_to_programming\nC:/Users/aurel/OneDrive/Documents/Introduction_to_programming/exercises/week_01&gt; cd ../.."
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#install-uv",
@@ -130,21 +130,21 @@
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html#create-a-project-for-the-exercise",
     "title": "4,222 Introduction to Programming",
     "section": "3.3. Create a project for the exercise",
-    "text": "3.3. Create a project for the exercise\nRemember, in the lecture we mentioned the importance of “closed environments” for Python. This is different than in R. We will create a new environment for each exercise session. To create a closed environment, we use a project with uv, which will manage our python version and our packages.\nIn the terminal, make sure you are in your working directory ~/Introduction_to_programming/exercises/week_01. Use uv init to initialize your project. Then specify the version of python we will use in this environment. We will use python 3.14.1 (for this course, it does not matter much).\ncd ~/OneDrive/Documents/Introduction_to_programming/exercises/week_01\nuv init --python 3.14.1\nYou should observe the creation of different files:\nIntroduction_to_programming/exercises/week_01/\n├── .python-version          # Specifies Python version (3.14.1) for this project\n├── pyproject.toml           # Project configuration file. Defines project dependencies and settings\n├── .gitignore               # Instructions for git. We will see this next week.\n├── README.md                #  README text file that contains your basic project documentation. Feel free to add some information. The syntax is `markdown` (`md`) syntax.\n└── main.py                  # Example Python script, can be erased\nNow, we will install the following python packages in our environment: ipykernel, pandas, numpy. Install them using uv add\nuv add ipykernel pandas numpy\nYou should observe different things happening:\n\nthe creation of a .venv folder, which contains your isolated Python environment\nthe creation of a uv.lock file, which “locks” the exact versions of all dependencies\nyour file pyproject.toml being updated under “dependencies”`1\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to init uv and add dependencies:"
+    "text": "3.3. Create a project for the exercise\nRemember, in the lecture we mentioned the importance of “closed environments” for Python. This is different than in R. We will create a new environment for each exercise session. To create a closed environment, we use a project with uv, which will manage our python version and our packages.\nIn the terminal, make sure you are in your working directory ~/Introduction_to_programming/exercises/week_01. Use uv init to initialize your project. Then specify the version of python we will use in this environment. We will use python 3.14.1 (for this course, it does not matter much).\ncd ~/OneDrive/Documents/Introduction_to_programming/exercises/week_01\nuv init --python 3.14.1\nYou should observe the creation of different files:\nIntroduction_to_programming/exercises/week_01/\n├── .python-version          # Specifies Python version (3.14.1) for this project\n├── pyproject.toml           # Project configuration file. Defines project dependencies and settings\n├── .gitignore               # Instructions for git. We will see this next week.\n├── README.md                #  README text file that contains your basic project documentation. Feel free to add some information. The syntax is `markdown` (`md`) syntax.\n└── main.py                  # Example Python script, can be erased\nNow, we will install the following python packages in our environment: ipykernel, pandas, numpy. Install them using uv add\nuv add ipykernel pandas numpy\nYou should observe different things happening:\n\nthe creation of a .venv folder, which contains your isolated Python environment\nthe creation of a uv.lock file, which “locks” the exact versions of all dependencies\nyour file pyproject.toml being updated under “dependencies”`1\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to init uv and add dependencies:"
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#open-python-using-uv",
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html#open-python-using-uv",
     "title": "4,222 Introduction to Programming",
     "section": "3.4 Open python using uv",
-    "text": "3.4 Open python using uv\nOpen python with your terminal using uv run python.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to run python in your uv environment:"
+    "text": "3.4 Open python using uv\nOpen python with your terminal using uv run python.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to run python in your uv environment:"
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#using-a-python-script-in-vs-code",
     "href": "exercise_sessions/week_01/Ex01_gettingstarted.html#using-a-python-script-in-vs-code",
     "title": "4,222 Introduction to Programming",
     "section": "3.5 Using a python script in VS code",
-    "text": "3.5 Using a python script in VS code\nOnce in Introduction_to_programming/exercises/week_01, open the main.py. The trick now is to choose the right python interpreter. Python interpreters are programs that read and execute your Python code. Each environment can have its own interpreter, which ensures you use the correct Python version and packages for your project. Since we defined our Python installation, we need to select the interpreter we chose from our uv environment.\n\nIn VS Code, use CTRL/CMD + SHIFT + P to open the palette. Then write “Select Python Interpreter”. There will be a list of available Python interpreters. Chose the one corresponding to Python 3.14.1 in your venv (tagged “Workspace” by VS Code).\n\nNote: it could be that VSCode does not detect your interpreter right away. In this case, first try to refresh VSCode using CTRL/CMD + SHIFT + P and then “Developer: Reload Window”. Otherwise, select “Enter interpreter path” and navigate to the venv folder in your project, then select the python.exe file in this folder.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to select the right python interpreter in VS Code:\n\n\n\n\n\nIn VS Code, if you have a .py file open, check the Python interpreter at the bottom right and make sure you have the right one selected.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to select the right python interpreter in VS Code:"
+    "text": "3.5 Using a python script in VS code\nOnce in Introduction_to_programming/exercises/week_01, open the main.py. The trick now is to choose the right python interpreter. Python interpreters are programs that read and execute your Python code. Each environment can have its own interpreter, which ensures you use the correct Python version and packages for your project. Since we defined our Python installation, we need to select the interpreter we chose from our uv environment.\n\nIn VS Code, use CTRL/CMD + SHIFT + P to open the palette. Then write “Select Python Interpreter”. There will be a list of available Python interpreters. Chose the one corresponding to Python 3.14.1 in your venv (tagged “Workspace” by VS Code).\n\nNote: it could be that VSCode does not detect your interpreter right away. In this case, first try to refresh VSCode using CTRL/CMD + SHIFT + P and then “Developer: Reload Window”. Otherwise, select “Enter interpreter path” and navigate to the venv folder in your project, then select the python.exe file in this folder.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to select the right python interpreter in VS Code:\n\n\n\n\n\nIn VS Code, if you have a .py file open, check the Python interpreter at the bottom right and make sure you have the right one selected.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe solution to this exercise will be shown during the exercise session. Here is a preview of how to select the right python interpreter in VS Code:"
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html#using-the-terminal-be-like",
@@ -430,29 +430,29 @@
     "objectID": "course_materials/week_01/01b_gettingstarted.html#goals-for-today",
     "href": "course_materials/week_01/01b_gettingstarted.html#goals-for-today",
     "title": "4,222 Introduction to Programming",
-    "section": "Goals for today",
-    "text": "Goals for today\nIn the next 45 minutes:\n\nlearn what a terminal is and why we use it\nset up an efficient (and professional) programming environment with an IDE\ninstall Python and understand environments\nprepare everything needed for the next lectures\n\nWe will address main concepts in the lecture, and then get hands-on in the guided exercise session this afternoon."
+    "section": "",
+    "text": "In the next 45 minutes:\n\nlearn what a terminal is and why we use it\nset up an efficient (and professional) programming environment with an IDE\ninstall Python and understand environments\nprepare everything needed for the next lectures\n\nWe will address main concepts in the lecture, and then get hands-on in the guided exercise session this afternoon."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#what-is-a-terminal",
     "href": "course_materials/week_01/01b_gettingstarted.html#what-is-a-terminal",
     "title": "4,222 Introduction to Programming",
     "section": "What is a terminal?",
-    "text": "What is a terminal?\nThe terminal is a text-based interface that allows you to interact directly with your computer/operating system by typing commands.\nAlternative names:\n“terminal”, “command line”, “shell”, “command prompt”\nSome terminology:\n\nTerminal: the window where you type commands and see output\nShell: the program that interprets your commands (e.g. bash, zsh, PowerShell)"
+    "text": "What is a terminal?\nThe terminal is a text-based interface that allows you to interact directly with your computer/operating system by typing commands.\n\nAlternative names:\n“terminal”, “command line”, “shell”, “command prompt”\n\n\nSome terminology:\n\nTerminal: the window where you type commands and see output\nShell: the program that interprets your commands (e.g. bash, zsh, PowerShell)"
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#why-use-a-terminal",
     "href": "course_materials/week_01/01b_gettingstarted.html#why-use-a-terminal",
     "title": "4,222 Introduction to Programming",
     "section": "Why use a terminal",
-    "text": "Why use a terminal\nAlmost everything you can do with a graphical interface can also be done from the terminal.\nThe terminal is often:\n\nfaster for repetitive tasks\nmore precise and reproducible\neasier to automate\navailable on almost every system\n\nBecause of this, terminals are widely used in programming, data science, and research workflows."
+    "text": "Why use a terminal\nAlmost everything you can do with a graphical interface can also be done from the terminal.\n\nThe terminal is often:\n\nfaster for repetitive tasks\nmore precise and reproducible\neasier to automate\navailable on almost every system\n\nBecause of this, terminals are widely used in programming, data science, and research workflows."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#opening-a-terminal",
     "href": "course_materials/week_01/01b_gettingstarted.html#opening-a-terminal",
     "title": "4,222 Introduction to Programming",
     "section": "Opening a terminal",
-    "text": "Opening a terminal\n\n\nmacOS\nHow to open:\n\nPress Cmd + Space\nType “Terminal”\nPress Enter\n\n\nWindows\nHow to open:\n\nOpen the Start menu\nSearch for “Command Prompt” or  “Windows Terminal”\n\n\nOn Windows, you may see different terminals:\n\nCommand Prompt (CMD): lightweight, text-based, older (early days of Windows), very basic\nPowerShell: modern, powerful, widely used, CMD on steroids\nWindows Terminal: a modern app that can host both\n\nFor this course: Use Command Prompt in Windows Terminal."
+    "text": "Opening a terminal\n\n\n\nmacOS\nHow to open:\n\nPress Cmd + Space\nType “Terminal”\nPress Enter\n\n\n\n\nWindows\nHow to open:\n\nOpen the Start menu\nSearch for “Command Prompt” or  “Windows Terminal”\n\n\n\n\n\nOn Windows, you may see different terminals:\n\nCommand Prompt (CMD): lightweight, text-based, older (early days of Windows), very basic\nPowerShell: modern, powerful, widely used, CMD on steroids\nWindows Terminal: a modern app that can host both\n\nFor this course: Use Command Prompt in Windows Terminal."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#opening-your-terminal",
@@ -473,21 +473,21 @@
     "href": "course_materials/week_01/01b_gettingstarted.html#on-files-paths-and-shortcuts-1",
     "title": "4,222 Introduction to Programming",
     "section": "On files, paths, and shortcuts",
-    "text": "On files, paths, and shortcuts\nTo access files, their location must be given with paths. Paths describe where a file is located.\nAbsolute path:\n\nstarts from the root of the file system\nexample: C:/Users/Bilbo/Documents/TheRedBookofWestmarch.txt\n\nRelative path:\n\nstarts from your current working directory\nexample: Documents/TheRedBookofWestmarch.txt"
+    "text": "On files, paths, and shortcuts\nTo access files, their location must be given with paths. Paths describe where a file is located.\n\nAbsolute path:\n\nstarts from the root of the file system\nexample: C:/Users/Bilbo/Documents/TheRedBookofWestmarch.txt\n\n\n\nRelative path:\n\nstarts from your current working directory\nexample: Documents/TheRedBookofWestmarch.txt"
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#on-files-paths-and-shortcuts-2",
     "href": "course_materials/week_01/01b_gettingstarted.html#on-files-paths-and-shortcuts-2",
     "title": "4,222 Introduction to Programming",
     "section": "On files, paths, and shortcuts",
-    "text": "On files, paths, and shortcuts\nFrom the terminal, you can use shortcuts instead of absolute paths.\nUseful path shortcuts:\n\n.    current directory\n..    parent directory\n~    your home directory\n\nExamples:\n\nfile in the parent directory: ../file.txt\nyour Documents folder: ~/Documents"
+    "text": "On files, paths, and shortcuts\nFrom the terminal, you can use shortcuts instead of absolute paths.\n\nUseful path shortcuts:\n\n.    current directory\n..    parent directory\n~    your home directory\n\n\n\nExamples:\n\nfile in the parent directory: ../file.txt\nyour Documents folder: ~/Documents"
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#main-terminal-commands",
     "href": "course_materials/week_01/01b_gettingstarted.html#main-terminal-commands",
     "title": "4,222 Introduction to Programming",
     "section": "Main terminal commands",
-    "text": "Main terminal commands\nWhen you first open Terminal you typically are placed in your home directory.\nMain commands:\n\n\n\n\n\n\n\n\n\nDescription\n\n\nbash/macOS\n\n\nCommand Prompt (Windows)\n\n\n\n\n\n\nCheck your current directory (print working directory)\n\n\npwd\n\n\ncd\n\n\n\n\nList the files in the current directory\n\n\nls\n\n\ndir\n\n\n\n\nMove into and out of the directory (change directory)\n\n\ncd &lt;directory&gt;\n\n\ncd &lt;directory&gt;\n\n\n\n\nCreate a directory (make directory)\n\n\nmkdir data\n\n\nmkdir data\n\n\n\n\nTips:\n\nRunning cd without arguments takes you to ~\nUse Tab for auto-completion\nUse arrow keys to browse command history\nAll these commands work from wherever your shell is currently pointing\nLook at Brad Traversy’s Common Terminal Commands"
+    "text": "Main terminal commands\nWhen you first open Terminal you typically are placed in your home directory.\n\nMain commands:\n\n\n\n\n\n\n\n\n\nDescription\n\n\nbash/macOS\n\n\nCommand Prompt (Windows)\n\n\n\n\n\n\nCheck your current directory (print working directory)\n\n\npwd\n\n\ncd\n\n\n\n\nList the files in the current directory\n\n\nls\n\n\ndir\n\n\n\n\nMove into and out of the directory (change directory)\n\n\ncd &lt;directory&gt;\n\n\ncd &lt;directory&gt;\n\n\n\n\nCreate a directory (make directory)\n\n\nmkdir data\n\n\nmkdir data\n\n\n\n\n\n\nTips:\n\nRunning cd without arguments takes you to ~\nUse Tab for auto-completion\nUse arrow keys to browse command history\nAll these commands work from wherever your shell is currently pointing\nLook at Brad Traversy’s Common Terminal Commands"
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#working-with-files-in-a-terminal",
@@ -501,7 +501,7 @@
     "href": "course_materials/week_01/01b_gettingstarted.html#naming-conventions",
     "title": "4,222 Introduction to Programming",
     "section": "Naming Conventions",
-    "text": "Naming Conventions\nUse Case Styles:\n\n🐍 snake_case (my_file_name.py)\n🐫 camelCase (myFileName.py)\n🍢 kebab-case (my-file-name.py)\n\nDon’ts:\n\nDo not use spaces in folder or file names! Never.\n\nAvoid special characters (remember Data Handling and encoding nightmares).\nMake sure to not switch styles within a project."
+    "text": "Naming Conventions\n\nUse Case Styles:\n\n🐍 snake_case (my_file_name.py)\n🐫 camelCase (myFileName.py)\n🍢 kebab-case (my-file-name.py)\n\n\n\nDon’ts:\n\nDo not use spaces in folder or file names! Never.\n\nAvoid special characters (remember Data Handling and encoding nightmares).\nMake sure to not switch styles within a project."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#naming-conventions-or",
@@ -536,7 +536,7 @@
     "href": "course_materials/week_01/01b_gettingstarted.html#why-python",
     "title": "4,222 Introduction to Programming",
     "section": "Why python?",
-    "text": "Why python?\nPython is a good first (and second…) programming language.\n\neasy to read and write\nwidely used in data science, economics, research, web development, automation, and AI\nflexible enough for small scripts and large projects\n\nPython or R?\n“It simply does not matter. If you stick around in data science long enough, you will eventually get in touch with both languages and, in turn, learn both. There is a huge overlap of what you can do with either of those languages. The point is, if you just start doing analytics using a programming language, both languages are guaranteed to carry you a long way. There is no way to tell for sure which one will be the more dominant language 10 years from now, or whether both will be around holding their ground the way they do now.” – Matthias Bannert, “Research Software Engineering”"
+    "text": "Why python?\nPython is a good first (and second…) programming language.\n\neasy to read and write\nwidely used in data science, economics, research, web development, automation, and AI\nflexible enough for small scripts and large projects\n\n\nPython or R?\n“It simply does not matter. If you stick around in data science long enough, you will eventually get in touch with both languages and, in turn, learn both. There is a huge overlap of what you can do with either of those languages. The point is, if you just start doing analytics using a programming language, both languages are guaranteed to carry you a long way. There is no way to tell for sure which one will be the more dominant language 10 years from now, or whether both will be around holding their ground the way they do now.” – Matthias Bannert, “Research Software Engineering”"
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#python-in-the-shell-or-in-a-.py-file",
@@ -550,7 +550,7 @@
     "href": "course_materials/week_01/01b_gettingstarted.html#coming-from-r",
     "title": "4,222 Introduction to Programming",
     "section": "Coming from R",
-    "text": "Coming from R\nIf you know R (which you do…), Python will feel familiar, but not identical.\nKey differences to keep in mind:\n\nindentation is part of the language\nindexing starts at 0\nPython prefers explicit, readable code"
+    "text": "Coming from R\nIf you know R (which you do…), Python will feel familiar, but not identical.\n\nKey differences to keep in mind:\n\nindentation is part of the language\nindexing starts at 0\nPython prefers explicit, readable code"
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#indentation",
@@ -564,21 +564,21 @@
     "href": "course_materials/week_01/01b_gettingstarted.html#counting-starts-at-0",
     "title": "4,222 Introduction to Programming",
     "section": "Counting starts at 0",
-    "text": "Counting starts at 0\nIn Python, many things start counting at 0 (zero-based indexing).\nExample:\n\nthe first element has index 0\nthe second element has index 1\n\nCommon in programming, even if it feels unintuitive at first."
+    "text": "Counting starts at 0\nIn Python, many things start counting at 0 (zero-based indexing).\n\nExample:\n\nthe first element has index 0\nthe second element has index 1\n\nCommon in programming, even if it feels unintuitive at first."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#the-problem-dependency-conflicts",
     "href": "course_materials/week_01/01b_gettingstarted.html#the-problem-dependency-conflicts",
     "title": "4,222 Introduction to Programming",
     "section": "The Problem: Dependency Conflicts",
-    "text": "The Problem: Dependency Conflicts\nIn R, you mostly use a single global library. In Python, different projects need different python versions and package versions.\n\n\nWhat happens without isolation?\nImagine you’re working on two projects:\n\nProject A (old research): needs pandas version 1.5\nProject B (new assignment): needs pandas version 2.0\n\nIf you install globally, updating for Project B breaks Project A!"
+    "text": "The Problem: Dependency Conflicts\nIn R, you mostly use a single global library. In Python, different projects need different python versions and package versions.\n\n\n\nWhat happens without isolation?\nImagine you’re working on two projects:\n\nProject A (old research): needs pandas version 1.5\nProject B (new assignment): needs pandas version 2.0\n\nIf you install globally, updating for Project B breaks Project A!"
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#a-note-on-python-interpreters",
     "href": "course_materials/week_01/01b_gettingstarted.html#a-note-on-python-interpreters",
     "title": "4,222 Introduction to Programming",
     "section": "A note on Python Interpreters",
-    "text": "A note on Python Interpreters\nA Python interpreter is the program that reads and executes your Python code.\n\n\nYour computer may have zero, one, or even multiple Python interpreters installed:\n\nSystem Python: might come pre-installed with your operating system (Windows, macOS, some Linux)\nUser Python: Python you install yourself (e.g. from python.org, Anaconda, or via uv)\n\nEach project can use a different interpreter with a different Python version (3.11, 3.12, etc.)."
+    "text": "A note on Python Interpreters\nA Python interpreter is the program that reads and executes your Python code.\n\n\nYour computer may have zero, one, or even multiple Python interpreters installed:\n\nSystem Python: might come pre-installed with your operating system (Windows, macOS, some Linux)\nUser Python: Python you install yourself (e.g. from python.org, Anaconda, or via uv)\n\n\nEach project can use a different interpreter with a different Python version (3.11, 3.12, etc.)."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#how-r-and-python-differ",
@@ -592,21 +592,21 @@
     "href": "course_materials/week_01/01b_gettingstarted.html#the-solution-virtual-environments",
     "title": "4,222 Introduction to Programming",
     "section": "The Solution: Virtual Environments",
-    "text": "The Solution: Virtual Environments\nThink of each project as having its own kitchen:\n\n\n\n\n\n\n\n\n\n\n\nEach kitchen has its own tools, ingredients, and equipment\nIf one recipe needs an old oven and another needs a new one, they don’t conflict\n\nIn Python: A virtual environment is an isolated setup for each project with its own packages and Python version. This solves the conflict problem."
+    "text": "The Solution: Virtual Environments\nThink of each project as having its own kitchen:\n\n\n\n\n\n\n\n\n\n\n\n\nEach kitchen has its own tools, ingredients, and equipment\nIf one recipe needs an old oven and another needs a new one, they don’t conflict\n\nIn Python: A virtual environment is an isolated setup for each project with its own packages and Python version. This solves the conflict problem."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#the-tool-uv",
     "href": "course_materials/week_01/01b_gettingstarted.html#the-tool-uv",
     "title": "4,222 Introduction to Programming",
     "section": "The Tool: uv",
-    "text": "The Tool: uv\nuv is a modern Python package manager that makes environments automatic and fast\n\nmanages virtual environments automatically\ninstalls packages very fast\nensures reproducible setups\nworks consistently across systems\n\n(Replaces pip, pip-tools, virtualenv, pip freeze or requirements.txt)\n\n\n⚠️ Important: Never install packages globally with system Python! Always use environments."
+    "text": "The Tool: uv\n\nuv is a modern Python package manager that makes environments automatic and fast\n\nmanages virtual environments automatically\ninstalls packages very fast\nensures reproducible setups\nworks consistently across systems\n\n(Replaces pip, pip-tools, virtualenv, pip freeze or requirements.txt)\n\n\n⚠️ Important: Never install packages globally with system Python! Always use environments."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#structure-of-a-uv-project",
     "href": "course_materials/week_01/01b_gettingstarted.html#structure-of-a-uv-project",
     "title": "4,222 Introduction to Programming",
     "section": "Structure of a uv project",
-    "text": "Structure of a uv project\n\n\nEach uv project has 3 key files\n\n.python-version: python version to use\npyproject.toml: dependencies\nuv.lock: exact versions of packages, automatically generated\n\nuv generates a .venv/ folder containing the actual environment (don’t delete it!)."
+    "text": "Structure of a uv project\n\n\n\nEach uv project has 3 key files\n\n.python-version: python version to use\npyproject.toml: dependencies\nuv.lock: exact versions of packages, automatically generated\n\nuv generates a .venv/ folder containing the actual environment (don’t delete it!)."
   },
   {
     "objectID": "course_materials/week_01/01b_gettingstarted.html#getting-started-using-uv",
@@ -633,43 +633,43 @@
     "objectID": "course_materials/week_01/01a_introduction.html#the-reality-of-economics-research-and-work",
     "href": "course_materials/week_01/01a_introduction.html#the-reality-of-economics-research-and-work",
     "title": "4,222 Introduction to Programming",
-    "section": "The reality of economics research and work",
-    "text": "The reality of economics research and work\n\n\n\nWhether you’re working with data or with economic models, …\n\nYou will write code and documents on your own machine.\nYou will collaborate with colleagues, for your thesis, research projects, and in industry.\nYou will share, publish and reuse your code.\n\n… and …\n\nSomeone else will need to run your code, understand it, and build on it."
+    "section": "",
+    "text": "You will write code and documents on your own machine.\nYou will collaborate with colleagues, for your thesis, research projects, and in industry.\nYou will share, publish and reuse your code.\n\n\n\n\n\nSomeone else will need to run your code, understand it, and build on it."
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#this-course-is-about-programming",
     "href": "course_materials/week_01/01a_introduction.html#this-course-is-about-programming",
     "title": "4,222 Introduction to Programming",
-    "section": "This course is about programming",
-    "text": "This course is about programming\n\n\n\nLearning to program has become comparatively easy\n\n\n\n\nLearn a programming language like R or Python,\nWrite code that works on your machine,\nSolve problems with models or data\n\n… are now the A-B-C of an economist’s toolkit."
+    "section": "",
+    "text": "Learn a programming language like R or Python,\nWrite code that works on your machine,\nSolve problems with models or data"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#and-programming-with-reproducibility",
     "href": "course_materials/week_01/01a_introduction.html#and-programming-with-reproducibility",
     "title": "4,222 Introduction to Programming",
-    "section": "… and programming with reproducibility",
-    "text": "… and programming with reproducibility\n\n\n\nLearning to program in a way that is reproducible, reusable and collaborative is harder\n\n\n\n\n\n\n\n\n\nDesign and execute projects in a systematic and reproducible way.\nWrite code that is reusable, maintainable and easy to share.\nApply collaborative code development practices."
+    "section": "",
+    "text": "Design and execute projects in a systematic and reproducible way.\nWrite code that is reusable, maintainable and easy to share.\nApply collaborative code development practices."
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#skills-youll-develop-in-this-course",
     "href": "course_materials/week_01/01a_introduction.html#skills-youll-develop-in-this-course",
     "title": "4,222 Introduction to Programming",
-    "section": "Skills you’ll develop in this course",
-    "text": "Skills you’ll develop in this course\n\nWrite modular code, document functions, implement error handling.\nCollaborate using Git and version control, manage shared code.\nStructure data in relational databases and query with SQL for systematic data workflows.\nProduce code that works not just on your machine, but in settings that reflect real work in research and industry."
+    "section": "",
+    "text": "Write modular code, document functions, implement error handling.\nCollaborate using Git and version control, manage shared code.\nStructure data in relational databases and query with SQL for systematic data workflows.\nProduce code that works not just on your machine, but in settings that reflect real work in research and industry."
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#lets-get-to-work",
     "href": "course_materials/week_01/01a_introduction.html#lets-get-to-work",
     "title": "4,222 Introduction to Programming",
-    "section": "Let’s get to work!",
-    "text": "Let’s get to work!\n\nLearn essential programming practices in Python.\nBuild tools using object oriented programming.\nLearn git and github.\nLearn SQL and relational databases.\n\n\n\n\nAt the end of this course, you will be able to produce structured and impactful work as an economist."
+    "section": "",
+    "text": "Learn essential programming practices in Python.\nBuild tools using object oriented programming.\nLearn git and github.\nLearn SQL and relational databases."
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#this-course-is-introductory-and-it-is-not",
     "href": "course_materials/week_01/01a_introduction.html#this-course-is-introductory-and-it-is-not",
     "title": "4,222 Introduction to Programming",
-    "section": "This course is introductory, and it is not…",
-    "text": "This course is introductory, and it is not…\n\n\n\nIntroductory yes ✅, but not in the traditional sense of the term ❌.\n\n\n\n\nAs said, learning a new programming language (Python) has become comparatively easier.\nWe will cover the basics of Python, but always with the goal of learning to program in a way that is reproducible, reusable and collaborative.\nAll of you know R because of Data Handling, many of you did DSF, you are learning Econometrics this semester: an introduction to programming is beyond the point.\n\n\n\n\n\nWe want you to develop a mindset!"
+    "section": "",
+    "text": "As said, learning a new programming language (Python) has become comparatively easier.\nWe will cover the basics of Python, but always with the goal of learning to program in a way that is reproducible, reusable and collaborative.\nAll of you know R because of Data Handling, many of you did DSF, you are learning Econometrics this semester: an introduction to programming is beyond the point.\n\n\n\n\n\nWe want you to develop a mindset!"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#warning-on-the-course",
@@ -704,28 +704,28 @@
     "href": "course_materials/week_01/01a_introduction.html#course-structure-part-1",
     "title": "4,222 Introduction to Programming",
     "section": "Course structure: part 1",
-    "text": "Course structure: part 1\n\n\n\nSet up your environment, learn to work together with version control and git.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\n\n\nTopic\n\n\nInstructor\n\n\nDate\n\n\nDate Exercise\n\n\n\n\n\n\nLecture 1\n\n\nThe big picture. Set up your environment.\n\n\nAurélien & Franziska\n\n\n20.02.2026\n\n\n20.02.2026\n\n\n\n\nLecture 2\n\n\nWorking together: intro to version control and git\n\n\nAurélien\n\n\n27.02.2026\n\n\n27.02.2026\n\n\n\n\nLecture 3\n\n\nWorking together: more about version control and git\n\n\nAurélien\n\n\n06.03.2026\n\n\n06.03.2026"
+    "text": "Course structure: part 1\n\n\n\n\nSet up your environment, learn to work together with version control and git.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\n\n\nTopic\n\n\nInstructor\n\n\nDate\n\n\nDate Exercise\n\n\n\n\n\n\nLecture 1\n\n\nThe big picture. Set up your environment.\n\n\nAurélien & Franziska\n\n\n20.02.2026\n\n\n20.02.2026\n\n\n\n\nLecture 2\n\n\nWorking together: intro to version control and git\n\n\nAurélien\n\n\n27.02.2026\n\n\n27.02.2026\n\n\n\n\nLecture 3\n\n\nWorking together: more about version control and git\n\n\nAurélien\n\n\n06.03.2026\n\n\n06.03.2026"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#course-structure-part-2",
     "href": "course_materials/week_01/01a_introduction.html#course-structure-part-2",
     "title": "4,222 Introduction to Programming",
     "section": "Course structure: part 2",
-    "text": "Course structure: part 2\n\n\n\nLearn Python from basics to classes, error handling, documentation, and debugging.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\n\n\nTopic\n\n\nInstructor\n\n\nDate\n\n\nDate Exercise\n\n\n\n\n\n\nLecture 4\n\n\nIntro to python\n\n\nFranziska\n\n\n13.03.2026\n\n\n13.03.2026\n\n\n\n\nLecture 5\n\n\nPython for Data: Pandas and Matplotlib\n\n\nFranziska\n\n\n20.03.2026\n\n\n20.03.2026\n\n\n\n\nLecture 6\n\n\nPython for Data: Pandas and Matplotlib\n\n\nFranziska\n\n\n27.03.2026\n\n\n27.03.2026\n\n\n\n\nBreak\n\n\n\n\nLecture 7\n\n\nPython: Introduction to Classes (OOP)\n\n\nFranziska\n\n\n17.04.2026\n\n\n17.04.2026\n\n\n\n\n  Publication of group project, deadline for group formation\n\n\n20.04.2026\n\n\n\n\n\n\nLecture 8\n\n\nError Handling, Documentation, Debugging\n\n\nFranziska\n\n\n24.04.2026\n\n\n24.04.2026"
+    "text": "Course structure: part 2\n\n\n\n\nLearn Python from basics to classes, error handling, documentation, and debugging.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\n\n\nTopic\n\n\nInstructor\n\n\nDate\n\n\nDate Exercise\n\n\n\n\n\n\nLecture 4\n\n\nIntro to python\n\n\nFranziska\n\n\n13.03.2026\n\n\n13.03.2026\n\n\n\n\nLecture 5\n\n\nPython for Data: Pandas and Matplotlib\n\n\nFranziska\n\n\n20.03.2026\n\n\n20.03.2026\n\n\n\n\nLecture 6\n\n\nPython for Data: Pandas and Matplotlib\n\n\nFranziska\n\n\n27.03.2026\n\n\n27.03.2026\n\n\n\n\nBreak\n\n\n\n\nLecture 7\n\n\nPython: Introduction to Classes (OOP)\n\n\nFranziska\n\n\n17.04.2026\n\n\n17.04.2026\n\n\n\n\n  Publication of group project, deadline for group formation\n\n\n20.04.2026\n\n\n\n\n\n\nLecture 8\n\n\nError Handling, Documentation, Debugging\n\n\nFranziska\n\n\n24.04.2026\n\n\n24.04.2026"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#course-structure-part-3",
     "href": "course_materials/week_01/01a_introduction.html#course-structure-part-3",
     "title": "4,222 Introduction to Programming",
     "section": "Course structure: part 3",
-    "text": "Course structure: part 3\n\n\n\nLearn about databases, SQL, and DevOps practices.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\n\n\nTopic\n\n\nInstructor\n\n\nDate\n\n\nDate Exercise\n\n\n\n\n\n\nLecture 9\n\n\nShort overview of databases and relational database management systems\n\n\nAurélien\n\n\n01.05.2026\n\n\n01.05.2026\n\n\n\n\nLecture 10\n\n\nDevops, Continuous Integration\n\n\nAurélien\n\n\n08.05.2026\n\n\nQ&A Session, 08.05.2026\n\n\n\n\nLecture 11\n\n\nConclusion, Q&A, Case Study\n\n\nAurélien & Franziska\n\n\n15.05.2026\n\n\nQ&A Session, 15.05.2026\n\n\n\n\n  Submission Group Project\n\n\n\n\n20.05.2026, 23:59\n\n\n\n\nLecture 12\n\n\nExam\n\n\nAurélien & Franziska\n\n\n22.05.2026\n\n\nNo Exercise session"
+    "text": "Course structure: part 3\n\n\n\n\nLearn about databases, SQL, and DevOps practices.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\n\n\nTopic\n\n\nInstructor\n\n\nDate\n\n\nDate Exercise\n\n\n\n\n\n\nLecture 9\n\n\nShort overview of databases and relational database management systems\n\n\nAurélien\n\n\n01.05.2026\n\n\n01.05.2026\n\n\n\n\nLecture 10\n\n\nDevops, Continuous Integration\n\n\nAurélien\n\n\n08.05.2026\n\n\nQ&A Session, 08.05.2026\n\n\n\n\nLecture 11\n\n\nConclusion, Q&A, Case Study\n\n\nAurélien & Franziska\n\n\n15.05.2026\n\n\nQ&A Session, 15.05.2026\n\n\n\n\n  Submission Group Project\n\n\n\n\n20.05.2026, 23:59\n\n\n\n\nLecture 12\n\n\nExam\n\n\nAurélien & Franziska\n\n\n22.05.2026\n\n\nNo Exercise session"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#exam-information-group-project",
     "href": "course_materials/week_01/01a_introduction.html#exam-information-group-project",
     "title": "4,222 Introduction to Programming",
     "section": "Exam information: Group project",
-    "text": "Exam information: Group project\nGoals\nThe goal of this project is to move beyond simple scripts and build a reusable Python tool for economic analysis. Working in groups, you will identify an economic question, source a relevant dataset, and build a Python class that automates the cleaning, analysis, and visualization of that data.\nYou will be submitting a collaborative Git repository including the tool you developed and two Quarto (.qmd) documents: A Research Brief (the results) and a User Manual (the instructions) so that anyone can pick up your tool and use it instantly.\nYou will get more Information on what we expect throughout the course, and a fact sheet on April, 20th"
+    "text": "Exam information: Group project\n\nGoals\nThe goal of this project is to move beyond simple scripts and build a reusable Python tool for economic analysis. Working in groups, you will identify an economic question, source a relevant dataset, and build a Python class that automates the cleaning, analysis, and visualization of that data.\nYou will be submitting a collaborative Git repository including the tool you developed and two Quarto (.qmd) documents: A Research Brief (the results) and a User Manual (the instructions) so that anyone can pick up your tool and use it instantly.\nYou will get more Information on what we expect throughout the course, and a fact sheet on April, 20th"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#exam",
@@ -739,7 +739,7 @@
     "href": "course_materials/week_01/01a_introduction.html#core-course-resources",
     "title": "4,222 Introduction to Programming",
     "section": "Core course resources",
-    "text": "Core course resources\n\nEverything on Canvas, then on github\nOnly one Canvas page\nQuestions only through Canvas forum!"
+    "text": "Core course resources\n\nEverything on Canvas, then on github\nOnly one Canvas page\nQuestions only through the Canvas forum!"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#contact-for-personal-questions-only",
@@ -1033,49 +1033,49 @@
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html",
     "title": "4,222 Introduction to Programming",
     "section": "",
-    "text": "in construction!!"
+    "text": "in construction!!\nOfficial Cheat-Sheet of Git: link\nWant to understand Git better? go here"
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#install-git-and-the-vscode-extension-git-graph",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#install-git-and-the-vscode-extension-git-graph",
     "title": "4,222 Introduction to Programming",
     "section": "Install git and the VSCode extension Git Graph",
-    "text": "Install git and the VSCode extension Git Graph\nThis step has to be done before the exercise session. Please follow the instructions on the git website: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git\nFor Windows users, we recommend installing git via the Git for Windows installer: https://git-scm.com/download/win. For Mac users, git is often already installed. On Mavericks (10.9) or above you can do this simply by trying to run git from the Terminal the very first time.\n$ git --version\nIf you don’t have it installed already, it will prompt you to install it. If you want a more up to date version, you can also install it via a binary installer. A macOS Git installer is maintained and available for download at the Git website, at https://git-scm.com/download/mac.\nIf you haven’t done it from the course, download the Git Cheat Sheet and save it in /week02"
+    "text": "Install git and the VSCode extension Git Graph\n— This step has to be done before the exercise session. —\nPlease follow the instructions on the git website: Git Installation Guide\n\nFor Windows users, we recommend installing git via the Git for Windows installer.\nFor Mac users, git is often already installed. On Mavericks (10.9) or above you can do this simply by trying to run git from the Terminal TODO: Powershell/Bash/CommandPrompt/…?. the very first time.\ngit --version\nIf you don’t have it installed already, it TODO: does ``it’’ refer to git –version?. will prompt you to install it. If you want a more up to date version, you can also install it via a binary installer.1 A macOS Git installer is maintained and available for download at the Git website here.\n\nTODO: Powershell/Bash/CommandPrompt/GitBash - when to use which command-line-interface."
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#configurate-git-on-your-machine",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#configurate-git-on-your-machine",
     "title": "4,222 Introduction to Programming",
-    "section": "Configurate git on your machine",
-    "text": "Configurate git on your machine\nFollow the step here to configurate your git installation.\n# Add your name\ngit config --global user.name \"Your Name\"\n\n# Add your email address\ngit config --global user.email \"your.email@unisg.ch\"\n\n# Use modern main branch name\ngit config --global init.defaultbranch main\n# For Linux/Mac:\ngit config --global core.autocrlf input\n\n# For Windows:\ngit config --global core.autocrlf true"
+    "section": "1. Configurate git on your machine",
+    "text": "1. Configurate git on your machine\nFollow the step here to configurate your git installation. TODO: Powershell/Bash/CommandPrompt/…?.\n\nuser.name: Set the name that will be attached to your commits. This is visible to collaborators when working on shared repositories. IMPORTANT: Use the same email address as for your GitLab account, if you have any, since it is used for identification and linking commits to your GitLab/GitHub account\nuser.email: Set the email address that will be attached to your commits. IMPORTANT: Use the same email address as for your GitLab account, if you have any, since it is used for identification and linking commits to your GitLab/GitHub account.\ninit.defaultBranch: Configure the default name of the initial branch when creating a new repository. Historically this was called “master”, but most platforms now use “main” as the standard default branch name.\n\n# Add your name\ngit config --global user.name \"Your Name\"\n\n# Add your email address\ngit config --global user.email \"your.email@unisg.ch\"\n\n# Use modern main branch name\ngit config --global init.defaultBranch main\nThe following commands configure how Git handles line endings across different operating systems. Windows uses a different line ending format (CRLF) than macOS/Linux (LF), which can otherwise lead to unnecessary changes showing up in version control and cause avoidable merge conflicts. Setting this option ensures a consistent file format across platforms and enables smooth collaboration. TODO: Powershell/Bash/CommandPrompt/…?.\nFor Linux/Mac:\ngit config --global core.autocrlf input\nFor Windows:\ngit config --global core.autocrlf true"
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#initialize-a-git-repository",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#initialize-a-git-repository",
     "title": "4,222 Introduction to Programming",
-    "section": "Initialize a git repository",
-    "text": "Initialize a git repository\nWe will work with our folder structure:\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\n\nIdentify the filepath of the directory Introduction_to_programming/exercises/week_02.\nIn the terminal, navigate to the directory.\nThere, initialize a git repository using git init. Check your git repo using git status.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nIn your terminal from VSCode, navigate to your cd Introduction_to_programming/exercises/week_02. Then:\ngit init\n# Initialized empty Git repository in /Users/Introduction_to_programming/exercises/week_02"
+    "section": "2. Initialize a Git repository",
+    "text": "2. Initialize a Git repository\n\n\n\n\n\n\nNoteInitializing\n\n\n\nInitializing a Git repository means turning a normal folder into a Git-tracked project. When you run git init, Git creates a hidden /.git directory that stores the version history and configuration for that folder. From that moment on, Git can track changes, create commits, and manage versions of your files in that folder and its subfolders.\n\n\n\nIdentify the filepath of the directory Introduction_to_programming/exercises/week_02.\nIn the terminal TODO: Powershell/Bash/CommandPrompt/…?., navigate to that directory. This is important. The folder you are currently in is the one Git will track.\nInitialize a git repository using git init. Check your git repo using git status.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nIn your terminal from VSCode, navigate to your cd Introduction_to_programming/exercises/week_02. Then:\ncd \"path-to-your-week_02-directory\"\ngit init"
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#first-tracking-and-commit",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#first-tracking-and-commit",
     "title": "4,222 Introduction to Programming",
-    "section": "First tracking and commit",
-    "text": "First tracking and commit\n\nIn week_02, create a text file named humorforprogrammers.txt containing the sentence “Code is like humor. When you have to explain it, it’s bad.” using your terminal or simply using VSCode (new file -&gt; save)\nObserve what happens with git status. Check git log.\nAdd the file to the staging area. Check with git status.\nCreate your first commit. Commit the new file with the commit message “text file created”. Check with git status.\nChange the text in humorforprogrammers.txt to “Code is absolutely not like humor.” and save. Use git diff to see the actual unstaged changes.\nAdd the file to the staging area and commit the new file with the commit message “text file modified because disagreement”. Check with git status and with git log.\nLook at your sidebar in VSCode. You’ll notice the git GUI. Now create a new file hello.txt containing “hello world!”. Observe the sidebar. Using the GUI, add hello.txt and commit, using a nice commit message.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n#| eval = false\necho \"Code is like humor. When you have to explain it, it’s bad.\" &gt; humorforprogrammers.txt\n\n# verify\ncat humorforprogrammers.txt\ngit add humorforprogrammers.txt\ngit status\ngit commit -m \"text file created\"\necho \"*Code is absolutely not like humor.*\" &gt; humorforprogrammers.txt\ngit add humorforprogrammers.txt\ngit status\ngit commit -m \"text file modified because disagreement\"\nThen use the GUI to add and commit hello.txt with a nice commit message."
+    "section": "3. First tracking and commit",
+    "text": "3. First tracking and commit\n\n\n\n\n\n\nNotecommit\n\n\n\nA commit is a saved snapshot of your project at a specific point in time. When you run git commit, Git records the staged changes together with a message describing what was changed. Each commit becomes part of the project’s history, allowing you to track progress, review changes, and revert to earlier versions if necessary.\n\n\n\n\n\n\n\n\nNotestaging area\n\n\n\nThe staging area is an intermediate step between your working files and a commit. When you run git add, you are selecting exactly which changes should be included in the next commit - you do not need to commit all your changes, you can select what should be commited. This allows you to group related changes together and avoid committing unfinished or unrelated edits. In short, the staging area gives you precise control over what becomes part of the project history.\n\n\n\n\n\n\n\n\nImportantVIM and Nano – when you forgot the -m\n\n\n\nIf you run git commit without the -m option, Git will open a text editor in the current terminal so you can write the commit message manually.\nGit uses a terminal-based editor by default. On many systems this is Vim, on others it may be Nano. Both are command-line text editors.\n\nIf Vim opens\nVim starts in normal mode, where you cannot type immediately.\n\nPress i to enter insert mode.\nType your commit message.\nPress Esc to leave insert mode.\nType :wq and press Enter to save and quit.\n\nIf you want to exit without saving, type :q! instead.\n\n\nIf Nano opens\nNano is simpler: - Just start typing your message. - Press Ctrl + O to save. - Press Enter to confirm. - Press Ctrl + X to exit.\nRecommendation: If you prefer not to use an editor, you can always write your commit message directly with\ngit commit -m \"Your message\".\n\n\n\n\nCheck the current status of your git project in /week_02 using git status.\nIn week_02, create a text file named humorforprogrammers.txt containing the sentence “Code is like humor. When you have to explain it, it’s bad.” using your terminal.\nObserve what happens with git status. Check git log.\nOutput the file contents of humorforprogrammers.txt.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nUse the Git Bash, Powershell (Windows) or Bash (macOS) terminal in VSC for this task. You can also use Git Bash directly.\n# 1-4:\ngit status\necho \"Code is like humor. When you have to explain it, it’s bad.\" &gt; humorforprogrammers.txt\ngit status\ngit log\ncat humorforprogrammers.txt\n\n\n\n\nAdd the file to the staging area. Check again git status. Remember: you can use autocomplete with the Tab key to avoid having to write the full name manually.\nCreate your first commit. Commit the new file with the commit message “text file created”. Check with git status.\nChange the text in humorforprogrammers.txt to “Code is absolutely not like humor.”. Verify the successful change by checking the file’s content in your terminal.\nUse git diff to see the actual unstaged changes.\nAdd the file to the staging area, check the status, and commit the new file with the commit message “text file modified because disagreement”. Check again with git status and with git log.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n# 5:\ngit add humorforprogrammers.txt\ngit status\n\n# 6:\ngit commit -m \"text file created\"\ngit status\n\n# 7:\necho \"*Code is absolutely not like humor.*\" &gt; humorforprogrammers.txt\ncat humorforprogrammers.txt\n\n# 8:\ngit diff\n\n# 9:\ngit add humorforprogrammers.txt\ngit status\ngit commit -m \"text file modified because disagreement\"\ngit status\ngit log\n\n\n\n\nLook at your sidebar in VSCode. You’ll notice the git GUI . Now create a new file hello.txt containing “hello world!”. Observe the sidebar. Using the GUI, add hello.txt and commit, using a nice commit message.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nCreate hello.txt file:\n# 10:\necho \"hello world!\" &gt; hello.txt\nIn the sidebar, open Git extension. Click on the plus symbol next to hello.txt to add it to the staging area.\nIn the message window, enter your commit message. No need to put it in quotes. Then hit commit.\nYou’ll see a new commit in the graph window:\n\n\n\n\n\n\n\n\n\n\nNotewarning: in the working copy of ‘humorforprogrammers.txt’, LF will be replaced by CRLF the next time Git touches it\n\n\n\nWindows users may see a warning such as:\n\nLF will be replaced by CRLF the next time Git touches it\n\nThis warning refers to differences in line endings between operating systems.\nmacOS and Linux use LF (Line Feed) to mark the end of a line, while Windows uses CRLF (Carriage Return + Line Feed).\nBecause we configured core.autocrlf=true on Windows, Git stores files in the repository using LF (to keep things consistent across systems), but automatically converts them to CRLF in your local working directory. If a file currently contains LF line endings, Git informs you that it will convert them to CRLF the next time it modifies the file.\nThis is not an error and does not affect the actual content of your file. It simply ensures consistent handling of line endings and smooth collaboration across different operating systems.\nmacOS and Linux users (who set core.autocrlf=input) typically do not see this warning, since their systems already use LF line endings."
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#ignore-some-files",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#ignore-some-files",
     "title": "4,222 Introduction to Programming",
-    "section": "Ignore some files",
-    "text": "Ignore some files\n\nNavigate to your repo /week_02 in exercises.\nIf you haven’t done it from the course, download the Git Cheat Sheet and save it in /week_02\nCreate a new .gitignore file to ignore only this cheatsheet.\nAdd all the files to your repo and commit. Notice what’s happening.\nChange the .gitignore file to the following file. Explain what the new .gitignore file does. Commit.\n\n# Data and generated outputs\n*.csv\n*.tsv\n*.xlsx\n*.pdf\n*.png\n*.jpg\n*.html\n\n# Python\n__pycache__/\n*.pyc\n\n# Virtual environment (uv)\n.venv/\n\n# Editor / OS files\n.DS_Store # typical for macOS!\n.vscode/"
+    "section": "5. Ignore some files",
+    "text": "5. Ignore some files\n\n\n\n\n\n\nNote.gitignore\n\n\n\nA .gitignore file tells Git which files or folders should not be tracked. This is useful for excluding temporary files, system files, build outputs, or sensitive information (e.g., passwords or API keys) that should not be part of the repository.\nGit ignores files based on pattern matching rules defined in .gitignore. These patterns work similarly to simple regular expressions (technically they use glob patterns), allowing you to ignore groups of files at once.\nFor example: - *.log ignores all log files\n- build/ ignores the entire build folder\n- .DS_Store ignores macOS system files\nIgnored files will not appear in git status and cannot be accidentally committed.\n\n\n\nMake sure to still be in the /week_02 repo.\nIf you haven’t done it from the course, download the Git Cheat Sheet and save it in your /week_02 folder.\nIf you want to see the pdf inside VSCode, we recommend you install the “PDF Viewer” extension.\nCreate a new .gitignore file to ignore only the cheatsheet. Note that there are two options:\n\nVia the Git GUI in VSCode\nVia the terminal by creating a new .gitignore file\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThere are two options to create the gitignore: once via Git GUI and once via the terminal. We’ll explain both.\n\nVia the Git GUI:\n\nThat automatically creates the .gitignore file for you.\nVia the terminal:\necho \"git-cheat-sheet-education.pdf\" &gt; .gitignore\n\n\n\n\n\nAdd all the files to your repo and commit. Notice what’s happening.\nChange the .gitignore file to the following file and save it. Explain what the new .gitignore file does. Add and commit.\n\n# Data and generated outputs\n*.csv\n*.tsv\n*.xlsx\n*.pdf\n*.png\n*.jpg\n*.html\n\n# Python\n__pycache__/\n*.pyc\n\n# Virtual environment (uv)\n.venv/\n\n# Editor / OS files\n.DS_Store # typical for macOS!\n.vscode/\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\ngit add .\ngit commit -m \"Added .gitignore file\"\n\nCopy-paste the new contents into the .gitignore file.\ngit status\ngit add .\ngit status\ngit commit -m \"Updated .gitignore file\"\n\nThis .gitignore file tells Git which files and folders should not be tracked or committed to the repository.\nIt ignores:\n\nData and generated outputs (*.csv, *.pdf, *.png, etc.)\n→ These are typically results, exports, or large files that can be recreated and do not belong in version control.\nPython temporary files (__pycache__/, *.pyc)\n→ These are automatically created by Python and do not need to be stored.\nVirtual environments (.venv/)\n→ This folder contains installed packages and can be recreated from a requirements file.\nEditor and operating system files (.DS_Store, .vscode/)\n→ These are system- or editor-specific configuration files that should not be shared.\n\nIn short, this .gitignore keeps the repository clean by excluding generated, temporary, and machine-specific files."
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#time-travel",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#time-travel",
     "title": "4,222 Introduction to Programming",
-    "section": "Time-Travel ⏱️",
-    "text": "Time-Travel ⏱️\n\nGo back to your directory /week_02 in exercises.\nOpen the git log of your respository or call it with git log. From the log, identify the commit hash (identifier) of your first commit. Note that HEAD is used to reference commits relatively, with HEAD being the current commit, HEAD~1 the previous commit, HEAD~2 the commit two commits ago, and so on.\nCheckout the previous commit using the git checkout function. As seen in the course, you can checkout to a git commit using the commit identifier. Or, you can use the following syntax: checkout HEAD~1.\nGo back to your main branch using git checkout.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nPlease complete. Make sure you are ready to explain what a detached head is and how to get back to the main branch."
+    "section": "6. Time-Travel ⏱️",
+    "text": "6. Time-Travel ⏱️\n\n\n\n\n\n\nNotecommit hash\n\n\n\nHere comes a short description\n\n\n\n\n\n\n\n\nNoteHEAD\n\n\n\nHere comes a short description\n\n\n\n\n\n\n\n\nNotedetached head\n\n\n\nHere comes a short description\n\n\n\nGo back to your directory /week_02 in exercises.\nOpen the git log of your respository or call it with git log. From the log, identify the commit hash (identifier) of your first commit. Note that HEAD is used to reference commits relatively, with HEAD being the current commit, HEAD~1 the previous commit, HEAD~2 the commit two commits ago, and so on.\nCheckout the previous commit using the git checkout function. As seen in the course, you can checkout to a git commit using the commit identifier. Or, you can use the following syntax: checkout HEAD~1.\nGo back to your main branch using git checkout.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nPlease complete. Make sure you are ready to explain what a detached head is and how to get back to the main branch."
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#option",
@@ -1200,15 +1200,15 @@
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#on",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#on",
     "title": "4,222 Introduction to Programming",
-    "section": "On 🪵, 🌲",
-    "text": "On 🪵, 🌲\n\nNavigate to your repo in /week_02 in exercises.\nCreate a new branch called fixCode. Checkout the new branch. Make sure you’re on the right branch using git status. Check the different branches of your repo with git branch.\nAdd a new file fix.txt containing “I fixed the code!” and save. Add and commit the change on the new branch.\nGo back to the main branch. Check the content of the directory. Do you see the new file? Why not?\nMerge the fixCode branch into main\nRepeat all the above steps (with a different branch name & commit) using the GUI on VSCode (self-study)\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nPlease complete"
+    "section": "7. On 🪵, 🌲",
+    "text": "7. On 🪵, 🌲\n\nNavigate to your repo in /week_02 in exercises.\nCreate a new branch called fixCode. Checkout the new branch. Make sure you’re on the right branch using git status. Check the different branches of your repo with git branch.\nAdd a new file fix.txt containing “I fixed the code!” and save. Add and commit the change on the new branch.\nGo back to the main branch. Check the content of the directory. Do you see the new file? Why not?\nMerge the fixCode branch into main\nRepeat all the above steps (with a different branch name & commit) using the GUI on VSCode (self-study)\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nPlease complete"
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#on-merge-conflicts",
     "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#on-merge-conflicts",
     "title": "4,222 Introduction to Programming",
-    "section": "On merge conflicts",
-    "text": "On merge conflicts\n\nCreate a new branch called conflictBranch. Checkout the new branch.\nChange the text in humorforprogrammers.txt to “Code is like humor. When you have to explain it, it’s really really bad.” and save. Add and commit the change.\nGo back to main and merge conflictBranch into main. Resolve the merge conflict and commit the merge.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nPlease complete.\nMake sure you are ready to explain how to deal with “forced” commit messages in the terminal (vim or nano) and in the GUI of VSCode."
+    "section": "8. On merge conflicts",
+    "text": "8. On merge conflicts\n\n\n\n\n\n\nNoteWhat is a merge conflict?\n\n\n\nHere comes a short description\n\n\n\nCreate a new branch called conflictBranch. Checkout the new branch.\nChange the text in humorforprogrammers.txt to “Code is like humor. When you have to explain it, it’s really really bad.” and save. Add and commit the change.\nGo back to main and merge conflictBranch into main. Resolve the merge conflict and commit the merge.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nPlease complete.\nMake sure you are ready to explain how to deal with “forced” commit messages in the terminal (vim or nano) and in the GUI of VSCode."
   },
   {
     "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#reference",
@@ -1250,7 +1250,7 @@
     "href": "course_materials/week_01/01a_introduction.html",
     "title": "4,222 Introduction to Programming",
     "section": "",
-    "text": "You will write code and documents on your own machine.\nYou will collaborate with colleagues, for your thesis, research projects, and in industry.\nYou will share, publish and reuse your code.\n\n\n\n\n\nSomeone else will need to run your code, understand it, and build on it.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn a programming language like R or Python,\nWrite code that works on your machine,\nSolve problems with models or data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDesign and execute projects in a systematic and reproducible way.\nWrite code that is reusable, maintainable and easy to share.\nApply collaborative code development practices.\n\n\n\n\n\n\n\n\n\n\nWrite modular code, document functions, implement error handling.\nCollaborate using Git and version control, manage shared code.\nStructure data in relational databases and query with SQL for systematic data workflows.\nProduce code that works not just on your machine, but in settings that reflect real work in research and industry.\n\n\n\n\n\nLearn essential programming practices in Python.\nBuild tools using object oriented programming.\nLearn git and github.\nLearn SQL and relational databases.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAs said, learning a new programming language (Python) has become comparatively easier.\nWe will cover the basics of Python, but always with the goal of learning to program in a way that is reproducible, reusable and collaborative.\nAll of you know R because of Data Handling, many of you did DSF, you are learning Econometrics this semester: an introduction to programming is beyond the point.\n\n\n\n\n\nWe want you to develop a mindset!\n\n\n\n\n\n\nThis is the first time we give this course.\nThe materials are new, the syllabus is new.\nWe will be learning and improving the course together with you."
+    "text": "You will write code and documents on your own machine.\nYou will collaborate with colleagues, for your thesis, research projects, and in industry.\nYou will share, publish and reuse your code.\n\n\n\n\n\nSomeone else will need to run your code, understand it, and build on it.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn a programming language like R or Python,\nWrite code that works on your machine,\nSolve problems with models or data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDesign and execute projects in a systematic and reproducible way.\nWrite code that is reusable, maintainable and easy to share.\nApply collaborative code development practices.\n\n\n\n\n\n\n\n\n\n\nWrite modular code, document functions, implement error handling.\nCollaborate using Git and version control, manage shared code.\nStructure data in relational databases and query with SQL for systematic data workflows.\nProduce code that works not just on your machine, but in settings that reflect real work in research and industry.\n\n\n\n\n\nLearn essential programming practices in Python.\nBuild tools using object oriented programming.\nLearn git and github.\nLearn SQL and relational databases.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAs said, learning a new programming language (Python) has become comparatively easier.\nWe will cover the basics of Python, but always with the goal of learning to program in a way that is reproducible, reusable and collaborative.\nAll of you know R because of Data Handling, many of you did DSF, you are learning Econometrics this semester: an introduction to programming is beyond the point.\n\n\n\n\n\nWe want you to develop a mindset!\n\n\n\n\n\n\nVersion 1.0 of this course. This is the first time we give this course.\nMaterials and syllabus are brand new.\nWe will be learning and improving the course together with you."
   },
   {
     "objectID": "course_materials/week_02/02_versioncontrol.html#working-in-your-directory-as-usual",
@@ -1438,8 +1438,8 @@
     "objectID": "course_materials/week_01/01a_introduction.html#fair-warning",
     "href": "course_materials/week_01/01a_introduction.html#fair-warning",
     "title": "4,222 Introduction to Programming",
-    "section": "Fair warning",
-    "text": "Fair warning\n\nVersion 1.0 of this course. This is the first time we give this course.\nMaterials and syllabus are brand new.\nWe will be learning and improving the course together with you."
+    "section": "",
+    "text": "Version 1.0 of this course. This is the first time we give this course.\nMaterials and syllabus are brand new.\nWe will be learning and improving the course together with you."
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#exam-information-project-timeline",
@@ -1496,5 +1496,19 @@
     "title": "6,222 Introduction to Programming",
     "section": "Clone it and start working",
     "text": "Clone it and start working\ngit clone git@github.com:yourusername/my-project.git"
+  },
+  {
+    "objectID": "course_materials/week_01/01b_gettingstarted.html",
+    "href": "course_materials/week_01/01b_gettingstarted.html",
+    "title": "4,222 Introduction to Programming",
+    "section": "",
+    "text": "In the next 45 minutes:\n\nlearn what a terminal is and why we use it\nset up an efficient (and professional) programming environment with an IDE\ninstall Python and understand environments\nprepare everything needed for the next lectures\n\nWe will address main concepts in the lecture, and then get hands-on in the guided exercise session this afternoon."
+  },
+  {
+    "objectID": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#footnotes",
+    "href": "exercise_sessions/week_02/Ex02_FirstCommitsInGit.html#footnotes",
+    "title": "4,222 Introduction to Programming",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nA binary installer is a ready-to-run version of a program that has already been compiled into machine code for your operating system. See e.g. this Reddit comment on the topic.↩︎"
   }
 ]
