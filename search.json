@@ -198,191 +198,359 @@
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#goals-for-today",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#goals-for-today",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Goals for today",
-    "text": "Goals for today\nIn this lecture and exercise session, we will:\n\ngo remote with our repository\nset up a collaborative project on git"
+    "text": "Goals for today\nAt the end of this lecture and exercise session, you will:\n\nknow how to go remote with our repository\nbe able to collaborate using Git and GitHub\n\nRemember: practice, practice, practice!\n\nIt can feel overwhelming at first, but it gets easier with time and experience.\nStart working with Git and GitHub as soon as possible, for instance for your group projects in Data Analytics II 😉"
   },
   {
-    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#git-is-a-version-control-system",
-    "href": "course_materials/week_03/03_versioncontrolwithothers.html#git-is-a-version-control-system",
-    "title": "6,222 Introduction to Programming",
-    "section": "Git is a Version Control System",
-    "text": "Git is a Version Control System\n\nBasic workflow: git init → git add → git commit\nKey concepts: Working directory → Staging area → Repository\nUse .gitignore to exclude files you don’t want to track."
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#recap-git-workflow",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#recap-git-workflow",
+    "title": "4,222 Introduction to Programming",
+    "section": "Recap: Git workflow",
+    "text": "Recap: Git workflow\n\nFill out the blanks."
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#git-workflow",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#git-workflow",
+    "title": "4,222 Introduction to Programming",
+    "section": "Git workflow",
+    "text": "Git workflow\n\n\n\nA typical repository contains a mix of files: source code (R scripts, Python scripts, etc.), output files (like quarto documents or csv files), and configuration files (like .gitignore).\nBasic workflow: git init → git add → git commit\nKey concepts: Working directory → Staging area → Repository\nUse .gitignore to exclude files you don’t want to track."
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#recap-git-commit-history",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#recap-git-commit-history",
+    "title": "4,222 Introduction to Programming",
+    "section": "Recap: Git commit history",
+    "text": "Recap: Git commit history\n\nFill out the blanks."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#recap-branches-and-merging",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#recap-branches-and-merging",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Recap: Branches and merging",
-    "text": "Recap: Branches and merging\n\nBranches let you work on features without breaking main code.\ngit branch feature → git checkout feature → make changes → git commit\nMerging brings changes from one branch into another.\ngit checkout main → git merge feature\nMerge conflicts happen when changes overlap. Resolve manually, then commit."
+    "text": "Recap: Branches and merging\n\n\n\nBranches let you work on features without breaking main code.git switch -c feature → make changes → git commit\nMerging brings changes from one branch into another.git switch main → git merge feature\nMerge conflicts happen when changes overlap. Resolve manually, then commit."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#communicate-and-collaborate-via-remotes",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#communicate-and-collaborate-via-remotes",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Communicate and collaborate via remotes",
-    "text": "Communicate and collaborate via remotes\n\n\nTo collaborate with others we need a remote\nGitHub is the de facto standard with a big community"
+    "text": "Communicate and collaborate via remotes\nThe main reason to use Git is to collaborate with others and back up your files online.\n\n\n\n\n\n\nThink of projects like:\n\nGroup project in Data Analytics II in R\nGroup project for Introduction to Programming in Python\nAny project you want to share with others (e.g., your portfolio, open-source contributions, etc.)"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#communicate-and-collaborate-via-remotes-1",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#communicate-and-collaborate-via-remotes-1",
+    "title": "4,222 Introduction to Programming",
+    "section": "Communicate and collaborate via remotes",
+    "text": "Communicate and collaborate via remotes\n\n\nSo far you’ve tracked your own work locally.\nTo collaborate with others, we need a remote\nGitHub is the de facto standard with a big community"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#remotes-1",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#remotes-1",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Remotes 🌐️",
-    "text": "Remotes 🌐️\n\nA remote is a version of your repository stored on a website like GitHub.\n\nWhat is GitHub?\n\nGitHub is a website to host git repositories\nBy having your git repository online, you can easily collaborate with others\nThere are alternative hosts like Bitbucket or GitLab"
+    "text": "Remotes 🌐️\nWhat is a remote?\n\nA remote is a version of your repository stored on a website like GitHub.\n\nWhat is GitHub?\n\nGitHub is a website to host Git repositories\nBy having your Git repository online, you can easily collaborate with others\nThere are alternative hosts like Bitbucket or GitLab"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#why-having-your-code-on-github",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#why-having-your-code-on-github",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Why having your code on GitHub?",
-    "text": "Why having your code on GitHub?\n\n\n\n\n\n\n\n\n\n\n\n\nBackup of your project (you can work from different machines)\nCollaboration in groups and also with people you don’t know\nFree and Open-Source Software (FOSS)\nVisibility as a Programmer (your porfolio - GitHub fulfills some function of a social network for programmers)"
+    "text": "Why having your code on GitHub?\n\n\n\n\n\n\n\n\n\n\n\n\nBackup of your projects (work from different machines, from work to private, or from one firm to another…)\nCollaboration in groups and also with people you don’t know\nFree and Open-Source Software (FOSS)\nVisibility as a programmer (show your portfolio and your “productivity” as a programmer… GitHub fulfills some signaling function and works as a social network for programmers)"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#github.com-a-demo",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#github.com-a-demo",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Github.com: a demo",
-    "text": "Github.com: a demo\nCheck some interesting GitHub repositories: PaddleOCR, an open-source optical character recognition, or Awesome Datascience, a full collection of resources on data science\nOr GitHub pages, like the GitHub profile of the World Bank or build your own page with “build-your-own” projects."
+    "text": "Github.com: a demo\nCheck some interesting GitHub repositories:\n\nPaddleOCR, an open-source optical character recognition\nAwesome Datascience, a full collection of resources on data science\n…\n\nOr GitHub pages:\n\nthe GitHub profile of the World Bank\nbuild your own page with “build-your-own” projects,\n…"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#four-basic-commands-to-work-with-remotes",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#four-basic-commands-to-work-with-remotes",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Four basic commands to work with remotes",
-    "text": "Four basic commands to work with remotes\n\n\ngit clone / git remote\ngit pull / git push\nThe main remote is usually called origin.\nRemotes also have branches, just like your local repository."
+    "text": "Four basic commands to work with remotes\n\n\n\nConnect to a remote: git clone / git remote\nSync with the remote: git pull / git push\nThe main remote is usually called origin.\nRemotes also have branches, just like your local repository."
   },
   {
-    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#adding-a-remote-from-an-existing-repository",
-    "href": "course_materials/week_03/03_versioncontrolwithothers.html#adding-a-remote-from-an-existing-repository",
-    "title": "6,222 Introduction to Programming",
-    "section": "Adding a remote from an existing repository",
-    "text": "Adding a remote from an existing repository\nWhen you want to add an existing repository to GitHub, you will have to add the remote yourself\ngit remote add &lt;remote name&gt; &lt;remote URL&gt;\n\nIt only works if you are not in a repo which has already been linked to a remote.\ngit remote add origin git@github.com:asallin/BECON_4222_Introduction_Programming.git\n\nTo learn about all possible commands for remotes use -h\ngit remote -h"
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#connect-to-a-remote-by-remote-adding-it-from-an-existing-repository",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#connect-to-a-remote-by-remote-adding-it-from-an-existing-repository",
+    "title": "4,222 Introduction to Programming",
+    "section": "Connect to a remote by remote adding it from an existing repository",
+    "text": "Connect to a remote by remote adding it from an existing repository\nWhen you want to add an existing repository to GitHub, you will have to add the remote yourself\ngit remote add &lt;remote name&gt; &lt;remote URL&gt;\nExample:\ngit remote add origin git@github.com:asallin/BECON_4222_Introduction_Programming.git\n\n\nNote 1: It only works if the remote repo exists and if you are not in a repo which has already been linked to a remote.\n\n\nNote 2: To learn about all possible commands for remotes use -h, like git remote -h."
   },
   {
-    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-a-repository",
-    "href": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-a-repository",
-    "title": "6,222 Introduction to Programming",
-    "section": "Cloning a repository",
-    "text": "Cloning a repository\n\nYou can download repositories from GitHub (and anywhere else), by cloning them\nFor public repositories, git clone just works, for private ones you will need to be authenticated\nIf you use git clone, the remote named origin is set up for you automatically.\ngit clone &lt;remote URL&gt;"
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#connect-to-a-remote-by-git-clone-ing-a-repository",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#connect-to-a-remote-by-git-clone-ing-a-repository",
+    "title": "4,222 Introduction to Programming",
+    "section": "Connect to a remote by git clone-ing a repository",
+    "text": "Connect to a remote by git clone-ing a repository\n\n\n\n\n\n\nYou can download repositories from GitHub (and anywhere else), by cloning them\nFor public repositories, git clone just works, for private ones you will need to be authenticated\nIf you use git clone, the remote named origin is set up for you automatically.\ngit clone &lt;remote URL&gt;"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#syncing-changes-overview",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#syncing-changes-overview",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Syncing Changes: overview",
-    "text": "Syncing Changes: overview\n\nYou first pull the latest changes from the remote and then push your own changes."
+    "text": "Syncing Changes: overview\n\nYou first pull the latest changes from the remote…\n… and then push your own changes."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#getting-changes-git-pull",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#getting-changes-git-pull",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Getting Changes: git pull",
-    "text": "Getting Changes: git pull\n\nTo get the newest updates from GitHub, type git pull in your terminal.\nThis command downloads any changes from the online repository and adds them to your current work.\nUsually, your branch is already set up to follow the matching branch on GitHub.\n\nIf it isn’t, Git will show you a warning and tell you what to do.\n\n\n# Pull from the tracked remote branch\ngit pull\n\n# Pull from a specific branch\ngit pull &lt;remote&gt; &lt;branch&gt;"
+    "text": "Getting Changes: git pull\n\nTo get the newest updates from GitHub, type git pull in your terminal.\nThis command downloads any changes from the online repository and adds them to your current work.\n\n# Pull from the tracked remote branch\ngit pull\n\n# Pull from a specific branch\ngit pull &lt;remote&gt; &lt;branch&gt;"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#getting-changes-git-pull-1",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#getting-changes-git-pull-1",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Getting Changes: git pull",
-    "text": "Getting Changes: git pull\n\ngit pull does does things under the hood: it fetches the latest changes and merges them into the current branch.\n(You can also run git fetch to fetch the latest changes and then git merge &lt;remote&gt;/branch to merge them)\nWhen you run git pull for the first time, you will need to choose a default merge strategy\nWhen you receive the message, just copy this line of code (or the one you prefer)\n\n# Default to merge\ngit config pull.rebase false"
+    "text": "Getting Changes: git pull\n\ngit pull does two things under the hood: it fetches the latest changes and merges them into the current branch.\n(You can also run git fetch to fetch the latest changes and then git merge &lt;remote&gt;/branch to merge them)\n\n\n\n\n\n\n\nNote\n\n\nWhen you run git pull for the first time, Git might prompt you to choose a default merge strategy. When you receive the message, run:\n# Default to merge\ngit config pull.rebase false"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#pushing-your-changes-git-push",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#pushing-your-changes-git-push",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Pushing Your Changes: git push",
-    "text": "Pushing Your Changes: git push\n\nYou can send your changes to github by running git push\nThis only works if there are no new changes at the remote\n\nIf there have been changes since your last pull you need to pull again\n\n\n# Push to the tracked remote branch\ngit push\n\n# Push a branch to the remote for the first time\n# -u is short for --set-upstream\ngit push -u &lt;remote&gt; &lt;branch&gt;"
+    "text": "Pushing Your Changes: git push\n\nYou can send your changes to GitHub by running git push\nThis only works if there are no new changes at the remote\nIf there have been changes since your last pull you need to pull again.\nWhy? \n\n# Push to the tracked remote branch\ngit push"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#what-if-a-branch-has-no-upstream-when-pushing",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#what-if-a-branch-has-no-upstream-when-pushing",
+    "title": "4,222 Introduction to Programming",
+    "section": "What if a branch has no upstream when pushing?",
+    "text": "What if a branch has no upstream when pushing?\nThe “upstream” is the remote branch your local branch is linked to and syncs with.\n\nYou are on branch test2, created locally but never pushed on remote.\nRunning git push from the branch leads to the following message:\n\nfatal: The current branch test2 has no upstream branch.\nTo push the current branch and set the remote as upstream, use\n\n    git push --set-upstream origin test2\n\nUse git push -u origin test2 or git push --set-upstream origin test2 to push the branch and set the upstream at the same time.\nBoth commands are equivalent (-u is short for --set-upstream)"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#what-if-a-branch-has-no-upstream-when-pulling",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#what-if-a-branch-has-no-upstream-when-pulling",
+    "title": "4,222 Introduction to Programming",
+    "section": "What if a branch has no upstream when pulling?",
+    "text": "What if a branch has no upstream when pulling?\n\n\n\n\nYou are on branch test3, which is not yet tracking any remote branch.\nRunning git pull from test3:\n\nThere is no tracking information for the current branch.\nPlease specify which branch you want to merge with.\n\n    git pull &lt;remote&gt; &lt;branch&gt;\n\nIf you wish to set tracking information for this branch you can do so with:\n\n    git branch --set-upstream-to=origin/test3 test3\n\nNote: The easiest way to avoid both situations: always use git push -u origin &lt;branch&gt; the first time you push a new branch."
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#push-and-pull",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#push-and-pull",
+    "title": "4,222 Introduction to Programming",
+    "section": "Push and pull",
+    "text": "Push and pull"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#authenticating-with-github",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#authenticating-with-github",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Authenticating with GitHub 🗝️",
-    "text": "Authenticating with GitHub 🗝️\n… some patience is required there…"
+    "text": "Authenticating with GitHub 🗝️\n… set it up once,\n…done forever as long as you don’t change computer,\n… takes about 10 minutes …"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#authenticating-with-github-1",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#authenticating-with-github-1",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Authenticating with GitHub 🗝️",
-    "text": "Authenticating with GitHub 🗝️\nAuthentication when pushing and pulling\n\nWhen you connect to a GitHub repository, GitHub needs to verify who you are using a username and password. Since August 2021 stronger authentication is required, and there are several secure methods available.\nWe’ll use SSH keys: you keep a private key on your computer and upload the matching public key to GitHub; when they match correctly, GitHub grants access.\nUsing SSH keys is more secure than passwords, avoids repeated credential prompts, and is a common, portable method for authenticating to remote services.\n\nHow to?\n\nSetting up the authentication with GitHub could be somewhat cumbersome.\nPlease go to this website from LMU Munich and follow the steps to authenticate with GitHub.Credits: Open Science Center at LMU Munich (Mike Croucher & Malika Ihle)"
+    "text": "Authenticating with GitHub 🗝️\nAuthentication when pushing and pulling\n\nWhen you connect to a GitHub repository, GitHub needs to verify who you are using a username and password. There are several secure methods available.\nWe’ll use SSH keys: you keep a private key on your computer and upload the matching public key to GitHub; when they match correctly, GitHub grants access.\nUsing SSH keys is more secure than passwords and avoids repeated credential prompts.\n\nHow to?\n\nSetting up the authentication with GitHub could be tedious the first time, but worth it 😒\nPlease go to this website from LMU Munich and follow the steps to authenticate with GitHub.Credits: Open Science Center at LMU Munich (Mike Croucher & Malika Ihle)"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#short-words-on-ssh-keys",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#short-words-on-ssh-keys",
+    "title": "4,222 Introduction to Programming",
+    "section": "Short words on SSH Keys",
+    "text": "Short words on SSH Keys\nWhat are SSH keys?\n\nSSH (Secure Shell) uses a key pair (a private key which stays on your computer and a public key which is uploaded to GitHub) to authenticate without a password.\nWhen you connect, GitHub checks if your private key matches the public key on file. If yes, access is granted, no password needed.\n\nSSH keys are per machine\n\nYour SSH key is tied to the computer where it was generated. If you switch to a new laptop, you need to generate a new key and add it to GitHub again\nYou can have multiple public keys registered on GitHub (one per machine)\n\n\nNote: Never share your private key. Not by email, not on GitHub, not anywhere. It belongs to .gitignore."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#test-your-connection",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#test-your-connection",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Test your connection",
-    "text": "Test your connection\nTest your connection using the following code.\nssh -T git@github.com\n&gt; Hi ASallin! You've successfully authenticated, but GitHub does not provide shell access."
+    "text": "Test your connection\nOnce you’ve set up your SSH key, test your connection using the following code.\nssh -T git@github.com\n&gt; Hi ASallin! You've successfully authenticated, but GitHub does not provide shell access."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Cloning the course repository",
-    "text": "Cloning the course repository\n1. Navigate to your course directory Introduction_to_programming using the terminal.\nRemember our course structure:\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ..."
+    "text": "Cloning the course repository\nHow to clone the course repository will be covered in the exercise session, but here is a quick overview of the steps."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository-1",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository-1",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Cloning the course repository",
-    "text": "Cloning the course repository\n2. Find the HTTPS or SSH on the GitHub course repo\nGo on https://github.com/ASallin/BECON_4222_Introduction_Programming and click on &lt;&gt;Code\n\nYou can find the remote URL by going to a repository on GitHub and clicking the Code button"
+    "text": "Cloning the course repository\n1. Navigate to your course directory Introduction_to_programming using the terminal.\nRemember our course structure:\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ..."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository-2",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository-2",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Cloning the course repository",
-    "text": "Cloning the course repository\n3. Clone the course repository.\nThe course is public, so cloning via HTTPS will work without a SSH key. However, cloning via the SSH URL requires a configured SSH key.\ngit clone https://github.com/ASallin/BECON_4222_Introduction_Programming.git\nor\ngit clone git@github.com:ASallin/BECON_4222_Introduction_Programming.git"
+    "text": "Cloning the course repository\n2. Find the HTTPS or SSH on the GitHub course repo\nGo on https://github.com/ASallin/BECON_4222_Introduction_Programming and click on &lt;&gt;Code\n\nYou can find the remote URL by going to a repository on GitHub and clicking the Code button"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#clone-the-course-repository",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#clone-the-course-repository",
+    "title": "4,222 Introduction to Programming",
+    "section": "Clone the course repository",
+    "text": "Clone the course repository\n3. Clone the course repository.\nThe course is public, so cloning via HTTPS will work without a SSH key.\nUsing HTTPS (no SSH key needed)\ngit clone https://github.com/ASallin/BECON_4222_Introduction_Programming.git\nUsing SSH\ngit clone git@github.com:ASallin/BECON_4222_Introduction_Programming.git"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository-3",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#cloning-the-course-repository-3",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Cloning the course repository",
-    "text": "Cloning the course repository\nNow you’ve cloned the course repository in your directory. You’ll have a new folder called BECON_4222_Introduction_Programming. You can remove the materials folder.\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\nEvery week, you can refresh the course content with git pull."
+    "text": "Cloning the course repository\nNow you’ve cloned the course repository in your directory. You’ll have a new folder called BECON_4222_Introduction_Programming. You can remove the github_course_materials folder.\nIntroduction_to_programming/\n├── BECON_4222_Introduction_Programming/\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\nEvery week, you can refresh the course content with git pull.\n\nNote: this is experimental. The course materials uploaded on Canvas every week are the official version. If you want to use the GitHub repository, make sure to pull the latest changes before starting to work on the exercises."
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#creating-a-github-repository",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#creating-a-github-repository",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Creating a GitHub repository",
-    "text": "Creating a GitHub repository\nOn your GitHub account, click New repository\n\nChoose a name (e.g., my-project)\nSet visibility: Public (anyone can see) or Private (only you and collaborators)\nCheck Add a README file"
+    "text": "Creating a GitHub repository\n\n\n\nOn your GitHub account, click New repository \nChoose the parameters:\n\n\nName (e.g., git-practice-week03)\nVisibility: Public (anyone can see) or Private (only you and collaborators)\nAdd a README file"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#the-readme.md",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#the-readme.md",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "The README.md",
-    "text": "The README.md\n\nFirst thing visitors see when they open your repo\nWritten in Markdown (you know Markdown already from Data Handling, same as Quarto)\nShould describe: what the project is, how to install/run it, how to contribute\nA good README makes your project accessible and professional"
+    "text": "The README.md\n\n\n\nFirst thing visitors and collaborators see when they open your repo\nWritten in Markdown (same syntax as Quarto)\nShould describe: what the project is, how to install/run it, how to contribute\nA good README makes your project accessible and professional\n\n\n\n# GoldenEye Weapon System – Analysis\n\nEconomic impact of the GoldenEye satellite on financial markets.\n\n## How to run\n1. Install dependencies: `uv sync`\n2. Run the analysis: `uv run python goldeneye.py`\n\n## Data\nSEVERNAYA station sensor logs, 1995. Source undisclosed."
   },
   {
-    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#clone-it-and-start-working",
-    "href": "course_materials/week_03/03_versioncontrolwithothers.html#clone-it-and-start-working",
-    "title": "6,222 Introduction to Programming",
-    "section": "Clone it and start working",
-    "text": "Clone it and start working\ngit clone git@github.com:yourusername/my-project.git"
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#create-a-local-repository-and-link-it-to-github",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#create-a-local-repository-and-link-it-to-github",
+    "title": "4,222 Introduction to Programming",
+    "section": "Create a local repository and link it to GitHub",
+    "text": "Create a local repository and link it to GitHub\n\n\n\nTwo scenarios when connecting a local repository to a remote on GitHub:\n\nScenario 1: You already have a local repo and want to push it to GitHub\nScenario 2: You start from scratch: you create the repo on GitHub and clone it locally"
   },
   {
-    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests",
-    "href": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests",
-    "title": "6,222 Introduction to Programming",
-    "section": "Pull Requests",
-    "text": "Pull Requests\nA pull request (PR) is a request to merge changes from one branch into another.\nWhy?\n\nYou don’t push directly to main — you work on a branch, then ask for your changes to be reviewed and merged\nPRs are the standard way to collaborate on GitHub\n\nWorkflow\n\nCreate a branch and make your changes\nPush the branch to GitHub: git push -u origin my-branch\nOn GitHub, open a Pull Request from my-branch → main\nCollaborators review, comment, request changes\nOnce approved, merge the PR\n\nPRs keep the main branch clean and give the team a chance to review code before it’s integrated."
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#scenario-1-you-already-have-a-local-repo-and-want-to-push-it-to-github",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#scenario-1-you-already-have-a-local-repo-and-want-to-push-it-to-github",
+    "title": "4,222 Introduction to Programming",
+    "section": "Scenario 1: You already have a local repo and want to push it to GitHub",
+    "text": "Scenario 1: You already have a local repo and want to push it to GitHub\n\n\n\nYou’ve been working locally and now want to publish your project on GitHub.\n\nCreate an empty repo on GitHub (no README, no .gitignore)\nLink your local repo to it and push:\n\ngit remote add origin https://github.com/ASallin/git-practice-week03.git\ngit push -u origin main"
   },
   {
-    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#collaborators",
-    "href": "course_materials/week_03/03_versioncontrolwithothers.html#collaborators",
-    "title": "6,222 Introduction to Programming",
-    "section": "Collaborators",
-    "text": "Collaborators"
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#scenario-2-you-start-from-scratch-you-create-the-repo-on-github-and-clone-it-locally",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#scenario-2-you-start-from-scratch-you-create-the-repo-on-github-and-clone-it-locally",
+    "title": "4,222 Introduction to Programming",
+    "section": "Scenario 2: You start from scratch: you create the repo on GitHub and clone it locally",
+    "text": "Scenario 2: You start from scratch: you create the repo on GitHub and clone it locally\n\n\n\nCreate the repo on GitHub first, then clone it locally:\ngit clone https://github.com/ASallin/git-practice-week03.git\n\nIt’s that simple 😎"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests-prs",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests-prs",
+    "title": "4,222 Introduction to Programming",
+    "section": "Pull Requests (PRs)",
+    "text": "Pull Requests (PRs)\nA pull request (PR) is a request to merge changes from one branch into another.\nWhy?\n\nWhen collaborating with other people, it’s often good to review each other’s changes\nThis is easiest done by using pull requests\nYou don’t push directly to main: you work on a branch, then request for your changes to be reviewed, pulled and merged\nPRs are the standard way to collaborate on GitHub"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests-overview",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests-overview",
+    "title": "4,222 Introduction to Programming",
+    "section": "Pull requests: Overview",
+    "text": "Pull requests: Overview\n\nOverview of the pull requests page in a GitHub repository. Repository: https://github.com/worldbank/GEEST"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests-detailed-view",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#pull-requests-detailed-view",
+    "title": "4,222 Introduction to Programming",
+    "section": "Pull requests: Detailed View",
+    "text": "Pull requests: Detailed View\n\nView of a single pull request on GitHub. Repository: https://github.com/worldbank/GEEST"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#workflow",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#workflow",
+    "title": "4,222 Introduction to Programming",
+    "section": "Workflow",
+    "text": "Workflow\n\nCreate a branch and make your changes\nPush the branch to GitHub: git push -u origin my-branch\nOn GitHub, open a Pull Request from my-branch → main (you are usually invited to do so)\nCollaborators review, comment, request changes\nOnce approved, merge the PR\n\nPRs keep the main branch clean and give the team a chance to review code before it’s integrated.\nI find PRs to be flexible (enough), and very helpful to avoid merge conflicts."
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#when-should-you-start-using-prs",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#when-should-you-start-using-prs",
+    "title": "4,222 Introduction to Programming",
+    "section": "When Should you Start using PRs?",
+    "text": "When Should you Start using PRs?\n\nMaybe your project doesn’t need these features yet, but try it\nOften it makes sense to use pull requests even when collaborating with just a few people\n\nTo avoid merge conflicts\nAlso for reviewing each others changes\n\nMany companies require code reviews and using PRs"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#a-rule-of-collaboration",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#a-rule-of-collaboration",
+    "title": "4,222 Introduction to Programming",
+    "section": "A rule of collaboration",
+    "text": "A rule of collaboration\nNobody pushes directly to main, everyone works on a branch and contributes via a pull request.\n\nAvoids headaches with impossible merge conflicts\nKeeps a collaborative approach\n…"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#advanced-git-and-github",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#advanced-git-and-github",
+    "title": "4,222 Introduction to Programming",
+    "section": "Advanced Git and GitHub",
+    "text": "Advanced Git and GitHub\nThere are many more features of Git and GitHub that we won’t cover in this course. You’ll learn the rest when you need it (I still discover so many new things in Git).\nIn Git:\n\nHooks: trigger scripts on certain Git events (e.g., pre-commit, post-merge)\nRebasing: an alternative to merging that creates a cleaner commit history\n\nIn GitHub:\n\nGitHub Issues: track bugs, tasks, and feature requests\nGitHub Pages: host static websites directly from a GitHub repository\nGitHub Actions: automate workflows (e.g., run tests, deploy code)\nForking: create your own copy of someone else’s repository to experiment with changes without affecting the original"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#issues",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#issues",
+    "title": "4,222 Introduction to Programming",
+    "section": "Issues",
+    "text": "Issues\n\nSystem to track tasks that still need to be done\nAllows for discussion\nWhen an issue is done, it is “closed”\n\n\nGo on the GitHub page of the BFS package (API wrapper from the Swiss Federal Statistical Office) and look at the different issues."
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#forking",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#forking",
+    "title": "4,222 Introduction to Programming",
+    "section": "Forking",
+    "text": "Forking\n\nYou can easily copy public repositories into your own GitHub account, by forking them\nThis way, you get your own remote version of the respository\n\nYou can still contribute your changes back to the original repository\nThe two repositories stay linked on GitHub\n\nThis happens in GitHub not Git"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#github-pages",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#github-pages",
+    "title": "4,222 Introduction to Programming",
+    "section": "GitHub Pages",
+    "text": "GitHub Pages\n\nHost your own website there for free on GitHub Pages\nYou can create websites for specific projects (i.e. repositories)\n\n&lt;your_gh_username&gt;.github.io/&lt;your_repo_name&gt;\n\nSpecial repository name: &lt;your_gh_username&gt;.github.io to create a personal page (portfolio, blog, etc.)\n\n\n\n\n\n\n\nCreate a page in 10mn from a template:\n\nGo to https://github.com/arifszn/gitprofile and fork the repository\nEnable GitHub Pages (→ Settings) and GitHub Actions (→ Actions)\nLook at the website at https://&lt;your-username&gt;.github.io/gitprofile/\nConfigure gitprofile.config.ts to customize your profile page."
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#github-pages-and-quarto-websites",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#github-pages-and-quarto-websites",
+    "title": "4,222 Introduction to Programming",
+    "section": "GitHub Pages and Quarto Websites",
+    "text": "GitHub Pages and Quarto Websites\n\n\nQuarto website\n\nYou can also create a Quarto website and host it on GitHub Pages. Check out the Quarto documentation for more details.\nBasic and static\n\n\n\n\n\nExample: https://silviacanelon.com/\n\n\n\n\n\nData scientist profiles: Silvia Canelòn, Samantha Csik (great tips on blogs), full tutorial by Marvin Schmitt\nMy personal website: https://asallin.github.io/\n\n\n\n\nYou can fork them and start from there"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#visualizing-git-repositories",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#visualizing-git-repositories",
+    "title": "4,222 Introduction to Programming",
+    "section": "Visualizing Git repositories",
+    "text": "Visualizing Git repositories\nSeveral tools exist to visualize git repositories. These can be useful to get a quick overview of a git repository.\n\n🚚 git-truck\n🐙 GitHub Repo Visualizer (Article)\n🌸 gource"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#additional-resources",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#additional-resources",
+    "title": "4,222 Introduction to Programming",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nhttps://learngitbranching.js.org/\nhttps://github.com/git-guides\nIntroduction to RStudio Git & GitHub\nThe Carpentries: Version Control with Git\nhttps://gitimmersion.com"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#what-we-have-covered-so-far",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#what-we-have-covered-so-far",
+    "title": "4,222 Introduction to Programming",
+    "section": "What we have covered so far",
+    "text": "What we have covered so far\n\nWeek 1 — Getting started\n\nTerminal, file paths, naming conventions\nIDEs and VS Code\nThe importance of virtual environments for Python, with uv\n\nWeek 2 — Local version control with Git\n\nTracking changes: git add, git commit, .gitignore\nBranches and merging; resolving conflicts\n\nWeek 3 — Collaborating with GitHub\n\nConnecting local repos to GitHub (clone, push, pull)\nPull requests as the standard review workflow\n\n\nYou are now ready for the next step: Python 🐍!"
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#practical-a-summary-exercise",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#practical-a-summary-exercise",
+    "title": "4,222 Introduction to Programming",
+    "section": "Practical: A Summary exercise",
+    "text": "Practical: A Summary exercise\nThis is a guided demo exercise to practice the full collaborative workflow using GitHub and pull requests.\n\nCreate teams of 2 people.\nOpen the exercise document ex03_git_collaboration.qmd and follow the instructions.\nFor this exercise to work, you need to have installed Git and set up your GitHub account with SSH keys.\nIf you haven’t done that yet, participate actively with the demo."
+  },
+  {
+    "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#i-need-two-volunteers",
+    "href": "course_materials/week_03/03_versioncontrolwithothers.html#i-need-two-volunteers",
+    "title": "4,222 Introduction to Programming",
+    "section": "I need two volunteers!",
+    "text": "I need two volunteers!"
   },
   {
     "objectID": "course_materials/week_03/03_versioncontrolwithothers.html#sources",
     "href": "course_materials/week_03/03_versioncontrolwithothers.html#sources",
-    "title": "6,222 Introduction to Programming",
+    "title": "4,222 Introduction to Programming",
     "section": "Sources",
-    "text": "Sources\nhttps://smonsays.github.io/git-workshop/#/iv.-collaboration\nJan Simon"
+    "text": "Sources\n\nThe course materials is inspired by Jan Simson, Introduction to Git and Advanced Git. Thanks for the inspiration and the great resources!"
   },
   {
     "objectID": "course_materials/week_01/01a_introduction.html#the-reality-of-economics-research-and-work",
@@ -529,28 +697,28 @@
     "href": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-1-authenticating-with-github",
     "title": "4,222 Introduction to Programming",
     "section": "Exercise 1: Authenticating with GitHub 🗝️",
-    "text": "Exercise 1: Authenticating with GitHub 🗝️\nTry to execute these steps before the exercise session. If you have any problem, we will try to solve it together during the session (if time permits)\nWhen you connect to a GitHub repository, GitHub needs to verify who you are using a username and password. Since August 2021 stronger authentication is required, and there are several secure methods available.\n\nWe’ll use SSH keys: you keep a private key on your computer and upload the matching public key to GitHub; when they match correctly, GitHub grants access.\nUsing SSH keys is more secure than passwords, avoids repeated credential prompts, and is a common, portable method for authenticating to remote services.\n\n\nInstructions\n\nPlease go to this website from LMU Munich and follow the steps to authenticate with GitHub.Credits: Open Science Center at LMU Munich (Mike Croucher & Malika Ihle)\n\n\n\nTest your connection\nTest your connection using the following code.\nssh -T git@github.com\n&gt; Hi ASallin! You've successfully authenticated, but GitHub does not provide shell access."
+    "text": "Exercise 1: Authenticating with GitHub 🗝️\nTry to execute these steps before the exercise session. If you have any problem, we will try to solve it together during the session (if time permits)\nWhen you connect to a GitHub repository, GitHub needs to verify who you are using a username and password. Since August 2021 stronger authentication is required, and there are several secure methods available.\n\nWe’ll use SSH keys: you keep a private key on your computer and upload the matching public key to GitHub; when they match correctly, GitHub grants access.1\nUsing SSH keys is more secure than passwords, avoids repeated credential prompts, and is a common, portable method for authenticating to remote services.\n\n\nInstructions\n\nPlease go to this website from LMU Munich and follow the steps to authenticate with GitHub.Credits: Open Science Center at LMU Munich (Mike Croucher & Malika Ihle)\n\n\n\nTest your connection\nTest your connection using the following code.\nssh -T git@github.com\n&gt; Hi ASallin! You've successfully authenticated, but GitHub does not provide shell access."
   },
   {
     "objectID": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-2-cloning-a-repository-course-repo",
     "href": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-2-cloning-a-repository-course-repo",
     "title": "4,222 Introduction to Programming",
     "section": "Exercise 2: Cloning a repository: course repo",
-    "text": "Exercise 2: Cloning a repository: course repo\n\nNavigate to your course directory Introduction_to_programming using the terminal. Remember our course structure:\n\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\n\nClone the course repo in your working directory Introduction_to_programming. The address of the repo is https://github.com/ASallin/BECON_4222_Introduction_Programming.\nExplore the repo briefly using git status and call for the log to see the history of commits.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSee class slides. Go on the repo and click on &lt;&gt;Code. Copy the https-address of the repo.\n. If you clone a repository for the first time, GitHub will prompt you to authenticate with your GitHub account. Follow the instructions to complete the authentication process on your browser.\nThen test that you are in the right directory and clone the repo using the following command:\npwd\ngit clone https://github.com/ASallin/BECON_4222_Introduction_Programming.git\nYou should observe something like this:\ngit clone https://github.com/ASallin/BECON_4222_Introduction_Programming.git\n/c/Users/aurel/OneDrive/Documents/Introduction_to_programming\nCloning into 'BECON_4222_Introduction_Programming'...\nremote: Enumerating objects: 1070, done.\nremote: Counting objects: 100% (36/36), done.\nremote: Compressing objects: 100% (24/24), done.\nremote: Total 1070 (delta 11), reused 22 (delta 6), pack-reused 1034 (from 1)\nReceiving objects: 100% (1070/1070), 120.89 MiB | 27.81 MiB/s, done.\nResolving deltas: 100% (426/426), done.\nUpdating files: 100% (350/350), done.\nNavigate to the repo and check the status and log. Use --oneline to have a more compact log… if you don’t want to see the full commit messages back to the Ancient Roman times.\ncd BECON_4222_Introduction_Programming\ngit status\ngit log --oneline\nUse Git Graph to visualize the history of commits. You should see the different branches from our contributors.\nFinally, the directory should now look like this:\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── BECON_4222_Introduction_Programming/ # GitHub repo with all course materials\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\nYou can remove the directory github_course_materials if you want, since the repo is now in BECON_4222_Introduction_Programming. Do it in VSCode or in the terminal with rm -r github_course_materials (be careful with this command, it deletes the directory and all its content without asking for confirmation)."
+    "text": "Exercise 2: Cloning a repository: course repo\n\nNavigate to your course directory Introduction_to_programming using the terminal. Remember our course structure:\n\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\n\nClone the course repo in your working directory Introduction_to_programming. The address of the repo is https://github.com/ASallin/BECON_4222_Introduction_Programming.\nExplore the repo briefly using git status and call for the log to see the history of commits.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSee class slides. Go on the repo and click on &lt;&gt;Code. Copy the https-address of the repo.\n. If you clone a repository for the first time, GitHub will prompt you to authenticate with your GitHub account. Follow the instructions to complete the authentication process on your browser.\nThen test that you are in the right directory and clone the repo using the following command:\npwd\ngit clone https://github.com/ASallin/BECON_4222_Introduction_Programming.git\nYou should observe something like this:\ngit clone https://github.com/ASallin/BECON_4222_Introduction_Programming.git\n/c/Users/aurel/OneDrive/Documents/Introduction_to_programming\nCloning into 'BECON_4222_Introduction_Programming'...\nremote: Enumerating objects: 1070, done.\nremote: Counting objects: 100% (36/36), done.\nremote: Compressing objects: 100% (24/24), done.\nremote: Total 1070 (delta 11), reused 22 (delta 6), pack-reused 1034 (from 1)\nReceiving objects: 100% (1070/1070), 120.89 MiB | 27.81 MiB/s, done.\nResolving deltas: 100% (426/426), done.\nUpdating files: 100% (350/350), done.\nNavigate to the repo and check the status and log. Use --oneline to have a more compact log… if you don’t want to see the full commit messages back to the Ancient Roman times.\ncd BECON_4222_Introduction_Programming\ngit status\ngit log --oneline\nUse Git Graph in VS Code to visualize the history of commits. You should see the different branches from our contributors.\nFinally, the directory should now look like this:\nIntroduction_to_programming/\n├── github_course_materials/ # is empty for now, you will clone the git repo in week 3\n├── BECON_4222_Introduction_Programming/ # GitHub repo with all course materials\n├── exercises/               # Student's own work\n│   ├── week_01/\n│   ├── week_02/\n│   ├── ...\n│   ├── week_12/\n├── group_project/\n│   ├── ...\nYou can remove the directory github_course_materials if you want, since the repo is now in BECON_4222_Introduction_Programming. Do it in VSCode or in the terminal with rm -r github_course_materials (be careful with this command, it deletes the directory and all its content without asking for confirmation)."
   },
   {
-    "objectID": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-3-github-classroom---inflation-forecasting",
-    "href": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-3-github-classroom---inflation-forecasting",
+    "objectID": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-3-github-classroom---your-first-push-and-pulls",
+    "href": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-3-github-classroom---your-first-push-and-pulls",
     "title": "4,222 Introduction to Programming",
-    "section": "Exercise 3: GitHub Classroom - Inflation Forecasting",
-    "text": "Exercise 3: GitHub Classroom - Inflation Forecasting\nFor this exercise, we’ve prepared a GitHub Classroom. A GitHub Classroom is a special type of repository created for a classroom, where each student gets their own copy to complete and submit assignments. It simulates real repositories on GitHub, and works like a normal GitHub repository. We will use it for the group project.\n\nAccept invitation and clone\n1. Accept the classroom invitation\nVisit the invitation link: https://classroom.github.com/a/xqcl3xcb\nAfter accepting, you’ll see a link to your personal repository. Click on it. If it says something like “repository access issues you nos longer have access to your assignment repository contact your teacher for support”, please open your email address and click on the link in the email to accept the invitation. If you don’t see an email, check your spam folder. If you still don’t see it, please contact us.\n\n\n\nClone the repository in Introduction_to_programming/exercises/week_03. Create the directory if needed:\n\ncd exercises\nmkdir week_03\ncd week_03\ngit clone https://github.com/&lt;org&gt;/&lt;your-repo-name&gt;.git\ncd &lt;your-repo-name&gt;\n\nCheck the initial state of the repo using git status. You should see a text file trivia.txt and a README file.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nnothing to commit, working tree clean\nThe file contains a simple trivia game:\nLearning Remotes in Git\n================================\n\nAnswer Questions A, B, and C below, then push your answers.\n\n...\n\n\n\n\nAnswer the questions in the text file (give your best guess…), commit and push your changes to GitHub.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit status\ngit add trivia.txt\ngit commit -m \"Add answers to trivia questions\"\ngit push\nThe push should give you output like this:\nEnumerating objects: 5, done.\nCounting objects: 100% (5/5), done.\nDelta compression using up to 16 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (3/3), 328 bytes | 328.00 KiB/s, done.\nTotal 3 (delta 2), reused 0 (delta 0), pack-reused 0\nremote: Resolving deltas: 100% (2/2), completed with 2 local objects.\nTo https://github.com/4222-Introduction-to-programming-2026/git-practice-clone-pull-push-ASallin.git\n   2954ce9..989ec79  main -&gt; main\n\n\n\n\nWait about 30-60 seconds before pulling the changes again 🥁🥁🥁. (A GitHub Action will run automatically and add the answers to your file. This simulates a colleague pushing changes while you work. It won’t be triggered if you don’t answer.)\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit pull\nYou should see output like:\nremote: Enumerating objects: 5, done.\nremote: Counting objects: 100% (5/5), done.\nremote: Compressing objects: 100% (2/2), done.\nremote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0 (from 0)\nUnpacking objects: 100% (3/3), 668 bytes | 60.00 KiB/s, done.\nFrom https://github.com/4222-Introduction-to-programming-2026/git-practice-clone-pull-push-ASallin\n   b8a0f6d..ff186cd  main       -&gt; origin/main\nUpdating b8a0f6d..ff186cd\nFast-forward\n trivia.txt | 20 ++++++++++++++++++++\n 1 file changed, 20 insertions(+)\n\n\n\n\nCheck what changed in the file trivia.txt. You should see that the answers to the questions have been added by the automation. Did you get the weight of the OLMA-sausage right?"
+    "section": "Exercise 3: GitHub Classroom - your first push and pulls",
+    "text": "Exercise 3: GitHub Classroom - your first push and pulls\nFor this exercise, we’ve prepared a GitHub Classroom. A GitHub Classroom is a special type of repository created for a classroom, where each student gets their own copy to complete and submit assignments. It simulates real repositories on GitHub, and works like a normal GitHub repository. We will use it for the group project.\n\nAccept invitation and clone\n1. Accept the classroom invitation\nVisit the invitation link: https://classroom.github.com/a/xqcl3xcb\nAfter accepting, you’ll see a link to your personal repository. Click on it. If it says something like “repository access issues you nos longer have access to your assignment repository contact your teacher for support”, please open your email address and click on the link in the email to accept the invitation. If you don’t see an email, check your spam folder. If you still don’t see it, please contact us.\n\n\n\nClone the repository in Introduction_to_programming/exercises/week_03. Create the directory if needed. Then clone the repository using the URL provided in GitHub classroom (change &lt;org&gt; and &lt;your-repo-name&gt; with the actual values).\n\ncd exercises\nmkdir week_03\ncd week_03\ngit clone https://github.com/&lt;org&gt;/&lt;your-repo-name&gt;.git\ncd &lt;your-repo-name&gt;\n\nCheck the initial state of the repo using git status. You should see a text file trivia.txt and a README file when printing the folder’s contents via ls.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit status\nls\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nnothing to commit, working tree clean\nThe file contains a simple trivia game:\nLearning Remotes in Git\n================================\n\nAnswer Questions A, B, and C below, then push your answers.\n\n...\n\n\n\n\nAnswer the questions in the text file (give your best guess…), save, commit and push your changes to GitHub.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit status\ngit add trivia.txt\ngit commit -m \"Add answers to trivia questions\"\ngit push\nThe push should give you output like this:\nEnumerating objects: 5, done.\nCounting objects: 100% (5/5), done.\nDelta compression using up to 16 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (3/3), 328 bytes | 328.00 KiB/s, done.\nTotal 3 (delta 2), reused 0 (delta 0), pack-reused 0\nremote: Resolving deltas: 100% (2/2), completed with 2 local objects.\nTo https://github.com/4222-Introduction-to-programming-2026/git-practice-clone-pull-push-ASallin.git\n   2954ce9..989ec79  main -&gt; main\n\n\n\n\nWait about 30-60 seconds before pulling the changes again 🥁🥁🥁. (A GitHub Action will run automatically and add the answers to your file. This simulates a colleague pushing changes while you work. It won’t be triggered if you don’t answer.)\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit pull\nYou should see output like:\nremote: Enumerating objects: 5, done.\nremote: Counting objects: 100% (5/5), done.\nremote: Compressing objects: 100% (2/2), done.\nremote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0 (from 0)\nUnpacking objects: 100% (3/3), 668 bytes | 60.00 KiB/s, done.\nFrom https://github.com/4222-Introduction-to-programming-2026/git-practice-clone-pull-push-ASallin\n   b8a0f6d..ff186cd  main       -&gt; origin/main\nUpdating b8a0f6d..ff186cd\nFast-forward\n trivia.txt | 20 ++++++++++++++++++++\n 1 file changed, 20 insertions(+)\n\n\n\n\nCheck what changed in the file trivia.txt. You should see that the answers to the questions have been added by the automation. Did you get the weight of the OLMA-sausage right?\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ncat trivia.txt"
   },
   {
     "objectID": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-4-economists-always-disagree",
     "href": "exercise_sessions/week_03/Ex03_GitHub.html#exercise-4-economists-always-disagree",
     "title": "4,222 Introduction to Programming",
     "section": "Exercise 4: Economists Always Disagree",
-    "text": "Exercise 4: Economists Always Disagree\nEconomists are famous for disagreeing on everything, especially when it comes to macroeconomists and forecasts… Let’s see how this can lead to conflicts in GitHub.\nCreate groups of 2-3 students and work together. Each student shows what she or he is doing to her or his colleagues.\n\nStudent 1: Create a new repository on GitHub with the name git-intro-example. Create a README file as asked by Github. Notice the other options when creating a repository, such as adding a .gitignore file or a license. You can ignore these for now.\n\nIn the settings of the repository, make sure to add your colleagues as collaborators, so that they can access the repository and push changes.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n \nTo add collaborators, go to the repository, click on “Settings” (the gear icon), then click on “Collaborators” in the left sidebar. Click on “Add people”, search for your colleague’s GitHub username, and click “Add” to give them access to the repository.\nThe person added will receive an email with the invitation. Click on the link “Accept the invitation”. If you don’t see an email, check your spam folder.\n\n\n\n\nAll students: Clone the repository in your local directory Introduction_to_programming/exercises/week_03.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ncd week_03\ngit clone &lt;URL&gt;\ncd git-intro-example\ngit status\n\n\n\n\nStudent 1: Create a new file called inflation_forecast.py in the repository and add the following code:\n\ndef forecast_inflation():\n    return \"Inflation will be 2% next year in Switzerland.\"\n\n# Run the function and print the result\nresult = forecast_inflation()\nprint(result)\nThen add and commit your changes. Finally push your changes.\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit add inflation_forecast.py\ngit commit -m \"YOUR COMMIT MESSAGE\"\ngit status\ngit push\n\n\n\n\nStudent 2: change the README file and add the following line: “This repository contains a simple inflation forecasting model” and the title “## Inflation Forecasting”.\n\n## Inflation Forecasting\nThis repository contains a simple inflation forecasting model.\nThen add and commit. Now try to push and observe what happens. Do you get an error message? Why? Explain what is happening. Then proceed to push.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nOpen the README file in VSCode, add the following lines and save. Then\ngit add README.md\ngit commit -m \"YOUR COMMIT MESSAGE\"\ngit status\ngit push\nYou should get an error message prompting you to pull the changes before pushing.\nOn branch main\nYour branch is ahead of 'origin/main' by 1 commit.\n  (use \"git push\" to publish your local commits)\n\nnothing to commit, working tree clean\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\ngit pull\ngit push\n\n\n\n\nStudent 1: pull the changes. All students: observe the commit history and the files changed.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit pull\n\n\n\n\nNow, let’s simulate a real-life economist situation:\n\nStudent 1: create a new branch called “forecast revision”. Switch to the branch and change the function in the python file with your own forecast (do not show it to your colleague). Commit and push. Notice that Git might ask you to add arguments to git push, such as -u origin forecast_revision.\nStudent 2: remain on main, change the inflation forecast in the python file, stage, commit, and push.\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nStudent 1:\ngit switch -c forecast_revision\n# Edit inflation_forecast.py - change the forecast\ngit add inflation_forecast.py\ngit commit -m \"YOUR COMMIT MESSAGE\"\ngit push\ngit status\nWhen you try to push, you should get an error message like this:\nfatal: The current branch forecast_revision has no upstream branch.\nTo push the current branch and set the remote as upstream, use\n\n    git push --set-upstream origin forecast_revision\n\nTo have this happen automatically for branches without a tracking\nupstream, see 'push.autoSetupRemote' in 'git help config'.\nYou have to push using\ngit push --set-upstream origin forecast_revision\nbecause the branch “forecast_revision” does not exist on GitHub yet. This command will create the branch on GitHub and set it as the upstream branch for your local branch.\n\n\n\n\nNow, both students pull the changes from GitHub. You have to find an agreement on the forecast and merge the two branches. To proceed: decide on a common forecast, solve the merge conflict, and push the changes to GitHub. Observe the commit history and the files changed.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nEither student can pull the changes and solve the conflict. For example, if student 1 pulls the changes, they will have to merge the main branch into their current branch “forecast_revision”. If student 2 pulls the changes, they will have to merge the “forecast_revision” branch into main.\nStudent 1 (who is on the branch “forecast_revision”):\ngit pull\ngit switch main\ngit pull\ngit merge forecast_revision\nOr student 2 (who is on the branch “main”):\ngit pull\ngit merge forecast_revision\nThen, solve the conflict in the file inflation_forecast.py and push the changes to GitHub.\nYou should see something like this in your Git Graph (WARNING: in the picture below, you’ll find the WORST commit messages you could think of. DO NOT REPEAT THIS.)\n\n\n\n\n\nNow, in the rare case where both students agreed on the forecast, what would have happened? Would there have been a conflict? Why?"
+    "text": "Exercise 4: Economists Always Disagree\nEconomists are famous for disagreeing on everything, especially when it comes to macroeconomists and forecasts… Let’s see how this can lead to conflicts in GitHub.\nCreate groups of 2 students and work together. Each student shows what they are doing to their colleague.\nStudent 1: Create a new repository on GitHub with the name git-intro-example. Create a README file as asked by Github. Notice the other options when creating a repository, such as adding a .gitignore file or a license. You can ignore these for now.\nIn the settings of the repository, make sure to add your colleagues as collaborators, so that they can access the repository and push changes.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n \nTo add collaborators, go to the repository, click on “Settings” (the gear icon), then click on “Collaborators” in the left sidebar. Click on “Add people”, search for your colleague’s GitHub username, and click “Add” to give them access to the repository.\nThe person added will receive an email with the invitation. Click on the link “Accept the invitation”. If you don’t see an email, check your spam folder.\n\n\n\nAll students: Clone the repository in your local directory Introduction_to_programming/exercises/week_03.\n\n\n\n\n\n\nSolution\n\n\n\n\n\ncd week_03\ngit clone &lt;URL&gt;\ncd git-intro-example\ngit status\n\n\n\nStudent 1: Create a new file called inflation_forecast.py in the repository and add the following code:\ndef forecast_inflation():\n    return \"Inflation will be 2% next year in Switzerland.\"\n\n# Run the function and print the result\nresult = forecast_inflation()\nprint(result)\nThen add and commit your changes. Finally push your changes.\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit add inflation_forecast.py\ngit commit -m \"YOUR COMMIT MESSAGE\"\ngit status\ngit push\n\n\n\nStudent 2: change the README file and add the following line: “This repository contains a simple inflation forecasting model” and the title “## Inflation Forecasting”.\n## Inflation Forecasting\nThis repository contains a simple inflation forecasting model.\nThen add and commit. Now try to push and observe what happens. Do you get an error message? Why? Explain what is happening. Then proceed to push.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nOpen the README file in VSCode, add the following lines and save. Then\ngit add README.md\ngit commit -m \"YOUR COMMIT MESSAGE\"\ngit status\ngit push\nYou should get an error message prompting you to pull the changes before pushing.\nOn branch main\nYour branch is ahead of 'origin/main' by 1 commit.\n  (use \"git push\" to publish your local commits)\n\nnothing to commit, working tree clean\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\ngit pull\ngit push\n\n\n\nStudent 1: pull the changes. All students: observe the commit history and the files changed.\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit pull\n\n\n\nNow, let’s simulate a real-life economist situation:\nStudent 1: create a new branch called forecast_revision. Switch to the branch and change the function in the python file with your own forecast (do not show it to your colleague). Commit and push. Notice that Git might ask you to add arguments to git push, such as -u origin forecast_revision.\nStudent 2: remain on main, change the inflation forecast in the python file, stage, commit, and push.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nStudent 1:\ngit switch -c forecast_revision\n\n# Edit inflation_forecast.py - change the forecast\ngit add inflation_forecast.py\ngit commit -m \"YOUR COMMIT MESSAGE\"\ngit push\ngit status\nWhen you try to push, you should get an error message like this:\nfatal: The current branch forecast_revision has no upstream branch.\nTo push the current branch and set the remote as upstream, use\n\n    git push --set-upstream origin forecast_revision\n\nTo have this happen automatically for branches without a tracking\nupstream, see 'push.autoSetupRemote' in 'git help config'.\nYou have to push using\ngit push --set-upstream origin forecast_revision\nbecause the branch forecast_revision does not exist on GitHub yet. This command will create the branch on GitHub and set it as the upstream branch for your local branch.\n\n\n\nNow, both students pull the changes from GitHub. You have to find an agreement on the forecast and merge the two branches. To proceed: decide on a common forecast, solve the merge conflict, and push the changes to GitHub. Observe the commit history and the files changed.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nEither student can pull the changes and solve the conflict. For example, if student 1 pulls the changes, they will have to merge the main branch into their current branch “forecast_revision”. If student 2 pulls the changes, they will have to merge the “forecast_revision” branch into main.\nStudent 1 (who is on the branch “forecast_revision”):\ngit pull\ngit switch main\ngit pull\ngit merge forecast_revision\nOr student 2 (who is on the branch “main”):\ngit pull\ngit merge forecast_revision\nThen, solve the conflict in the file inflation_forecast.py and push the changes to GitHub.\nYou should see something like this in your Git Graph (WARNING: in the picture below, you’ll find the WORST commit messages you could think of. DO NOT REPEAT THIS.)\n\n\n\n\nNow, in the rare case where both students agreed on the forecast, what would have happened? Would there have been a conflict? Why?"
   },
   {
     "objectID": "exercise_sessions/week_03/Ex03_GitHub.html#bonus-adding-your-own-repository-to-github",
@@ -560,11 +728,53 @@
     "text": "Bonus: Adding your own repository to GitHub\nIf you finish early, practice creating a repository from scratch.\n\nCreate a new repository on GitHub with the name git-intro-addrepo\n\nMake sure NOT to add a README or any other file when creating it\n\nCreate a local Git repository in your week_03 folder\nAdd the GitHub repo as a remote\n\ngit remote add origin &lt;URL&gt;\n\nPush your changes to GitHub\n\ngit push -u origin main"
   },
   {
+    "objectID": "exercise_sessions/week_03/Ex03_GitHub.html#footnotes",
+    "href": "exercise_sessions/week_03/Ex03_GitHub.html#footnotes",
+    "title": "4,222 Introduction to Programming",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWhat is a SSH key? SSH stands for Secure Shell. It is a protocol that allows secure communication between your computer and another machine (for example, GitHub). When you create an SSH key, a key pair is generated: (i) a private key (kept secret on your computer), and (ii) a public key (which you can safely upload to GitHub). These files are usually stored in a hidden folder called .ssh inside your home directory (e.g., ~/.ssh/). By default, you might see files such as id_ed25519 (private key) and id_ed25519.pub (public key). The private key must never be shared. Anyone who has access to it can authenticate as you and gain access to your repositories. The private key is protected in two ways: 1. it never leaves your computer during authentication, and 2. it is mathematically infeasible to derive the private key from the public key. When you connect to GitHub, GitHub sends a cryptographic challenge. Your computer uses the private key to generate a valid response. GitHub checks this response using your public key. If they match, your identity is verified - without sending your password over the internet.↩︎"
+  },
+  {
     "objectID": "examination/recap_quizzes/01b_recap.html",
     "href": "examination/recap_quizzes/01b_recap.html",
     "title": "4,222 Introduction to Programming",
     "section": "",
     "text": "This is a non-graded recap quiz to reinforce concepts from lecture 01b. Estimated time: 15-20 minutes. Ideally, complete this before starting Exercise 2 (git).\n\nExercise 1: Navigate with the terminal\nWithout using any graphical file explorer, complete the following tasks using only the terminal:\n\nFrom your home directory (~), navigate to Introduction_to_programming/exercises/week_01\nGo back to the parent directory (exercises/)\nList the contents of the exercises/ directory\nNavigate back to Introduction_to_programming using a relative path\nPrint your current working directory to confirm you are in the right place\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nWindows (command prompt)Mac (bash)\n\n\ncd exercises\\week_01\ncd ..\ndir\ncd ..\ncd\n\n\ncd ~/Documents/Introduction_to_programming/exercises/week_01\ncd ..\nls\ncd ..\npwd\n\n\n\n\n\n\n\n\n\nExercise 2: Understand your environment\nAnswer the following questions by inspecting files and using the terminal. No coding required.\n\nOpen the pyproject.toml file in VS Code (the one created in Exercise 1). What Python version is specified? What dependencies are listed?\nWhere is the Python interpreter located in your .venv folder? Give the full path.\nWhat does uv add pandas do?\nIf you delete the .venv folder, how would you recreate the environment? (Hint: think about which files uv uses to know what to install.)\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nOpen pyproject.toml in VS Code. Under [project], you should see requires-python = \"&gt;=3.14.1\". Under dependencies, you should see ipykernel, pandas, and numpy.\nThe Python interpreter path:\n\n\nWindowsMac\n\n\nIntroduction_to_programming\\exercises\\week_01\\.venv\\Scripts\\python.exe\n\n\nIntroduction_to_programming/exercises/week_01/.venv/bin/python\n\n\n\n\nuv add pandas installs the package inside the project’s virtual environment and records it in pyproject.toml and uv.lock.\nOne way is to run uv init --python 3.14.1 then uv add &lt;package&gt; for each dependency listed in pyproject.toml. Another way, which we haven’t see specifically in the exercises, is to recreate the environment by running uv sync in the project directory. uv reads pyproject.toml and uv.lock to reinstall the exact same packages and Python version.\n\n\n\n\n\n\n\nExercise 3: Create a project folder\nNavigate to exercises/week_01_recap/ (create the folder if it doesn’t exist yet). Initialize a uv project with Python 3.14.1 and add the ipykernel package. Then answer:\n\nDoes this project share the same .venv as your week_01 project? Check by looking at the .venv folders.\nRun uv run python -c \"import pandas; print(pandas.__version__)\" inside week_01_recap. What happens and why?\nNow go back to week_01 and run the same command. What happens and why?\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nWindows (command prompt)Mac (bash)\n\n\ncd exercises\\week_01_recap\nuv init --python 3.14.1\nuv add ipykernel\n\nuv run python -c \"import pandas; print(pandas.__version__)\"\n\ncd ..\\week_01\nuv run python -c \"import pandas; print(pandas.__version__)\"\n\n\ncd ~/Documents/Introduction_to_programming/exercises/week_01_recap\nuv init --python 3.14.1\nuv add ipykernel\n\nuv run python -c \"import pandas; print(pandas.__version__)\"\n\ncd ../week_01\nuv run python -c \"import pandas; print(pandas.__version__)\"\n\n\n\n\nNo. Each project has its own .venv folder. week_01_recap/.venv and week_01/.venv are separate, isolated environments.\nInside week_01_recap, the command fails with ModuleNotFoundError: No module named 'pandas'. We only added ipykernel to this project, not pandas.\nBack in week_01, the command prints the version of pandas (e.g., 2.2.3). We added pandas to week_01 in the previous exercise session. This demonstrates why virtual environments exist: each project is isolated and only has the packages you explicitly added to it."
+  },
+  {
+    "objectID": "course_materials/week_02/02_recap.html#the-terminal",
+    "href": "course_materials/week_02/02_recap.html#the-terminal",
+    "title": "4,222 Introduction to Programming",
+    "section": "The Terminal",
+    "text": "The Terminal\n\nA text-based interface to interact with your computer\nMac uses bash (Terminal), Windows uses Command Prompt or PowerShell. In this course, we focus on bash and command prompt commands.\nAll commands operate relative to your current working directory. Always know where you are!\nPaths: absolute (C:/Users/Bilbo/Documents/) vs relative (../Documents/)"
+  },
+  {
+    "objectID": "course_materials/week_02/02_recap.html#the-terminal-1",
+    "href": "course_materials/week_02/02_recap.html#the-terminal-1",
+    "title": "4,222 Introduction to Programming",
+    "section": "The Terminal",
+    "text": "The Terminal\n\n\n\n\nAction\n\n\nbash (Mac)\n\n\nCommand Prompt (Windows)\n\n\n\n\n\n\nShow current directory\n\n\npwd\n\n\ncd (without arguments)\n\n\n\n\nList files\n\n\nls\n\n\ndir\n\n\n\n\nNavigate\n\n\ncd &lt;path&gt;\n\n\ncd &lt;path&gt;\n\n\n\n\nCreate directory\n\n\nmkdir\n\n\nmkdir\n\n\n\n\nWrite text to file\n\n\necho “text” &gt; file\n\n\necho text &gt; file\n\n\n\n\nHome shortcut\n\n\n~ (e.g. cd ~/Documents)\n\n\n-\n\n\n\n\nCurrent directory shortcut\n\n\n.\n\n\n.\n\n\n\n\nParent directory shortcut\n\n\n..\n\n\n.."
+  },
+  {
+    "objectID": "course_materials/week_02/02_recap.html#using-visual-code",
+    "href": "course_materials/week_02/02_recap.html#using-visual-code",
+    "title": "4,222 Introduction to Programming",
+    "section": "Using Visual Code",
+    "text": "Using Visual Code\nThe IDE\n\nVS Code is our IDE: code editor + terminal + extensions in one tool\nAlways open VS Code from your project directory (code .)\nInstall extensions: Python, Pylance, Ruff, Jupyter"
+  },
+  {
+    "objectID": "course_materials/week_02/02_recap.html#python-environments",
+    "href": "course_materials/week_02/02_recap.html#python-environments",
+    "title": "4,222 Introduction to Programming",
+    "section": "Python & Environments",
+    "text": "Python & Environments\nWhy Python?\n\nReadable, versatile, widely used in data science, economics, and AI\nComing from R: watch out for 0-based indexing and indentation"
+  },
+  {
+    "objectID": "course_materials/week_02/02_recap.html#python-environments-1",
+    "href": "course_materials/week_02/02_recap.html#python-environments-1",
+    "title": "4,222 Introduction to Programming",
+    "section": "Python & Environments",
+    "text": "Python & Environments\nVirtual Environments with uv\n\nEach project gets its own isolated environment (its own “kitchen”)\nNever install packages globally, always use environments!\nKey commands:\n\n\n\n\n\nuv init –python 3.14.1\n\n\nCreate a new project\n\n\n\n\nuv add pandas numpy\n\n\nAdd packages\n\n\n\n\nuv run main.py\n\n\nRun a script in the environment\n\n\n\n\nuv sync\n\n\nInstall dependencies from lock file\n\n\n\n\n\nKey files: .python-version, pyproject.toml, uv.lock, .venv/"
   },
   {
     "objectID": "course_materials/week_01/CommonTerminalCommands_BradTraversy.html",
@@ -707,39 +917,25 @@
     "text": "The history Command\nUsed to display the history of commands that you have run.\n  history\nYou can also use the ! to run a command from the history.\n  !100\nThis will run the command that is in the 100th position in the history."
   },
   {
-    "objectID": "course_materials/week_02/02_recap.html#the-terminal",
-    "href": "course_materials/week_02/02_recap.html#the-terminal",
-    "title": "4,222 Introduction to Programming",
-    "section": "The Terminal",
-    "text": "The Terminal\n\nA text-based interface to interact with your computer\nMac uses bash (Terminal), Windows uses Command Prompt or PowerShell. In this course, we focus on bash and command prompt commands.\nAll commands operate relative to your current working directory. Always know where you are!\nPaths: absolute (C:/Users/Bilbo/Documents/) vs relative (../Documents/)"
+    "objectID": "course_materials/week_03/ex03_git_collaboration.html",
+    "href": "course_materials/week_03/ex03_git_collaboration.html",
+    "title": "6,222 Introduction to Programming",
+    "section": "",
+    "text": "Goal: By the end of this exercise, you and your partner will share a GitHub repository, each working on your own branch, with a merged pull request (PR) in the history. This is a typical workflow we would like you to use for your group project in this course, and you can also use it for your other group projects in R or Python or any programming language.\nWork in pairs. Decide who is Student A (the repository owner) and who is Student B (the collaborator)."
   },
   {
-    "objectID": "course_materials/week_02/02_recap.html#the-terminal-1",
-    "href": "course_materials/week_02/02_recap.html#the-terminal-1",
-    "title": "4,222 Introduction to Programming",
-    "section": "The Terminal",
-    "text": "The Terminal\n\n\n\n\nAction\n\n\nbash (Mac)\n\n\nCommand Prompt (Windows)\n\n\n\n\n\n\nShow current directory\n\n\npwd\n\n\ncd (without arguments)\n\n\n\n\nList files\n\n\nls\n\n\ndir\n\n\n\n\nNavigate\n\n\ncd &lt;path&gt;\n\n\ncd &lt;path&gt;\n\n\n\n\nCreate directory\n\n\nmkdir\n\n\nmkdir\n\n\n\n\nWrite text to file\n\n\necho “text” &gt; file\n\n\necho text &gt; file\n\n\n\n\nHome shortcut\n\n\n~ (e.g. cd ~/Documents)\n\n\n-\n\n\n\n\nCurrent directory shortcut\n\n\n.\n\n\n.\n\n\n\n\nParent directory shortcut\n\n\n..\n\n\n.."
+    "objectID": "course_materials/week_03/ex03_git_collaboration.html#option-1-merge-main-into-your-feature-branch",
+    "href": "course_materials/week_03/ex03_git_collaboration.html#option-1-merge-main-into-your-feature-branch",
+    "title": "6,222 Introduction to Programming",
+    "section": "5.1 Option 1: Merge main into your feature branch",
+    "text": "5.1 Option 1: Merge main into your feature branch\nMake sure you are on your feature / working branch\ngit switch &lt;feature-branch&gt;\n\n# Download newest changes from GitHub. This updates your local copy of main but does not change your branch yet.\ngit fetch origin\n\n# Merge main into your branch. Now your branch contains all changes from main\ngit merge origin/main\n\n# If there are conflicts, Git will tell you. Fix them, then run:\ngit add .\ngit commit"
   },
   {
-    "objectID": "course_materials/week_02/02_recap.html#using-visual-code",
-    "href": "course_materials/week_02/02_recap.html#using-visual-code",
-    "title": "4,222 Introduction to Programming",
-    "section": "Using Visual Code",
-    "text": "Using Visual Code\nThe IDE\n\nVS Code is our IDE: code editor + terminal + extensions in one tool\nAlways open VS Code from your project directory (code .)\nInstall extensions: Python, Pylance, Ruff, Jupyter"
-  },
-  {
-    "objectID": "course_materials/week_02/02_recap.html#python-environments",
-    "href": "course_materials/week_02/02_recap.html#python-environments",
-    "title": "4,222 Introduction to Programming",
-    "section": "Python & Environments",
-    "text": "Python & Environments\nWhy Python?\n\nReadable, versatile, widely used in data science, economics, and AI\nComing from R: watch out for 0-based indexing and indentation"
-  },
-  {
-    "objectID": "course_materials/week_02/02_recap.html#python-environments-1",
-    "href": "course_materials/week_02/02_recap.html#python-environments-1",
-    "title": "4,222 Introduction to Programming",
-    "section": "Python & Environments",
-    "text": "Python & Environments\nVirtual Environments with uv\n\nEach project gets its own isolated environment (its own “kitchen”)\nNever install packages globally, always use environments!\nKey commands:\n\n\n\n\n\nuv init –python 3.14.1\n\n\nCreate a new project\n\n\n\n\nuv add pandas numpy\n\n\nAdd packages\n\n\n\n\nuv run main.py\n\n\nRun a script in the environment\n\n\n\n\nuv sync\n\n\nInstall dependencies from lock file\n\n\n\n\n\nKey files: .python-version, pyproject.toml, uv.lock, .venv/"
+    "objectID": "course_materials/week_03/ex03_git_collaboration.html#option-2-rebase-your-branch-onto-main",
+    "href": "course_materials/week_03/ex03_git_collaboration.html#option-2-rebase-your-branch-onto-main",
+    "title": "6,222 Introduction to Programming",
+    "section": "5.2 Option 2: Rebase your branch onto main",
+    "text": "5.2 Option 2: Rebase your branch onto main\nThis keeps the commit history linear and clean, but is slightly more advanced.\ngit switch &lt;feature-branch&gt;\n\n# Download newest changes from GitHub. This updates your local copy of main but does not change your branch yet.\ngit fetch origin\n\n# rebase onto main\ngit rebase origin/main\n\n# If there are conflicts, Git will tell you. Fix them, then run:\ngit add .\ngit rebase --continue\n\n# repeat (Fix -&gt; git add -&gt; git rebase --continue) until Git says something like \"Successfully rebased and updated &lt;feature-branch&gt;.\""
   },
   {
     "objectID": "exercise_sessions/week_01/Ex01_gettingstarted.html",
@@ -830,7 +1026,7 @@
     "href": "index.html",
     "title": "BEcon 4222 - Introduction to Programming",
     "section": "",
-    "text": "This course introduces you to programming fundamentals using Python, with applications in economics and data science.\n\n\n\n\nAccess weekly lecture slides and materials through the navigation menu above.\n\n\n\nHands-on exercises to practice programming concepts.\n\n\n\nCourse syllabus, schedule, and administrative information.\n\n\n\n\n\n\n\nLectures: - Lecture 1a: Introduction - Lecture 1b: Getting Started\nExercises: - Exercise 1: Getting Started - Recap Quiz 1 (non-graded)\nResources: - Common Terminal Commands\n\n\n\nLectures: - Lecture 2a: Recap Week 1 - Lecture 2b: Version Control\nExercises: - Exercise 2: First Commands in Git\nResources: - Git Cheat Sheet (PDF)\nSetup: - Install Git (instructions) - Install VSCode extension: Git Graph\n\n\n\n\n\nBy the end of this course, you will be able to:\n\nUse the terminal and command line effectively\nWrite and run Python programs\nWork with data using Python libraries\nUse Git and GitHub for version control\nApply programming concepts to economic problems"
+    "text": "This course introduces you to programming fundamentals using Python, with applications in economics and data science.\n\n\n\n\nAccess weekly lecture slides and materials through the navigation menu above.\n\n\n\nHands-on exercises to practice programming concepts.\n\n\n\nCourse syllabus, schedule, and administrative information.\n\n\n\n\n\n\n\nLectures: - Lecture 1a: Introduction - Lecture 1b: Getting Started\nExercises: - Exercise 1: Getting Started - Recap Quiz 1 (non-graded)\nResources: - Common Terminal Commands\n\n\n\nLectures: - Lecture 2a: Recap Week 1 - Lecture 2b: Version Control\nExercises: - Exercise 2: First Commands in Git\nResources: - Git Cheat Sheet (PDF)\nSetup: - Install Git (instructions) - Install VSCode extension: Git Graph\n\n\n\n\n\nLectures: - Lecture 3: Version Control with Others\nIn-class exercise: - Exercise 3: Git and GitHub for Collaboration - generate_data.py\nExercises: - Exercise 3: GitHub\n\n\n\n\n\nBy the end of this course, you will be able to:\n\nUse the terminal and command line effectively\nWrite and run Python programs\nWork with data using Python libraries\nUse Git and GitHub for version control\nApply programming concepts to economic problems"
   },
   {
     "objectID": "index.html#course-structure",
@@ -844,7 +1040,7 @@
     "href": "index.html#course-content",
     "title": "BEcon 4222 - Introduction to Programming",
     "section": "",
-    "text": "Lectures: - Lecture 1a: Introduction - Lecture 1b: Getting Started\nExercises: - Exercise 1: Getting Started - Recap Quiz 1 (non-graded)\nResources: - Common Terminal Commands\n\n\n\nLectures: - Lecture 2a: Recap Week 1 - Lecture 2b: Version Control\nExercises: - Exercise 2: First Commands in Git\nResources: - Git Cheat Sheet (PDF)\nSetup: - Install Git (instructions) - Install VSCode extension: Git Graph"
+    "text": "Lectures: - Lecture 1a: Introduction - Lecture 1b: Getting Started\nExercises: - Exercise 1: Getting Started - Recap Quiz 1 (non-graded)\nResources: - Common Terminal Commands\n\n\n\nLectures: - Lecture 2a: Recap Week 1 - Lecture 2b: Version Control\nExercises: - Exercise 2: First Commands in Git\nResources: - Git Cheat Sheet (PDF)\nSetup: - Install Git (instructions) - Install VSCode extension: Git Graph\n\n\n\n\n\nLectures: - Lecture 3: Version Control with Others\nIn-class exercise: - Exercise 3: Git and GitHub for Collaboration - generate_data.py\nExercises: - Exercise 3: GitHub"
   },
   {
     "objectID": "index.html#learning-objectives",
