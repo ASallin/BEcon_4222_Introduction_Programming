@@ -80,6 +80,16 @@ Course syllabus, schedule, and administrative information.
 - [Exercise 3: GitHub](exercise_sessions/week_03/Ex03_GitHub.qmd)
 :::
 
+::: {.g-col-6}
+### 📒 Week 4: Introduction to Python
+
+**Lectures:**
+- [Lecture 4: Introduction to Python](course_materials/week_04/L04_IntroPython.qmd)
+
+**Exercises:**
+- [Exercise 4: Introduction to Python](exercise_sessions/week_04/Ex04_IntroPython.qmd)
+:::
+
 :::
 
 ## Learning Objectives

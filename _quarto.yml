@@ -44,6 +44,13 @@ website:
           - text: "---"
           - text: "Exercise 3: GitHub"
             file: exercise_sessions/week_03/Ex03_GitHub.qmd
+      - text: "Week 4"
+        menu:
+          - text: "— Part 2: Python —"
+          - text: "Lecture 4: Introduction to Python"
+            file: course_materials/week_04/L04_IntroPython.qmd
+          - text: "Exercise 4: Introduction to Python"
+            file: exercise_sessions/week_04/Ex04_IntroPython.qmd
       - text: "Admin"
         menu:
           - text: "Syllabus"

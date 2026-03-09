@@ -104,7 +104,6 @@ cd exercises/week_03
 git clone <Student A's repo URL>
 cd collab-exercise-week03
 ```
-
 ::::
 
 
