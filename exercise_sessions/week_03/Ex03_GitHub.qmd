@@ -25,6 +25,15 @@ execute:
 [Create a Github account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) if you don't have one already. Preferably, use the email address you've used to set up your git config.
 
 
+<!------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+------------------------------------------------->
+
+
+
+<div style="margin-top: 8em;"></div>
+
 ## Exercise 1: Authenticating with GitHub 🗝️
 
 **Try to execute these steps before the exercise session. If you have any problem, we will try to solve it together during the session (if time permits)**
@@ -84,7 +93,7 @@ Introduction_to_programming/
 ::: {.callout-tip collapse="true" title="Solution"}
 See class slides. Go on the repo and click on **<>Code**. Copy the https-address of the repo.
 
-![You can find the remote URL by going to a repository on GitHub and clicking the Code button](../../assets/img/clone_repo.png). If you clone a repository for the first time, GitHub will prompt you to authenticate with your GitHub account. Follow the instructions to complete the authentication process on your browser.
+![You can find the remote URL by going to a repository on GitHub and clicking the Code button](../../assets/img/lecture_03_github/clone_repo.png). If you clone a repository for the first time, GitHub will prompt you to authenticate with your GitHub account. Follow the instructions to complete the authentication process on your browser.
 
 Then test that you are in the right directory and clone the repo using the following command:
 

@@ -3,7 +3,7 @@ title: '4,222 Introduction to Programming'
 subtitle: 'Exercise Week 4: Introduction to Python'
 author: "Franziska Bender"
 date: "2026-03-09"
-format: 
+format:
   html:
     toc: true          # Adds a Table of Contents on the side
     toc-depth: 4
@@ -22,6 +22,12 @@ jupyter: python3       # Tells Quarto to use your Python 3 kernel
 #title-block-header .subtitle {
   font-size: 1.4rem;
   font-weight: 500;
+}
+code {
+  font-size: 0.85em;
+}
+pre.sourceCode {
+  background-color: #f4f4f4 !important;
 }
 </style>
 
@@ -199,7 +205,7 @@ if age = 18:
 
 This is one of the most common mistakes in Python! It fails because you are using a single equals sign (`=`) inside the if statement.
 
-- A single equals sign (`=`) is the assignment operator. It tells Python to "store the value 18 inside the variable age". 
+- A single equals sign (`=`) is the assignment operator. It tells Python to "store the value 18 inside the variable age".
 - To check if two things are equal, you must use the equality operator, which is a double equals sign (`==`).
 
 Fixed Code:
@@ -529,7 +535,7 @@ def calculate_real_gdp(nominal_gdp, deflator):
     """
     # 2. Calculate the real value
     real_gdp = (nominal_gdp / deflator) * 100
-    
+
     # 3. Return the result
     return real_gdp
 
@@ -583,7 +589,7 @@ Write a function `check_same_items(base_prices, current_prices)`
 - It should compare the items (the keys) in both dictionaries.
 - It must return `True` if both dictionaries contain the exact same items, and `False` if the basket definition has changed.
 
-Hints: 
+Hints:
 
 - You only need to compare the keys, not the values.
 - `dict.keys()` gives you all keys.
@@ -645,11 +651,11 @@ $$ \sum_i p_i w_i$$
 `weights` is a dictionary mapping items to weights (budget shares) in the beginning of the exercise.
 
 
-Hints: 
+Hints:
 
 - Start with `if weights is None`:  Unweighted case is the same as previously
 - For the weighted case, loop over `prices.items()`.
-- Inside the loop extract the weight for the current item using `weights.get(item)` 
+- Inside the loop extract the weight for the current item using `weights.get(item)`
 
 ::: {.callout-tip collapse="true" title="Solution"}
 ```{python}
@@ -661,7 +667,7 @@ def basket_cost(prices, weights=None):
     # Weighted
     total = 0
     for item, price in prices.items():
-        w = weights.get(item) 
+        w = weights.get(item)
         total += price * w
     return total
 ```
@@ -716,7 +722,7 @@ def price_index(base_prices, current_prices, weights=None):
 
 Now use your `price_index()` function with the dictionaries `base`, `current`, and `weights`.
 
-1. Compute the unweighted price index 
+1. Compute the unweighted price index
 2. Compute the weighted price index
 3. Print both results
 

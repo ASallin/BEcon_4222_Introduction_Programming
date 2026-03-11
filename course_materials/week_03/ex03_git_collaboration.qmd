@@ -7,47 +7,61 @@ format:
   html:
     toc: true
     toc-depth: 2
-    number-sections: true
+    number-sections: false
     theme: cosmo
     embed-resources: true
 ---
 
 <style>
 /* Student A: purple */
-div.callout-important {
-  border-left-color: #7c3aed !important;
-}
-div.callout-important > .callout-header {
-  background-color: rgba(124, 58, 237, 0.08) !important;
+.student-a {
+  border-left: 4px solid #7c3aed;
+  padding-left: 1em;
+  margin: 1em 0;
 }
 /* Student B: orange */
-div.callout-tip {
-  border-left-color: #ea580c !important;
+.student-b {
+  border-left: 4px solid #ea580c;
+  padding-left: 1em;
+  margin: 1em 0;
 }
-div.callout-tip > .callout-header {
-  background-color: rgba(234, 88, 12, 0.08) !important;
+/* Bubble label row */
+.student-bubble {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2em;
+  margin-bottom: 0.4em;
 }
 </style>
 
 # Overview
 
-**Goal:** By the end of this exercise, you and your partner will share a GitHub repository, each working on your own branch, with a merged pull request (PR) in the history. **This is a typical workflow we would like you to use for your group project in this course, and you can also use it for your other group projects in R or Python or any programming language.**
+**Goal:** By the end of this exercise, you and your partner will share a GitHub repository, each working on your own branch, with a merged pull request (PR) in the history. This is a typical workflow we would like you to use for your group project in this course, and you can also use it for your other group projects in R or Python or any programming language.
 
 Work in pairs. Decide who is **Student A** (the repository owner) and who is **Student B** (the collaborator).
 
+<!------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+------------------------------------------------->
+
+<div style="margin-top: 4em;"></div>
+
 ---
+
+<div style="margin-top: 4em;"></div>
 
 # Phase 1: Create and Link a Repository
 
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#7c3aed; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 A
 :::
 **Student A**
 :::
 
-:::: {.callout-important}
-## **Student A**: Create a repository and invite your collaborator
+**Create a repository and invite your collaborator**
 
 1. Go to [github.com](https://github.com) and click **New repository**
 2. Name it `collab-exercise-week03`, set visibility to **Public**
@@ -82,19 +96,16 @@ cd collab-exercise-week03
 ![Clone repository](../../assets/img/lecture_03_github/ex03_clone_repo.png)
 :::
 
-::::
-
 > **Note:** Using the SSH URL requires a configured SSH key. If SSH is not set up yet, use the HTTPS URL, which works for public repositories without a key.
 
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#ea580c; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 B
 :::
 **Student B**
 :::
 
-:::: {.callout-tip}
-## **Student B**: Accept the invitation and clone
+**Accept the invitation and clone**
 
 1. Accept the collaborator invitation (check GitHub notifications, email, and spam)
 2. Clone the repository into [exercises/week_03]{.path}:
@@ -104,10 +115,18 @@ cd exercises/week_03
 git clone <Student A's repo URL>
 cd collab-exercise-week03
 ```
-::::
 
+
+<!------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+------------------------------------------------->
+
+<div style="margin-top: 4em;"></div>
 
 ---
+
+<div style="margin-top: 4em;"></div>
 
 # Phase 2: Set Up the Environment
 
@@ -127,15 +146,14 @@ print("File written: gdp_data.csv")
 ```
 
 
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#7c3aed; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 A
 :::
 **Student A**
 :::
 
-:::: {.callout-important}
-## **Student A**: Create a virtual environment and add the data script
+**Create a virtual environment and add the data script**
 
 1. In the repository, create a virtual environment and install `pandas`:
 
@@ -172,17 +190,14 @@ git commit -m "Add virtual environment and data generation script"
 git push
 ```
 
-::::
-
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#ea580c; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 B
 :::
 **Student B**
 :::
 
-:::: {.callout-tip}
-## **Student B**: Sync the environment and generate the data
+**Sync the environment and generate the data**
 
 1. Pull Student A's changes and sync the virtual environment:
 
@@ -209,39 +224,42 @@ git commit -m "Ignore generated CSV file"
 git push
 ```
 
-::::
-
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#7c3aed; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 A
 :::
 **Student A**
 :::
 
-:::: {.callout-important}
-## **Student A**: Pull the changes
+**Pull the changes**
 
 ```bash
 git pull
 ```
 
-::::
-
 **Checkpoint:** At this point, both students have [generate_data.py]{.path} and [.gitignore]{.path}. The CSV is generated locally but not tracked by Git. The .gitignore file is in sync.
+
+<!------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+------------------------------------------------->
+
+<div style="margin-top: 4em;"></div>
 
 ---
 
+<div style="margin-top: 4em;"></div>
+
 # Phase 3: Branch and Pull Request
 
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#ea580c; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 B
 :::
 **Student B**
 :::
 
-:::: {.callout-tip}
-## **Student B**: Create a branch and extend the dataset
+**Create a branch and extend the dataset**
 
 1. Create a new branch:
 
@@ -288,17 +306,14 @@ git push -u origin add-population-data
 ![Open pull request](../../assets/img/lecture_03_github/ex03_pullrequest.png)
 :::
 
-::::
-
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#7c3aed; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 A
 :::
 **Student A**
 :::
 
-:::: {.callout-important}
-## **Student A**: Review the pull request
+**Review the pull request**
 
 1. Open the Pull Request on GitHub and go to the **Files changed** tab. It gives you an overview of all the changes made on the branch that wants to be pulled. Check that only [generate_data.py]{.path} was modified.
 
@@ -312,17 +327,14 @@ A
 
 > *"Great work! Before we merge, can you add a `gdp_per_capita_usd` column? It should be GDP in billions of USD divided by population in millions, scaled to USD per person."*
 
-::::
-
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#ea580c; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 B
 :::
 **Student B**
 :::
 
-:::: {.callout-tip}
-## **Student B**: Address the review
+**Address the review**
 
 Add the column to [generate_data.py]{.path}:
 
@@ -343,22 +355,17 @@ git commit -m "Add GDP per capita column"
 git push
 ```
 
-::::
-
-::: {style="display:flex; align-items:center; gap:10px; margin-bottom:-12px;"}
+::: {.student-bubble}
 ::: {style="width:40px; height:40px; border-radius:50%; background-color:#7c3aed; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.1em;"}
 A
 :::
 **Student A**
 :::
 
-:::: {.callout-important}
-## **Student A**: Approve and merge
+**Approve and merge**
 
 1. Check the updated **Files changed** tab and verify the formula is correct
 2. Approve and click **Merge pull request**
-
-::::
 
 Both students sync `main`:
 
@@ -370,7 +377,16 @@ git pull
 **Checkpoint:** Student B's changes are in `main`. Both students are in sync. The full collaborative workflow is complete.
 
 
+<!------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+------------------------------------------------->
+
+<div style="margin-top: 4em;"></div>
+
 ---
+
+<div style="margin-top: 4em;"></div>
 
 # Ensuring that your feature/working branch is up-to-date with the `main` branch (self-study)
 
@@ -423,7 +439,16 @@ git rebase --continue
 ```
 
 
+<!------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+------------------------------------------------->
+
+<div style="margin-top: 4em;"></div>
+
 ---
+
+<div style="margin-top: 4em;"></div>
 
 # Summary
 

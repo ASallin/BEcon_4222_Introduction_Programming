@@ -41,7 +41,7 @@ Course syllabus, schedule, and administrative information.
 - [Recap Quiz 1 (non-graded)](examination/recap_quizzes/01b_recap.qmd)
 
 **Resources:**
-- [Common Terminal Commands](course_materials/week_01/CommontTerminalCommands_BradTraversy.qmd)
+- [Common Terminal Commands](course_materials/week_01/CommonTerminalCommands_BradTraversy.qmd)
 :::
 
 ::: {.g-col-6}

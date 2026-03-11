@@ -17,22 +17,22 @@ website:
             href: course_materials/week_01/01a_introduction.html
           - text: "Lecture 1b: Getting Started"
             href: course_materials/week_01/01b_gettingstarted.html
-          - text: "Exercise 1: Getting Started"
-            file: exercise_sessions/week_01/Ex01_gettingstarted.qmd
-          - text: "---"
           - text: "Recap Quiz 1 (non-graded)"
             file: examination/recap_quizzes/01b_recap.qmd
+          - text: "---"
+          - text: "Exercise 1: Getting Started"
+            file: exercise_sessions/week_01/Ex01_gettingstarted.qmd
       - text: "Week 2"
         menu:
           - text: "Lecture 2a: Recap Week 1"
             file: course_materials/week_02/02_recap.qmd
           - text: "Lecture 2b: Version Control"
             file: course_materials/week_02/02_versioncontrol.qmd
-          - text: "Exercise 2: First Commands in Git"
-            file: exercise_sessions/week_02/Ex02_FirstCommitsInGit.qmd
-          - text: "---"
           - text: "Git Cheat Sheet (PDF)"
             file: course_materials/week_02/git-cheat-sheet-education.pdf
+          - text: "---"
+          - text: "Exercise 2: First Commands in Git"
+            file: exercise_sessions/week_02/Ex02_FirstCommitsInGit.qmd
       - text: "Week 3"
         menu:
           - text: "Lecture 3: Version Control with Others"
@@ -46,9 +46,9 @@ website:
             file: exercise_sessions/week_03/Ex03_GitHub.qmd
       - text: "Week 4"
         menu:
-          - text: "— Part 2: Python —"
           - text: "Lecture 4: Introduction to Python"
             file: course_materials/week_04/L04_IntroPython.qmd
+          - text: "---"
           - text: "Exercise 4: Introduction to Python"
             file: exercise_sessions/week_04/Ex04_IntroPython.qmd
       - text: "Admin"
@@ -72,9 +72,8 @@ format:
 
   html:
     theme:
-      - flatly
-      - assets/style/hsgtheme.scss
+      - cosmo
     toc: true
     toc-location: right
     code-line-numbers: false
-    highlight-style: dracula
+    #highlight-style: dracula
