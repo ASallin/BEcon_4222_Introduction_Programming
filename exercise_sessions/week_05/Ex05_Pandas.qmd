@@ -1,0 +1,614 @@
+---
+title: "Exercise 5: Pandas"
+author: "Franziska Bender"
+date: "2026-03-14"
+format: 
+  html:
+    toc: true          # Adds a Table of Contents on the side
+    toc-depth: 4
+    code-fold: false   # Keeps your code visible (set to true to hide it)
+    theme: cosmo       # A clean, built-in professional look
+    embed-resources: true
+execute:
+  echo: true           # Shows your code in the output
+  freeze: false
+  error: true
+jupyter: python3       # Tells Quarto to use your Python 3 kernel
+---
+
+
+In this exercise, we move from our simplified "teaching" dataset to a broader download from the Penn World Table (PWT). Download the data `pwt_data_ex5.csv` and save it in a folder `data`. This version contains more countries and a wider range of macroeconomic variables:
+
+
+
+<table style="width: 70%; margin: 0 auto 1.5em auto; font-size: 0.9em; border-collapse: collapse; border-top: 2px solid #777; border-bottom: 2px solid #777;">
+  <colgroup>
+    <col style="width: 18%;">
+    <col style="width: 82%;">
+  </colgroup>
+  <thead>
+    <tr style="border-bottom: 1.5px solid #777;">
+      <th style="text-align: left; padding: 6px 10px;">Variable</th>
+      <th style="text-align: left; padding: 6px 10px;">Full Name / Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>iso3</strong></td>
+      <td style="padding: 5px 10px;">3-letter ISO Country Code</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>Country</strong></td>
+      <td style="padding: 5px 10px;">Full Country Name</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>year</strong></td>
+      <td style="padding: 5px 10px;">Observation Year</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>pop</strong></td>
+      <td style="padding: 5px 10px;">Population (in millions)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>rgdpna</strong></td>
+      <td style="padding: 5px 10px;">Real GDP at constant 2021 national prices (in mil. 2021USD)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>rnna</strong></td>
+      <td style="padding: 5px 10px;">Capital stock at constant 2021 national prices (in mil. 2021USD)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>emp</strong></td>
+      <td style="padding: 5px 10px;">Number of persons engaged (in millions)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>avh</strong></td>
+      <td style="padding: 5px 10px;">Average annual hours worked by persons engaged</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>hc</strong></td>
+      <td style="padding: 5px 10px;">Human capital index (based on years of schooling)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>ctfp</strong></td>
+      <td style="padding: 5px 10px;">TFP level at current PPPs (USA = 1)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>labsh</strong></td>
+      <td style="padding: 5px 10px;">Share of labor compensation in GDP</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>pl_con</strong></td>
+      <td style="padding: 5px 10px;">Price level of household consumption</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+**Import Packages**
+
+```{python}
+import pandas as pd
+```
+
+
+## Exercise 1: Data Loading and Initial Inspection
+
+In this exercise, you will practice loading a comprehensive macroeconomic dataset into a DataFrame and performing an initial inspection to understand its dimensionality, variable types, and the unique entities it contains.
+
+Your Tasks:
+
+1. Load the data: Read the file `data/pwt_data_ex5.csv` into a DataFrame named `df`.
+2. Size Check: How many observations (rows) and variables (columns) does this dataset have?
+3. Variable Types: Use a method to see which columns are categorical (strings) and which are numeric.
+4. Country Count: How many unique countries are represented in this dataset?
+5. Summary Statistics: Display the mean and standard deviation for the numeric variables.
+
+
+::: {.callout-tip collapse="true" title="Solution 1.1: Load the Data"}
+```{python}
+# 1. Load the data
+df = pd.read_csv("data/pwt_data_ex5.csv")
+df.head()
+```
+
+You'll notice immediately the `NaN` entries in the dataframe. In pandas, `NaN` stands for “Not a Number” and is commonly used to represent missing or undefined data in a Series or DataFrame.
+
+For this exercise we're going to ignore them. Handling missing data is something we'll cover in week 6. 
+
+:::
+
+::: {.callout-tip collapse="true" title="Solution 1.2: Size Check"}
+```{python}
+# 2. Size Check
+print(f"Dataset Shape: {df.shape}")
+# df.shape returns (rows, columns)
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 1.3: Variable Types"}
+```{python}
+# 3. Variable Types and Non-Null counts
+# .info() is perfect for seeing Dtypes and identifying missing data at a glance
+df.info()
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 1.4: Country Count"}
+```{python}
+# 4. Country Count
+# We use .nunique() on the 'Country' column to count unique entries
+num_countries = df['Country'].nunique()
+print(f"There are {num_countries} countries in this dataset.")
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 1.5: Summary Statistics"}
+```{python}
+# 5. Summary Statistics
+# .describe() gives us the mean, std, and quartiles for numeric columns
+df.describe()
+```
+:::
+
+
+
+
+## Exercise 2: Basic Filtering
+
+In this exercise, you will practice extracting specific subsets of data from your main DataFrame df.
+
+Your Tasks:
+
+1. The Recent Slice: Create a new DataFrame called `df_2023` that contains only observations for the year 2023.
+2. The Country Focus: Create a new DataFrame called `df_switzerland` that contains all years of data for Switzerland.
+3. High-Population Economies: Filter the dataset to find all observations where the population (`'pop'`) was greater than 1,000 million (1 billion), which countries remain?
+4. Specific Comparison: Create a DataFrame called `df_comparison` that contains only the data for Germany and France for the years 2000 to 2010 (inclusive). Hint: You will need to use the `&` operator and parentheses for multiple conditions.
+
+::: {.callout-tip collapse="true" title="Solution 2.1: The Recent Slice"}
+```{python}
+# 1. The Recent Slice
+df_2023 = df[df['year'] == 2023]
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 2.2: The Country Focus"}
+```{python}
+# 2. The Country Focus
+df_switzerland = df[df['Country'] == 'Switzerland']
+```
+:::
+
+
+::: {.callout-tip collapse="true" title="Solution 2.3: High-Population Economies"}
+```{python}
+# 3. High-Population Economies
+high_pop = df[df['pop'] > 1000]
+high_pop['Country'].unique()
+```
+:::
+
+
+::: {.callout-tip collapse="true" title="Solution 2.4: Specific Comparison"}
+```{python}
+
+# 4. Specific Comparison
+# We use .isin() for the countries and logical operators for the years
+countries = ['Germany', 'France']
+mask = (df['Country'].isin(countries)) & (df['year'] >= 2000) & (df['year'] <= 2010)
+df_comparison = df[mask]
+print(f"Size of comparison group: {len(df_comparison)}")
+```
+:::
+
+
+
+## Exercise 3: Creating New Variables
+
+In this exercise, you will create derived variables to help analyze productivity and living standards across different countries.
+
+Your Tasks: 
+
+1. **GDP per Capita**: Create a new column called `gdp_pc` by dividing Real GDP (`rgdpna`) by Population (`pop`).
+2. **Capital Intensity**: Create a column called `k_labor` which represents the amount of Capital Stock (`rnna`) available per person engaged (`emp`).
+3. **Labor Productivity**: Create a column called `labor_prod` by dividing Real GDP (`rgdpna`) by the total number of hours worked (`emp` x `avh`).
+
+    Note: `avh` has many missing values, which will result in `NaN` for those specific rows in your new column. We'll learn how to deal with missing values next week. 
+
+4. **Display Results**: Show the first 5 rows of the newly created variables, country and year.
+
+::: {.callout-tip collapse="true" title="Solution 3.1: GDP per Capita"}
+```{python}
+# 1. GDP per Capita
+# Formula: Real GDP / Population
+df['gdp_pc'] = df['rgdpna'] / df['pop']
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 3.2: Capital Intensity"}
+```{python}
+# 2. Capital Intensity (Capital per worker)
+# Formula: Capital Stock / Employment
+df['k_labor'] = df['rnna'] / df['emp']
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 3.3: Labor Productivity"}
+```{python}
+# 3. Labor Productivity (Output per hour)
+# We multiply employment by average hours to get total labor hours
+df['labor_prod'] = df['rgdpna'] / (df['emp'] * df['avh'])
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 3.4: Display Results"}
+```{python}
+# Display the first few rows to verify the new columns
+df[['Country', 'year', 'gdp_pc', 'k_labor', 'labor_prod']].head()
+```
+:::
+
+
+
+## Exercise 4: Aggregation and Grouping
+
+In this exercise, you will practice summarizing your data. Instead of looking at individual rows, we want to understand broader trends by country or by year.
+
+Your Tasks:
+
+1. **Global Trends**: Calculate the total world population and the average TFP level for every year in the dataset.
+2. **Country Profiles**: For each country, find their maximum GDP per capita (`'gdp_pc'`) and their average labor share (`'labsh'`) across all available years.
+3. **Productivity Trend**: Group the data by year and calculate the mean Labor Productivity (`'labor_prod'`).
+4. **Summary Table:** Create a new DataFrame called `country_stats` that shows the mean, min, and max of the Human Capital index (`'hc'`) for every country.
+
+
+::: {.callout-tip collapse="true" title="Solution 4.1: Global Trends"}
+```{python}
+# We group by 'year' and sum population, then average TFP
+global_trends = df.groupby('year').agg({
+    'pop': 'sum',
+    'ctfp': 'mean'
+}).reset_index()
+global_trends.head()
+```
+:::
+
+
+::: {.callout-tip collapse="true" title="Solution 4.2: Country Profiles"}
+```{python}
+# Find the peak wealth and typical labor share for each nation
+country_profiles = df.groupby('Country').agg({
+    'gdp_pc': 'max',
+    'labsh': 'mean'
+}).reset_index()
+country_profiles.head()
+```
+:::
+
+
+::: {.callout-tip collapse="true" title="Solution 4.3: Productivity Trend"}
+```{python}
+# Labor Productivity over time
+productivity_trend = df.groupby('year')['labor_prod'].mean()
+productivity_trend.head()
+# Optional: Quick visualization to check the trend
+# productivity_trend.plot(title="Global Labor Productivity Over Time")
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 4.4: Summary Table"}
+```{python}
+# Using .agg() with a list of functions for a single column
+country_stats = df.groupby('Country')['hc'].agg(['mean', 'min', 'max']).reset_index()
+country_stats.head()
+```
+:::
+
+
+
+
+## Exercise 5: Visualization
+
+In this exercise, you will use `matplotlib` to create figures that tell a story about global development and productivity.
+
+
+Your Tasks:
+
+1. Import matplotlib
+2. **The Rise of Human Capital**: Create a line plot showing the average human capital (hc) for all countries over time. Requirement: Add a title, label your axes, and include a grid.
+3. **Productivity vs. Wealth:** Create a scatter plot for the year 2023 where the x-axis is hc (Human Capital) and the y-axis is gdp_pc (GDP per capita). <br> Create the same figure again but use `plt.yscale('log')`.
+4. **The TFP Frontier**: Use a horizontal bar chart (plt.barh) to show the ctfp (Total Factor Productivity) for a selection of countries in 2019: United States, China, India, Germany, Switzerland, Brazil, and Nigeria.
+5. **Distribution of Labor Shares**: Create a histogram of the labsh (Labor Share) variable for the entire dataset. Use 30 bins to see the shape of the distribution.
+
+
+::: {.callout-tip collapse="true" title="Solution 5.1: Import Matplotlib"}
+```{python}
+import matplotlib.pyplot as plt
+```
+:::
+
+
+::: {.callout-tip collapse="true" title="Solution 5.2: The Rise in Human Capital"}
+```{python}
+# 1. Calculate the average human capital for all countries by year
+hc_trend = df.groupby('year')['hc'].mean()
+hc_trend = hc_trend.reset_index()
+
+# 2. Create the figure
+
+# Initialize figure and set a figsize
+plt.figure(figsize=(8, 5))
+# plot year on x-axis and 'hc' on y axis
+plt.plot(hc_trend['year'], hc_trend['hc'])
+# Set a title and labels
+plt.title("Global Average Human Capital Index (2000–2023)")
+plt.xlabel("Year")
+plt.ylabel("Average Human Capital Index")
+# Add a grid
+plt.grid(True)
+# Show the figure
+plt.show()
+```
+:::
+
+
+
+::: {.callout-tip collapse="true" title="Solution 5.3: Productivity vs. Wealth"}
+```{python}
+# Filter your data for 2023
+df_2023 = df[df['year'] == 2023]
+
+
+# Create the scatterplot 
+plt.figure(figsize=(8, 6))
+plt.scatter(df_2023['hc'], df_2023['gdp_pc'])
+plt.title("Human Capital vs. GDP per Capita (2023)")
+plt.xlabel("Human Capital Index")
+plt.ylabel("GDP per Capita (USD)")
+plt.show()
+```
+
+```{python}
+# Create the same plot with a log scale for the y-axis
+plt.figure(figsize=(8, 6))
+plt.scatter(df_2023['hc'], df_2023['gdp_pc'])
+plt.yscale('log') # Log scale for GDP is standard in macroeconomics
+plt.title("Human Capital vs. GDP per Capita (2023)")
+plt.xlabel("Human Capital Index")
+plt.ylabel("GDP per Capita (USD, Log Scale)")
+plt.show()
+```
+:::
+
+
+
+::: {.callout-tip collapse="true" title="Solution 5.4: The TFP Frontier"}
+```{python}
+# Filter the 2023 data from previously for the countries, and sort values
+selection = ['United States', 'China', 'India', 'Germany','Switzerland', 'Brazil', 'Nigeria']
+df_sel = df_2023[df_2023['Country'].isin(selection)]
+df_sel = df_sel.sort_values('ctfp')
+
+# Create horizontal barchart
+plt.figure(figsize=(8, 5))
+plt.barh(df_sel['Country'], df_sel['ctfp'])
+plt.title("Total Factor Productivity Levels in 2023 (USA = 1)")
+plt.xlabel("TFP Level (Relative to USA)")
+plt.show()
+
+```
+:::
+
+::: {.callout-tip collapse="true" title="Solution 5.5: Distribution of Labor Shares"}
+```{python}
+plt.figure(figsize=(8, 5))
+plt.hist(df['labsh'].dropna(), bins=30, edgecolor='white')
+plt.title("Distribution of Labor Shares Across All Observations")
+plt.xlabel("Labor Share of GDP")
+plt.ylabel("Frequency")
+plt.show()
+```
+:::
+
+
+
+
+
+## Exercise 6: Growth Accounting - Self-Study
+
+In this independent deep dive, you will apply the 'Solow Residual' method to decompose GDP growth into its fundamental drivers—capital, labor, and technology—transforming a core macroeconomic theory into a practical data analysis.
+
+In this exercise, we assume a Cobb-Douglas production function:
+
+$$Y_t = A_t K_t^{\alpha}L_t^{1-\alpha}$$
+
+Where $Y$ is output, $K$ is capital, $L$ is labor, and $A$ is technology (TFP). Our goal is to calculate the growth rate of $A$. We want to understand how much of a country's GDP growth comes from the three components (i) labor, (ii) capital and (iii) technological progress.
+
+
+
+#### 1. Preparation
+
+- Create a new dataframe `ga_df` that includes only the United States and Switzerland
+- Sort values by country and year (important for growth calculations later)
+
+::: {.callout-tip collapse="true" title="Solution 6.1: Preparation"}
+```{python}
+# 1. Filter and Sort 
+countries = ['United States', 'Switzerland']
+ga_df = df[df['Country'].isin(countries)].copy()
+ga_df = ga_df.sort_values(['Country', 'year'])
+ga_df.head()
+```
+:::
+
+#### 2. Calculate Growth Rates
+
+- Create new variables:
+  - `g_y`: GDP growth (growth rate of `rgdpna`)
+  - `g_l`: Labor growth (growth rate of `emp`)
+  - `g_k`: Capital growth (growth rate of `rnna`)
+
+You can calculate growth rates with `.pct_change()`. It will calculate the percentage change of a value and the previous value in your dataframe. This is why sorting is important, we want to calculate the change from one year to the next. 
+
+**Important:** We don't want to accidentally compare the last value of switzerland to the first value of the United States. To avoid this you should group by 'Country' before you calculate the growth rates. 
+
+
+::: {.callout-tip collapse="true" title="Solution 6.2: Calculate Growth Rates"}
+```{python}
+ga_df = ga_df.sort_values(['Country', 'year'])
+ga_df['g_y'] = ga_df.groupby('Country')['rgdpna'].pct_change()
+ga_df['g_k'] = ga_df.groupby('Country')['rnna'].pct_change()
+ga_df['g_l'] = ga_df.groupby('Country')['emp'].pct_change()
+ga_df.head()
+```
+:::
+
+#### 3. Define Capital Share ($\alpha$):
+
+A crucial parameter in the production function is the capital share $\alpha$. We assume that this is constant. 
+
+- Create a new variable `capital_share_annual`, which is 1 minus the labor share `labsh`
+- Calculate the average capital share for both countries, `alpha_che` for switzerland, `alpha_usa` for the United States
+- Assign the average capital share back to the dataframe. Use `.loc`
+
+
+So far, you have used `.loc` to find specific data (e.g., `df.loc[row, column]`). However, `.loc` is also one of the most powerful tools for creating or updating variables based on a condition. When you use the assignment operator (`=`) with `.loc`, you are telling Python: "Find all the rows that meet my condition, look at this specific column, and write this value there."
+
+```{python}
+#| eval: false
+# Example 
+#            [1. The Rows]               [2. The Column]    [3. The Value]
+ga_df.loc[df['Country'] == 'United States', 'alpha']        =  0.1
+```
+
+1. The Rows (The Filter): This identifies which rows you want to target (e.g., only the ones where the country is the United States).
+2. The Column (The Target): This is the name of the variable. If the column 'alpha' doesn't exist yet, Pandas will create it for you automatically.
+3. The Value (The Assignment): This is the data you want to "paste" into those specific rows.
+
+
+::: {.callout-tip collapse="true" title="Solution 6.3: Define the Capital Share"}
+```{python}
+# create variable cap_share_annual
+ga_df['cap_share_annual'] = 1 - ga_df['labsh']
+
+# Calculate the average alpha for each country
+alpha_usa = ga_df[ga_df['Country'] == 'United States']['cap_share_annual'].mean()
+alpha_che = ga_df[ga_df['Country']=='Switzerland']['cap_share_annual'].mean()
+
+# Assign the average alpha back to the dataframe
+ga_df.loc[ga_df['Country'] == 'United States', 'alpha'] = alpha_usa
+ga_df.loc[ga_df['Country'] == 'Switzerland', 'alpha'] = alpha_che
+ga_df.head()
+```
+:::
+
+
+
+#### 4. The Solow Residual: 
+
+
+We want to calculate TFP growth (i.e. the growth of $A$ in the production function).
+
+- Calculate TFP growth using the following formula:
+
+$$g_A​ = g_Y​ - [\alpha g_K​+(1−\alpha)g_L]​$$
+
+
+- $g_L$: growth of labour `g_l`
+- $g_K$: growth of capital `g_k`
+- $g_Y$: growth of GDP `g_y`
+- $\alpha$: capital share `alpha`
+
+*If you want to derive this formula: apply $ln$ to the production function, then use the fact that the change in the natural log of a variable is approximately equal to its growth rate (g)*
+
+::: {.callout-tip collapse="true" title="Solution 6.4: TFP Growth"}
+```{python}
+# 4. Calculate TFP Growth
+ga_df['g_tfp'] = ga_df['g_y'] - (ga_df['alpha'] * ga_df['g_k'] + (1 - ga_df['alpha']) * ga_df['g_l'])
+ga_df.head()
+```
+:::
+
+
+
+#### 5. Summarize and Plot 
+
+First we want to create a summary table 
+
+- Create a table `summary` with the mean of the growth variables and alpha `['g_y', 'g_k', 'g_l', 'alpha', 'g_tfp']` by country
+- The raw growth rates of Capital (`g_k`) and Labor (`g_l`) don't tell the whole story. We must multiply them by their respective "shares" in the economy to see how much they actually contributed to total GDP growth: 
+  - Create a variable `contrib_k`: The contribution of capital which is $\alpha g_K$
+  - Create a variable `contrib_l`: The contribution of labor which is $(1-\alpha)g_L$
+
+::: {.callout-tip collapse="true" title="Solution 6.5: Summary Table"}
+```{python}
+# 1. Average the components 
+summary = ga_df.groupby('Country')[['g_y', 'g_k', 'g_l', 'alpha', 'g_tfp']].mean()
+
+# 2. Calculate the final contributions
+summary['contrib_k'] = summary['alpha'] * summary['g_k']
+summary['contrib_l'] = (1 - summary['alpha']) * summary['g_l']
+
+# 3. Show the summary table
+summary = summary.reset_index()
+summary
+```
+:::
+
+
+Then we create a stacked barchart to visualize our results. 
+
+The code below creates a figure that decomposes average annual GDP growth into the specific contributions of capital accumulation, labor input, and Total Factor Productivity (TFP) to illustrate the underlying drivers of economic growth for each country.
+
+We haven't covered "stacked" charts in class, deduce how this works by looking at the three `plt.bar()` calls.
+
+
+```{python}
+# 1. Setup the data from the columns
+countries = summary['Country']
+tfp_part = summary['g_tfp']
+k_part = summary['contrib_k']
+l_part = summary['contrib_l']
+
+# 2. Create the figure
+plt.figure(figsize=(8, 4.5))
+
+# Plot Layer 1: TFP (The base)
+plt.bar(countries, tfp_part, label='TFP Growth')
+
+# Plot Layer 2: Capital (Stacked on top of TFP)
+plt.bar(countries, k_part, bottom=tfp_part, label='Capital Contribution')
+
+# Plot Layer 3: Labor (Stacked on top of TFP + Capital)
+plt.bar(countries, l_part, bottom=tfp_part + k_part, label='Labor Contribution')
+
+# 3. Add styling
+plt.ylabel("Average Annual Growth Rate")
+plt.title("Growth Accounting Decomposition")
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+
+::: {.callout-tip collapse="true" title="How does the stacked barchart work?"}
+We call `plt.bar()` three separate times. Each call tells Matplotlib to draw a set of bars on the same figure.
+
+- The first call draws the TFP bars.
+- The second call draws the Capital bars.
+- The third call draws the Labor bars.
+
+The `bottom` Argument: This is the secret to "stacking." By default, Matplotlib starts every bar at zero.
+
+- In the second call, we set `bottom=tfp_part`. This tells Python: "Don't start the Capital bars at zero; start them at the height where the TFP bars ended."
+- In the third call, we set `bottom=tfp_part + k_part`. This stacks the Labor bars on top of both the TFP and Capital layers combined.
+
+Labels and Legend: 
+
+- Inside each `plt.bar()` function, we provide a label (e.g., 'TFP Growth').
+- However, these labels won't show up on the chart by themselves. We must call `plt.legend()` at the end. This command looks at all the labels we've defined and creates the "Key" or "Legend" in the corner of the chart so the reader knows which color represents which economic component.
+
+:::
+
