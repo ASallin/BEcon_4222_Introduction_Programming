@@ -1,0 +1,1101 @@
+---
+title: '4,222 Introduction to Programming'
+subtitle: 'Week 5: Python for Data - Part I'
+author: "Franziska Bender"
+date: "2026-03-14"
+format: 
+  html:
+    toc: true          # Adds a Table of Contents on the side
+    toc-depth: 4
+    code-fold: false   # Keeps your code visible (set to true to hide it)
+    theme: cosmo       # A clean, built-in professional look
+    embed-resources: true
+execute:
+  echo: true           # Shows your code in the output
+  freeze: false
+  error: true
+jupyter: python3       # Tells Quarto to use your Python 3 kernel
+---
+
+# Before We Begin:
+
+
+**Installing Packages**
+
+In Python, we use external "packages" to do heavy lifting—like analyzing data or drawing graphs. Since Python doesn't come with these built-in, we need to download them.
+
+We will use `uv` to download these packages and formally add them to our project. We need four core packages today:
+
+- `numpy`: A math package that works behind the scenes to make data calculations fast.
+- `pandas`: For working with datasets (like Excel or CSV files).
+- `matplotlib`: For drawing graphs and charts.
+- `ipykernel`: The "engine" that allows VS Code to run Python code inside this notebook.
+
+
+To install them open a new terminal, type: 
+
+```bash
+uv add ipykernel pandas numpy matplotlib
+```
+
+and press Enter.
+
+(Note: *Some of these packages you have probably installed previously. Don't worry, `uv` will check what is already installed and only add what isn't.*)
+
+
+**Recommended Folder Structure**
+
+If you want to work through this notebook yourself, test the code, and also experiment with it, we recommend extending the folder structure we set up previously. Set up a folder for `week_05`. Put your Jupyter notebook (`my_analysis_week05.ipynb`) there, and create a `data` subfolder where you save the dataset "countries_data.csv".
+
+```text
+Introduction_to_programming/
+├── github_course_materials/ 
+├── exercises/              
+│   ├── ...
+├── group_project/
+│   ├── ...
+└── lectures/                
+    └── week_05/             # <--- NEW: Create this folder
+        ├── data/            # <--- NEW: Create this folder
+        │   └── countries_data.csv      # NEW: Save the dataset
+        └── my_analysis_week05.ipynb
+```
+
+(Note: *You can create your own folder structure if you prefer, but remember to adjust the file paths in your code later when we load or save dataframes!*)
+
+# Pandas
+
+Pandas is Python’s go-to library for working with tabular data—the kind you typically see in spreadsheets or statistical software. It gives you fast, convenient tools to 
+
+- import data (CSV, Excel, SQL), 
+- clean and reshape it (handle missing values, filter rows, create new variables, merge datasets), and 
+- summarize it (grouping, descriptive statistics) 
+
+in a way that’s both readable and reproducible. For economics work, pandas is especially useful because it makes it easy to build a transparent data pipeline: from raw data to analysis-ready datasets, and then on to figures and results you can trust and rerun.
+
+
+```{python}
+import numpy as np
+import pandas as pd
+```
+
+
+When we import these packages, you will almost always see `as np` and `as pd`. Think of this as creating an official, time-saving nickname. 
+
+- By writing import pandas as pd, we tell Python: "Whenever I type pd, I mean pandas."
+- It saves typing: You get to use `pd.read_csv()` instead of the full name.
+- It is the industry standard: `pd` and `np` are the universal conventions in the Python data science and economics community. Using these specific abbreviations ensures your code is instantly readable to anyone else sharing your work.
+
+
+**Numpy**
+
+NumPy (Numerical Python) is a math package that works behind the scenes to make data calculations fast. If Pandas is the spreadsheet, NumPy is the underlying calculator. In fact, Pandas is actually built on top of NumPy. For many tasks Pandas will use NumPy in the background without you needing to import it explicitly. But occasionally we need to do math that Pandas doesn't handle on its own. Since they are the dynamic duo of Python data analysis, it is standard practice to just import both at the very top of your script so you have all your tools ready to go.
+
+
+## Reading Data
+
+To get data into your workspace, we use *reader* functions. Since a lot of economic data comes as CSV (Comma-Separated Values) files, `pd.read_csv()` will likely be your most-used command.
+
+
+**Basic Syntax:**
+
+```{python}
+#| eval: false
+df = pd.read_csv("path/to/your/file.csv")
+```
+
+
+When you run this, Pandas does three things:
+
+- Finds the file on your computer (based on the path you give it).
+- Splits the text into columns using a delimiter (usually a comma).
+- Builds a DataFrame (a table-like object) and stores it in df (a common convention).
+
+
+Real-world economic data is often messy. These options can rescue you when the default settings don’t work:
+
+- `sep`: If your file uses semicolons instead of commas, use `sep=';'`
+- `index_col`: If the first column is a "Year" or "ID" and you want it to be the label for your rows, use `index_col=0`.
+- `header`: If your data starts on the 3rd row because there are two rows of titles/notes at the top, use `header=2`.
+
+
+If your data is not in csv format there are different functions to read the data:
+
+- `pd.read_excel()`: For excel files (.xlsx or .xls). It Unlike a CSV, an Excel file can have multiple sheets. You can specify the name (as a string) or the position (e.g., 0 for the first sheet using the argument `sheet_name`).
+- `pd.read_stata()`: For stata files (.dta)
+
+
+
+Example: We'll work with a dataset "countries_data.csv" located in the folder "data". Read the data
+
+```{python}
+# Load the dataset
+df = pd.read_csv("data/countries_data.csv")
+```
+
+After reading a dataset, always do a quick check that it worked. Datasets can be large, so you usually don’t want to print the entire table. Your safest first preview is: `df.head()`
+
+
+```{python}
+# Preview of data
+df.head()
+```
+
+
+This shows the first few rows so you can confirm that:
+
+- columns are aligned correctly,
+- headers look right,
+- and the values “make sense” at first glance.
+
+
+
+### FileNotFoundError
+
+```{python}
+#| error: true
+%xmode Minimal
+df = pd.read_csv("my_data/countries_data.csv")
+```
+
+you might get a massive block of red text ending in FileNotFoundError. Don't panic! This simply means Python cannot find the file at the path you provided.
+
+1. Check your spelling: Ensure the file name is exactly "countries_data.csv" and the folder is exactly "data/".
+2. Check your Working Directory: Python looks for the file relative to where you are 
+
+If you ever get completely lost, you can always run a cell
+```{python}
+import os          
+os.getcwd()
+```
+
+to see exactly which folder Python thinks it is in right now!
+
+Navigating folder paths: 
+
+- `"data/countries_data.csv"`: This tells Python, "Look inside my current location for a folder named data, and grab the file."
+- `"../"`: This tells Python, "Take one step backward (up) out of the current folder." So if you have a folder `data` that is not in `week05` but one level above, this is how you can access it.
+
+
+## A First Look at Your Data
+
+### The Data
+
+In this lecture we work with data from the Penn World Table. The Penn World Table (PWT) is a cross-country macroeconomic dataset that provides internationally comparable information on income, output, inputs, prices, and productivity. The current PWT 11.0 release covers 185 countries from 1950 to 2023 and is designed to make economic comparisons across countries and over time using purchasing power parity (PPP) methods.
+
+The variables we use in this class to explore the functionality of Pandas are: 
+
+<table style="width: 70%; margin-left: auto; margin-right: auto; font-size: 0.9em; border-collapse: collapse; border-top: 2px solid #777; border-bottom: 2px solid #777;">
+  <colgroup>
+    <col style="width: 18%;">
+    <col style="width: 82%;">
+  </colgroup>
+  <thead>
+    <tr style="border-bottom: 1.5px solid #777;">
+      <th style="text-align: left; padding: 6px 10px;">Variable</th>
+      <th style="text-align: left; padding: 6px 10px;">Full Name / Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>iso3</strong></td>
+      <td style="padding: 5px 10px;">3-letter ISO Country Code</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>Country</strong></td>
+      <td style="padding: 5px 10px;">Full Country Name</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>year</strong></td>
+      <td style="padding: 5px 10px;">Observation Year</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>hc</strong></td>
+      <td style="padding: 5px 10px;">Human capital index (based on years of schooling)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>pop</strong></td>
+      <td style="padding: 5px 10px;">Population (in millions)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>rgdpe</strong></td>
+      <td style="padding: 5px 10px;">Expenditure-side real GDP at chained PPPs (in mil. 2021US$)</td>
+    </tr>
+    <tr>
+      <td style="padding: 5px 10px;"><strong>xr</strong></td>
+      <td style="padding: 5px 10px;">Exchange rate, national currency/USD (market+estimated)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+There are many other variables (and countries) available, you can download data from the PWT [here](https://pwt-data-tool.streamlit.app/)
+
+
+### Inspect the DataFrame
+
+Once your data is in a DataFrame, your first step is to inspect it. Pandas provides several built-in methods and attributes that help you quickly understand what you’re working with.
+
+**Methods (you call them)**
+
+Methods are functions attached to an object (here `df`), you call them using object.method(), (with parentheses!)
+
+- `df.head()`: shows the first rows of the DataFrame (default: 5)
+- `df.tail()`:shows the first rows of the DataFrame (default: 5)
+- `df.info()`: shows the number of rows and columns, non-null counts (missing data), and data types
+- `df.describe()`: for numeric columns, gives summary statistics (count, mean, std, min, quartiles, max)
+
+**Attributes (you can access them)**
+
+Attributes are stored information, so you don’t use parentheses.
+
+- `df.shape`: a tuple (number of rows, number of columns)
+- `df.columns`: the column names (an index-like object)
+
+
+
+```{python}
+# Why use it: 
+# To quickly verify that the data loaded correctly, headers are aligned, 
+# and the values make sense at first glance
+df.head()
+```
+
+```{python}
+# Why use it:
+# Sometimes the data hasfootnotes or summary rows appended to the very bottom of the CSV. 
+# This helps you catch and remove that "junk" data before running your analysis.
+df.tail()
+```
+
+
+```{python}
+# Why use it: 
+# This is your structural overview. It lets you instantly spot missing data or 
+# check if a numeric column like GDP was accidentally imported as text
+df.info()
+```
+
+When you run `df.info()`, you will see a column called Dtype. Pandas uses slightly different names for data types than standard Python. Pandas also has additional datatypes (such as `datetime64`) which we will cover in the next lecture. 
+
+```{python}
+# Why use it:
+# Get a sense of the values in your DataFrame, 
+# Quick sanity check—for example, ensuring population values aren't negative 
+# or that max GDP isn't unrealistically high.
+df.describe()
+```
+
+
+```{python}
+# Why use it: 
+# Confirm your dataset is the size you expect
+df.shape
+```
+
+
+```{python}
+# Why use it: 
+# Find out what variables you're working with.
+df.columns
+```
+
+
+::: {.callout-tip collapse="true" title="Python Vocabulary: Functions, Methods, and Attributes"}
+As you learn Python, you will notice three different ways we interact with data. Understanding the difference now will save you a lot of syntax errors later!
+
+- **Functions (Standalone Tools):** These are tools that live on their own. You bring your data *into* the tool.
+    - **Syntax:** `function_name(object)`
+    - **Example:** `print(df)` or `len(df)`
+
+- **Methods (Built-in Actions):** These are functions attached directly to an object (like a DataFrame). You are asking the dataset to *do something* to itself. Because it is an action, it always requires parentheses `()`.
+    - **Syntax:** `object.method_name()`
+    - **Example:** `df.head()` or `df.describe()`
+
+- **Attributes (Stored Facts):** These are pieces of information or metadata saved *inside* the object. You are not asking the dataset to calculate anything new; you are just reading a fact. Because it is not an action, there are no parentheses.
+    - **Syntax:** `object.attribute_name`
+    - **Example:** `df.shape` or `df.columns`
+
+
+:::
+
+
+
+## Selecting Data
+
+### Selecting Columns
+
+- To grab one column and return a Series, use square brackets `[]` with the column name (a string):
+- To grab multiple columns, pass a list of names inside the brackets. This is why you’ll see double brackets `[[]]` (outer `[]` for pandas selection, inner `[]` for the list). This returns a DataFrame (even if the list has only one column):
+
+**Quick rule**: "one name" --> Series, ["list of names"] --> DataFrame.
+
+Examples: 
+
+```{python}
+df['year']              # return 'year' column as a series
+```
+
+```{python}
+df[['year', 'pop']]     # returns 'year' and 'pop' column as a DataFrame
+```
+
+
+Once you select a single column (a Series), you can use specific methods to explore it. For example, 
+
+- `.nunique()`: Returns the number of unique values. (e.g., "Exactly how many different countries are in my dataset?")
+- `.unique()`: Returns an array of the actual unique values. (e.g., "Give me a list of the names of all the countries included.")
+- `.value_counts()`: Returns a count of how many times each unique value appears, sorted from most frequent to least frequent. (e.g., "How many years of data do I have for each country?")
+
+
+```{python}
+# How many unique countries are in the dataset?
+df['Country'].nunique()
+```
+
+```{python}
+# What are the names of those countries?
+df['Country'].unique()
+```
+
+```{python}
+# How many observations (years) do we have for each country?
+df['Country'].value_counts()
+```
+
+### Selecting rows/columns by position: .iloc[]
+
+
+`.iloc[]` selects by integer position, like standard Python indexing.
+
+- Syntax: `df.iloc[row_position, column_position]`
+- Counting starts at **0**
+- Slices are end-exclusive (just like Python): 0:3 gives rows 0, 1, 2
+
+Examples: 
+```{python}
+df.iloc[0, 0]      # first row, first column
+```
+
+```{python}
+df.iloc[0:3, 0:2]  # rows 0-2 and columns 0-1
+```
+
+
+### Selecting rows/columns by label: .loc[]
+
+`.loc[]` selects by labels (names) from the index and columns.
+
+- Syntax: `df.loc[row_label, column_label]`
+
+
+```{python}
+df.loc[0, "rgdpe"]                 # if the index labels include 0
+```
+
+**Important difference:** label-based slicing with .loc is usually end-inclusive:
+
+```{python}
+# first 6 rows (0,1,2,3,4,5) and column 'rgdpe'
+df.loc[0:5, "rgdpe"]
+```
+
+
+For both `.loc` and `.iloc`, using `:`(instead of label or index of columns or rows) means “everything” along that dimension:
+
+```{python}
+df.loc[:,['year', 'pop']].head()
+```
+
+::: {.callout-tip collapse="true" title="Best Practice: When to use `[]`, `.loc`, or `.iloc`?"}
+Pandas gives you several ways to subset your data, which can feel overwhelming. Here is the cheat sheet for what you should actually use in your research scripts:
+
+- **Use `[[]]` (Standard Brackets) when you ONLY need columns:** If you just want to isolate a few variables this is the cleanest way. 
+    - *Example:* `df_small = df[['year', 'pop', 'gdp']]`
+
+- **Use `.loc[]` (Label-based) as your default for rows + columns:**
+    - If you need to select specific rows and columns, **always prefer `.loc`**. Because it uses the *names* of the columns, your code is robust. If the dataset is updated next year and adds a new column at the beginning, your `.loc` code will still grab the correct variables.
+
+- **Use `.iloc[]` (Position-based) sparingly:**
+    - Selecting data by its integer position (e.g., "give me the 4th column") is risky in economics because datasets change. Use `.iloc` only when position actually matters, such as grabbing the top 3 rows after sorting a dataset. 
+:::
+
+
+
+## Filtering
+
+Filtering - also called Boolean indexing - is one of the most important pandas skills. In research, you almost never use the full “universe” of data. Instead you focus on specific countries, certain time periods, recession years, or groups defined by a threshold (e.g., high inflation, high debt-to-GDP).
+
+
+**Filtering is a two-step-process:** 
+
+- 1. The Comparison (build a **mask**): When you compare a column to a value, pandas doesn’t return one answer. It returns a True/False value for every row. This `True`/`False` Series is called a mask (it has the same length as the DataFrame).
+- 2. The Selection/Filter (apply the mask): You can then use the mask in `df[]` and it will only return the rows for which the mask is `True`
+
+
+Example: keep only observations from 2000 onward
+```{python}
+# Step 1: Build a mask
+mask = df["year"] >= 2010  
+mask
+```
+
+```{python}
+# Step 2: Apply the mask
+df_2010 = df[mask]        
+df_2010.head()              
+```
+
+
+Once you are comfortable with masks, you will often skip creating the 'mask' variable and put the condition directly inside the brackets:
+
+```{python}
+df_recent = df[df["year"] >= 2015]
+```
+
+This is perfectly fine, especially for simple filtering, but creating a mask variable explicitly can improve readability if the filtering is more complex. 
+
+
+**Comparison tools you’ll use all the time**
+
+- `==`: equal to
+- `!=`: not equal to
+- `>`/ `<`: greater or less than
+- `>=` / `<=`: greater than or equal to / less than or equal to
+- `.isin([...])` membership in a list of values (very common for countries)
+
+Example: Keep a set of countries
+```{python}
+mask = df["iso3"].isin(['CHE', 'FRA', 'DEU', 'ITA'])    # 1. build a mask
+df_europe = df[mask]                                    # 2. apply the mask
+df_europe['Country'].value_counts()                     # did it work?
+```
+
+
+
+Note: if use filter your dataframe `df[mask]` it creates a filtered view/result, but it does not overwrite `df`. To keep it you either (i) assign it to a new name `df_filtered = df[mask]` or (ii) you overwrite  `df=df[mask]`, which makes it permanent for your session. 
+
+Usually it's better to create a new object name (df_eurupe, df_che, etc.) so you don’t “lose” data by accident.
+
+
+
+**Filtering with multiple conditions (combining masks)**
+
+Often you want to filter using more than one criterion—for example, a set of countries and only years after 2015.
+
+
+- Condition1: `df['iso3'].isin(['FRA', 'DEU', 'CHE'])`
+- Condition2: `df['year'] > 2015`
+
+You can combine them with logical operators: 
+
+- `&` (AND): Both conditions must be true
+- `|` (OR): At least one condition must be True.
+- `~` (NOT): Flips the mask, True becomes False and vice versa. So if it's easier to define what you do *not* want to have in your dataframe you can use this. 
+
+*Note: for lists we used `and`/`or`, but in pandas we use `&`/ `|`.*
+
+You must wrap each condition in parentheses `()`: 
+
+mask = (condition1) & (condition2)
+
+
+Example: Filter observations for france, germany and switzerland after 2015
+```{python}
+# example: mask for france, germany and switzerland for the years after 2015
+mask = (df['iso3'].isin(['FRA', 'DEU', 'CHE'])) & (df['year'] > 2015)
+df_filtered = df[mask]
+```
+
+
+Example: Filter for years after 2015 for all countries except USA and China
+```{python}
+# example: mask for years after 2015 for all countries except USA and China
+countries_to_exclude = ['China', 'United States']
+mask = (~df['Country'].isin(countries_to_exclude)) & (df['year'] > 2015)
+# use the mask to filter, select 'Country' and check the countries remaining: 
+df_filtered = df[mask]
+
+# Check whether USA and China are still in there: 
+df_filtered['Country'].value_counts()
+```
+
+
+
+**Example with Error**
+```{python}
+# INCORRECT: Using 'and' instead of '&', and forgetting parentheses
+mask = df['iso3'] == 'CHE' and df['year'] > 2015
+```
+
+If you get an error when you create the mask, check your filtering code: 
+
+- Did you use `and`/`or` instead of `&`/`|`?
+- Did you forget the parentheses () around each individual condition?
+
+
+
+### Filtering and Selecting Simultaneously
+
+So far, we have used `df[mask]` to filter our dataset. This returns all the columns for the rows that meet our condition.
+
+But what if you only want to see the Country name and GDP for years where the population was over 100 million?
+
+
+This is where `.loc` is actually the best tool for the job. You pass the mask as the row selector, and a list of columns as the column selector: `df.loc[mask, columns]`
+
+```{python}
+# 1. Build the mask (Population over 100 million in the year 2023)
+mask_large_pop = (df['year'] == 2023) & (df['pop'] > 100)
+
+# 2. Define the exact columns you want to see
+cols_to_keep = ['Country', 'pop', 'rgdpe']
+
+# 3. Use .loc to apply the mask to the rows, and select the columns simultaneously
+df_large = df.loc[mask_large_pop, cols_to_keep]
+
+# See the result
+df_large.head()
+```
+
+
+
+**The Alternative**
+```{python}
+# 1. Build the mask (Population over 100 million in the year 2023)
+mask_large_pop = (df['year'] == 2023) & (df['pop'] > 100)
+
+# 2. Apply the mask, and select columns 
+df_large = df[mask_large_pop][['Country', 'pop', 'rgdpe']]
+
+# See the result
+df_large.head()
+```
+
+It works and if you just want to have a quick look at the result it's perfectly fine. However it's not the best practice for two reasons:
+
+1. It is inefficient: Under the hood, Pandas has to do this in two separate steps. First, it creates a temporary, invisible copy of your entire dataset with just the filtered rows. Then, it runs a second operation to pluck the columns out of that temporary copy.
+2. `ChainedAssignmentError`: If you ever try to change a value using chained brackets (for example, trying to fix a typo in the GDP column: `df[mask]['gdp'] = 100)`), it won't work. Pandas doesn't know if you want to modify the original dataset or the temporary invisible copy it just made. Older versions of pandas raised the `SettingWithCopyWarning`.
+
+
+
+## Sorting
+
+The primary tool is `.sort_values()`
+
+- Ascending (smallest to largest, default): `df.sort_values(by = 'column_name')` 
+- Descending (largest to smallest): `df.sort_values(by = 'column_name', ascending = False)` 
+
+
+Example: Which country had the highest GDP in 2023?
+```{python}
+latest_data = df[df["year"] == 2023]
+
+top5_gdp = latest_data.sort_values(by="rgdpe", ascending=False)
+
+top5_gdp[['Country', 'rgdpe']].head()
+```
+
+
+You'll notice that it keeps the index of the observation of the original dataframe. If you want to see the ranking clearly you can add `.reset_index(drop=True)` after sorting. `reset_index()` will set a new index from 0 to ... The argument `drop=True` ensures that the old index is dropped, without it there would be a column that keeps track of the old index.
+
+```{python}
+latest_data = df[df["year"] == 2023]
+
+top5_gdp = latest_data.sort_values(by="rgdpe", ascending=False).reset_index(drop=True)
+
+top5_gdp[['Country', 'rgdpe']].head()
+```
+
+
+
+**Sorting by multiple columns**
+
+You can pass a list to the `by=` argument, to sort by multiple columns, similarly you'll have to pass a list of `True`/`False` values to `ascending=` if you want to overwrite the default. 
+
+```{python}
+# Sort the entire dataset by Country alphabetically, and then by year chronologically
+df_sorted = df.sort_values(by=["Country", "year"], ascending=[True, False])
+df_sorted[['Country', 'year', 'rgdpe']].head()
+```
+
+
+**Does it overwrite?** 
+
+`.sort_values()` does *not* overwrite the dataframe. If you want the dataframe to stay sorted permanently in your computer's memory, you have to overwrite it: `df = df.sort_values(...)`, or you can use the argument `inplace=` (`False` by default) and set it to `True`. 
+
+
+
+
+## Aggregation and Grouping
+
+### Aggregation
+
+Aggregation means reducing many values down to one summary number—for example the average GDP per capita, the maximum exchange rate, or the number of countries in the dataset.
+
+**Common aggregation methods**
+
+
+- `.sum()`: sum of values (numeric columns)
+- `.mean()`: average
+- `.median()`: median
+- `.min()`/ `.max()`: smallest and largest value
+- `.std()` / `.var()`: standard deviation / variance
+- `.nunique()`: Number of unique values
+
+
+Example: Calculate the average GDP ('rgdpe') overall, and the average gdp of switzerland
+```{python}
+# Average GDP across countries
+avg_gdp = df['rgdpe'].mean()
+print(avg_gdp)
+```
+
+```{python}
+# Average GDP Switzerland
+avg_gdp_switzerland = df[df['Country']=='Switzerland']['rgdpe'].mean()
+print(avg_gdp_switzerland)
+```
+
+Note: `df['rgdpe'].mean()` averages across *country-year observations*, to get the average for a country we had to filter the data first. We'll now look at `.groupby()` which enables us to compute country-specific averages for all countries at once.
+
+
+### Grouping
+
+
+`groupby()` is pandas’ way to do “split → apply → combine”:
+
+1. **Split** the rows into groups based on one or more columns (e.g., by country or by year)
+2. **Apply** an operation within each group (mean, sum, count, etc.)
+3. **Combine** the results into a new object
+
+
+Basic Syntax: `df.groupby("group_column")["value_column"].agg_function()`
+
+
+Example: Average real GDP by country
+```{python}
+df.groupby("Country")["rgdpe"].mean()
+```
+
+By default, the grouping variable becomes the index of the result. If you want a regular DataFrame instead, you have two common options:
+
+- `as_index=False` inside `groupby(...)`, or
+- `.reset_index()` after the aggregation.
+
+
+```{python}
+# Use as_index = False
+avg_gdp_by_country = df.groupby("Country", as_index = False)["rgdpe"].mean()
+avg_gdp_by_country.head()
+```
+
+
+Example: Total world population by year
+```{python}
+# Use reset_index() after the aggregation
+world_pop = df.groupby("year")["pop"].sum().reset_index()
+world_pop.head()
+```
+
+
+**Group by multiple columns**
+
+```{python}
+# Average real GDP by Country and year
+gdp_country_year = df.groupby(["Country", "year"])["rgdpe"].mean().reset_index()
+gdp_country_year.head()
+```
+
+Does this make sense here? --> *No, for every country, year we only have one observation so aggregation doesn't make sense*
+
+But in general it's very useful, suppose you have monthly data for different countries and different years, you can group by country and year to create a dataframe with yearly data.
+
+
+**Multiple aggregations at once**
+
+Often you want more than just the mean. For example, looking at the minimum, average, and maximum within each group gives a quick sense of the spread of values. Use `.agg()` for this. You can pass a list to `.agg()`; for example `["mean", "std"]` to get the mean and standard deviation for the variable you select (after grouping).
+
+By default, the grouping variable becomes the **index** of the result (you can turn it back into a normal column with `.reset_index()` if you want).
+
+
+Example: Create a summary of the min, mean and max of human capital (hc) for every country
+
+```{python}
+# Summary of human capital (hc) by country
+hc_stats = df.groupby("Country")["hc"].agg(["min", "mean", "max"])
+hc_stats.head()
+```
+
+```{python}
+# Access one country
+hc_stats.loc["Switzerland"]
+```
+
+
+```{python}
+# Uf you prefer a normal DataFrame (Country as a column):
+hc_stats.reset_index().head()
+```
+
+
+While passing a list `[]` to `.agg()` is great for applying multiple math functions to a single variable, you might want to calculate different statistics for different variables simultaneously.
+
+To do this, we pass a dictionary `{}` to the `.agg()` method. The "Key" is the column name, and the "Value" is the function you want to apply.
+
+Basic Syntax
+```{python}
+#| eval: false
+df.groupby('grouping_column').agg({
+    'variable_1': 'mean',
+    'variable_2': 'sum',
+    'variable_3': 'max'
+})
+```
+
+
+Example: Aggregate different variables with different methods
+
+```{python}
+year_summary = df.groupby('year').agg({
+    'pop': 'sum',        # Total world population
+    'hc': 'mean'         # Average human capital level
+}).reset_index()
+year_summary.head()
+```
+
+
+## Changing / Creating Variables 
+
+**Renaming Variables**
+
+Datasets often come with short or cryptic column names. Renaming makes your code easier to read and reduces mistakes.
+
+- `rename(columns={...})` lets you rename one or more columns using a dictionary.
+- It returns a new DataFrame, so it’s common to reassign: `df = df.rename(...)`.
+
+
+Example: 
+
+```{python}
+# Rename columns to clearer names
+df = df.rename(columns={
+    "rgdpe": "gdp",   # GDP measured in millions
+})
+df.head()
+```
+
+
+
+**Creating New Variables**
+
+A derived variable is a new column computed from existing columns. This is how you change units, create ratios, and build features for analysis. Pandas uses **vectorized operations**. This means you don't need to write a loop to calculate math for each row. If you divide one column by another, Pandas automatically does the math row-by-row.
+
+Example: 'gdp' is measured in millions USD, create a new variable 'gdp_bn' which is in billions
+```{python}
+df["gdp_bn"] = df["gdp"] / 1000
+df.head()
+```
+
+
+Example: create a variable 'gdp_pc' (gdp per capita) by dividing 'gdp' by population 'pop'
+```{python}
+df["gdp_pc"] = df["gdp"] / df["pop"]
+df.head()
+```
+
+
+
+## Saving a DataFrame
+
+After spending time cleaning, filtering, and transforming your data, you don’t want to lose that work. Saving a DataFrame lets you:
+
+- share the cleaned dataset with someone else
+- open it in another program (Excel, Stata, R, etc.)
+- reload it later without rerunning all your code
+
+
+In pandas, saving is done with “export” methods. The pattern is: `df.to_...("filename")`
+
+### Save as CSV (most common)
+
+You can save your data frame as a csv file using `.to_csv()`.
+
+CSV is the most universal format—it works in Excel, Google Sheets, R, Stata, and more. 
+
+By default, pandas will also save the DataFrame’s index (0, 1, 2, …) as an extra column. Most of the time you don’t want that, so use `index=False`.
+
+
+```{python}
+df.head() # Check again if it looks the way it should
+```
+
+```{python}
+# Save the cleaned dataframe to a CSV file
+df.to_csv("data/cleaned_countries_data.csv", index=False)
+```
+
+
+You can save to other formats as well
+- `to_excel()`
+- `to_stata()`
+
+### Save to Pickle
+
+In Python, *pickling* is the process of saving a Python object (like a pandas DataFrame) as a file by converting it into a stream of bytes. When you load it back, Python reconstructs the object exactly.
+
+Why use Pickle?
+
+1. Speed: Reading/writing is often much faster than CSV for larger datasets.
+2. Preserves metadata: It keeps your DataFrame exactly as it is (data types, datetime columns, index, etc.).
+3. File size: It’s often smaller than CSV, and you can also save a compressed pickle if you want.
+
+Syntax: 
+
+- Save to pickle syntax: `df.to_pickle("file.pkl")`
+- When you read it back later syntax: `pd.read_pickle("file.pkl") 
+
+
+**Warning:** Only open pickle files from people you trust. A malicious pickle can execute code when it is loaded. For sharing data widely, prefer formats like CSV (or other non-executable data formats).
+
+
+```{python}
+# Save the dataframe as a Pickle file
+df.to_pickle("data/cleaned_countries_data.pkl")
+```
+
+```{python}
+# Read it back later
+test_pkl_df = pd.read_pickle("data/cleaned_countries_data.pkl")
+test_pkl_df.head()
+```
+
+
+
+# Visualization with Matplotlib
+
+## Installation / Import
+
+1. Installation: If you're using it for the first time you need to install it. Run `uv add matplotlib` in the terminal
+2. Import the package `import matplotlib.pyplot as plt`
+
+- `matplotlib`: The main plotting library. It provides the core machinery for creating figures and rendering graphics.
+- `matplotlib.pyplot`: A user-friendly module that gives a simple “plotting commands” interface (it manages the current figure/axes for you).
+- `plt`: The conventional nickname
+
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+
+
+## Your First Plot
+
+Let’s make a simple **line plot** of GDP per capita (gdp_pc) over time for Switzerland.
+
+
+Basic Syntax: 
+
+1. `plt.plot(x, y)` to draw the plot
+2. `plt.show()` to display it
+
+
+Matplotlib plots whatever x–y values you give it, so we first create a smaller DataFrame that only contains Switzerland. x values will be 'year' and the y values will be 'gdp_pc'. For a line plot, it’s important that the x-axis (time) is sorted.
+
+
+```{python}
+# Filter to Switzerland and sort by year
+df_switzerland = df[df["Country"] == "Switzerland"]
+df_switzerland = df_switzerland.sort_values("year")
+# df_switzerland.head()
+```
+
+
+```{python}
+# Plot year (x-axis) vs gdp_pc (y-axis)
+plt.plot(df_switzerland["year"], df_switzerland["gdp_pc"])
+
+# Show the plot
+plt.show()
+```
+
+Without labels, a plot is just a mystery line on a grid. You should add the relevant context
+
+- `plt.xlabel('some text')`: Add a label for the x axis, for example 'Year'
+- `plt.ylabel('some text')`: Add a label for the y axis, for example 'GDP per Capita (mio. USD)'
+- `plt.title('some text')`: Add a title: the title should be descriptive enough that a reader can understand the chart
+
+```{python}
+# Create the plot
+# Plot year (x-axis) vs gdp_pc (y-axis)
+plt.plot(df_switzerland["year"], df_switzerland["gdp_pc"])
+
+# NEW: Add labels so the plot is readable
+plt.title("GDP per capita over time — Switzerland")
+plt.xlabel("Year")
+plt.ylabel("GDP per capita (mio. USD)")
+
+# Show the plot
+plt.show()
+```
+
+Some useful layout methods: 
+
+- Size: You can initizalize the figure with `plt.figure()` and determine the size using the argument `figsize = (width, height)`
+- Grid: You can add a grid, which can help the reader to map a specific year to a specific value using `plt.grid()`
+- Layout: Use `plt.tight_layout()` before you show the plot. It automatically adjusts the spacing in your figure so that things like the title, axis labels, and tick labels don’t overlap or get cut off.
+
+
+```{python}
+# NEW: initialize and set a size
+plt.figure(figsize=(8, 5))
+
+# Plot year (x-axis) vs gdp_pc (y-axis)
+plt.plot(df_switzerland["year"], df_switzerland["gdp_pc"])
+
+# Add labels so the plot is readable
+plt.title("GDP per capita over time — Switzerland")
+plt.xlabel("Year")
+plt.ylabel("GDP per capita (mio. USD)")
+
+# NEW: Add a grid
+plt.grid()
+
+# Show the plot
+# NEW: tight layout
+plt.tight_layout()
+plt.show()
+```
+
+
+## Types of Plots
+
+Here are some of the most common plot types in Matplotlib, what they’re for, and the basic syntax 
+
+- Line plot (trend over time or another ordered variable) <br> Syntax: `plt.plot(x, y)`
+- Scatter plot (relationship between two numeric variables; each point is one observation) <br> Syntax: `plt.scatter(x, y)`
+- Bar chart (compare values across categories) <br> Syntax: `plt.bar(categories, values)` for vertical bars <br> Syntax: `plt.barh(categories, values)` for horizontal bars.
+- Histogram (distribution of a single numeric variable) <br> Syntax: `plt.hist(x, bins=...)`
+- Box plot (distribution + median + spread; easy comparison across groups) <br> Syntax: `plt.boxplot(data)`
+- Pie chart (shares of a whole; generally best for a small number of categories) <br> Syntax: `plt.pie(values, labels=labels)`
+
+
+#### Bar Chart
+
+A bar chart is used when you want to compare a single numeric value across different categorie (for example, a value per country, sector, or group).
+
+- Each bar represents one category 
+- The length/height of the bar represents the value
+- Bar charts are easiest to read when categories are sorted.
+- For long category names (like country names), a horizontal bar chart (plt.barh) is often more readable than a vertical one.
+
+Syntax:
+
+- Vertical: `plt.bar(x_categories, y_values)`
+- Horizontal: `plt.barh(y_categories, x_values)`
+
+Example: Human capital index 'hc' of the different countries in 2023
+```{python}
+# 1) Filter the data for the year 2023 and sort countries by hc
+df_2023 = df[df["year"] == 2023].sort_values("hc", ascending=True)
+
+# 2) Initialize the figure (controls plot size)
+plt.figure(figsize=(8, 4.5))
+
+# 3) Create a horizontal bar chart
+plt.barh(df_2023["Country"], df_2023["hc"])
+
+# 4) Add labels so the chart is interpretable
+plt.title("Human Capital Index by Country (2023)")
+plt.xlabel("Human Capital Index")
+plt.ylabel("")  # optional: remove label if it's obvious from the country names
+
+# 5) Final layout and display
+plt.tight_layout()
+plt.show()
+```
+
+
+
+
+#### Scatterplot
+
+A scatter plot is used to visualize the relationship between two numeric variables. Each dot represents one observation (for example: one country in one year).
+
+Scatter plots are useful for spotting:
+- Positive or negative relationships (do values tend to rise together?)
+- Clusters (groups of points that look similar)
+- Outliers (unusual observations)
+
+Basic Syntax: `plt.scatter(x, y)`
+
+
+Example: Create a scatterplot for human capital index ('hc') and GDP per capita ('gdp_pc') for all countries and years
+
+```{python}
+plt.figure(figsize=(8, 6))
+
+# Use the full dataframe 'df'
+plt.scatter(df['hc'], df['gdp_pc'])
+
+# Add Context
+plt.title('Human Capital vs. GDP per Capita: All Countries, All Years (2000-2023)')
+plt.xlabel('Human Capital Index')
+plt.ylabel('GDP per Capita (USD)')
+
+plt.grid(True, linestyle='--', alpha=0.2)
+plt.tight_layout()
+plt.show()
+```
+
+#### Histogram
+
+
+A Histogram is the go-to tool for understanding the "shape" of your data. A histogram shows the distribution of values across your data.
+We use histograms to see the frequency of certain outcomes. It takes a continuous variable (like GDP growth) and splits it into "bins" (ranges). It then counts how many data points fall into each bin.
+
+
+Syntax: `plt.hist(data, bins=10)`
+
+- `data`: The column of your dataframe for which you want to see the distribution of values
+- `bins`: The number of bins.
+
+Useful additional arguments in `plt.hist()`:
+- `color`: define the color that fills the bar
+- `edgecolor`: define the color of the border, usually white or black. Helps to separate the bars
+- ...
+
+
+
+```{python}
+plt.figure(figsize=(8, 5))
+
+# Use the 'gdp_growth' column
+# .dropna() is important because histograms can't handle missing values
+plt.hist(df['gdp_pc'].dropna(), bins=30, color='steelblue', edgecolor='white')
+
+# Add Context
+plt.title('Distribution of GDP per Capita (2000-2023)', fontsize=14)
+plt.xlabel('GDP per Capita', fontsize=12)
+plt.ylabel('Frequency (Number of Occurrences)', fontsize=12)
+
+plt.grid(axis='y', alpha=0.3)
+plt.show()
+```
+
+
+
+# Next Week
+
+Next week we’ll build on what we learned today and go a step further:
+
+- Time series data: working with dates and time, and plotting trends over time more effectively
+- Messier real-world data: handling missing values and other common data issues
+- Customizing plots: improving readability with better labels, formatting, scales, and styling options
+- Reusable plotting functions: writing Python functions that create figures so you can make the same plot quickly for different countries/variables
+
+
+
+
