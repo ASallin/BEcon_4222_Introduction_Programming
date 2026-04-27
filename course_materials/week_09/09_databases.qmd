@@ -654,7 +654,7 @@ We will explore a simple star schema with FRED data in the exercise session.
 - SQL is not a programming language, it is a **query language**.
 - You describe *what* you want, and the database figures out *how* to get it.
 - It is very high level, highly optimized, and has been around for decades.
-- Different "dialects" (standards and implementsation, which are incompletely compatible)
+- Different "**dialects**" (standards and implementsation, which are incompletely compatible)
 - 💪 Required skill for most data science positions in industry
 :::
 ::: {.column}
@@ -663,6 +663,14 @@ We will explore a simple star schema with FRED data in the exercise session.
 :::
 
 > **Note:** Originally based upon relational algebra and tuple relational calculus. We won't go into details in this introductory course. I recommend Marco Venturini's lecture for more details.
+
+
+
+## The database universe
+
+#### Hundreds of database products exist.
+
+![Source: [A Primer on Databases](https://www.generativevalue.com/p/a-primer-on-databases)](https://substackcdn.com/image/fetch/$s_!2v_D!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3443cfc6-2a00-4568-b0fd-e60cc8dc1284_1400x900.png){fig-align="center" width="90%"}
 
 
 
@@ -681,257 +689,6 @@ SQL has five main parts:
 <div style="margin-top: 1em;"></div>
 
 In this course, we'll focus on DDL, DML and DQL.
-
-
-## Atomic data types in SQL
-
-  - The SQL standard defines a core set of data types.
-  - Each dialect has its own extensions, but these are the most common:
-    - Characters: `VARCHAR[(length)]` (Variable-length string, max n)
-    - Numeric: `INTEGER`/`INT` (four-byte integers), `BIGINT` (64-bit integers), `SMALLINT` (16-bit integers), `FLOAT` (approximate floating-point), `DECIMAL(p, s)` (Exact fixed-point number with precision p and scale s)
-    - Others: `DATE`, `TIME`, `DATETIME`/`TIMESTAMP`, `INTERVAL`, `BOOLEAN`
-
-Refer to the documentation of each SQL dialect. For DuckDB, see https://duckdb.org/docs/current/sql/data_types/overview
-
-
-
-
-## SQL constraints
-
-Constraints enforce rules on your data at the database level.
-
-<div style="margin-top: 1em;"></div>
-
-| Constraint | What it does |
-|---|---|
-| `NOT NULL` | Column must always have a value |
-| `UNIQUE` | No two rows can share the same value |
-| `PRIMARY KEY` | NOT NULL + UNIQUE — the row's unique identifier |
-| `FOREIGN KEY` | Value must exist in another table |
-| `CHECK` | Custom condition, e.g. `CHECK (gdp_usd >= 0)` |
-| `DEFAULT` | Auto-fills a value when none is provided |
-
-<div style="margin-top: 1em;"></div>
-
-> **Note:** Constraints are optional. They protect your data and document your intent. Use them.
-
-
-## CREATE our first TABLE
-
-- Creating a table means defining its **schema**: the column names, their types, and any constraints.
-- The schema is self-documenting: anyone reading it knows the rules.
-
-It follows a simple syntax:
-
-::: {.columns}
-::: {.column}
-```sql
-CREATE TABLE countries (
-    id         INTEGER PRIMARY KEY,
-    name       VARCHAR NOT NULL UNIQUE,
-    region     VARCHAR,
-    gdp_usd    FLOAT   CHECK (gdp_usd >= 0)
-);
-```
-:::
-::: {.column}
-![](../../assets/img/lecture_09_db/data_model_0countries.png){width="50%" style="display: block; margin: -30px auto 0 auto; padding: 0;"}
-:::
-:::
-
-<div style="margin-top: 1em;"></div>
-
-- `country_id`: integer, the primary key: `NOT NULL` + `UNIQUE` by definition
-- `name`: text, required (`NOT NULL`), no duplicates (`UNIQUE`)
-- `region`: text, optional (no constraint — `NULL` is allowed)
-- `gdp_usd`: number, constraint: must be non-negative
-
-
-
-## Create a table with a FOREIGN KEY
-
-A foreign key constraints says: *"this column's value must exist in another table."*
-
-<div style="margin-top: 1em;"></div>
-
-::: {.columns}
-::: {.column width="60%"}
-```sql
-CREATE TABLE trade_flows (
-    flow_id     INTEGER PRIMARY KEY,
-    exporter_id INTEGER NOT NULL REFERENCES countries(country_id),
-    importer_id INTEGER NOT NULL REFERENCES countries(country_id),
-    year        INTEGER NOT NULL,
-    value_usd   FLOAT   CHECK (value_usd >= 0)
-);
-```
-:::
-::: {.column width="40%"}
-![](../../assets/img/lecture_09_db/data_model_0trade.png){width="50%" style="display: block; margin: -30px auto 0 auto; padding: 0;"}
-:::
-:::
-<!-- end columns -->
-
-<div style="margin-top: 1em;"></div>
-
-- `REFERENCES countries(country_id)` — this is the foreign key constraint
-- Will reject any insert where `exporter_id` has no matching row in `countries`
-- Both `exporter_id` and `importer_id` point to the same table
-
-<div style="margin-top: 1.5em;"></div>
-
-::: {.aside}
-DuckDB syntax: `REFERENCES table(column)` is equivalent to `FOREIGN KEY (col) REFERENCES table(col)` — the short form is cleaner for single-column keys.
-:::
-
-
-## What the foreign key actually prevents
-
-#### 1. Inserting a row with a non-existent reference
-
-```sql
--- This works: country 1 exists in countries
-INSERT INTO trade_flows VALUES (1, 1, 2, 2022, 45000000);
-
--- This fails: country 99 does not exist
-INSERT INTO trade_flows VALUES (2, 99, 2, 2022, 10000000);
--- Error: FOREIGN KEY constraint failed
-```
-
-<div style="margin-top: 1em;"></div>
-
-::: {.fragment}
-##### Why?
-:::
-
-::: {.fragment}
-The database enforces **referential integrity**: every reference must point to an existing row. This prevents "orphan" records that reference non-existent entities.
-:::
-
-
-
-## What the foreign key actually prevents
-
-#### 2. Deleting a referenced row
-
-The constraint also works in the other direction: you cannot delete a row that is still referenced.
-
-```sql
--- This fails: country 1 is referenced by trade_flows
-DELETE FROM countries WHERE country_id = 1;
--- Error: Violates foreign key constraint
-```
-
-::: {.fragment}
-```sql
--- You must delete the child rows first
-DELETE FROM trade_flows WHERE exporter_id = 1 OR importer_id = 1;
-DELETE FROM countries  WHERE country_id = 1;  -- now this works
-```
-:::
-
-::: {.fragment}
-##### The database protects referential integrity in both directions: on INSERT and on DELETE.
-:::
-
-
-## 🔎 Self-study: What the foreign key actually prevents
-
-#### 3. Handling the deletion of a referenced row
-
-The foreign key also controls what happens when you **delete a referenced row**.
-
-<div style="margin-top: 1em;"></div>
-
-```sql
-CREATE TABLE trade_flows (
-    flow_id     INTEGER PRIMARY KEY,
-    exporter_id INTEGER NOT NULL
-                REFERENCES countries(country_id) ON DELETE CASCADE,
-    ...
-);
-```
-
-<div style="margin-top: 1em;"></div>
-
-| Action | Behaviour when you delete a country |
-|---|---|
-| `ON DELETE RESTRICT` | ❌ Delete is rejected — the country is still referenced |
-| `ON DELETE CASCADE` | All trade flows for that country are deleted automatically |
-| `ON DELETE SET NULL` | `exporter_id` is set to `NULL` in all affected rows |
-
-<div style="margin-top: 1em;"></div>
-
-> Note: on DuckDB, only `RESTRICT` is supported. `CASCADE` and `SET NULL` are not implemented yet, but they are common in other databases (PostgreSQL, MySQL, SQLite).
-
-
-## INSERT — adding rows
-
-```sql
--- Populate countries first (the referenced table must exist)
-INSERT INTO countries VALUES (1, 'Switzerland', 'Europe', 905000000000);
-INSERT INTO countries VALUES (2, 'Germany',     'Europe', 4072000000000);
-INSERT INTO countries VALUES (3, 'Brazil',      'LATAM',  2081000000000);
-
--- Now populate trade flows
-INSERT INTO trade_flows VALUES (1, 1, 2, 2022, 45000000);
-INSERT INTO trade_flows VALUES (2, 2, 3, 2022, 120000000);
-```
-
-<div style="margin-top: 1em;"></div>
-
-> **Note:** Always insert into the referenced table first. You cannot insert a trade flow for a country that doesn't exist yet.
-
-
-
-# Creating a database
-
-## The ETL pipeline
-
-- On one hand, building a database is to set up the **architecture** of the data through a data model.
-- On the other hand, the data has to get there to populate the model.
-
-<div style="margin-top: 0.5em;"></div>
-
-##### **ETL** = **E**xtract → **T**ransform → **L**oad
-
-A common pipeline that fits well with the type of work we do in (Econ) research.
-
-| Step | What happens | Tool |
-|---|---|---|
-| **Extract** | Read raw data from its source, often messy and wide format | `pandas`, `fredapi`, CSV, an app, a survey |
-| **Transform** | Clean, reshape, tidy data, assign IDs | `pandas` |
-| **Load** | Insert into the database, give it structure and queryable | SQL `INSERT` |
-
-
-::: {.aside}
-Source: [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load)
-:::
-
-
-## The ETL pipeline
-
-**Why not load raw data directly into a database?**
-
-- Raw data is often wide, messy, missing IDs
-- SQL has no `melt()`, no regex-heavy cleaning
-- pandas or tidyverse/data.table in R are the right tool for reshaping
-
-
-**Another pipeline**: ELT: Extract, Load, Transform
-Loads raw data directly into a warehouse before transforming it, enabling faster loading and greater flexibility than traditional ETL. Key usage examples include real-time analytics, big data processing, and centralizing data from diverse sources.
-
-
-
-
-
-# Our tool: DuckDB
-
-## The database universe
-
-#### Hundreds of database products exist.
-
-![Source: [A Primer on Databases](https://www.generativevalue.com/p/a-primer-on-databases)](https://substackcdn.com/image/fetch/$s_!2v_D!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3443cfc6-2a00-4568-b0fd-e60cc8dc1284_1400x900.png){fig-align="center" width="90%"}
 
 
 
@@ -1183,6 +940,261 @@ dbDisconnect(con, shutdown = TRUE)
 ::: {.aside}
 Aubury & Letcher, *Getting Started with DuckDB* (Packt, 2024) — Ch. 1–3 are the reference for this course.
 :::
+
+
+
+
+
+## Atomic data types in SQL
+
+  - The SQL standard defines a core set of data types.
+  - Each dialect has its own extensions, but these are the most common:
+    - Characters: `VARCHAR[(length)]` (Variable-length string, max n)
+    - Numeric: `INTEGER`/`INT` (four-byte integers), `BIGINT` (64-bit integers), `SMALLINT` (16-bit integers), `FLOAT` (approximate floating-point), `DECIMAL(p, s)` (Exact fixed-point number with precision p and scale s)
+    - Others: `DATE`, `TIME`, `DATETIME`/`TIMESTAMP`, `INTERVAL`, `BOOLEAN`
+
+Refer to the documentation of each SQL dialect. For DuckDB, see https://duckdb.org/docs/current/sql/data_types/overview
+
+
+
+
+## SQL constraints
+
+Constraints enforce rules on your data at the database level.
+
+<div style="margin-top: 1em;"></div>
+
+| Constraint | What it does |
+|---|---|
+| `NOT NULL` | Column must always have a value |
+| `UNIQUE` | No two rows can share the same value |
+| `PRIMARY KEY` | NOT NULL + UNIQUE — the row's unique identifier |
+| `FOREIGN KEY` | Value must exist in another table |
+| `CHECK` | Custom condition, e.g. `CHECK (gdp_usd >= 0)` |
+| `DEFAULT` | Auto-fills a value when none is provided |
+
+<div style="margin-top: 1em;"></div>
+
+> **Note:** Constraints are optional. They protect your data and document your intent. Use them.
+
+
+
+
+
+
+
+
+
+
+## CREATE our first TABLE
+
+- Creating a table means defining its **schema**: the column names, their types, and any constraints.
+- The schema is self-documenting: anyone reading it knows the rules.
+
+It follows a simple syntax:
+
+::: {.columns}
+::: {.column}
+```sql
+CREATE TABLE countries (
+    id         INTEGER PRIMARY KEY,
+    name       VARCHAR NOT NULL UNIQUE,
+    region     VARCHAR,
+    gdp_usd    FLOAT   CHECK (gdp_usd >= 0)
+);
+```
+:::
+::: {.column}
+![](../../assets/img/lecture_09_db/data_model_0countries.png){width="50%" style="display: block; margin: -30px auto 0 auto; padding: 0;"}
+:::
+:::
+
+<div style="margin-top: 1em;"></div>
+
+- `country_id`: integer, the primary key: `NOT NULL` + `UNIQUE` by definition
+- `name`: text, required (`NOT NULL`), no duplicates (`UNIQUE`)
+- `region`: text, optional (no constraint — `NULL` is allowed)
+- `gdp_usd`: number, constraint: must be non-negative
+
+
+
+## Create a table with a FOREIGN KEY
+
+A foreign key constraints says: *"this column's value must exist in another table."*
+
+<div style="margin-top: 1em;"></div>
+
+::: {.columns}
+::: {.column width="60%"}
+```sql
+CREATE TABLE trade_flows (
+    flow_id     INTEGER PRIMARY KEY,
+    exporter_id INTEGER NOT NULL REFERENCES countries(country_id),
+    importer_id INTEGER NOT NULL REFERENCES countries(country_id),
+    year        INTEGER NOT NULL,
+    value_usd   FLOAT   CHECK (value_usd >= 0)
+);
+```
+:::
+::: {.column width="40%"}
+![](../../assets/img/lecture_09_db/data_model_0trade.png){width="50%" style="display: block; margin: -30px auto 0 auto; padding: 0;"}
+:::
+:::
+<!-- end columns -->
+
+<div style="margin-top: 1em;"></div>
+
+- `REFERENCES countries(country_id)` — this is the foreign key constraint
+- Will reject any insert where `exporter_id` has no matching row in `countries`
+- Both `exporter_id` and `importer_id` point to the same table
+
+<div style="margin-top: 1.5em;"></div>
+
+::: {.aside}
+DuckDB syntax: `REFERENCES table(column)` is equivalent to `FOREIGN KEY (col) REFERENCES table(col)` — the short form is cleaner for single-column keys.
+:::
+
+
+## What the foreign key actually prevents
+
+#### 1. Inserting a row with a non-existent reference
+
+```sql
+-- This works: country 1 exists in countries
+INSERT INTO trade_flows VALUES (1, 1, 2, 2022, 45000000);
+
+-- This fails: country 99 does not exist
+INSERT INTO trade_flows VALUES (2, 99, 2, 2022, 10000000);
+-- Error: FOREIGN KEY constraint failed
+```
+
+<div style="margin-top: 1em;"></div>
+
+::: {.fragment}
+##### Why?
+:::
+
+::: {.fragment}
+The database enforces **referential integrity**: every reference must point to an existing row. This prevents "orphan" records that reference non-existent entities.
+:::
+
+
+
+## What the foreign key actually prevents
+
+#### 2. Deleting a referenced row
+
+The constraint also works in the other direction: you cannot delete a row that is still referenced.
+
+```sql
+-- This fails: country 1 is referenced by trade_flows
+DELETE FROM countries WHERE country_id = 1;
+-- Error: Violates foreign key constraint
+```
+
+::: {.fragment}
+```sql
+-- You must delete the child rows first
+DELETE FROM trade_flows WHERE exporter_id = 1 OR importer_id = 1;
+DELETE FROM countries  WHERE country_id = 1;  -- now this works
+```
+:::
+
+::: {.fragment}
+##### The database protects referential integrity in both directions: on INSERT and on DELETE.
+:::
+
+
+## 🔎 Self-study: What the foreign key actually prevents
+
+#### 3. Handling the deletion of a referenced row
+
+The foreign key also controls what happens when you **delete a referenced row**.
+
+<div style="margin-top: 1em;"></div>
+
+```sql
+CREATE TABLE trade_flows (
+    flow_id     INTEGER PRIMARY KEY,
+    exporter_id INTEGER NOT NULL
+                REFERENCES countries(country_id) ON DELETE CASCADE,
+    ...
+);
+```
+
+<div style="margin-top: 1em;"></div>
+
+| Action | Behaviour when you delete a country |
+|---|---|
+| `ON DELETE RESTRICT` | ❌ Delete is rejected — the country is still referenced |
+| `ON DELETE CASCADE` | All trade flows for that country are deleted automatically |
+| `ON DELETE SET NULL` | `exporter_id` is set to `NULL` in all affected rows |
+
+<div style="margin-top: 1em;"></div>
+
+> Note: on DuckDB, only `RESTRICT` is supported. `CASCADE` and `SET NULL` are not implemented yet, but they are common in other databases (PostgreSQL, MySQL, SQLite).
+
+
+## INSERT — adding rows
+
+```sql
+-- Populate countries first (the referenced table must exist)
+INSERT INTO countries VALUES (1, 'Switzerland', 'Europe', 905000000000);
+INSERT INTO countries VALUES (2, 'Germany',     'Europe', 4072000000000);
+INSERT INTO countries VALUES (3, 'Brazil',      'LATAM',  2081000000000);
+
+-- Now populate trade flows
+INSERT INTO trade_flows VALUES (1, 1, 2, 2022, 45000000);
+INSERT INTO trade_flows VALUES (2, 2, 3, 2022, 120000000);
+```
+
+<div style="margin-top: 1em;"></div>
+
+> **Note:** Always insert into the referenced table first. You cannot insert a trade flow for a country that doesn't exist yet.
+
+
+
+# Creating a database
+
+## The ETL pipeline
+
+- On one hand, building a database is to set up the **architecture** of the data through a data model.
+- On the other hand, the data has to get there to populate the model.
+
+<div style="margin-top: 0.5em;"></div>
+
+##### **ETL** = **E**xtract → **T**ransform → **L**oad
+
+A common pipeline that fits well with the type of work we do in (Econ) research.
+
+| Step | What happens | Tool |
+|---|---|---|
+| **Extract** | Read raw data from its source, often messy and wide format | `pandas`, `fredapi`, CSV, an app, a survey |
+| **Transform** | Clean, reshape, tidy data, assign IDs | `pandas` |
+| **Load** | Insert into the database, give it structure and queryable | SQL `INSERT` |
+
+
+::: {.aside}
+Source: [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load)
+:::
+
+
+## The ETL pipeline
+
+**Why not load raw data directly into a database?**
+
+- Raw data is often wide, messy, missing IDs
+- SQL has no `melt()`, no regex-heavy cleaning
+- pandas or tidyverse/data.table in R are the right tool for reshaping
+
+
+**Another pipeline**: ELT: Extract, Load, Transform
+Loads raw data directly into a warehouse before transforming it, enabling faster loading and greater flexibility than traditional ETL. Key usage examples include real-time analytics, big data processing, and centralizing data from diverse sources.
+
+
+
+
+
 
 
 
