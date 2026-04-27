@@ -1,0 +1,4 @@
+.env
+.venv
+fred_cache.parquet
+frd_mini.db
