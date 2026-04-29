@@ -352,6 +352,8 @@ Following your ER diagram, create the schema and load the data directly.
 
 Use `duckdb.connect()` to create a new database file [fred_mini.db]{.path}. If the file already exists, delete it first to start with a clean slate.
 
+<!-- @Aurélien: It would be helpful to say that we are first constructing the containers / tables and relationships - filling with data comes only later. I was looking for a reference to our data for quite a while until I realized that tables are populated only later. This was unexpected because unknown and is worth mentioning I believe, to reduce potential confusion. -->
+
 ::: {.callout-note collapse="true" title="Solution"}
 
 Use `duckdb.connect()` to create the database. This is a file with extension `db`. You can delete it and recreate it at any point.
@@ -379,6 +381,9 @@ conn.execute("""
 ```
 
 ::: {.callout-note collapse="true" title="Solution"}
+
+<!-- @Aurélien: it is not clear why some columns get a "NOT NULL" or "UNIQUE" attribute while others (that at least at first glance also qualify for it) don't get it. That's quite confusing. The same applies for the indicators table. -->
+
 ```{python}
 conn.execute("""
     CREATE TABLE states (
