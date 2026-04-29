@@ -12,7 +12,7 @@ format:
     embed-resources: true
 execute:
   echo: true
-  freeze: false
+  freeze: true
   error: true
 jupyter: python3
 ---
@@ -350,6 +350,8 @@ Following your ER diagram, create the schema and load the data directly.
 
 ## 3.1 Open a new database
 
+In this exercise, we are first constructing the skeletton of our model: the (empty) tables and their relationships. Filling the model with data comes only later.
+
 Use `duckdb.connect()` to create a new database file [fred_mini.db]{.path}. If the file already exists, delete it first to start with a clean slate.
 
 ::: {.callout-note collapse="true" title="Solution"}
@@ -394,9 +396,11 @@ conn.execute("""
 
 **Constraints:**
 
-- `PRIMARY KEY` - uniquely identifies each row, never null
-- `NOT NULL` - this column always has a value
-- `UNIQUE` - no two states share the same abbreviation
+- `PRIMARY KEY`: uniquely identifies each row, never null
+- `NOT NULL`: this column always has a value
+- `UNIQUE`: no two states share the same abbreviation
+
+Why do we want the columns in the dimension tables to be not null? Because, as dimensions, they identify the entities being measured. An entity without a linkable identifier (e.g. a state without an abbreviation) would not be useful in our model.
 
 ## 3.3 Create the "indicators" table
 
