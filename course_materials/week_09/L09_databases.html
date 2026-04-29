@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Aurélien Sallin">
+<meta name="dcterms.date" content="2026-04-24">
+
+<title>4,222 Introduction to Programming – BEcon 6222 - Introduction to Programming</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">BEcon 6222 - Introduction to Programming</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 1</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-1">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_01/01a_introduction.html">
+ <span class="dropdown-text">Lecture 1a: Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_01/01b_gettingstarted.html">
+ <span class="dropdown-text">Lecture 1b: Getting Started</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examination/recap_quizzes/01b_recap.html">
+ <span class="dropdown-text">Recap Quiz 1 (non-graded)</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_01/Ex01_gettingstarted.html">
+ <span class="dropdown-text">Exercise 1: Getting Started</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-2" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 2</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-2">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_02/02_recap.html">
+ <span class="dropdown-text">Lecture 2a: Recap Week 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_02/02_versioncontrol.html">
+ <span class="dropdown-text">Lecture 2b: Version Control</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_02/git-cheat-sheet-education.pdf">
+ <span class="dropdown-text">Git Cheat Sheet (PDF)</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_02/Ex02_FirstCommitsInGit.html">
+ <span class="dropdown-text">Exercise 2: First Commands in Git</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-3" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 3</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-3">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_03/03_versioncontrolwithothers.html">
+ <span class="dropdown-text">Lecture 3: Version Control with Others</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_03/ex03_git_collaboration.html">
+ <span class="dropdown-text">In-class Exercise 3: Git Collaboration</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_03/generate_data.py">
+ <span class="dropdown-text">generate_data.py</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_03/Ex03_GitHub.html">
+ <span class="dropdown-text">Exercise 3: GitHub</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-4" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 4</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-4">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_04/L04_IntroPython.html">
+ <span class="dropdown-text">Lecture 4: Introduction to Python</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_04/Ex04_IntroPython.html">
+ <span class="dropdown-text">Exercise 4: Introduction to Python</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-5" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 5</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-5">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_05/L05_Pandas_I.html">
+ <span class="dropdown-text">Lecture 5: Python for Data - Part I</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_05/Ex05_Pandas_I.html">
+ <span class="dropdown-text">Exercise 5: Python for Data - Part I</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-6" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 6</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-6">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_06/L06_Pandas_II.html">
+ <span class="dropdown-text">Lecture 6: Python for Data - Part II</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_06/Ex06_Pandas_II.html">
+ <span class="dropdown-text">Exercise 6: Python for Data - Part II</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-7" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 7</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-7">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_07/L07_Classes.html">
+ <span class="dropdown-text">Lecture 7: Classes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_07/group_project.html">
+ <span class="dropdown-text">Info Group Project</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_07/Ex07_Classes.html">
+ <span class="dropdown-text">Exercise 7: Classes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-admin" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Admin</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-admin">    
+        <li>
+    <a class="dropdown-item" href="../../admin/source/syllabus_v1.pdf">
+ <span class="dropdown-text">Syllabus</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#two-ways-to-look-at-data" id="toc-two-ways-to-look-at-data" class="nav-link active" data-scroll-target="#two-ways-to-look-at-data">Two ways to look at data</a></li>
+  <li><a href="#two-ways-to-look-at-data-1" id="toc-two-ways-to-look-at-data-1" class="nav-link" data-scroll-target="#two-ways-to-look-at-data-1">Two ways to look at data</a></li>
+  <li><a href="#two-ways-to-look-at-data-2" id="toc-two-ways-to-look-at-data-2" class="nav-link" data-scroll-target="#two-ways-to-look-at-data-2">Two ways to look at data</a></li>
+  <li><a href="#example-from-my-work" id="toc-example-from-my-work" class="nav-link" data-scroll-target="#example-from-my-work">Example from my work</a></li>
+  <li><a href="#goals-for-the-next-two-weeks" id="toc-goals-for-the-next-two-weeks" class="nav-link" data-scroll-target="#goals-for-the-next-two-weeks">Goals for the next two weeks</a></li>
+  <li><a href="#what-is-a-database" id="toc-what-is-a-database" class="nav-link" data-scroll-target="#what-is-a-database">What is a database?</a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-database-1" id="toc-what-is-a-database-1" class="nav-link" data-scroll-target="#what-is-a-database-1">What is a database?</a></li>
+  <li><a href="#managing-databases" id="toc-managing-databases" class="nav-link" data-scroll-target="#managing-databases">Managing databases</a></li>
+  <li><a href="#why-use-a-dbms" id="toc-why-use-a-dbms" class="nav-link" data-scroll-target="#why-use-a-dbms">Why use a DBMS?</a></li>
+  </ul></li>
+  <li><a href="#the-relational-model" id="toc-the-relational-model" class="nav-link" data-scroll-target="#the-relational-model">The relational model</a>
+  <ul class="collapse">
+  <li><a href="#data-lives-in-tables" id="toc-data-lives-in-tables" class="nav-link" data-scroll-target="#data-lives-in-tables">Data lives in tables</a></li>
+  <li><a href="#data-lives-in-tables-1" id="toc-data-lives-in-tables-1" class="nav-link" data-scroll-target="#data-lives-in-tables-1">Data lives in tables</a></li>
+  <li><a href="#data-lives-in-tables-2" id="toc-data-lives-in-tables-2" class="nav-link" data-scroll-target="#data-lives-in-tables-2">Data lives in tables</a></li>
+  <li><a href="#self-study-terminology-many-names-one-thing" id="toc-self-study-terminology-many-names-one-thing" class="nav-link" data-scroll-target="#self-study-terminology-many-names-one-thing">🔎 Self-study: Terminology — many names, one thing</a></li>
+  <li><a href="#tables-are-built-on-relationships" id="toc-tables-are-built-on-relationships" class="nav-link" data-scroll-target="#tables-are-built-on-relationships">Tables are built on relationships</a></li>
+  <li><a href="#relationships-are-built-on-keys" id="toc-relationships-are-built-on-keys" class="nav-link" data-scroll-target="#relationships-are-built-on-keys">Relationships are built on keys</a></li>
+  <li><a href="#relationships-are-built-on-keys-1" id="toc-relationships-are-built-on-keys-1" class="nav-link" data-scroll-target="#relationships-are-built-on-keys-1">Relationships are built on keys</a></li>
+  <li><a href="#relationships-are-built-on-keys-2" id="toc-relationships-are-built-on-keys-2" class="nav-link" data-scroll-target="#relationships-are-built-on-keys-2">Relationships are built on keys</a></li>
+  <li><a href="#relationships-are-built-on-keys-3" id="toc-relationships-are-built-on-keys-3" class="nav-link" data-scroll-target="#relationships-are-built-on-keys-3">Relationships are built on keys</a></li>
+  <li><a href="#why-split-data-into-multiple-tables" id="toc-why-split-data-into-multiple-tables" class="nav-link" data-scroll-target="#why-split-data-into-multiple-tables">Why split data into multiple tables?</a></li>
+  <li><a href="#why-split-data-into-multiple-tables-1" id="toc-why-split-data-into-multiple-tables-1" class="nav-link" data-scroll-target="#why-split-data-into-multiple-tables-1">Why split data into multiple tables?</a></li>
+  <li><a href="#thinking-in-entities-and-relationships" id="toc-thinking-in-entities-and-relationships" class="nav-link" data-scroll-target="#thinking-in-entities-and-relationships">Thinking in entities and relationships</a></li>
+  <li><a href="#write-your-schema-in-a-simple-text-format-first" id="toc-write-your-schema-in-a-simple-text-format-first" class="nav-link" data-scroll-target="#write-your-schema-in-a-simple-text-format-first">Write your schema in a simple text format first</a></li>
+  <li><a href="#or-use-an-er-diagram" id="toc-or-use-an-er-diagram" class="nav-link" data-scroll-target="#or-use-an-er-diagram">Or use an ER diagram 🧜‍♀️</a></li>
+  <li><a href="#thinking-in-entities-and-relationships-1" id="toc-thinking-in-entities-and-relationships-1" class="nav-link" data-scroll-target="#thinking-in-entities-and-relationships-1">Thinking in entities and relationships</a></li>
+  </ul></li>
+  <li><a href="#an-example-of-relational-model-the-star-schema" id="toc-an-example-of-relational-model-the-star-schema" class="nav-link" data-scroll-target="#an-example-of-relational-model-the-star-schema">An example of relational model: the star schema</a>
+  <ul class="collapse">
+  <li><a href="#the-star-schema" id="toc-the-star-schema" class="nav-link" data-scroll-target="#the-star-schema">The star schema ⭐</a></li>
+  <li><a href="#the-star-schema-1" id="toc-the-star-schema-1" class="nav-link" data-scroll-target="#the-star-schema-1">The star schema ⭐</a></li>
+  <li><a href="#the-star-schema-and-the-idea-of-normalization" id="toc-the-star-schema-and-the-idea-of-normalization" class="nav-link" data-scroll-target="#the-star-schema-and-the-idea-of-normalization">The star schema ⭐ and the idea of normalization</a></li>
+  <li><a href="#the-star-schema-and-the-idea-of-normalization-1" id="toc-the-star-schema-and-the-idea-of-normalization-1" class="nav-link" data-scroll-target="#the-star-schema-and-the-idea-of-normalization-1">🔍 The star schema ⭐ and the idea of normalization</a></li>
+  </ul></li>
+  <li><a href="#from-sketch-to-schema-using-sql" id="toc-from-sketch-to-schema-using-sql" class="nav-link" data-scroll-target="#from-sketch-to-schema-using-sql">From sketch to schema using SQL</a>
+  <ul class="collapse">
+  <li><a href="#sql-structured-query-language" id="toc-sql-structured-query-language" class="nav-link" data-scroll-target="#sql-structured-query-language">SQL — <strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage</a></li>
+  <li><a href="#sql-structured-query-language-1" id="toc-sql-structured-query-language-1" class="nav-link" data-scroll-target="#sql-structured-query-language-1">SQL — <strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage</a></li>
+  <li><a href="#atomic-data-types-in-sql" id="toc-atomic-data-types-in-sql" class="nav-link" data-scroll-target="#atomic-data-types-in-sql">Atomic data types in SQL</a></li>
+  <li><a href="#sql-constraints" id="toc-sql-constraints" class="nav-link" data-scroll-target="#sql-constraints">SQL constraints</a></li>
+  <li><a href="#create-our-first-table" id="toc-create-our-first-table" class="nav-link" data-scroll-target="#create-our-first-table">CREATE our first TABLE</a></li>
+  <li><a href="#create-a-table-with-a-foreign-key" id="toc-create-a-table-with-a-foreign-key" class="nav-link" data-scroll-target="#create-a-table-with-a-foreign-key">Create a table with a FOREIGN KEY</a></li>
+  <li><a href="#what-the-foreign-key-actually-prevents" id="toc-what-the-foreign-key-actually-prevents" class="nav-link" data-scroll-target="#what-the-foreign-key-actually-prevents">What the foreign key actually prevents</a></li>
+  <li><a href="#what-the-foreign-key-actually-prevents-1" id="toc-what-the-foreign-key-actually-prevents-1" class="nav-link" data-scroll-target="#what-the-foreign-key-actually-prevents-1">What the foreign key actually prevents</a></li>
+  <li><a href="#self-study-what-the-foreign-key-actually-prevents" id="toc-self-study-what-the-foreign-key-actually-prevents" class="nav-link" data-scroll-target="#self-study-what-the-foreign-key-actually-prevents">🔎 Self-study: What the foreign key actually prevents</a></li>
+  <li><a href="#insert-adding-rows" id="toc-insert-adding-rows" class="nav-link" data-scroll-target="#insert-adding-rows">INSERT — adding rows</a></li>
+  </ul></li>
+  <li><a href="#creating-a-database" id="toc-creating-a-database" class="nav-link" data-scroll-target="#creating-a-database">Creating a database</a>
+  <ul class="collapse">
+  <li><a href="#the-etl-pipeline" id="toc-the-etl-pipeline" class="nav-link" data-scroll-target="#the-etl-pipeline">The ETL pipeline</a></li>
+  <li><a href="#the-etl-pipeline-1" id="toc-the-etl-pipeline-1" class="nav-link" data-scroll-target="#the-etl-pipeline-1">The ETL pipeline</a></li>
+  </ul></li>
+  <li><a href="#our-tool-duckdb" id="toc-our-tool-duckdb" class="nav-link" data-scroll-target="#our-tool-duckdb">Our tool: DuckDB</a>
+  <ul class="collapse">
+  <li><a href="#the-database-universe" id="toc-the-database-universe" class="nav-link" data-scroll-target="#the-database-universe">The database universe</a></li>
+  <li><a href="#the-most-important-split-is-oltp-vs.-olap" id="toc-the-most-important-split-is-oltp-vs.-olap" class="nav-link" data-scroll-target="#the-most-important-split-is-oltp-vs.-olap">The most important split is <strong>OLTP vs.&nbsp;OLAP</strong></a></li>
+  <li><a href="#in-this-course" id="toc-in-this-course" class="nav-link" data-scroll-target="#in-this-course">In this course</a></li>
+  <li><a href="#duckdb-is-not-a-classic-rdbms" id="toc-duckdb-is-not-a-classic-rdbms" class="nav-link" data-scroll-target="#duckdb-is-not-a-classic-rdbms">DuckDB is not a classic RDBMS</a></li>
+  <li><a href="#where-does-each-tool-fit" id="toc-where-does-each-tool-fit" class="nav-link" data-scroll-target="#where-does-each-tool-fit">Where does each tool fit?</a></li>
+  <li><a href="#why-duckdb-and-not-postgresql-or-sqlite" id="toc-why-duckdb-and-not-postgresql-or-sqlite" class="nav-link" data-scroll-target="#why-duckdb-and-not-postgresql-or-sqlite">Why DuckDB and not PostgreSQL or SQLite?</a></li>
+  <li><a href="#we-will-use-duckdb-as-dbms" id="toc-we-will-use-duckdb-as-dbms" class="nav-link" data-scroll-target="#we-will-use-duckdb-as-dbms">We will use DuckDB as DBMS</a></li>
+  <li><a href="#we-will-use-duckdb-as-dbms-1" id="toc-we-will-use-duckdb-as-dbms-1" class="nav-link" data-scroll-target="#we-will-use-duckdb-as-dbms-1">We will use DuckDB as DBMS</a></li>
+  </ul></li>
+  <li><a href="#queries" id="toc-queries" class="nav-link" data-scroll-target="#queries">Queries</a>
+  <ul class="collapse">
+  <li><a href="#querying-a-relational-database" id="toc-querying-a-relational-database" class="nav-link" data-scroll-target="#querying-a-relational-database">Querying a relational database</a></li>
+  <li><a href="#the-select-statement" id="toc-the-select-statement" class="nav-link" data-scroll-target="#the-select-statement">The SELECT statement</a></li>
+  <li><a href="#order-by-and-limit" id="toc-order-by-and-limit" class="nav-link" data-scroll-target="#order-by-and-limit">ORDER BY and LIMIT</a></li>
+  <li><a href="#the-basic-query-structure" id="toc-the-basic-query-structure" class="nav-link" data-scroll-target="#the-basic-query-structure">The basic query structure</a></li>
+  </ul></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking ahead</a>
+  <ul class="collapse">
+  <li><a href="#what-we-did-not-cover" id="toc-what-we-did-not-cover" class="nav-link" data-scroll-target="#what-we-did-not-cover">What we did not cover</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="L09_databases.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">4,222 Introduction to Programming</h1>
+<p class="subtitle lead">Lecture 9: Databases &amp; SQL</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr.&nbsp;Aurélien Sallin </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 24, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="two-ways-to-look-at-data" class="level2">
+<h2 class="anchored" data-anchor-id="two-ways-to-look-at-data">Two ways to look at data</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../assets/img/lecture_09_db/data_story_pic1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</section>
+<section id="two-ways-to-look-at-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="two-ways-to-look-at-data-1">Two ways to look at data</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../assets/img/lecture_09_db/data_story_pic2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<div class="notes">
+<p>The key difference is not just where the data lives, it is how you access it.</p>
+<p>With a file, you load everything into memory: <code>pd.read_csv("data.csv")</code> pulls the entire dataset into RAM. That works fine for a 10 MB file. It breaks when your dataset is 50 GB — you simply run out of memory.</p>
+<p>With a database, you send a query and get back only the rows and columns you asked for. The database does the filtering on disk, before anything reaches your machine. Your RAM only ever sees the result, not the raw data.</p>
+<p>This is the fundamental shift: from “give me everything, I’ll figure it out” to “I know exactly what I want, give me that.”</p>
+<p>The other consequence: because the data lives independently on a server or a file on disk, multiple people can query it at the same time. It doesn’t belong to any one session. That’s what makes it a “service” — and also what makes it the right tool for shared, live, or large data.</p>
+</div>
+<!--
+Notes from Matter, pages 124 -
+- use stand-alone databases when: data is large and must be stored efficiently (i.e. on disk, not in memory), data is relational (multiple tables linked by keys), and/or multiple people need to access the same data
+- use databases when data is not static — when it is updated frequently, or when you need to ensure data integrity and consistency over time
+
+relational data model: data is organized into tables (relations) with rows (tuples) and columns (attributes). Tables are linked through keys (primary and foreign keys). This model allows for efficient storage, querying, and maintenance of data integrity.
+RDBMS: row-based relational database management system, optimized for transactional workloads (OLTP). Examples: MySQL, PostgreSQL, SQLite. Not ideal for analytical queries over large datasets.
+made for storing clean data in clearly defined set of tables, with defined properties.  Rows are indexed according to unique identifiers. Good for business data (transactions), not for analytics.
+
+NoSQL: column-based, document-based, key-value based or graph-based models. Optimized for horizontal scaling, optimized to give quick answers based on summarizing large amounts of data.
+
+
+relational data bmodel:
+
+- dataset split by columns into tables to reduce the storage of redundant data and to maintain data integrity. Linked through keys. Efficient storage. Key columns are indexed
+## Two ways to look at data
+-->
+</section>
+<section id="two-ways-to-look-at-data-2" class="level2">
+<h2 class="anchored" data-anchor-id="two-ways-to-look-at-data-2">Two ways to look at data</h2>
+<div class="columns" style="font-size: 0.85em;">
+<div class="column" style="width:50%;">
+<section id="data-in-memory-pandas-polars-dplyr" class="level4">
+<h4 class="anchored" data-anchor-id="data-in-memory-pandas-polars-dplyr"><strong>Data in memory</strong>: pandas, polars, dplyr</h4>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="data-in-a-database-sql" class="level4">
+<h4 class="anchored" data-anchor-id="data-in-a-database-sql"><strong>Data in a database</strong>: SQL</h4>
+</section>
+</div>
+</div>
+<div class="fragment columns" style="font-size: 0.85em;">
+<div class="column" style="width:50%;">
+<ul>
+<li>You load data into RAM and manipulate it with code</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>You send <strong>queries</strong> to a database, which returns only what you ask for</li>
+</ul>
+</div>
+</div>
+<div class="fragment columns" style="font-size: 0.85em;">
+<div class="column" style="width:50%;">
+<ul>
+<li>The data <strong>lives in memory</strong>, temporary, on RAM</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>The data <strong>lives in a database</strong>, persistent, on disk or in the cloud</li>
+</ul>
+</div>
+</div>
+<div class="fragment columns" style="font-size: 0.85em;">
+<div class="column" style="width:50%;">
+<ul>
+<li>Size is small and can fit in memory</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Large datasets that don’t fit in memory</li>
+</ul>
+</div>
+</div>
+<div class="fragment columns" style="font-size: 0.85em;">
+<div class="column" style="width:50%;">
+<ul>
+<li>You work on the whole dataset at once</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>You operate on “parts/subsets” of the data through querying</li>
+</ul>
+</div>
+</div>
+<div class="fragment columns" style="font-size: 0.85em;">
+<div class="column" style="width:50%;">
+<ul>
+<li>For statistical analysis, plotting, typical data workflow in research, small projects</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>For data that needs to stay consistent over time, for data that is updated frequently, for data that is shared across multiple users/systems, for production applications</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="example-from-my-work" class="level2">
+<h2 class="anchored" data-anchor-id="example-from-my-work">Example from my work</h2>
+<ul>
+<li>With health insurance claims data, data arrive continuously from hospitals, labs, pharmacies, and are stored in a database, which is continuously updated.</li>
+<li>All the data are stored in a <strong>D</strong>ata <strong>W</strong>are<strong>H</strong>ouse (DWH), a central database based on OLAP and OLTP (we’ll cover these terms later)</li>
+<li>I write <strong>SQL queries</strong> to extract data from the DWH</li>
+<li>Queries can be very simple. Depending on the data, it can be quite tedious too (like invoice movements and moving from different aggregation levels)</li>
+<li>I then import the data into R or Python for analysis</li>
+</ul>
+</section>
+<section id="goals-for-the-next-two-weeks" class="level2">
+<h2 class="anchored" data-anchor-id="goals-for-the-next-two-weeks">Goals for the next two weeks</h2>
+<section id="construct-a-database" class="level4">
+<h4 class="anchored" data-anchor-id="construct-a-database">CONSTRUCT a database</h4>
+<ul>
+<li>understand why databases exist and what problem they solve</li>
+<li>know the relational model: tables, rows, keys, relationships</li>
+</ul>
+</section>
+<section id="query-the-database" class="level4">
+<h4 class="anchored" data-anchor-id="query-the-database">QUERY the database</h4>
+<ul>
+<li>write our first simple SQL queries with DuckDB</li>
+<li>make more complex queries with JOINs, subqueries, and CTEs (next week)</li>
+</ul>
+</section>
+</section>
+<section id="what-is-a-database" class="level1">
+<h1>What is a database?</h1>
+<section id="what-is-a-database-1" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-database-1">What is a database?</h2>
+<div style="margin-top: 1em;">
+
+</div>
+<p>Every app, every service, every research dataset you interact with is backed by a database.</p>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="structured-data" class="level4">
+<h4 class="anchored" data-anchor-id="structured-data">Structured data</h4>
+<ul>
+<li>Customer records (name, address, country)</li>
+<li>Trade flows (year, exporter, importer, value)</li>
+<li>Survey responses (respondent_id, question, answer)</li>
+</ul>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="unstructured-data" class="level4">
+<h4 class="anchored" data-anchor-id="unstructured-data">Unstructured data</h4>
+<ul>
+<li>Text, emails, news articles</li>
+<li>Images, audio, video</li>
+</ul>
+</section>
+</div>
+</div>
+<div style="margin-top: 1.5em;">
+
+</div>
+<section id="a-database-is-an-organized-collection-of-data." class="level5">
+<h5 class="anchored" data-anchor-id="a-database-is-an-organized-collection-of-data.">A database is an organized collection of data.</h5>
+</section>
+</section>
+<section id="managing-databases" class="level2">
+<h2 class="anchored" data-anchor-id="managing-databases">Managing databases</h2>
+<section id="a-database-management-system-dbms-is-the-software-that-sits-between-you-and-the-data." class="level4">
+<h4 class="anchored" data-anchor-id="a-database-management-system-dbms-is-the-software-that-sits-between-you-and-the-data.">A <strong>Database Management System (DBMS)</strong> is the software that sits between you and the data.</h4>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div style="margin-top: 1em;">
+
+</div>
+<ul>
+<li>You send it a query: <em>“Which countries exported more than 10B in 2022?”</em></li>
+<li>It returns the answer.</li>
+</ul>
+<p>You never touch or manipulate the raw data directly. The DBMS handles storage, indexing, and access. It serves you the data on a silver platter.</p>
+</div><div class="column" style="width:45%;">
+<div style="margin-top: -1em;">
+
+</div>
+<p><img src="../../assets/img/lecture_09_db/data_story_pic3_query.png" class="img-fluid" style="width:90.0%"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="why-use-a-dbms" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-a-dbms">Why use a DBMS?</h2>
+<p>Three elements are needed from your databases: <!--Think of any firm: a bank, an insurer, an online shop. Or think of large data for your master's thesis on your own computer.--></p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="columns" style="font-size: 0.72em;">
+<div class="column" style="width:33%;">
+<section id="data-independence-integrity" class="level4">
+<h4 class="anchored" data-anchor-id="data-independence-integrity">1. Data independence &amp; integrity</h4>
+<p>Many people/systems read and write the same data. Data must stay correct regardless of who touches it.</p>
+<ul>
+<li>Abstract view. No one touches raw storage</li>
+<li>Constraints enforce consistency automatically</li>
+<li>No conflicting CSV versions, no overwrites</li>
+</ul>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="simple-efficient-access" class="level4">
+<h4 class="anchored" data-anchor-id="simple-efficient-access">2. Simple, efficient access</h4>
+<p>Apps, dashboards, and analysts all need to extract data quickly, without knowing where or how it is stored.<br></p>
+<ul>
+<li><strong>SQL</strong> is the standard interface across all databases</li>
+<li>The <strong>query optimizer</strong> decides <em>how</em> to run your query. You just say <em>what</em> you want.</li>
+<li>Enables <strong>ETL</strong>: Extract, Transform, Load pipelines</li>
+</ul>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="governance-reliability" class="level4">
+<h4 class="anchored" data-anchor-id="governance-reliability">3. Governance &amp; reliability</h4>
+<p>The system <strong>cannot break down</strong> (no failed transaction, a lost record, a data breach).</p>
+<ul>
+<li>Transactions: operations either complete fully or not at all</li>
+<li>Crash recovery: data survives system failures</li>
+<li>Access control: who can read or write what</li>
+</ul>
+</section>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Need 3 is enforced through <strong>ACID</strong> properties (Atomicity, Consistency, Isolation, Durability), which is very relevant in cases of OLTP.</p>
+</blockquote>
+</section>
+</section>
+<section id="the-relational-model" class="level1 page-columns page-full">
+<h1>The relational model</h1>
+<section id="data-lives-in-tables" class="level2">
+<h2 class="anchored" data-anchor-id="data-lives-in-tables">Data lives in tables</h2>
+<section id="the-fundamental-idea-data-is-organized-into-relations-tables.---relational-databases" class="level5">
+<h5 class="anchored" data-anchor-id="the-fundamental-idea-data-is-organized-into-relations-tables.---relational-databases">The fundamental idea: data is organized into <strong>relations</strong> (tables). -&gt; “relational databases”</h5>
+<div style="margin-top: 1em;">
+
+</div>
+<p><img src="../../assets/img/lecture_09_db/datamodel_1.png" class="img-fluid" style="width:90.0%"></p>
+</section>
+</section>
+<section id="data-lives-in-tables-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-lives-in-tables-1">Data lives in tables</h2>
+<section id="the-fundamental-idea-data-is-organized-into-relations-tables.---relational-databases-1" class="level5">
+<h5 class="anchored" data-anchor-id="the-fundamental-idea-data-is-organized-into-relations-tables.---relational-databases-1">The fundamental idea: data is organized into <strong>relations</strong> (tables). -&gt; “relational databases”</h5>
+<div style="margin-top: 1em;">
+
+</div>
+<p>Each table/relation has:</p>
+<ul>
+<li>A <strong>(relation) schema</strong>: the table name, column names, and their types (or domain)</li>
+<li><strong>Columns</strong> (attributes): one variable per column</li>
+<li><strong>Rows</strong> (records / tuples): one entry per observation</li>
+</ul>
+<p>We can write the relation schema as:</p>
+<pre><code>Table(attribute_1: INT, attribute_2: VARCHAR, ...)</code></pre>
+</section>
+</section>
+<section id="data-lives-in-tables-2" class="level2">
+<h2 class="anchored" data-anchor-id="data-lives-in-tables-2">Data lives in tables</h2>
+<section id="the-fundamental-idea-data-is-organized-into-relations-tables.---relational-databases-2" class="level5">
+<h5 class="anchored" data-anchor-id="the-fundamental-idea-data-is-organized-into-relations-tables.---relational-databases-2">The fundamental idea: data is organized into <strong>relations</strong> (tables). -&gt; “relational databases”</h5>
+<div style="margin-top: 1em;">
+
+</div>
+<p><img src="../../assets/img/lecture_09_db/datamodel_1.png" class="img-fluid" style="width:90.0%"></p>
+<pre><code>Countries(country_id: INT, iso3: VARCHAR, name: VARCHAR, region: VARCHAR, gdp_usd: FLOAT)
+Trade_flows(flow_id: INT, exporter_id: INT, importer_id: INT, year: INT, value_usd: FLOAT)</code></pre>
+</section>
+</section>
+<section id="self-study-terminology-many-names-one-thing" class="level2">
+<h2 class="anchored" data-anchor-id="self-study-terminology-many-names-one-thing">🔎 Self-study: Terminology — many names, one thing</h2>
+<p>The relational model has formal names.</p>
+<div style="margin-top: 1em;">
+
+</div>
+<div style="font-size: 0.75em;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Formal (relational model)</th>
+<th>SQL / practical</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Relation</td>
+<td>Table</td>
+<td>The whole dataset/Table</td>
+</tr>
+<tr class="even">
+<td>Tuple / Record</td>
+<td>Row</td>
+<td>One observation</td>
+</tr>
+<tr class="odd">
+<td>Attribute</td>
+<td>Column / Field</td>
+<td>One variable</td>
+</tr>
+<tr class="even">
+<td>Entry</td>
+<td>Value</td>
+<td>One cell</td>
+</tr>
+<tr class="odd">
+<td>Relation schema</td>
+<td>Table definition</td>
+<td>The structure (name + column types)</td>
+</tr>
+<tr class="even">
+<td>Database schema</td>
+<td>Database definition</td>
+<td>All the tables and their relationships</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> You will see all these terms used interchangeably in documentation, Stack Overflow, and textbooks. They are the same concepts.</p>
+</blockquote>
+</section>
+<section id="tables-are-built-on-relationships" class="level2">
+<h2 class="anchored" data-anchor-id="tables-are-built-on-relationships">Tables are built on relationships</h2>
+<ul>
+<li>A <strong>relational database</strong> is a collection of relations (tables) that are linked together through <strong>keys</strong>.</li>
+</ul>
+<p><img src="../../assets/img/lecture_09_db/datamodel_2.png" class="img-fluid" style="width:90.0%"></p>
+</section>
+<section id="relationships-are-built-on-keys" class="level2">
+<h2 class="anchored" data-anchor-id="relationships-are-built-on-keys">Relationships are built on keys</h2>
+<section id="primary-key" class="level4">
+<h4 class="anchored" data-anchor-id="primary-key">Primary key</h4>
+<ul>
+<li>Column (or set of columns) that uniquely identifies each row. If two tuples agree on the value(s) of the key, then they must be the same tuple.</li>
+<li>It is <code>NOT NULL</code> and <code>UNIQUE</code> by definition</li>
+<li>It allows other tables to <strong>refer</strong> to this table</li>
+</ul>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> A good primary key is stable (never changes), unique, and meaningless on its own — a number, not the country name, which could change. If no natural attribute works as a key, you create a <strong>surrogate key</strong> (an artificial integer ID). When a single column isn’t enough, a <strong>composite key</strong> combines two or more columns.</p>
+</blockquote>
+</section>
+</section>
+<section id="relationships-are-built-on-keys-1" class="level2">
+<h2 class="anchored" data-anchor-id="relationships-are-built-on-keys-1">Relationships are built on keys</h2>
+<section id="primary-key-in-our-model" class="level4">
+<h4 class="anchored" data-anchor-id="primary-key-in-our-model">Primary key in our model?</h4>
+<div class="fragment">
+<p><img src="../../assets/img/lecture_09_db/datamodel_3.png" class="img-fluid" style="width:70.0%"></p>
+</div>
+<div class="fragment" style="font-size: 0.8em;">
+<ul>
+<li><code>country_id</code> in <code>Countries</code> is the primary key. It uniquely identifies each country.</li>
+<li><code>flow_id</code> in <code>Trade_Flows</code> is the primary key for trade flows.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="relationships-are-built-on-keys-2" class="level2">
+<h2 class="anchored" data-anchor-id="relationships-are-built-on-keys-2">Relationships are built on keys</h2>
+<section id="foreign-key" class="level4">
+<h4 class="anchored" data-anchor-id="foreign-key">Foreign key</h4>
+<ul>
+<li>A column (or set of columns) that refers to a primary key in another table. It creates a link between the two tables.</li>
+<li>Always in the referencing table (the “many” side of a one-to-many relationship)</li>
+<li>A <strong>foreign key constraint</strong> means: you cannot insert a row with a foreign key value that does not exist in the referenced table</li>
+</ul>
+</section>
+</section>
+<section id="relationships-are-built-on-keys-3" class="level2">
+<h2 class="anchored" data-anchor-id="relationships-are-built-on-keys-3">Relationships are built on keys</h2>
+<section id="what-are-the-foreign-keys-in-our-model" class="level4">
+<h4 class="anchored" data-anchor-id="what-are-the-foreign-keys-in-our-model">What are the foreign keys in our model?</h4>
+<div class="fragment">
+<p><img src="../../assets/img/lecture_09_db/datamodel_4.png" class="img-fluid" style="width:70.0%"></p>
+</div>
+<div class="fragment" style="font-size: 0.8em;">
+<ul>
+<li><code>exporter_id</code> and <code>importer_id</code> in <code>TradeFlows</code> are foreign keys that <strong>refer to</strong> <code>country_id</code> in <code>Countries</code></li>
+<li>The constraint: you cannot insert a trade flow for a country that does not exist in <code>Countries</code>.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="why-split-data-into-multiple-tables" class="level2">
+<h2 class="anchored" data-anchor-id="why-split-data-into-multiple-tables">Why split data into multiple tables?</h2>
+<section id="yes-why" class="level5">
+<h5 class="anchored" data-anchor-id="yes-why">Yes, why?</h5>
+</section>
+</section>
+<section id="why-split-data-into-multiple-tables-1" class="level2">
+<h2 class="anchored" data-anchor-id="why-split-data-into-multiple-tables-1">Why split data into multiple tables?</h2>
+<p>Imagine storing everything in one table:</p>
+<div style="font-size: 0.75em;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 6%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">flow_id</th>
+<th>exporter_name</th>
+<th>exporter_region</th>
+<th>importer_name</th>
+<th>importer_region</th>
+<th style="text-align: center;">year</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Switzerland</td>
+<td>Europe</td>
+<td>Germany</td>
+<td>Europe</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: right;">45M</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Switzerland</td>
+<td>Europe</td>
+<td>France</td>
+<td>Europe</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: right;">38M</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Redundant storage</strong>: “Europe” is repeated for every Swiss export, which is a waste of space (VARCHARs are large).</li>
+<li><strong>Update anomaly</strong>: you don’t need to update the region for every row if Switzerland moves to a different region. Just one update in the <code>countries</code> table.</li>
+<li><strong>Deletion anomaly</strong>: you can’t delete all trade flows for Switzerland without losing the information that Switzerland is in Europe.</li>
+</ul>
+</div>
+<div class="fragment">
+<section id="split-tables-eliminate-redundancy-and-keep-data-consistent." class="level5">
+<h5 class="anchored" data-anchor-id="split-tables-eliminate-redundancy-and-keep-data-consistent.">Split tables eliminate redundancy and keep data consistent.</h5>
+</section>
+</div>
+</section>
+<section id="thinking-in-entities-and-relationships" class="level2">
+<h2 class="anchored" data-anchor-id="thinking-in-entities-and-relationships">Thinking in entities and relationships</h2>
+<p>Before writing any SQL, sketch the structure of your data. Think visually about your data structure and your schema design.</p>
+<div style="margin-top: 1.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ol type="1">
+<li><strong>Entities</strong>: a <em>country</em>, a <em>firm</em>, a <em>survey respondent</em>, a <em>product</em>.</li>
+<li><strong>Attributes</strong>: the properties of each entity. In our example, each country has a name, a region, an income group.</li>
+<li><strong>Relationships</strong>: how entities connect with each other. E.g., a trade flow <em>links</em> an exporter country to an importer country, or a survey response <em>belongs to</em> a respondent</li>
+</ol>
+</div><div class="column" style="width:40%;">
+<p><img src="../../assets/img/lecture_09_db/relationship_v1.png" class="img-fluid" style="display: block; margin: -30px auto 0 auto; padding: 0;;width:70.0%"></p>
+</div>
+</div>
+<div style="margin-top: 1.5em;">
+
+</div>
+<blockquote class="blockquote">
+<p><strong>Note</strong>: The concept of “entity” is close to the idea of “unit of observation” in statistics. It is the “thing” that you are collecting data about.</p>
+</blockquote>
+</section>
+<section id="write-your-schema-in-a-simple-text-format-first" class="level2">
+<h2 class="anchored" data-anchor-id="write-your-schema-in-a-simple-text-format-first">Write your schema in a simple text format first</h2>
+<section id="for-instance" class="level4">
+<h4 class="anchored" data-anchor-id="for-instance">For instance:</h4>
+<pre><code>Countries(country_id: INT PK, iso3: VARCHAR, name: VARCHAR, region: VARCHAR, gdp_usd: FLOAT)
+Trade_flows(flow_id: INT PK, exporter_id: INT FK→Countries, importer_id: INT FK→Countries, year: INT, value_usd: FLOAT)</code></pre>
+</section>
+</section>
+<section id="or-use-an-er-diagram" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="or-use-an-er-diagram">Or use an ER diagram 🧜‍♀️</h2>
+<p><strong>Mermaid</strong> is a text-based diagram language for <strong>entity-relationship diagrams</strong> (ERDs).</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<pre><code>erDiagram
+    COUNTRIES {
+        int     country_id  PK
+        varchar iso3
+        varchar name
+        varchar region
+        float   gdp_usd
+    }
+    TRADE_FLOWS {
+        int   flow_id      PK
+        int   exporter_id  FK
+        int   importer_id  FK
+        int   year
+        float value_usd
+    }
+    COUNTRIES ||--o{ TRADE_FLOWS : "exports"
+    COUNTRIES ||--o{ TRADE_FLOWS : "imports"</code></pre>
+</div><div class="column" style="width:55%;">
+<div class="cell" data-layout-align="default">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>erDiagram</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    COUNTRIES {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        int     country_id  PK</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        varchar iso3</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        varchar name</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        varchar region</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        float   gdp_usd</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    TRADE_FLOWS {</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        int   flow_id      PK</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        int   exporter_id  FK</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        int   importer_id  FK</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        int   year</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        float value_usd</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    COUNTRIES ||--o{ TRADE_FLOWS : "exports"</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    COUNTRIES ||--o{ TRADE_FLOWS : "imports"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+    COUNTRIES {
+        int     country_id  PK
+        varchar iso3
+        varchar name
+        varchar region
+        float   gdp_usd
+    }
+    TRADE_FLOWS {
+        int   flow_id      PK
+        int   exporter_id  FK
+        int   importer_id  FK
+        int   year
+        float value_usd
+    }
+    COUNTRIES ||--o{ TRADE_FLOWS : "exports"
+    COUNTRIES ||--o{ TRADE_FLOWS : "imports"
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Mermaid renders directly in Quarto. See <a href="https://mermaid.js.org/syntax/entityRelationshipDiagram.html">mermaid.js.org</a>.</p>
+</div></div></section>
+<section id="thinking-in-entities-and-relationships-1" class="level2">
+<h2 class="anchored" data-anchor-id="thinking-in-entities-and-relationships-1">Thinking in entities and relationships</h2>
+<section id="once-you-have-a-sketch-translating-to-sql-will-be-mechanical" class="level4">
+<h4 class="anchored" data-anchor-id="once-you-have-a-sketch-translating-to-sql-will-be-mechanical">Once you have a sketch, translating to SQL will be mechanical:</h4>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Each <strong>entity</strong> → one table</li>
+<li>Each <strong>attribute</strong> → one column, with a type</li>
+<li>Each <strong>relationship</strong> → a foreign key</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img src="../../assets/img/lecture_09_db/relationship_v1.png" class="img-fluid" style="display: block; margin: -30px auto 0 auto; padding: 0;;width:70.0%"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="an-example-of-relational-model-the-star-schema" class="level1 page-columns page-full">
+<h1>An example of relational model: the star schema</h1>
+<section id="the-star-schema" class="level2">
+<h2 class="anchored" data-anchor-id="the-star-schema">The star schema ⭐</h2>
+<ul>
+<li>Most widely used to develop data warehouses</li>
+<li>Consists of one or more <strong>fact tables</strong> referencing any number of <strong>dimension tables</strong>.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../assets/img/lecture_09_db/star_schema.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://en.wikipedia.org/wiki/Star_schema">Wikipedia</a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Fact table</strong> (<code>observations</code>). Long data, one row per measurement</li>
+<li><strong>Dimension tables</strong> (<code>countries</code>, <code>indicators</code>). Metadata, usually wider because contains more attributes.</li>
+<li>🔑 The fact table holds foreign keys to all dimensions</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="the-star-schema-1" class="level2">
+<h2 class="anchored" data-anchor-id="the-star-schema-1">The star schema ⭐</h2>
+<p>Imagine you are building a database of economic indicators across countries. What does a naive table look like?</p>
+<p>. . .</p>
+<div style="font-size: 0.75em;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>country_name</th>
+<th>region</th>
+<th>indicator_name</th>
+<th>year</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Germany</td>
+<td>Europe &amp; Central Asia</td>
+<td>GDP per capita</td>
+<td>2020</td>
+<td>45 234</td>
+</tr>
+<tr class="even">
+<td>Germany</td>
+<td>Europe &amp; Central Asia</td>
+<td>GDP per capita</td>
+<td>2021</td>
+<td>46 100</td>
+</tr>
+<tr class="odd">
+<td>Germany</td>
+<td>Europe &amp; Central Asia</td>
+<td>Unemployment rate</td>
+<td>2020</td>
+<td>3.8</td>
+</tr>
+<tr class="even">
+<td>France</td>
+<td>Europe &amp; Central Asia</td>
+<td>GDP per capita</td>
+<td>2020</td>
+<td>38 600</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>. . .</p>
+<div style="font-size: 0.8em;">
+<p><strong>Problem:</strong> <code>"Germany"</code>, <code>"Europe &amp; Central Asia"</code>, … repeat thousands of times.</p>
+<ul>
+<li>Update thousands of rows if you have a typo in <code>"Europe &amp; Central Asia"</code></li>
+<li>Add a column to a million-row table when adding a new attribute to a country (e.g.&nbsp;<code>capital_city</code>)</li>
+<li>Storage: the string <code>"Europe &amp; Central Asia"</code> is ~25 bytes; the integer <code>3</code> is 4 bytes</li>
+</ul>
+</div>
+</section>
+<section id="the-star-schema-and-the-idea-of-normalization" class="level2">
+<h2 class="anchored" data-anchor-id="the-star-schema-and-the-idea-of-normalization">The star schema ⭐ and the idea of normalization</h2>
+<p><strong>Normalization</strong> = move repeated metadata into separate tables, replace strings with integer IDs.</p>
+<div class="columns" style="font-size: 0.72em;">
+<div class="column" style="width:50%;">
+<p><strong><code>observations</code></strong> (fact — millions of rows, lean)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>country_id</th>
+<th>indicator_id</th>
+<th>year</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+<td>2020</td>
+<td>45 234</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1</td>
+<td>2021</td>
+<td>46 100</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2</td>
+<td>2020</td>
+<td>3.8</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>2020</td>
+<td>38 600</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong><code>countries</code></strong> (dimension — small, rich)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>country_id</th>
+<th>name</th>
+<th>region</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>Germany</td>
+<td>Europe &amp; Central Asia</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>France</td>
+<td>Europe &amp; Central Asia</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>indicators</code></strong> (dimension — tiny)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>indicator_id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>GDP per capita</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Unemployment rate</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The <strong>cost</strong>: you need a JOIN to get readable labels. The <strong>benefit</strong>: consistency, compactness, flexibility.</p>
+</section>
+<section id="the-star-schema-and-the-idea-of-normalization-1" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-star-schema-and-the-idea-of-normalization-1">🔍 The star schema ⭐ and the idea of normalization</h2>
+<p>A star schema sits in the <strong>middle</strong> of the normalization spectrum:</p>
+<div class="columns" style="font-size: 0.78em;">
+<div class="column" style="width:33%;">
+<section id="flat-table-0nf" class="level4">
+<h4 class="anchored" data-anchor-id="flat-table-0nf">Flat table (0NF)</h4>
+<p>Everything in one table. Simple to query, terrible to maintain. Strings repeat everywhere.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="star-schema-partial" class="level4">
+<h4 class="anchored" data-anchor-id="star-schema-partial">Star schema (partial)</h4>
+<p>Fact table normalized — no redundancy in <code>observations</code>. Dimension tables <strong>denormalized</strong> — <code>region</code> lives inside <code>countries</code>, not in a separate table.</p>
+<p><em>This is what we use.</em></p>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="snowflake-schema-full" class="level4">
+<h4 class="anchored" data-anchor-id="snowflake-schema-full">Snowflake schema (full)</h4>
+<p>Dimension tables also split: <code>countries → regions → continents</code>. Maximum compactness, minimum redundancy. Cost: more JOINs, harder to query.</p>
+<p><em>Used in large enterprise data warehouses.</em></p>
+</section>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Sources for these two slides: <a href="https://en.wikipedia.org/wiki/Star_schema">Wikipedia — Star schema</a> · <a href="https://en.wikipedia.org/wiki/Snowflake_schema">Wikipedia — Snowflake schema</a></p>
+</div></div></section>
+</section>
+<section id="from-sketch-to-schema-using-sql" class="level1 page-columns page-full">
+<h1>From sketch to schema using SQL</h1>
+<section id="sql-structured-query-language" class="level2">
+<h2 class="anchored" data-anchor-id="sql-structured-query-language">SQL — <strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>SQL is not a programming language, it is a <strong>query language</strong>.</li>
+<li>You describe <em>what</em> you want, and the database figures out <em>how</em> to get it.</li>
+<li>It is very high level, highly optimized, and has been around for decades.</li>
+<li>Different “dialects” (standards and implementsation, which are incompletely compatible)</li>
+<li>💪 Required skill for most data science positions in industry</li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../assets/img/lecture_09_db/sql_vs_squirrel.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><a href="https://www.reddit.com/r/ProgrammerHumor/comments/7z0eoj/how_to_pronounce_sql/">Reddit</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> Originally based upon relational algebra and tuple relational calculus. We won’t go into details in this introductory course. I recommend Marco Venturini’s lecture for more details.</p>
+</blockquote>
+</section>
+<section id="sql-structured-query-language-1" class="level2">
+<h2 class="anchored" data-anchor-id="sql-structured-query-language-1">SQL — <strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage</h2>
+<div style="margin-top: 1em;">
+
+</div>
+<p>SQL has five main parts:</p>
+<ul>
+<li><strong>DDL</strong> — Data Definition Language: <code>CREATE TABLE</code>, <code>DROP TABLE</code>, <code>ALTER TABLE</code></li>
+<li><strong>DML</strong> — Data Manipulation Language: <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> records</li>
+<li><strong>DQL</strong> — Data Query Language: <code>SELECT</code></li>
+<li><strong>DCL</strong> — Data Control Language (authorization): <code>GRANT</code>, <code>REVOKE</code></li>
+<li><strong>TCL</strong> — Transaction Control Language (manages changes in transactions): <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code>, <code>SET TRANSACTION</code></li>
+</ul>
+<div style="margin-top: 1em;">
+
+</div>
+<p>In this course, we’ll focus on DDL, DML and DQL.</p>
+</section>
+<section id="atomic-data-types-in-sql" class="level2">
+<h2 class="anchored" data-anchor-id="atomic-data-types-in-sql">Atomic data types in SQL</h2>
+<ul>
+<li>The SQL standard defines a core set of data types.</li>
+<li>Each dialect has its own extensions, but these are the most common:
+<ul>
+<li>Characters: <code>VARCHAR[(length)]</code> (Variable-length string, max n)</li>
+<li>Numeric: <code>INTEGER</code>/<code>INT</code> (four-byte integers), <code>BIGINT</code> (64-bit integers), <code>SMALLINT</code> (16-bit integers), <code>FLOAT</code> (approximate floating-point), <code>DECIMAL(p, s)</code> (Exact fixed-point number with precision p and scale s)</li>
+<li>Others: <code>DATE</code>, <code>TIME</code>, <code>DATETIME</code>/<code>TIMESTAMP</code>, <code>INTERVAL</code>, <code>BOOLEAN</code></li>
+</ul></li>
+</ul>
+<p>Refer to the documentation of each SQL dialect. For DuckDB, see https://duckdb.org/docs/current/sql/data_types/overview</p>
+</section>
+<section id="sql-constraints" class="level2">
+<h2 class="anchored" data-anchor-id="sql-constraints">SQL constraints</h2>
+<p>Constraints enforce rules on your data at the database level.</p>
+<div style="margin-top: 1em;">
+
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Constraint</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>NOT NULL</code></td>
+<td>Column must always have a value</td>
+</tr>
+<tr class="even">
+<td><code>UNIQUE</code></td>
+<td>No two rows can share the same value</td>
+</tr>
+<tr class="odd">
+<td><code>PRIMARY KEY</code></td>
+<td>NOT NULL + UNIQUE — the row’s unique identifier</td>
+</tr>
+<tr class="even">
+<td><code>FOREIGN KEY</code></td>
+<td>Value must exist in another table</td>
+</tr>
+<tr class="odd">
+<td><code>CHECK</code></td>
+<td>Custom condition, e.g.&nbsp;<code>CHECK (gdp_usd &gt;= 0)</code></td>
+</tr>
+<tr class="even">
+<td><code>DEFAULT</code></td>
+<td>Auto-fills a value when none is provided</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> Constraints are optional. They protect your data and document your intent. Use them.</p>
+</blockquote>
+</section>
+<section id="create-our-first-table" class="level2">
+<h2 class="anchored" data-anchor-id="create-our-first-table">CREATE our first TABLE</h2>
+<ul>
+<li>Creating a table means defining its <strong>schema</strong>: the column names, their types, and any constraints.</li>
+<li>The schema is self-documenting: anyone reading it knows the rules.</li>
+</ul>
+<p>It follows a simple syntax:</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> countries (</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span>         <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    name       <span class="dt">VARCHAR</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    region     <span class="dt">VARCHAR</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    gdp_usd    <span class="dt">FLOAT</span>   <span class="kw">CHECK</span> (gdp_usd <span class="op">&gt;=</span> <span class="dv">0</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<p><img src="../../assets/img/lecture_09_db/data_model_0countries.png" class="img-fluid" style="display: block; margin: -30px auto 0 auto; padding: 0;;width:50.0%"></p>
+</div>
+</div>
+<div style="margin-top: 1em;">
+
+</div>
+<ul>
+<li><code>country_id</code>: integer, the primary key: <code>NOT NULL</code> + <code>UNIQUE</code> by definition</li>
+<li><code>name</code>: text, required (<code>NOT NULL</code>), no duplicates (<code>UNIQUE</code>)</li>
+<li><code>region</code>: text, optional (no constraint — <code>NULL</code> is allowed)</li>
+<li><code>gdp_usd</code>: number, constraint: must be non-negative</li>
+</ul>
+</section>
+<section id="create-a-table-with-a-foreign-key" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="create-a-table-with-a-foreign-key">Create a table with a FOREIGN KEY</h2>
+<p>A foreign key constraints says: <em>“this column’s value must exist in another table.”</em></p>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> trade_flows (</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    flow_id     <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    exporter_id <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> countries(country_id),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    importer_id <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> countries(country_id),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">year</span>        <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    value_usd   <span class="dt">FLOAT</span>   <span class="kw">CHECK</span> (value_usd <span class="op">&gt;=</span> <span class="dv">0</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img src="../../assets/img/lecture_09_db/data_model_0trade.png" class="img-fluid" style="display: block; margin: -30px auto 0 auto; padding: 0;;width:50.0%"></p>
+</div>
+</div>
+<!-- end columns -->
+<div style="margin-top: 1em;">
+
+</div>
+<ul>
+<li><code>REFERENCES countries(country_id)</code> — this is the foreign key constraint</li>
+<li>Will reject any insert where <code>exporter_id</code> has no matching row in <code>countries</code></li>
+<li>Both <code>exporter_id</code> and <code>importer_id</code> point to the same table</li>
+</ul>
+<div style="margin-top: 1.5em;">
+
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>DuckDB syntax: <code>REFERENCES table(column)</code> is equivalent to <code>FOREIGN KEY (col) REFERENCES table(col)</code> — the short form is cleaner for single-column keys.</p>
+</div></div></section>
+<section id="what-the-foreign-key-actually-prevents" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-foreign-key-actually-prevents">What the foreign key actually prevents</h2>
+<section id="inserting-a-row-with-a-non-existent-reference" class="level4">
+<h4 class="anchored" data-anchor-id="inserting-a-row-with-a-non-existent-reference">1. Inserting a row with a non-existent reference</h4>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- This works: country 1 exists in countries</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> trade_flows <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2022</span>, <span class="dv">45000000</span>);</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- This fails: country 99 does not exist</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> trade_flows <span class="kw">VALUES</span> (<span class="dv">2</span>, <span class="dv">99</span>, <span class="dv">2</span>, <span class="dv">2022</span>, <span class="dv">10000000</span>);</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Error: FOREIGN KEY constraint failed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="fragment">
+<section id="why" class="level5">
+<h5 class="anchored" data-anchor-id="why">Why?</h5>
+</section>
+</div>
+<div class="fragment">
+<p>The database enforces <strong>referential integrity</strong>: every reference must point to an existing row. This prevents “orphan” records that reference non-existent entities.</p>
+</div>
+</section>
+</section>
+<section id="what-the-foreign-key-actually-prevents-1" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-foreign-key-actually-prevents-1">What the foreign key actually prevents</h2>
+<section id="deleting-a-referenced-row" class="level4">
+<h4 class="anchored" data-anchor-id="deleting-a-referenced-row">2. Deleting a referenced row</h4>
+<p>The constraint also works in the other direction: you cannot delete a row that is still referenced.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- This fails: country 1 is referenced by trade_flows</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> countries <span class="kw">WHERE</span> country_id <span class="op">=</span> <span class="dv">1</span>;</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- Error: Violates foreign key constraint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- You must delete the child rows first</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> trade_flows <span class="kw">WHERE</span> exporter_id <span class="op">=</span> <span class="dv">1</span> <span class="kw">OR</span> importer_id <span class="op">=</span> <span class="dv">1</span>;</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> countries  <span class="kw">WHERE</span> country_id <span class="op">=</span> <span class="dv">1</span>;  <span class="co">-- now this works</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<section id="the-database-protects-referential-integrity-in-both-directions-on-insert-and-on-delete." class="level5">
+<h5 class="anchored" data-anchor-id="the-database-protects-referential-integrity-in-both-directions-on-insert-and-on-delete.">The database protects referential integrity in both directions: on INSERT and on DELETE.</h5>
+</section>
+</div>
+</section>
+</section>
+<section id="self-study-what-the-foreign-key-actually-prevents" class="level2">
+<h2 class="anchored" data-anchor-id="self-study-what-the-foreign-key-actually-prevents">🔎 Self-study: What the foreign key actually prevents</h2>
+<section id="handling-the-deletion-of-a-referenced-row" class="level4">
+<h4 class="anchored" data-anchor-id="handling-the-deletion-of-a-referenced-row">3. Handling the deletion of a referenced row</h4>
+<p>The foreign key also controls what happens when you <strong>delete a referenced row</strong>.</p>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> trade_flows (</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    flow_id     <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    exporter_id <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                <span class="kw">REFERENCES</span> countries(country_id) <span class="kw">ON</span> <span class="kw">DELETE</span> <span class="kw">CASCADE</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">..</span>.</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Behaviour when you delete a country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ON DELETE RESTRICT</code></td>
+<td>❌ Delete is rejected — the country is still referenced</td>
+</tr>
+<tr class="even">
+<td><code>ON DELETE CASCADE</code></td>
+<td>All trade flows for that country are deleted automatically</td>
+</tr>
+<tr class="odd">
+<td><code>ON DELETE SET NULL</code></td>
+<td><code>exporter_id</code> is set to <code>NULL</code> in all affected rows</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote class="blockquote">
+<p>Note: on DuckDB, only <code>RESTRICT</code> is supported. <code>CASCADE</code> and <code>SET NULL</code> are not implemented yet, but they are common in other databases (PostgreSQL, MySQL, SQLite).</p>
+</blockquote>
+</section>
+</section>
+<section id="insert-adding-rows" class="level2">
+<h2 class="anchored" data-anchor-id="insert-adding-rows">INSERT — adding rows</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Populate countries first (the referenced table must exist)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> countries <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">'Switzerland'</span>, <span class="st">'Europe'</span>, <span class="dv">905000000000</span>);</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> countries <span class="kw">VALUES</span> (<span class="dv">2</span>, <span class="st">'Germany'</span>,     <span class="st">'Europe'</span>, <span class="dv">4072000000000</span>);</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> countries <span class="kw">VALUES</span> (<span class="dv">3</span>, <span class="st">'Brazil'</span>,      <span class="st">'LATAM'</span>,  <span class="dv">2081000000000</span>);</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Now populate trade flows</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> trade_flows <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2022</span>, <span class="dv">45000000</span>);</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> trade_flows <span class="kw">VALUES</span> (<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2022</span>, <span class="dv">120000000</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> Always insert into the referenced table first. You cannot insert a trade flow for a country that doesn’t exist yet.</p>
+</blockquote>
+</section>
+</section>
+<section id="creating-a-database" class="level1 page-columns page-full">
+<h1>Creating a database</h1>
+<section id="the-etl-pipeline" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-etl-pipeline">The ETL pipeline</h2>
+<ul>
+<li>On one hand, building a database is to set up the <strong>architecture</strong> of the data through a data model.</li>
+<li>On the other hand, the data has to get there to populate the model.</li>
+</ul>
+<div style="margin-top: 0.5em;">
+
+</div>
+<section id="etl-extract-transform-load" class="level5 page-columns page-full">
+<h5 class="anchored" data-anchor-id="etl-extract-transform-load"><strong>ETL</strong> = <strong>E</strong>xtract → <strong>T</strong>ransform → <strong>L</strong>oad</h5>
+<p>A common pipeline that fits well with the type of work we do in (Econ) research.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>What happens</th>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Extract</strong></td>
+<td>Read raw data from its source, often messy and wide format</td>
+<td><code>pandas</code>, <code>fredapi</code>, CSV, an app, a survey</td>
+</tr>
+<tr class="even">
+<td><strong>Transform</strong></td>
+<td>Clean, reshape, tidy data, assign IDs</td>
+<td><code>pandas</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Load</strong></td>
+<td>Insert into the database, give it structure and queryable</td>
+<td>SQL <code>INSERT</code></td>
+</tr>
+</tbody>
+</table>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <a href="https://en.wikipedia.org/wiki/Extract,_transform,_load">ETL</a></p>
+</div></div></section>
+</section>
+<section id="the-etl-pipeline-1" class="level2">
+<h2 class="anchored" data-anchor-id="the-etl-pipeline-1">The ETL pipeline</h2>
+<p><strong>Why not load raw data directly into a database?</strong></p>
+<ul>
+<li>Raw data is often wide, messy, missing IDs</li>
+<li>SQL has no <code>melt()</code>, no regex-heavy cleaning</li>
+<li>pandas or tidyverse/data.table in R are the right tool for reshaping</li>
+</ul>
+<p><strong>Another pipeline</strong>: ELT: Extract, Load, Transform Loads raw data directly into a warehouse before transforming it, enabling faster loading and greater flexibility than traditional ETL. Key usage examples include real-time analytics, big data processing, and centralizing data from diverse sources.</p>
+</section>
+</section>
+<section id="our-tool-duckdb" class="level1 page-columns page-full">
+<h1>Our tool: DuckDB</h1>
+<section id="the-database-universe" class="level2">
+<h2 class="anchored" data-anchor-id="the-database-universe">The database universe</h2>
+<section id="hundreds-of-database-products-exist." class="level4">
+<h4 class="anchored" data-anchor-id="hundreds-of-database-products-exist.">Hundreds of database products exist.</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://substackcdn.com/image/fetch/$s_!2v_D!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3443cfc6-2a00-4568-b0fd-e60cc8dc1284_1400x900.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Source: <a href="https://www.generativevalue.com/p/a-primer-on-databases">A Primer on Databases</a></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="the-most-important-split-is-oltp-vs.-olap" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-most-important-split-is-oltp-vs.-olap">The most important split is <strong>OLTP vs.&nbsp;OLAP</strong></h2>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="oltp-online-transaction-processing" class="level4">
+<h4 class="anchored" data-anchor-id="oltp-online-transaction-processing">OLTP — Online Transaction Processing</h4>
+<section id="postgresql-mysql-oracle-sqlite" class="level5">
+<h5 class="anchored" data-anchor-id="postgresql-mysql-oracle-sqlite">PostgreSQL, MySQL, Oracle, SQLite</h5>
+<ul>
+<li>One row at a time: inserts, updates, deletes</li>
+<li>High write frequency, strict data integrity</li>
+<li>Powers apps, payment systems, inventory</li>
+<li><strong>Running</strong> the business (claims, subscriptions, inventory movements)</li>
+</ul>
+</section>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="olap-online-analytical-processing" class="level4">
+<h4 class="anchored" data-anchor-id="olap-online-analytical-processing">OLAP — Online Analytical Processing</h4>
+<section id="duckdb-clickhouse-snowflake-bigquery" class="level5">
+<h5 class="anchored" data-anchor-id="duckdb-clickhouse-snowflake-bigquery">DuckDB, ClickHouse, Snowflake, BigQuery</h5>
+<ul>
+<li>Millions of rows at once: aggregations, joins</li>
+<li>Read-heavy, optimised for full-column scans</li>
+<li>Powers dashboards, research, reporting</li>
+<li><strong>Understanding</strong> the business, tailored for data analysis and research.</li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<div style="margin-top: 1.5em;">
+
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>The distinction drives storage layout, indexing strategy, concurrency model. A database optimised for transactions is slow at analytics, and vice versa.</p>
+</div></div><div class="notes">
+<p><strong>Storage layout — the concrete explanation:</strong></p>
+<p>Row-oriented (PostgreSQL, Oracle): data stored row by row on disk. [1, Switzerland, Europe, 905B] [2, Germany, Europe, 4072B] … SELECT AVG(gdp_usd) reads every full row — name, region, everything — just to get one column.</p>
+<p>Column-oriented (DuckDB): data stored column by column. country_id: [1, 2, 3, …] name: [Switzerland, Germany, Brazil, …] gdp_usd: [905B, 4072B, 2081B, …] SELECT AVG(gdp_usd) reads only the gdp_usd column and skips the rest.</p>
+<p>With 200 rows the difference is invisible. With 50 million rows and 100 columns, SELECT AVG(salary) reads 1/100th of the data — 100x less disk I/O.</p>
+<p>OLTP apps need the opposite: SELECT * FROM orders WHERE order_id = 42 reads one full row. With column storage that single row is scattered across 100 files — slow. Rule of thumb: analytics = few columns, many rows → column wins. Apps = all columns, one row → row wins.</p>
+<p><strong>Oracle:</strong> Oracle is a row-oriented RDBMS, same category as PostgreSQL — the dominant production database in large enterprises, banks, insurance, government. Proprietary, expensive, huge enterprise ecosystem. In my work I write SQL against an Oracle data warehouse. The syntax is almost identical to what we use here — differences are in advanced features (window functions, date handling). Oracle also sells analytical add-ons (Exadata) but the core engine is row-oriented OLTP.</p>
+</div>
+</section>
+<section id="in-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="in-this-course">In this course</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/DuckDB_logo.svg/960px-DuckDB_logo.svg.png" class="img-fluid" style="width:90.0%"></p>
+<p>We will use <strong>DuckDB</strong> — an OLAP database built for analytics and research.</p>
+</section>
+<section id="duckdb-is-not-a-classic-rdbms" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb-is-not-a-classic-rdbms">DuckDB is not a classic RDBMS</h2>
+<p>DuckDB speaks SQL, but it is an <strong>analytical database</strong>.</p>
+<div style="margin-top: 1em;">
+
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>RDBMS (PostgreSQL, Oracle)</th>
+<th>DuckDB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Optimised for</td>
+<td>Writes, transactions</td>
+<td>Reads, aggregations</td>
+</tr>
+<tr class="even">
+<td>Storage layout</td>
+<td><strong>Row-oriented</strong></td>
+<td><strong>Column-oriented</strong></td>
+</tr>
+<tr class="odd">
+<td>Setup</td>
+<td>Server process</td>
+<td>In-process (like pandas)</td>
+</tr>
+<tr class="even">
+<td>Concurrency</td>
+<td>Many writers</td>
+<td>One writer, many readers</td>
+</tr>
+<tr class="odd">
+<td>Use case</td>
+<td>Production apps, OLTP</td>
+<td>Analytics, research, OLAP</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 1em;">
+
+</div>
+</section>
+<section id="where-does-each-tool-fit" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="where-does-each-tool-fit">Where does each tool fit?</h2>
+<p>Two axes place every database product:</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Self-hosted server</strong></th>
+<th><strong>Cloud / managed</strong></th>
+<th><strong>Embedded (in-process)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>OLTP</strong> — row, transactional</td>
+<td>Oracle, PostgreSQL, MySQL</td>
+<td>AWS Aurora, Cloud SQL</td>
+<td>SQLite</td>
+</tr>
+<tr class="even">
+<td><strong>OLAP</strong> — column, analytical</td>
+<td>ClickHouse, Redshift</td>
+<td>Snowflake, BigQuery</td>
+<td><strong>DuckDB</strong> ← us</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 1em;">
+
+</div>
+<ul>
+<li><strong>SQLite and DuckDB share the same architecture</strong> — both embedded, no server, single file</li>
+<li>They differ on workload: SQLite stores app state (OLTP), DuckDB analyses data (OLAP)</li>
+<li>DuckDB’s unique position: the only mature <strong>embedded OLAP</strong> engine</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>“Embedded” means the engine runs inside your process — <code>import duckdb</code> is all it takes. No port, no credentials, no daemon to manage.</p>
+</div></div></section>
+<section id="why-duckdb-and-not-postgresql-or-sqlite" class="level2">
+<h2 class="anchored" data-anchor-id="why-duckdb-and-not-postgresql-or-sqlite">Why DuckDB and not PostgreSQL or SQLite?</h2>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="columns" style="font-size: 0.9em;">
+<div class="column" style="width:33%;">
+<section id="oracle-postgresql" class="level4">
+<h4 class="anchored" data-anchor-id="oracle-postgresql">Oracle / PostgreSQL</h4>
+<section id="industry-standard" class="level5">
+<h5 class="anchored" data-anchor-id="industry-standard">Industry standard</h5>
+<ul>
+<li>Production-grade, battle-tested</li>
+<li>What you will use in most data jobs</li>
+<li>Needs a server, credentials, administration</li>
+<li>Too much friction for a research course</li>
+</ul>
+</section>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="sqlite" class="level4">
+<h4 class="anchored" data-anchor-id="sqlite">SQLite</h4>
+<section id="embedded-but-for-apps" class="level5">
+<h5 class="anchored" data-anchor-id="embedded-but-for-apps">Embedded — but for apps</h5>
+<ul>
+<li>Also embedded, no server, single file</li>
+<li><strong>Row-oriented</strong> — designed for app storage, not analytics</li>
+<li>Poor performance on aggregations over large data</li>
+<li>Same architecture as DuckDB, different workload</li>
+</ul>
+</section>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="duckdb" class="level4">
+<h4 class="anchored" data-anchor-id="duckdb">DuckDB</h4>
+<section id="research-analytics" class="level5">
+<h5 class="anchored" data-anchor-id="research-analytics">Research &amp; analytics</h5>
+<ul>
+<li><code>uv add duckdb</code> — no server to start</li>
+<li>Runs inside Python or R like pandas</li>
+<li>Reads CSV, Parquet, JSON directly</li>
+<li>Fast on analytical queries</li>
+<li>One <code>.db</code> file, shareable via git</li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="fragment">
+<section id="duckdb-is-to-analytical-sql-what-pandas-is-to-dataframes-the-default-tool-for-data-work-that-doesnt-need-a-server." class="level5">
+<h5 class="anchored" data-anchor-id="duckdb-is-to-analytical-sql-what-pandas-is-to-dataframes-the-default-tool-for-data-work-that-doesnt-need-a-server.">DuckDB is to analytical SQL what pandas is to dataframes: the default tool for data work that doesn’t need a server.</h5>
+</section>
+</div>
+</section>
+<section id="we-will-use-duckdb-as-dbms" class="level2">
+<h2 class="anchored" data-anchor-id="we-will-use-duckdb-as-dbms">We will use DuckDB as DBMS</h2>
+<p>A typical workflow: create a connection to a <code>.db</code> file, create tables, insert data, query with SQL, get results as a DataFrame. Once you’re done, close the connection.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Open (or create) a .db file</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> duckdb.<span class="ex">connect</span>(<span class="st">"project.db"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create tables</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>conn.execute(<span class="st">"""</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="st">    CREATE TABLE countries (</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">        country_id INTEGER PRIMARY KEY,</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">        name       VARCHAR NOT NULL UNIQUE,</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="st">        region     VARCHAR,</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="st">        gdp_usd    FLOAT</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Query → pandas DataFrame</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> conn.execute(</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SELECT * FROM countries"</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>).df()</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>conn.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="we-will-use-duckdb-as-dbms-1" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="we-will-use-duckdb-as-dbms-1">We will use DuckDB as DBMS</h2>
+<p>DuckDB is both usable with Python and R — the same <code>.db</code> file, no conversion.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Python</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Open (or create) a .db file</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> duckdb.<span class="ex">connect</span>(<span class="st">"project.db"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create tables</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>conn.execute(<span class="st">"""</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">    CREATE TABLE countries (</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">        country_id INTEGER PRIMARY KEY,</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">        name       VARCHAR NOT NULL UNIQUE,</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">        region     VARCHAR,</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">        gdp_usd    FLOAT</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Query → pandas DataFrame</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> conn.execute(</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SELECT * FROM countries"</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>).df()</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>conn.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><strong>R</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Open the same file from Python</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">duckdb</span>(), <span class="st">"project.db"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Query → data.frame</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT c.name,</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="st">           SUM(t.value_usd) AS exports</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM   trade_flows t</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="st">    JOIN   countries   c</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="st">      ON   t.exporter_id = c.country_id</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY c.name</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con, <span class="at">shutdown =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div style="margin-top: 1em;">
+
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Aubury &amp; Letcher, <em>Getting Started with DuckDB</em> (Packt, 2024) — Ch. 1–3 are the reference for this course.</p>
+</div></div></section>
+</section>
+<section id="queries" class="level1">
+<h1>Queries</h1>
+<section id="querying-a-relational-database" class="level2">
+<h2 class="anchored" data-anchor-id="querying-a-relational-database">Querying a relational database</h2>
+<p>A <strong>query</strong> is a request for specific information from the database. It takes one or more tables as input and returns a new table as output.</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">country_id</th>
+<th>name</th>
+<th>region</th>
+<th style="text-align: right;">gdp_usd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Switzerland</td>
+<td>Europe</td>
+<td style="text-align: right;">905000000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Germany</td>
+<td>Europe</td>
+<td style="text-align: right;">4072000000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>Brazil</td>
+<td>LATAM</td>
+<td style="text-align: right;">2081000000000</td>
+</tr>
+</tbody>
+</table>
+<p><em>Which countries are in Europe?</em></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>   countries</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  region <span class="op">=</span> <span class="st">'Europe'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>What is Switzerland’s GDP?</em></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> gdp_usd</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>   countries</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  name <span class="op">=</span> <span class="st">'Switzerland'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-select-statement" class="level2">
+<h2 class="anchored" data-anchor-id="the-select-statement">The SELECT statement</h2>
+<p>The basic pattern:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column1, column2</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span>   table_name</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span>  condition</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<ul>
+<li><strong><code>SELECT</code></strong> which columns to return (use <code>*</code> for all)</li>
+<li><strong><code>FROM</code></strong> the table you want</li>
+<li><strong><code>WHERE</code></strong> you filter rows (optional)</li>
+</ul>
+<div style="margin-top: 1em;">
+
+</div>
+</section>
+<section id="order-by-and-limit" class="level2">
+<h2 class="anchored" data-anchor-id="order-by-and-limit">ORDER BY and LIMIT</h2>
+<p>Sort results and limit output:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   name, gdp_usd</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span>     countries</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span>    region <span class="op">=</span> <span class="st">'Europe'</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ORDER</span> <span class="kw">BY</span> gdp_usd <span class="kw">DESC</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">LIMIT</span>    <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<ul>
+<li><strong><code>ORDER BY</code></strong> sorts by column (<code>ASC</code> ascending, <code>DESC</code> descending)</li>
+<li><strong><code>LIMIT</code></strong> returns only the first N rows (or <code>where rownum ≤ N</code>)</li>
+</ul>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> In DuckDB, <code>LIMIT</code> is useful for exploring large datasets. Always limit during exploration so you don’t wait for millions of rows.</p>
+</blockquote>
+</section>
+<section id="the-basic-query-structure" class="level2">
+<h2 class="anchored" data-anchor-id="the-basic-query-structure">The basic query structure</h2>
+<p>SQL clauses must appear in this order:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   column1, column2   <span class="co">-- which columns to return</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     table_name         <span class="co">-- which table</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>    condition          <span class="co">-- filter rows (optional)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="kw">column</span> <span class="kw">ASC</span><span class="op">/</span><span class="kw">DESC</span>    <span class="co">-- sort (optional)</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span>    n                  <span class="co">-- truncate output (optional)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote class="blockquote">
+<p>The database executes <code>FROM</code> → <code>WHERE</code> → <code>SELECT</code> → <code>ORDER BY</code> → <code>LIMIT</code>. <code>SELECT</code> is written first but evaluated last — which is why you can use a column alias in <code>ORDER BY</code> but not in <code>WHERE</code>.</p>
+</blockquote>
+</section>
+</section>
+<section id="looking-ahead" class="level1 page-columns page-full">
+<h1>Looking ahead</h1>
+<section id="what-we-did-not-cover" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-we-did-not-cover">What we did not cover</h2>
+<p>This is a two-session introduction. Many important topics are out of scope — not because they are unimportant, but because they belong in a dedicated databases course.</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="skipped-for-time" class="level4">
+<h4 class="anchored" data-anchor-id="skipped-for-time">Skipped for time</h4>
+<ul>
+<li>Formal ER notation (cardinality, weak entities, ISA)</li>
+<li>Normalization (1NF, 2NF, 3NF, BCNF)</li>
+<li>Relational algebra (projection, selection, cross product)</li>
+<li>Nested / subqueries</li>
+<li>String and date functions</li>
+<li><code>ALTER TABLE</code>, <code>DROP TABLE</code></li>
+</ul>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="skipped-by-design" class="level4">
+<h4 class="anchored" data-anchor-id="skipped-by-design">Skipped by design</h4>
+<ul>
+<li>ACID properties (atomicity, consistency, isolation, durability)</li>
+<li>Transactions and locking</li>
+<li>Database administration, roles, access control</li>
+<li>Index creation and query tuning</li>
+<li>Non-relational databases (document, graph, key-value)</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>For a full treatment: Venturini, <em>Data Handling: Databases</em> (HSG, 2025) — 6 lectures covering all of the above.</p>
+</div></div></section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<ul>
+<li>Simon Aubury &amp; Ned Letcher, <a href="https://github.com/PacktPublishing/Getting-Started-with-DuckDB"><em>Getting Started with DuckDB</em></a> (Packt, 2024)</li>
+<li>Jacob Montiel, <a href="https://github.com/jacobmontiel/sql-intro">sql-intro</a> — motivation and intro structure</li>
+<li>Marco Venturini, <em>Data Handling: Databases</em> (HSG, 2025) — relational model and schema concepts</li>
+<li>DuckDB documentation: https://duckdb.org/docs/</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
