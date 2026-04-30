@@ -4902,6 +4902,38 @@ vertical-align: -.125em;
     </ul>
   </li>
   <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-8" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 8</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-8">    
+        <li class="dropdown-header">Coming soon</li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-week-9" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Week 9</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-week-9">    
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_09/09_databases.html">
+ <span class="dropdown-text">Lecture 9: Databases &amp; SQL</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_materials/week_09/demo_countries_trade.py">
+ <span class="dropdown-text">Demo script: countries &amp; trade flows</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_09/E09_RelationalDB.html">
+ <span class="dropdown-text">Exercise 9: Relational Databases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../exercise_sessions/week_09/fred_cache.parquet">
+ <span class="dropdown-text">FRED data (Parquet)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-admin" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Admin</span>
     </a>
@@ -5007,7 +5039,7 @@ vertical-align: -.125em;
 </ul>
 </div>
 <p>In Python, almost everything you interact with is actually an object behind the scenes.</p>
-<div id="856fc560" class="cell" data-execution_count="1">
+<div id="c7e32b35" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>string_example <span class="op">=</span> <span class="st">&#39;Hello&#39;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(string_example))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5044,14 +5076,14 @@ vertical-align: -.125em;
 <section id="the-class-keyword" class="level3">
 <h3 class="anchored" data-anchor-id="the-class-keyword">The <code>class</code> keyword</h3>
 <p>To define a class, you use the class keyword followed by the name. When naming a class in Python, use PascalCase: start each word with a capital letter, remove spaces, and don’t use underscores (example: <code>DataFrame</code>) Inside the class you define how the object is built and what it can do.</p>
-<div id="259eb6d1" class="cell" data-execution_count="2">
+<div id="331b724f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Everything indented inside here belongs to the class</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>class definitions cannot be empty, but if you for some reason have a class definition with no content, put in the <code>pass</code> statement to avoid getting an error.</p>
 <p>Now we can use the class blueprint named <code>CentralBank</code> to create objects:</p>
-<div id="1c4c90e5" class="cell" data-execution_count="3">
+<div id="b8e9ace3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -5064,7 +5096,7 @@ vertical-align: -.125em;
 <li>The first argument of <code>__init__</code> must always be <code>self</code>.</li>
 </ul>
 <p>Let’s define two attributes of the central bank: <code>policy</code> describes how the central bank conducts monetary policy (active or passive), and <code>interest_rate</code> is the interest rate it sets.</p>
-<div id="6a17d11c" class="cell" data-execution_count="4">
+<div id="b8ea9a7d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2">2</button><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.policy <span class="op">=</span> <span class="st">&#39;active&#39;</span></span>
@@ -5084,7 +5116,7 @@ vertical-align: -.125em;
 </div>
 <p><strong>What is <code>self</code>?</strong> <br> When you define a class, you are writing code for objects that don’t exist yet. You need a way to say: “When this object is eventually created, take this data and save it inside the object itself.” self is just a placeholder that refers to the specific instance being created.</p>
 <p><strong>Accessing Attributes</strong> <br> You can access these attributes outside the class using dot notation. Notice how <code>self</code> inside the class effectively becomes <code>snb</code> outside the class!</p>
-<div id="8150b7e2" class="cell" data-execution_count="5">
+<div id="49d3548a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an instance of CentralBank</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5100,7 +5132,7 @@ vertical-align: -.125em;
 <section id="creating-an-object-with-specific-attributes" class="level3">
 <h3 class="anchored" data-anchor-id="creating-an-object-with-specific-attributes">Creating an object with specific attributes</h3>
 <p>So far, every central bank we create from the class will have exactly the same starting values — every instance gets <code>policy=&#39;active&#39;</code> and <code>interest_rate=0.02</code>, with no way to change them at creation time. In practice, we want to be able to create different central banks with different rates and policies. We do this by adding arguments to <code>__init__()</code> (always after <code>self</code>):</p>
-<div id="2db582eb" class="cell" data-execution_count="6">
+<div id="76d5ee41" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1">1</button><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy, interest_rate):</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2">2</button><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.policy <span class="op">=</span> policy</span>
@@ -5119,7 +5151,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>When you create an instance you must specify the values for these attributes:</p>
-<div id="78119b74" class="cell" data-execution_count="7">
+<div id="a4ca200f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an instance snb, with policy=&#39;active&#39; and interest_rate = 0.1</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank(policy<span class="op">=</span><span class="st">&#39;active&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.1</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5130,18 +5162,18 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Since <code>policy</code> and <code>interest_rate</code> are now required arguments, Python will raise a <code>TypeError</code> if you try to create an instance without providing them:</p>
-<div id="4cbbe576" class="cell" data-execution_count="8">
+<div id="eab9158c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try creating an instance without providing the required arguments</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()      </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[8]</span><span class="ansi-green-fg">, line 2</span>
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[8], line 2</span>
 <span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Try creating an instance without providing the required arguments</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> snb = <span class="ansi-yellow-bg">CentralBank</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>      
+<span class="ansi-green-fg ansi-bold">----&gt; 2</span> snb <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">CentralBank</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>      
 
-<span class="ansi-red-fg">TypeError</span>: CentralBank.__init__() missing 2 required positional arguments: &#39;policy&#39; and &#39;interest_rate&#39;</pre>
+<span class="ansi-red-fg ansi-bold">TypeError</span>: CentralBank.__init__() missing 2 required positional arguments: &#39;policy&#39; and &#39;interest_rate&#39;</pre>
 </div>
 </div>
 </div>
@@ -5150,7 +5182,7 @@ vertical-align: -.125em;
 <h3 class="anchored" data-anchor-id="using-default-values">Using Default Values</h3>
 <p>Often, you want the best of both worlds: the ability to specify exact attribute values when creating an object, but also the convenience of falling back on sensible default values if the user doesn’t provide any.</p>
 <p>Because <code>__init__()</code> is ultimately just a Python function, you can set default values for its arguments exactly the same way you do for standard standalone functions: by assigning them right in the parameter list.</p>
-<div id="cdc6f282" class="cell" data-execution_count="9">
+<div id="a65770da" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy<span class="op">=</span><span class="st">&#39;passive&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.02</span>):</span>
@@ -5165,7 +5197,7 @@ vertical-align: -.125em;
 </dl>
 </div>
 </div>
-<div id="26241b26" class="cell" data-execution_count="10">
+<div id="aa922ca5" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we provide no arguments, it uses the default values:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fed <span class="op">=</span> CentralBank()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fed.policy)         </span>
@@ -5175,7 +5207,7 @@ vertical-align: -.125em;
 0.02</code></pre>
 </div>
 </div>
-<div id="ff0d27b7" class="cell" data-execution_count="11">
+<div id="6b0ed0fd" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we provide arguments, it overrides the defaults:</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank(policy<span class="op">=</span><span class="st">&#39;active&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.05</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(snb.policy)         </span>
@@ -5186,7 +5218,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p><strong>What you should NOT do:</strong> <br> A very common mistake when learning classes is to require arguments, but then accidentally hard-code the default values inside the body of the <code>__init__()</code> method.</p>
-<div id="27e14653" class="cell" data-execution_count="12">
+<div id="19293aec" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is an example of how NOT to provide default values</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBankExample:</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy, interest_rate):</span>
@@ -5195,7 +5227,7 @@ vertical-align: -.125em;
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.policy <span class="op">=</span> <span class="st">&#39;passive&#39;</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.interest_rate <span class="op">=</span> <span class="fl">0.02</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4858ba92" class="cell" data-execution_count="13">
+<div id="676683e5" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create snb with a policy=&#39;active&#39; and interest_rate=0.05...</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBankExample(policy<span class="op">=</span><span class="st">&#39;active&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.05</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5213,7 +5245,7 @@ vertical-align: -.125em;
 <p>Once an object is created, its attributes are not permanently locked in place. As your program runs or your data updates, you will often need to change the state of your objects. There are two ways to change an attribute’s value: direct access and using methods.</p>
 <p><strong>1. Direct Access (The Quick Way)</strong> <br></p>
 <p>You can overwrite the attribute of an object directly, exactly like you would reassign a normal variable, using dot notation and the <code>=</code> sign.</p>
-<div id="83ee6f50" class="cell" data-execution_count="14">
+<div id="33f5a7f5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Initial interest rate: </span><span class="sc">{</span>snb<span class="sc">.</span>interest_rate<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5245,7 +5277,7 @@ New interest rate: 0.05</code></pre>
 </ol>
 </div>
 <p>Example: Let’s create a method called <code>set_rate()</code> that allows us to change the value of the interest_rate attribute safely:</p>
-<div id="48b37996" class="cell" data-execution_count="15">
+<div id="35df7ae9" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <span id="annotated-cell-15-2"><a href="#annotated-cell-15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy<span class="op">=</span><span class="st">&#39;passive&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.02</span>):</span>
 <span id="annotated-cell-15-3"><a href="#annotated-cell-15-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.policy <span class="op">=</span> policy</span>
@@ -5270,7 +5302,7 @@ New interest rate: 0.05</code></pre>
 </div>
 </div>
 <p>To use a method, you use the dot notation on the specific object you created.</p>
-<div id="012d206e" class="cell" data-execution_count="16">
+<div id="3b373486" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the method:</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>snb.set_rate(new_rate<span class="op">=</span><span class="fl">0.03</span>)</span>
@@ -5299,7 +5331,7 @@ New interest rate: 0.05</code></pre>
 <li>If the rate is negative (which is unconventional but possible), we want to accept it but print a warning.</li>
 </ol>
 </div>
-<div id="c556a495" class="cell" data-execution_count="17">
+<div id="f64ec8ef" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy<span class="op">=</span><span class="st">&#39;passive&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.02</span>):</span>
@@ -5322,7 +5354,7 @@ New interest rate: 0.05</code></pre>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Policy Update: Rate is now </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>interest_rate<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s see our safety checks in action:</p>
-<div id="32ba5241" class="cell" data-execution_count="18">
+<div id="99729d8c" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Trying to pass a string instead of a number</span></span>
@@ -5331,7 +5363,7 @@ New interest rate: 0.05</code></pre>
 <pre><code>Error: 5 percent is not a number. Rate remains 0.02.</code></pre>
 </div>
 </div>
-<div id="de51030a" class="cell" data-execution_count="19">
+<div id="f5ef9468" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Passing a valid, but negative number</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>snb.set_rate(<span class="op">-</span><span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5348,7 +5380,7 @@ Policy Update: Rate is now -0.01</code></pre>
 <li><strong>Reporting and Visualization:</strong> Methods can be used to display the object’s data in a way that is easy to read or visualize. This is where your <code>matplotlib</code> skills will come in.</li>
 </ol>
 <p><strong>Example 1: (Computation &amp; Analysis)</strong> <br> Let’s add a method so the CentralBank can calculate the real interest rate when given an inflation rate.</p>
-<div id="027cc579" class="cell" data-execution_count="20">
+<div id="dc0e1dc4" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy<span class="op">=</span><span class="st">&#39;passive&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.02</span>):</span>
@@ -5373,7 +5405,7 @@ Policy Update: Rate is now -0.01</code></pre>
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># This method performs a calculation using internal data and an external input</span></span>
 <span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.interest_rate <span class="op">-</span> inflation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="223f8bbe" class="cell" data-execution_count="21">
+<div id="c077eeae" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The nominal interest rate is </span><span class="sc">{</span>snb<span class="sc">.</span>interest_rate<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5388,7 +5420,7 @@ The real interest rate is 0.01</code></pre>
 </div>
 <p>Note on <code>return</code>: Notice that we use <code>return</code> in this method. This is because we do not want to permanently change the central bank’s actual interest rate. We just want the object to perform a calculation and hand the result back to us to use as a variable.</p>
 <p><strong>Example 2: (Reporting and Visualization)</strong> <br> We want to print an overview of the central bank’s policy, the type and the interest rate</p>
-<div id="0b737903" class="cell" data-execution_count="22">
+<div id="a5f55398" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy<span class="op">=</span><span class="st">&#39;passive&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.02</span>):</span>
@@ -5424,7 +5456,7 @@ The real interest rate is 0.01</code></pre>
 <span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;-&quot;</span> <span class="op">*</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, whenever we want to see what is going on with our object, we just call this one simple method:</p>
-<div id="bfc2466e" class="cell" data-execution_count="23">
+<div id="a5655f65" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>snb.display_status()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5468,7 +5500,7 @@ Current Rate: 2.00%
 <li>Pass a current_inflation value of 0.05 to both banks using their react_to_inflation method and observe how their internal states diverge.</li>
 </ul></li>
 </ol>
-<div id="d00d860c" class="cell" data-execution_count="24">
+<div id="4aa9c0f5" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="annotated-cell-24"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-24-1"><a href="#annotated-cell-24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-24" data-target-annotation="1">1</button><span id="annotated-cell-24-2" class="code-annotation-target"><a href="#annotated-cell-24-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, policy<span class="op">=</span><span class="st">&#39;passive&#39;</span>, interest_rate<span class="op">=</span><span class="fl">0.02</span>, target<span class="op">=</span><span class="fl">0.02</span>):</span>
 <span id="annotated-cell-24-3"><a href="#annotated-cell-24-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.policy <span class="op">=</span> policy</span>
@@ -5519,7 +5551,7 @@ Current Rate: 2.00%
 </dl>
 </div>
 </div>
-<div id="e009b052" class="cell" data-execution_count="25">
+<div id="4a48ff67" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The Inflation Data </span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>current_inflation <span class="op">=</span> <span class="fl">0.05</span> </span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5551,7 +5583,7 @@ Current Rate: 2.00%
 <h3 class="anchored" data-anchor-id="how-to-import-your-own-classes">How to import your own Classes</h3>
 <p>Now that the tool exists in its own file, we can import it into our current notebook or any other notebook or script. There are three common ways to bring it into your workspace:</p>
 <p><strong>1. Import the Entire Module</strong> <br> The most basic approach is to import the whole file. To create an object, you must use dot notation to tell Python: “Look inside the monetary_policy module, and find the CentralBank class.”</p>
-<div id="717c676d" class="cell" data-execution_count="26">
+<div id="c9e78d97" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> monetary_policy</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an instance: You must prefix the class name with the module name</span></span>
@@ -5564,7 +5596,7 @@ Current Rate: 2.00%
 <p><strong>2. Import the Entire Module with an Alias</strong> <br></p>
 <p>Typing <code>monetary_policy</code> over and over gets tedious. It is standard practice to give the module a shorter nickname (an alias) when you import it.</p>
 <p>This is the exact same logic we use when we type <code>import pandas as pd</code>!</p>
-<div id="59798260" class="cell" data-execution_count="27">
+<div id="19f93af6" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> monetary_policy <span class="im">as</span> mp</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we just use the &#39;mp.&#39; prefix</span></span>
@@ -5577,7 +5609,7 @@ Current Rate: 2.00%
 <p><strong>3. Import a Specific Class Directly</strong> <br></p>
 <p>If you know you only need one specific class from a large module, you can pull it directly into your workspace using the <code>from ... import ...</code> syntax.</p>
 <p>Because you imported the class specifically, you no longer need the module prefix at all. You can use it just like a built-in Python function.</p>
-<div id="b99adf23" class="cell" data-execution_count="28">
+<div id="6c9a80a1" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In your main analysis file</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> monetary_policy <span class="im">import</span> CentralBank</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5597,7 +5629,7 @@ Current Rate: 2.00%
 <li><strong>The Class:</strong> Define your class</li>
 <li><strong>Docstrings:</strong> Use docstrings (triple quotes) <code>&quot;&quot;&quot; &quot;&quot;&quot;</code> to explain what the class and the methods do. This is helpful because when you hover over the class the text will pop up as a “help” hint.</li>
 </ol>
-<div id="e7e3ddcc" class="cell" data-execution_count="29">
+<div id="586b334c" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank():</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">    A class to represent a central bank and simulate its monetary policy decisions.</span></span>
@@ -5633,21 +5665,21 @@ Current Rate: 2.00%
 <span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The rest of the code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Add some docstrings to your class in <code>monetary_policy.py</code>, save it and then import the Class again:</p>
-<div id="1a461ad9" class="cell" data-execution_count="30">
+<div id="e3f097e4" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> monetary_policy <span class="im">import</span> CentralBank</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>snb <span class="op">=</span> CentralBank()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can use the <code>help()</code> function on your class or on a method and it will grab those internal strings and print a manual for them.</p>
-<div id="500b7e48" class="cell" data-execution_count="31">
+<div id="f913533d" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(CentralBank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on class CentralBank in module monetary_policy:
 
 class CentralBank(builtins.object)
  |  CentralBank(policy=&#39;passive&#39;, interest_rate=0.02, target=0.02)
- |
+ |  
  |  A class to represent a central bank and simulate its monetary policy decisions.
- |
+ |  
  |  Attributes
  |  ----------
  |  policy : str
@@ -5656,64 +5688,64 @@ class CentralBank(builtins.object)
  |      The current nominal interest rate set by the bank.
  |  target : float
  |      The central bank&#39;s target inflation rate.
- |
+ |  
  |  Methods defined here:
- |
+ |  
  |  __init__(self, policy=&#39;passive&#39;, interest_rate=0.02, target=0.02)
  |      Initializes the CentralBank with a policy stance, initial rate, and target.
- |
+ |  
  |  react_to_inflation(self, current_inflation)
  |      Adjusts the interest rate based on the current inflation rate.
- |
- |      An &#39;active&#39; bank adjusts rates by 100 basis points (0.01), while a
+ |      
+ |      An &#39;active&#39; bank adjusts rates by 100 basis points (0.01), while a 
  |      &#39;passive&#39; bank adjusts by 25 basis points (0.0025).
- |
+ |      
  |      Parameters
  |      ----------
  |      current_inflation : float
  |          The current economic inflation rate to react to.
- |
+ |  
  |  ----------------------------------------------------------------------
  |  Data descriptors defined here:
- |
+ |  
  |  __dict__
  |      dictionary for instance variables
- |
+ |  
  |  __weakref__
  |      list of weak references to the object
 </code></pre>
 </div>
 </div>
 <p>Sometimes that’s a bit too much information, if you want to see the docstring for the class only, you can access it using <code>MyClass.__doc__</code>. This is a special hidden attribute that is created automatically</p>
-<div id="2493e872" class="cell" data-execution_count="32">
+<div id="0cb4bbe4" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(CentralBank.__doc__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-A class to represent a central bank and simulate its monetary policy decisions.
+    A class to represent a central bank and simulate its monetary policy decisions.
 
-Attributes
-----------
-policy : str
-    The bank&#39;s policy stance, either &#39;active&#39; or &#39;passive&#39;.
-interest_rate : float
-    The current nominal interest rate set by the bank.
-target : float
-    The central bank&#39;s target inflation rate.
-</code></pre>
+    Attributes
+    ----------
+    policy : str
+        The bank&#39;s policy stance, either &#39;active&#39; or &#39;passive&#39;.
+    interest_rate : float
+        The current nominal interest rate set by the bank.
+    target : float
+        The central bank&#39;s target inflation rate.
+    </code></pre>
 </div>
 </div>
 <p>Similarly you can use <code>help()</code> for a specific method of the class</p>
-<div id="bda90f5e" class="cell" data-execution_count="33">
+<div id="6b283bae" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(CentralBank.react_to_inflation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function react_to_inflation in module monetary_policy:
 
 react_to_inflation(self, current_inflation)
     Adjusts the interest rate based on the current inflation rate.
-
-    An &#39;active&#39; bank adjusts rates by 100 basis points (0.01), while a
+    
+    An &#39;active&#39; bank adjusts rates by 100 basis points (0.01), while a 
     &#39;passive&#39; bank adjusts by 25 basis points (0.0025).
-
+    
     Parameters
     ----------
     current_inflation : float
@@ -5722,20 +5754,20 @@ react_to_inflation(self, current_inflation)
 </div>
 </div>
 <p>or access the docstring of a method using <code>MyClass.my_method.__doc__</code></p>
-<div id="9110ac9f" class="cell" data-execution_count="34">
+<div id="48eb02f1" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(CentralBank.react_to_inflation.__doc__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Adjusts the interest rate based on the current inflation rate.
+        Adjusts the interest rate based on the current inflation rate.
+        
+        An &#39;active&#39; bank adjusts rates by 100 basis points (0.01), while a 
+        &#39;passive&#39; bank adjusts by 25 basis points (0.0025).
 
-An &#39;active&#39; bank adjusts rates by 100 basis points (0.01), while a 
-&#39;passive&#39; bank adjusts by 25 basis points (0.0025).
-
-Parameters
-----------
-current_inflation : float
-    The current economic inflation rate to react to.
-</code></pre>
+        Parameters
+        ----------
+        current_inflation : float
+            The current economic inflation rate to react to.
+        </code></pre>
 </div>
 </div>
 <p><br></p>
@@ -5756,7 +5788,7 @@ current_inflation : float
 <li>When you import the file: Python sets <code>__name__</code> to the filename (e.g., “monetary_policy”). The condition is false, and the code inside the block is skipped.</li>
 </ol>
 <p><strong>Implementation Template</strong></p>
-<div id="a75ca263" class="cell" data-execution_count="35">
+<div id="4e2b6b33" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- monetary_policy.py ---</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CentralBank:</span>
