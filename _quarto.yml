@@ -74,10 +74,27 @@ website:
           - text: "---"
           - text: "Exercise 7: Classes"
             file: exercise_sessions/week_07/Ex07_Classes.qmd
+      - text: "Week 8"
+        menu:
+          - text: "Coming soon"
+      - text: "Week 9"
+        menu:
+          - text: "Lecture 9: Databases & SQL"
+            file: course_materials/week_09/09_databases.qmd
+          - text: "Demo script: countries & trade flows"
+            file: course_materials/week_09/demo_countries_trade.py
+          - text: "---"
+          - text: "Exercise 9: Relational Databases"
+            file: exercise_sessions/week_09/E09_RelationalDB.qmd
+          - text: "FRED data (Parquet)"
+            file: exercise_sessions/week_09/fred_cache.parquet
       - text: "Admin"
         menu:
           - text: "Syllabus"
             file: admin/source/syllabus_v1.pdf
+
+execute:
+  freeze: auto
 
 format:
   revealjs:
