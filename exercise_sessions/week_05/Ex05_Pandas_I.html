@@ -5270,7 +5270,7 @@ Price level of household consumption
 </tbody>
 </table>
 <p><strong>Import Packages</strong></p>
-<div id="615476b0" class="cell" data-execution_count="1">
+<div id="dfc1f9e8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="exercise-1-data-loading-and-initial-inspection" class="level2">
@@ -5296,7 +5296,7 @@ Solution 1.1: Load the Data
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="56b5b217" class="cell" data-execution_count="2">
+<div id="d77e7361" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Load the data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/pwt_data_ex5.csv&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5421,7 +5421,7 @@ Solution 1.2: Size Check
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="6f2760d4" class="cell" data-execution_count="3">
+<div id="f063c34c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Size Check</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Dataset Shape: </span><span class="sc">{</span>df<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># df.shape returns (rows, columns)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5444,7 +5444,7 @@ Solution 1.3: Variable Types
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="4b7544ac" class="cell" data-execution_count="4">
+<div id="2e934435" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Variable Types and Non-Null counts</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .info() is perfect for seeing Dtypes and identifying missing data at a glance</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5485,7 +5485,7 @@ Solution 1.4: Country Count
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c5e7330a" class="cell" data-execution_count="5">
+<div id="7ee864b6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Country Count</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We use .nunique() on the &#39;Country&#39; column to count unique entries</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>num_countries <span class="op">=</span> df[<span class="st">&#39;Country&#39;</span>].nunique()</span>
@@ -5509,7 +5509,7 @@ Solution 1.5: Summary Statistics
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="b50d3712" class="cell" data-execution_count="6">
+<div id="7f63b163" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Summary Statistics</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .describe() gives us the mean, std, and quartiles for numeric columns</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5670,7 +5670,7 @@ Solution 2.1: The Recent Slice
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="57740389" class="cell" data-execution_count="7">
+<div id="00e761c3" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. The Recent Slice</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_2023 <span class="op">=</span> df[df[<span class="st">&#39;year&#39;</span>] <span class="op">==</span> <span class="dv">2023</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -5689,7 +5689,7 @@ Solution 2.2: The Country Focus
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="52f9916d" class="cell" data-execution_count="8">
+<div id="10102844" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. The Country Focus</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_switzerland <span class="op">=</span> df[df[<span class="st">&#39;Country&#39;</span>] <span class="op">==</span> <span class="st">&#39;Switzerland&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -5708,7 +5708,7 @@ Solution 2.3: High-Population Economies
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="55243913" class="cell" data-execution_count="9">
+<div id="e5cea174" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. High-Population Economies</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>high_pop <span class="op">=</span> df[df[<span class="st">&#39;pop&#39;</span>] <span class="op">&gt;</span> <span class="dv">1000</span>]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>high_pop[<span class="st">&#39;Country&#39;</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5731,7 +5731,7 @@ Solution 2.4: Specific Comparison
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="9e8baa79" class="cell" data-execution_count="10">
+<div id="ef5704c5" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Specific Comparison</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We use .isin() for the countries and logical operators for the years</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>countries <span class="op">=</span> [<span class="st">&#39;Germany&#39;</span>, <span class="st">&#39;France&#39;</span>]</span>
@@ -5769,7 +5769,7 @@ Solution 3.1: GDP per Capita
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="605f0b8c" class="cell" data-execution_count="11">
+<div id="6f4cbb7e" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. GDP per Capita</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Formula: Real GDP / Population</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;gdp_pc&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;rgdpna&#39;</span>] <span class="op">/</span> df[<span class="st">&#39;pop&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5789,7 +5789,7 @@ Solution 3.2: Capital Intensity
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="6ff24489" class="cell" data-execution_count="12">
+<div id="c4671c53" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Capital Intensity (Capital per worker)</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Formula: Capital Stock / Employment</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;k_labor&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;rnna&#39;</span>] <span class="op">/</span> df[<span class="st">&#39;emp&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5809,7 +5809,7 @@ Solution 3.3: Labor Productivity
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="eb32e07b" class="cell" data-execution_count="13">
+<div id="f46566d1" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Labor Productivity (Output per hour)</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We multiply employment by average hours to get total labor hours</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;labor_prod&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;rgdpna&#39;</span>] <span class="op">/</span> (df[<span class="st">&#39;emp&#39;</span>] <span class="op">*</span> df[<span class="st">&#39;avh&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5829,7 +5829,7 @@ Solution 3.4: Display Results
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="9fb8df45" class="cell" data-execution_count="14">
+<div id="7993a73f" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows to verify the new columns</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">&#39;Country&#39;</span>, <span class="st">&#39;year&#39;</span>, <span class="st">&#39;gdp_pc&#39;</span>, <span class="st">&#39;k_labor&#39;</span>, <span class="st">&#39;labor_prod&#39;</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -5920,7 +5920,7 @@ Solution 4.1: Global Trends
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="a674083c" class="cell" data-execution_count="15">
+<div id="00e222de" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We group by &#39;year&#39; and sum population, then average TFP</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>global_trends <span class="op">=</span> df.groupby(<span class="st">&#39;year&#39;</span>).agg({</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;pop&#39;</span>: <span class="st">&#39;sum&#39;</span>,</span>
@@ -5992,7 +5992,7 @@ Solution 4.2: Country Profiles
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="eaefe5a8" class="cell" data-execution_count="16">
+<div id="9086636f" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the peak wealth and typical labor share for each nation</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>country_profiles <span class="op">=</span> df.groupby(<span class="st">&#39;Country&#39;</span>).agg({</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;gdp_pc&#39;</span>: <span class="st">&#39;max&#39;</span>,</span>
@@ -6064,7 +6064,7 @@ Solution 4.3: Productivity Trend
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="a28fb470" class="cell" data-execution_count="17">
+<div id="c41e2845" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Labor Productivity over time</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>productivity_trend <span class="op">=</span> df.groupby(<span class="st">&#39;year&#39;</span>)[<span class="st">&#39;labor_prod&#39;</span>].mean()</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>productivity_trend.head()</span>
@@ -6095,7 +6095,7 @@ Solution 4.4: Summary Table
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="3eacdaaa" class="cell" data-execution_count="18">
+<div id="cd381bf3" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using .agg() with a list of functions for a single column</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>country_stats <span class="op">=</span> df.groupby(<span class="st">&#39;Country&#39;</span>)[<span class="st">&#39;hc&#39;</span>].agg([<span class="st">&#39;mean&#39;</span>, <span class="st">&#39;min&#39;</span>, <span class="st">&#39;max&#39;</span>]).reset_index()</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>country_stats.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6182,7 +6182,7 @@ Solution 5.1: Import Matplotlib
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="69fcba8a" class="cell" data-execution_count="19">
+<div id="a62997f5" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -6200,7 +6200,7 @@ Solution 5.2: The Rise in Human Capital
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="1fac82d1" class="cell" data-execution_count="20">
+<div id="7e9470c9" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate the average human capital for all countries by year</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>hc_trend <span class="op">=</span> df.groupby(<span class="st">&#39;year&#39;</span>)[<span class="st">&#39;hc&#39;</span>].mean()</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>hc_trend <span class="op">=</span> hc_trend.reset_index()</span>
@@ -6242,7 +6242,7 @@ Solution 5.3: Productivity vs. Wealth
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="60fefdab" class="cell" data-execution_count="21">
+<div id="0f283cd1" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter your data for 2023</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df_2023 <span class="op">=</span> df[df[<span class="st">&#39;year&#39;</span>] <span class="op">==</span> <span class="dv">2023</span>]</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6262,7 +6262,7 @@ Solution 5.3: Productivity vs. Wealth
 </div>
 </div>
 </div>
-<div id="104a9c4f" class="cell" data-execution_count="22">
+<div id="0a99b0a5" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the same plot with a log scale for the y-axis</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(df_2023[<span class="st">&#39;hc&#39;</span>], df_2023[<span class="st">&#39;gdp_pc&#39;</span>])</span>
@@ -6294,7 +6294,7 @@ Solution 5.4: The TFP Frontier
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="653e5ab9" class="cell" data-execution_count="23">
+<div id="d3468595" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the 2023 data from previously for the countries, and sort values</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>selection <span class="op">=</span> [<span class="st">&#39;United States&#39;</span>, <span class="st">&#39;China&#39;</span>, <span class="st">&#39;India&#39;</span>, <span class="st">&#39;Germany&#39;</span>,<span class="st">&#39;Switzerland&#39;</span>, <span class="st">&#39;Brazil&#39;</span>, <span class="st">&#39;Nigeria&#39;</span>]</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>df_sel <span class="op">=</span> df_2023[df_2023[<span class="st">&#39;Country&#39;</span>].isin(selection)]</span>
@@ -6329,7 +6329,7 @@ Solution 5.5: Distribution of Labor Shares
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c5907ea3" class="cell" data-execution_count="24">
+<div id="8537c29e" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plt.hist(df[<span class="st">&#39;labsh&#39;</span>].dropna(), bins<span class="op">=</span><span class="dv">30</span>, edgecolor<span class="op">=</span><span class="st">&#39;white&#39;</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Distribution of Labor Shares Across All Observations&quot;</span>)</span>
@@ -6372,7 +6372,7 @@ Solution 6.1: Preparation
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="057b68ae" class="cell" data-execution_count="25">
+<div id="ecc07910" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Filter and Sort </span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>countries <span class="op">=</span> [<span class="st">&#39;United States&#39;</span>, <span class="st">&#39;Switzerland&#39;</span>]</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>ga_df <span class="op">=</span> df[df[<span class="st">&#39;Country&#39;</span>].isin(countries)].copy()</span>
@@ -6528,7 +6528,7 @@ Solution 6.2: Calculate Growth Rates
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="09095566" class="cell" data-execution_count="26">
+<div id="72de3f45" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ga_df <span class="op">=</span> ga_df.sort_values([<span class="st">&#39;Country&#39;</span>, <span class="st">&#39;year&#39;</span>])</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>ga_df[<span class="st">&#39;g_y&#39;</span>] <span class="op">=</span> ga_df.groupby(<span class="st">&#39;Country&#39;</span>)[<span class="st">&#39;rgdpna&#39;</span>].pct_change()</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>ga_df[<span class="st">&#39;g_k&#39;</span>] <span class="op">=</span> ga_df.groupby(<span class="st">&#39;Country&#39;</span>)[<span class="st">&#39;rnna&#39;</span>].pct_change()</span>
@@ -6687,7 +6687,7 @@ Solution 6.2: Calculate Growth Rates
 <li>Assign the average capital share back to the dataframe. Use <code>.loc</code></li>
 </ul>
 <p>So far, you have used <code>.loc</code> to find specific data (e.g., <code>df.loc[row, column]</code>). However, <code>.loc</code> is also one of the most powerful tools for creating or updating variables based on a condition. When you use the assignment operator (<code>=</code>) with <code>.loc</code>, you are telling Python: “Find all the rows that meet my condition, look at this specific column, and write this value there.”</p>
-<div id="3d41c82f" class="cell" data-execution_count="27">
+<div id="cacea26a" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example </span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#            [1. The Rows]               [2. The Column]    [3. The Value]</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>ga_df.loc[df[<span class="st">&#39;Country&#39;</span>] <span class="op">==</span> <span class="st">&#39;United States&#39;</span>, <span class="st">&#39;alpha&#39;</span>]        <span class="op">=</span>  <span class="fl">0.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6709,7 +6709,7 @@ Solution 6.3: Define the Capital Share
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="dac7aed7" class="cell" data-execution_count="28">
+<div id="c0073f87" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create variable cap_share_annual</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>ga_df[<span class="st">&#39;cap_share_annual&#39;</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> ga_df[<span class="st">&#39;labsh&#39;</span>]</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6903,7 +6903,7 @@ Solution 6.4: TFP Growth
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="91b339e0" class="cell" data-execution_count="29">
+<div id="3c19ab3e" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Calculate TFP Growth</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>ga_df[<span class="st">&#39;g_tfp&#39;</span>] <span class="op">=</span> ga_df[<span class="st">&#39;g_y&#39;</span>] <span class="op">-</span> (ga_df[<span class="st">&#39;alpha&#39;</span>] <span class="op">*</span> ga_df[<span class="st">&#39;g_k&#39;</span>] <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> ga_df[<span class="st">&#39;alpha&#39;</span>]) <span class="op">*</span> ga_df[<span class="st">&#39;g_l&#39;</span>])</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>ga_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -7093,7 +7093,7 @@ Solution 6.5: Summary Table
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="a98abf12" class="cell" data-execution_count="30">
+<div id="6468b537" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Average the components </span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> ga_df.groupby(<span class="st">&#39;Country&#39;</span>)[[<span class="st">&#39;g_y&#39;</span>, <span class="st">&#39;g_k&#39;</span>, <span class="st">&#39;g_l&#39;</span>, <span class="st">&#39;alpha&#39;</span>, <span class="st">&#39;g_tfp&#39;</span>]].mean()</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7157,7 +7157,7 @@ Solution 6.5: Summary Table
 <p>Then we create a stacked barchart to visualize our results.</p>
 <p>The code below creates a figure that decomposes average annual GDP growth into the specific contributions of capital accumulation, labor input, and Total Factor Productivity (TFP) to illustrate the underlying drivers of economic growth for each country.</p>
 <p>We haven’t covered “stacked” charts in class, deduce how this works by looking at the three <code>plt.bar()</code> calls.</p>
-<div id="512b8f68" class="cell" data-execution_count="31">
+<div id="b8deda9b" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Setup the data from the columns</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>countries <span class="op">=</span> summary[<span class="st">&#39;Country&#39;</span>]</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>tfp_part <span class="op">=</span> summary[<span class="st">&#39;g_tfp&#39;</span>]</span>
