@@ -444,7 +444,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Dr. Aurélien Sallin">
-  <meta name="dcterms.date" content="2026-02-27">
+  <meta name="dcterms.date" content="2026-05-01">
   <title>BEcon 6222 - Introduction to Programming – 4,222 Introduction to Programming</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -488,8 +488,73 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ color: #f8f8f2; background-color: #282a36; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #f8f8f2; } 
+code span.al { color: #ff5555; font-weight: bold; } 
+code span.an { color: #ff79c6; } 
+code span.at { color: #ff79c6; } 
+code span.bn { color: #bd93f9; } 
+code span.bu { color: #8be9fd; } 
+code span.cf { color: #ff79c6; } 
+code span.ch { color: #f1fa8c; } 
+code span.cn { color: #bd93f9; font-weight: bold; } 
+code span.co { color: #6272a4; } 
+code span.cv { color: #8be9fd; } 
+code span.do { color: #ffb86c; } 
+code span.dt { color: #8be9fd; font-style: italic; } 
+code span.dv { color: #bd93f9; } 
+code span.er { color: #ff5555; text-decoration: underline; } 
+code span.ex { color: #8be9fd; } 
+code span.fl { color: #bd93f9; } 
+code span.fu { color: #50fa7b; } 
+code span.im { color: #ff79c6; } 
+code span.in { color: #f1fa8c; } 
+code span.kw { color: #ff79c6; } 
+code span.op { color: #f8f8f2; } 
+code span.ot { color: #50fa7b; } 
+code span.pp { color: #ff79c6; } 
+code span.re { color: #8be9fd; } 
+code span.sc { color: #ff79c6; } 
+code span.ss { color: #f1fa8c; } 
+code span.st { color: #f1fa8c; } 
+code span.va { color: #8be9fd; } 
+code span.vs { color: #f1fa8c; } 
+code span.wa { color: #ff5555; } 
 </style>
-  <link href="data:text/css,%40import%22%2E%2Ffonts%2Fleague%2Dgothic%2Fleague%2Dgothic%2Ecss%22%3B%40import%22https%3A%2F%2Ffonts%2Egoogleapis%2Ecom%2Fcss%3Ffamily%3DLato%3A400%2C700%2C400italic%2C700italic%22%3B%40import%22https%3A%2F%2Ffonts%2Egoogleapis%2Ecom%2Fcss%3Ffamily%3DOpen%2BSans%22%3B%40import%22https%3A%2F%2Ffonts%2Egoogleapis%2Ecom%2Fcss2%3Ffamily%3DSource%2BSans%2BPro%3Awght%40400%3B600%3B700%26family%3DPoppins%3Awght%40500%3B600%3B700%26display%3Dswap%22%3B%40import%22%2E%2Ffonts%2Fsource%2Dsans%2Dpro%2Fsource%2Dsans%2Dpro%2Ecss%22%3B%2Egreen%2Dbold%7Bcolor%3Agreen%3Bfont%2Dweight%3Abold%7D%3Aroot%7B%2D%2Dr%2Dbackground%2Dcolor%3A%20%23ffffff%3B%2D%2Dr%2Dmain%2Dfont%3A%20Inter%2C%20sans%2Dserif%3B%2D%2Dr%2Dmain%2Dfont%2Dsize%3A%2040px%3B%2D%2Dr%2Dmain%2Dcolor%3A%20%23000%3B%2D%2Dr%2Dblock%2Dmargin%3A%2024px%3B%2D%2Dr%2Dheading%2Dmargin%3A%200%200%2024px%200%3B%2D%2Dr%2Dheading%2Dfont%3A%20Poppins%3B%2D%2Dr%2Dheading%2Dcolor%3A%20%2302934a%3B%2D%2Dr%2Dheading%2Dline%2Dheight%3A%201%2E2%3B%2D%2Dr%2Dheading%2Dletter%2Dspacing%3A%20normal%3B%2D%2Dr%2Dheading%2Dtext%2Dtransform%3A%20none%3B%2D%2Dr%2Dheading%2Dtext%2Dshadow%3A%20none%3B%2D%2Dr%2Dheading%2Dfont%2Dweight%3A%20600%3B%2D%2Dr%2Dheading1%2Dtext%2Dshadow%3A%20none%3B%2D%2Dr%2Dheading1%2Dsize%3A%202%2E5em%3B%2D%2Dr%2Dheading2%2Dsize%3A%201%2E35em%3B%2D%2Dr%2Dheading3%2Dsize%3A%201%2E1em%3B%2D%2Dr%2Dheading4%2Dsize%3A%201em%3B%2D%2Dr%2Dcode%2Dfont%3A%20SFMono%2DRegular%2C%20Menlo%2C%20Monaco%2C%20Consolas%2C%20Liberation%20Mono%2C%20Courier%20New%2C%20monospace%3B%2D%2Dr%2Dlink%2Dcolor%3A%20%2302934a%3B%2D%2Dr%2Dlink%2Dcolor%2Ddark%3A%20%23014824%3B%2D%2Dr%2Dlink%2Dcolor%2Dhover%3A%20%2303c563%3B%2D%2Dr%2Dselection%2Dbackground%2Dcolor%3A%20%2302934a%3B%2D%2Dr%2Dselection%2Dcolor%3A%20%23ffffff%7D%2Ereveal%2Dviewport%7Bbackground%3A%23fff%3Bbackground%2Dcolor%3Avar%28%2D%2Dr%2Dbackground%2Dcolor%29%7D%2Ereveal%7Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dmain%2Dfont%29%3Bfont%2Dsize%3Avar%28%2D%2Dr%2Dmain%2Dfont%2Dsize%29%3Bfont%2Dweight%3Anormal%3Bcolor%3Avar%28%2D%2Dr%2Dmain%2Dcolor%29%7D%2Ereveal%20%3A%3Aselection%7Bcolor%3Avar%28%2D%2Dr%2Dselection%2Dcolor%29%3Bbackground%3Avar%28%2D%2Dr%2Dselection%2Dbackground%2Dcolor%29%3Btext%2Dshadow%3Anone%7D%2Ereveal%20%3A%3A%2Dmoz%2Dselection%7Bcolor%3Avar%28%2D%2Dr%2Dselection%2Dcolor%29%3Bbackground%3Avar%28%2D%2Dr%2Dselection%2Dbackground%2Dcolor%29%3Btext%2Dshadow%3Anone%7D%2Ereveal%20%2Eslides%20section%2C%2Ereveal%20%2Eslides%20section%3Esection%7Bline%2Dheight%3A1%2E3%3Bfont%2Dweight%3Ainherit%7D%2Ereveal%20h1%2C%2Ereveal%20h2%2C%2Ereveal%20h3%2C%2Ereveal%20h4%2C%2Ereveal%20h5%2C%2Ereveal%20h6%7Bmargin%3Avar%28%2D%2Dr%2Dheading%2Dmargin%29%3Bcolor%3Avar%28%2D%2Dr%2Dheading%2Dcolor%29%3Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dheading%2Dfont%29%3Bfont%2Dweight%3Avar%28%2D%2Dr%2Dheading%2Dfont%2Dweight%29%3Bline%2Dheight%3Avar%28%2D%2Dr%2Dheading%2Dline%2Dheight%29%3Bletter%2Dspacing%3Avar%28%2D%2Dr%2Dheading%2Dletter%2Dspacing%29%3Btext%2Dtransform%3Avar%28%2D%2Dr%2Dheading%2Dtext%2Dtransform%29%3Btext%2Dshadow%3Avar%28%2D%2Dr%2Dheading%2Dtext%2Dshadow%29%3Bword%2Dwrap%3Abreak%2Dword%7D%2Ereveal%20h1%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading1%2Dsize%29%7D%2Ereveal%20h2%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading2%2Dsize%29%7D%2Ereveal%20h3%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading3%2Dsize%29%7D%2Ereveal%20h4%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading4%2Dsize%29%7D%2Ereveal%20h1%7Btext%2Dshadow%3Avar%28%2D%2Dr%2Dheading1%2Dtext%2Dshadow%29%7D%2Ereveal%20p%7Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%200%3Bline%2Dheight%3A1%2E3%7D%2Ereveal%20h1%3Alast%2Dchild%2C%2Ereveal%20h2%3Alast%2Dchild%2C%2Ereveal%20h3%3Alast%2Dchild%2C%2Ereveal%20h4%3Alast%2Dchild%2C%2Ereveal%20h5%3Alast%2Dchild%2C%2Ereveal%20h6%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7D%2Ereveal%20img%2C%2Ereveal%20video%2C%2Ereveal%20iframe%7Bmax%2Dwidth%3A95%25%3Bmax%2Dheight%3A95%25%7D%2Ereveal%20strong%2C%2Ereveal%20b%7Bfont%2Dweight%3Abold%7D%2Ereveal%20em%7Bfont%2Dstyle%3Aitalic%7D%2Ereveal%20ol%2C%2Ereveal%20dl%2C%2Ereveal%20ul%7Bdisplay%3Ainline%2Dblock%3Btext%2Dalign%3Aleft%3Bmargin%3A0%200%200%201em%7D%2Ereveal%20ol%7Blist%2Dstyle%2Dtype%3Adecimal%7D%2Ereveal%20ul%7Blist%2Dstyle%2Dtype%3Adisc%7D%2Ereveal%20ul%20ul%7Blist%2Dstyle%2Dtype%3Asquare%7D%2Ereveal%20ul%20ul%20ul%7Blist%2Dstyle%2Dtype%3Acircle%7D%2Ereveal%20ul%20ul%2C%2Ereveal%20ul%20ol%2C%2Ereveal%20ol%20ol%2C%2Ereveal%20ol%20ul%7Bdisplay%3Ablock%3Bmargin%2Dleft%3A40px%7D%2Ereveal%20dt%7Bfont%2Dweight%3Abold%7D%2Ereveal%20dd%7Bmargin%2Dleft%3A40px%7D%2Ereveal%20blockquote%7Bdisplay%3Ablock%3Bposition%3Arelative%3Bwidth%3A70%25%3Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%20auto%3Bpadding%3A5px%3Bfont%2Dstyle%3Aitalic%3Bbackground%3Argba%28255%2C255%2C255%2C%2E05%29%3Bbox%2Dshadow%3A0px%200px%202px%20rgba%280%2C0%2C0%2C%2E2%29%7D%2Ereveal%20blockquote%20p%3Afirst%2Dchild%2C%2Ereveal%20blockquote%20p%3Alast%2Dchild%7Bdisplay%3Ainline%2Dblock%7D%2Ereveal%20q%7Bfont%2Dstyle%3Aitalic%7D%2Ereveal%20pre%7Bdisplay%3Ablock%3Bposition%3Arelative%3Bwidth%3A90%25%3Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%20auto%3Btext%2Dalign%3Aleft%3Bfont%2Dsize%3A%2E55em%3Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dcode%2Dfont%29%3Bline%2Dheight%3A1%2E2em%3Bword%2Dwrap%3Abreak%2Dword%3Bbox%2Dshadow%3A0px%205px%2015px%20rgba%280%2C0%2C0%2C%2E15%29%7D%2Ereveal%20code%7Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dcode%2Dfont%29%3Btext%2Dtransform%3Anone%3Btab%2Dsize%3A2%7D%2Ereveal%20pre%20code%7Bdisplay%3Ablock%3Bpadding%3A5px%3Boverflow%3Aauto%3Bmax%2Dheight%3A400px%3Bword%2Dwrap%3Anormal%7D%2Ereveal%20%2Ecode%2Dwrapper%7Bwhite%2Dspace%3Anormal%7D%2Ereveal%20%2Ecode%2Dwrapper%20code%7Bwhite%2Dspace%3Apre%7D%2Ereveal%20table%7Bmargin%3Aauto%3Bborder%2Dcollapse%3Acollapse%3Bborder%2Dspacing%3A0%7D%2Ereveal%20table%20th%7Bfont%2Dweight%3Abold%7D%2Ereveal%20table%20th%2C%2Ereveal%20table%20td%7Btext%2Dalign%3Aleft%3Bpadding%3A%2E2em%20%2E5em%20%2E2em%20%2E5em%3Bborder%2Dbottom%3A1px%20solid%7D%2Ereveal%20table%20th%5Balign%3Dcenter%5D%2C%2Ereveal%20table%20td%5Balign%3Dcenter%5D%7Btext%2Dalign%3Acenter%7D%2Ereveal%20table%20th%5Balign%3Dright%5D%2C%2Ereveal%20table%20td%5Balign%3Dright%5D%7Btext%2Dalign%3Aright%7D%2Ereveal%20table%20tbody%20tr%3Alast%2Dchild%20th%2C%2Ereveal%20table%20tbody%20tr%3Alast%2Dchild%20td%7Bborder%2Dbottom%3Anone%7D%2Ereveal%20sup%7Bvertical%2Dalign%3Asuper%3Bfont%2Dsize%3Asmaller%7D%2Ereveal%20sub%7Bvertical%2Dalign%3Asub%3Bfont%2Dsize%3Asmaller%7D%2Ereveal%20small%7Bdisplay%3Ainline%2Dblock%3Bfont%2Dsize%3A%2E6em%3Bline%2Dheight%3A1%2E2em%3Bvertical%2Dalign%3Atop%7D%2Ereveal%20small%20%2A%7Bvertical%2Dalign%3Atop%7D%2Ereveal%20img%7Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%200%7D%2Ereveal%20a%7Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%3Btext%2Ddecoration%3Anone%3Btransition%3Acolor%20%2E15s%20ease%7D%2Ereveal%20a%3Ahover%7Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%2Dhover%29%3Btext%2Dshadow%3Anone%3Bborder%3Anone%7D%2Ereveal%20%2Eroll%20span%3Aafter%7Bcolor%3A%23fff%3Bbackground%3Avar%28%2D%2Dr%2Dlink%2Dcolor%2Ddark%29%7D%2Ereveal%20%2Er%2Dframe%7Bborder%3A4px%20solid%20var%28%2D%2Dr%2Dmain%2Dcolor%29%3Bbox%2Dshadow%3A0%200%2010px%20rgba%280%2C0%2C0%2C%2E15%29%7D%2Ereveal%20a%20%2Er%2Dframe%7Btransition%3Aall%20%2E15s%20linear%7D%2Ereveal%20a%3Ahover%20%2Er%2Dframe%7Bborder%2Dcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%3Bbox%2Dshadow%3A0%200%2020px%20rgba%280%2C0%2C0%2C%2E55%29%7D%2Ereveal%20%2Econtrols%7Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%7D%2Ereveal%20%2Eprogress%7Bbackground%3Argba%280%2C0%2C0%2C%2E2%29%3Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%7D%40media%20print%7B%2Ebackgrounds%7Bbackground%2Dcolor%3Avar%28%2D%2Dr%2Dbackground%2Dcolor%29%7D%7D%2Etop%2Dright%7Bposition%3Aabsolute%3Btop%3A1em%3Bright%3A1em%7D%2Evisually%2Dhidden%7Bborder%3A0%3Bclip%3Arect%280%200%200%200%29%3Bheight%3Aauto%3Bmargin%3A0%3Boverflow%3Ahidden%3Bpadding%3A0%3Bposition%3Aabsolute%3Bwidth%3A1px%3Bwhite%2Dspace%3Anowrap%7D%2Ehidden%7Bdisplay%3Anone%20%21important%7D%2Ezindex%2Dbottom%7Bz%2Dindex%3A%2D1%20%21important%7Dfigure%2Efigure%7Bdisplay%3Ablock%7D%2Equarto%2Dlayout%2Dpanel%7Bmargin%2Dbottom%3A1em%7D%2Equarto%2Dlayout%2Dpanel%3Efigure%7Bwidth%3A100%25%7D%2Equarto%2Dlayout%2Dpanel%3Efigure%3Efigcaption%2C%2Equarto%2Dlayout%2Dpanel%3E%2Epanel%2Dcaption%7Bmargin%2Dtop%3A10pt%7D%2Equarto%2Dlayout%2Dpanel%3E%2Etable%2Dcaption%7Bmargin%2Dtop%3A0px%7D%2Etable%2Dcaption%20p%7Bmargin%2Dbottom%3A%2E5em%7D%2Equarto%2Dlayout%2Drow%7Bdisplay%3Aflex%3Bflex%2Ddirection%3Arow%3Balign%2Ditems%3Aflex%2Dstart%7D%2Equarto%2Dlayout%2Dvalign%2Dtop%7Balign%2Ditems%3Aflex%2Dstart%7D%2Equarto%2Dlayout%2Dvalign%2Dbottom%7Balign%2Ditems%3Aflex%2Dend%7D%2Equarto%2Dlayout%2Dvalign%2Dcenter%7Balign%2Ditems%3Acenter%7D%2Equarto%2Dlayout%2Dcell%7Bposition%3Arelative%3Bmargin%2Dright%3A20px%7D%2Equarto%2Dlayout%2Dcell%3Alast%2Dchild%7Bmargin%2Dright%3A0%7D%2Equarto%2Dlayout%2Dcell%20figure%2C%2Equarto%2Dlayout%2Dcell%3Ep%7Bmargin%3A%2E2em%7D%2Equarto%2Dlayout%2Dcell%20img%7Bmax%2Dwidth%3A100%25%7D%2Equarto%2Dlayout%2Dcell%20%2Ehtml%2Dwidget%7Bwidth%3A100%25%20%21important%7D%2Equarto%2Dlayout%2Dcell%20div%20figure%20p%7Bmargin%3A0%7D%2Equarto%2Dlayout%2Dcell%20figure%7Bdisplay%3Ablock%3Bmargin%2Dinline%2Dstart%3A0%3Bmargin%2Dinline%2Dend%3A0%7D%2Equarto%2Dlayout%2Dcell%20table%7Bdisplay%3Ainline%2Dtable%7D%2Equarto%2Dlayout%2Dcell%2Dsubref%20figcaption%2Cfigure%20%2Equarto%2Dlayout%2Drow%20figure%20figcaption%7Btext%2Dalign%3Acenter%3Bfont%2Dstyle%3Aitalic%7D%2Equarto%2Dfigure%7Bposition%3Arelative%3Bmargin%2Dbottom%3A1em%7D%2Equarto%2Dfigure%3Efigure%7Bwidth%3A100%25%3Bmargin%2Dbottom%3A0%7D%2Equarto%2Dfigure%2Dleft%3Efigure%3Ep%2C%2Equarto%2Dfigure%2Dleft%3Efigure%3Ediv%7Btext%2Dalign%3Aleft%7D%2Equarto%2Dfigure%2Dcenter%3Efigure%3Ep%2C%2Equarto%2Dfigure%2Dcenter%3Efigure%3Ediv%7Btext%2Dalign%3Acenter%7D%2Equarto%2Dfigure%2Dright%3Efigure%3Ep%2C%2Equarto%2Dfigure%2Dright%3Efigure%3Ediv%7Btext%2Dalign%3Aright%7D%2Equarto%2Dfigure%3Efigure%3Ediv%2Ecell%2Dannotation%2C%2Equarto%2Dfigure%3Efigure%3Ediv%20code%7Btext%2Dalign%3Aleft%7Dfigure%3Ep%3Aempty%7Bdisplay%3Anone%7Dfigure%3Ep%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%3Bmargin%2Dbottom%3A0%7Dfigure%3Efigcaption%2Equarto%2Dfloat%2Dcaption%2Dbottom%7Bmargin%2Dbottom%3A%2E5em%7Dfigure%3Efigcaption%2Equarto%2Dfloat%2Dcaption%2Dtop%7Bmargin%2Dtop%3A%2E5em%7Ddiv%5Bid%5E%3Dtbl%2D%5D%7Bposition%3Arelative%7D%2Equarto%2Dfigure%3E%2Eanchorjs%2Dlink%7Bposition%3Aabsolute%3Btop%3A%2E6em%3Bright%3A%2E5em%7Ddiv%5Bid%5E%3Dtbl%2D%5D%3E%2Eanchorjs%2Dlink%7Bposition%3Aabsolute%3Btop%3A%2E7em%3Bright%3A%2E3em%7D%2Equarto%2Dfigure%3Ahover%3E%2Eanchorjs%2Dlink%2Cdiv%5Bid%5E%3Dtbl%2D%5D%3Ahover%3E%2Eanchorjs%2Dlink%2Ch2%3Ahover%3E%2Eanchorjs%2Dlink%2Ch3%3Ahover%3E%2Eanchorjs%2Dlink%2Ch4%3Ahover%3E%2Eanchorjs%2Dlink%2Ch5%3Ahover%3E%2Eanchorjs%2Dlink%2Ch6%3Ahover%3E%2Eanchorjs%2Dlink%2C%2Ereveal%2Danchorjs%2Dlink%3E%2Eanchorjs%2Dlink%7Bopacity%3A1%7D%23title%2Dblock%2Dheader%7Bmargin%2Dblock%2Dend%3A1rem%3Bposition%3Arelative%3Bmargin%2Dtop%3A%2D1px%7D%23title%2Dblock%2Dheader%20%2Eabstract%7Bmargin%2Dblock%2Dstart%3A1rem%7D%23title%2Dblock%2Dheader%20%2Eabstract%20%2Eabstract%2Dtitle%7Bfont%2Dweight%3A600%7D%23title%2Dblock%2Dheader%20a%7Btext%2Ddecoration%3Anone%7D%23title%2Dblock%2Dheader%20%2Eauthor%2C%23title%2Dblock%2Dheader%20%2Edate%2C%23title%2Dblock%2Dheader%20%2Edoi%7Bmargin%2Dblock%2Dend%3A%2E2rem%7D%23title%2Dblock%2Dheader%20%2Equarto%2Dtitle%2Dblock%3Ediv%7Bdisplay%3Aflex%7D%23title%2Dblock%2Dheader%20%2Equarto%2Dtitle%2Dblock%3Ediv%3Eh1%7Bflex%2Dgrow%3A1%7D%23title%2Dblock%2Dheader%20%2Equarto%2Dtitle%2Dblock%3Ediv%3Ebutton%7Bflex%2Dshrink%3A0%3Bheight%3A2%2E25rem%3Bmargin%2Dtop%3A0%7Dtr%2Eheader%3Eth%3Ep%3Alast%2Dof%2Dtype%7Bmargin%2Dbottom%3A0px%7Dtable%2Ctable%2Etable%7Bmargin%2Dtop%3A%2E5rem%3Bmargin%2Dbottom%3A%2E5rem%7Dcaption%2C%2Etable%2Dcaption%7Bpadding%2Dtop%3A%2E5rem%3Bpadding%2Dbottom%3A%2E5rem%3Btext%2Dalign%3Acenter%7Dfigure%2Equarto%2Dfloat%2Dtbl%20figcaption%2Equarto%2Dfloat%2Dcaption%2Dtop%7Bmargin%2Dtop%3A%2E5rem%3Bmargin%2Dbottom%3A%2E25rem%3Btext%2Dalign%3Acenter%7Dfigure%2Equarto%2Dfloat%2Dtbl%20figcaption%2Equarto%2Dfloat%2Dcaption%2Dbottom%7Bpadding%2Dtop%3A%2E25rem%3Bmargin%2Dbottom%3A%2E5rem%3Btext%2Dalign%3Acenter%7D%2Eutterances%7Bmax%2Dwidth%3Anone%3Bmargin%2Dleft%3A%2D8px%7Diframe%7Bmargin%2Dbottom%3A1em%7Ddetails%7Bmargin%2Dbottom%3A1em%7Ddetails%5Bshow%5D%7Bmargin%2Dbottom%3A0%7Ddetails%3Esummary%7Bcolor%3A%234d4d4d%7Ddetails%3Esummary%3Ep%3Aonly%2Dchild%7Bdisplay%3Ainline%7Dpre%2EsourceCode%2Ccode%2EsourceCode%7Bposition%3Arelative%7Ddd%20code%3Anot%28%2EsourceCode%29%2Cp%20code%3Anot%28%2EsourceCode%29%7Bwhite%2Dspace%3Apre%2Dwrap%7Dcode%7Bwhite%2Dspace%3Apre%7D%40media%20print%7Bcode%7Bwhite%2Dspace%3Apre%2Dwrap%7D%7Dpre%3Ecode%7Bdisplay%3Ablock%7Dpre%3Ecode%2EsourceCode%7Bwhite%2Dspace%3Apre%7Dpre%3Ecode%2EsourceCode%3Espan%3Ea%3Afirst%2Dchild%3A%3Abefore%7Btext%2Ddecoration%3Anone%7Dpre%2Ecode%2Doverflow%2Dwrap%3Ecode%2EsourceCode%7Bwhite%2Dspace%3Apre%2Dwrap%7Dpre%2Ecode%2Doverflow%2Dscroll%3Ecode%2EsourceCode%7Bwhite%2Dspace%3Apre%7Dcode%20a%3Aany%2Dlink%7Bcolor%3Ainherit%3Btext%2Ddecoration%3Anone%7Dcode%20a%3Ahover%7Bcolor%3Ainherit%3Btext%2Ddecoration%3Aunderline%7Dul%2Etask%2Dlist%7Bpadding%2Dleft%3A1em%7D%5Bdata%2Dtippy%2Droot%5D%7Bdisplay%3Ainline%2Dblock%7D%2Etippy%2Dcontent%20%2Efootnote%2Dback%7Bdisplay%3Anone%7D%2Efootnote%2Dback%7Bmargin%2Dleft%3A%2E2em%7D%2Etippy%2Dcontent%7Boverflow%2Dx%3Aauto%7D%2Equarto%2Dembedded%2Dsource%2Dcode%7Bdisplay%3Anone%7D%2Equarto%2Dunresolved%2Dref%7Bfont%2Dweight%3A600%7D%2Equarto%2Dcover%2Dimage%7Bmax%2Dwidth%3A35%25%3Bfloat%3Aright%3Bmargin%2Dleft%3A30px%7D%2Ecell%2Doutput%2Ddisplay%20%2Ewidget%2Dsubarea%7Bmargin%2Dbottom%3A1em%7D%2Ecell%2Doutput%2Ddisplay%3Anot%28%2Eno%2Doverflow%2Dx%29%2C%2Eknitsql%2Dtable%3Anot%28%2Eno%2Doverflow%2Dx%29%7Boverflow%2Dx%3Aauto%7D%2Epanel%2Dinput%7Bmargin%2Dbottom%3A1em%7D%2Epanel%2Dinput%3Ediv%2C%2Epanel%2Dinput%3Ediv%3Ediv%7Bdisplay%3Ainline%2Dblock%3Bvertical%2Dalign%3Atop%3Bpadding%2Dright%3A12px%7D%2Epanel%2Dinput%3Ep%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7D%2Elayout%2Dsidebar%7Bmargin%2Dbottom%3A1em%7D%2Elayout%2Dsidebar%20%2Etab%2Dcontent%7Bborder%3Anone%7D%2Etab%2Dcontent%3E%2Epage%2Dcolumns%2Eactive%7Bdisplay%3Agrid%7Ddiv%2EsourceCode%3Eiframe%7Bwidth%3A100%25%3Bheight%3A300px%3Bmargin%2Dbottom%3A%2D0%2E5em%7Da%7Btext%2Dunderline%2Doffset%3A3px%7Ddiv%2Eansi%2Descaped%2Doutput%7Bfont%2Dfamily%3Amonospace%3Bdisplay%3Ablock%7D%2Eansi%2Dblack%2Dfg%7Bcolor%3A%233e424d%7D%2Eansi%2Dblack%2Dbg%7Bbackground%2Dcolor%3A%233e424d%7D%2Eansi%2Dblack%2Dintense%2Dblack%2C%2Eansi%2Dbright%2Dblack%2Dfg%7Bcolor%3A%23282c36%7D%2Eansi%2Dblack%2Dintense%2Dblack%2C%2Eansi%2Dbright%2Dblack%2Dbg%7Bbackground%2Dcolor%3A%23282c36%7D%2Eansi%2Dred%2Dfg%7Bcolor%3A%23e75c58%7D%2Eansi%2Dred%2Dbg%7Bbackground%2Dcolor%3A%23e75c58%7D%2Eansi%2Dred%2Dintense%2Dred%2C%2Eansi%2Dbright%2Dred%2Dfg%7Bcolor%3A%23b22b31%7D%2Eansi%2Dred%2Dintense%2Dred%2C%2Eansi%2Dbright%2Dred%2Dbg%7Bbackground%2Dcolor%3A%23b22b31%7D%2Eansi%2Dgreen%2Dfg%7Bcolor%3A%2300a250%7D%2Eansi%2Dgreen%2Dbg%7Bbackground%2Dcolor%3A%2300a250%7D%2Eansi%2Dgreen%2Dintense%2Dgreen%2C%2Eansi%2Dbright%2Dgreen%2Dfg%7Bcolor%3A%23007427%7D%2Eansi%2Dgreen%2Dintense%2Dgreen%2C%2Eansi%2Dbright%2Dgreen%2Dbg%7Bbackground%2Dcolor%3A%23007427%7D%2Eansi%2Dyellow%2Dfg%7Bcolor%3A%23ddb62b%7D%2Eansi%2Dyellow%2Dbg%7Bbackground%2Dcolor%3A%23ddb62b%7D%2Eansi%2Dyellow%2Dintense%2Dyellow%2C%2Eansi%2Dbright%2Dyellow%2Dfg%7Bcolor%3A%23b27d12%7D%2Eansi%2Dyellow%2Dintense%2Dyellow%2C%2Eansi%2Dbright%2Dyellow%2Dbg%7Bbackground%2Dcolor%3A%23b27d12%7D%2Eansi%2Dblue%2Dfg%7Bcolor%3A%23208ffb%7D%2Eansi%2Dblue%2Dbg%7Bbackground%2Dcolor%3A%23208ffb%7D%2Eansi%2Dblue%2Dintense%2Dblue%2C%2Eansi%2Dbright%2Dblue%2Dfg%7Bcolor%3A%230065ca%7D%2Eansi%2Dblue%2Dintense%2Dblue%2C%2Eansi%2Dbright%2Dblue%2Dbg%7Bbackground%2Dcolor%3A%230065ca%7D%2Eansi%2Dmagenta%2Dfg%7Bcolor%3A%23d160c4%7D%2Eansi%2Dmagenta%2Dbg%7Bbackground%2Dcolor%3A%23d160c4%7D%2Eansi%2Dmagenta%2Dintense%2Dmagenta%2C%2Eansi%2Dbright%2Dmagenta%2Dfg%7Bcolor%3A%23a03196%7D%2Eansi%2Dmagenta%2Dintense%2Dmagenta%2C%2Eansi%2Dbright%2Dmagenta%2Dbg%7Bbackground%2Dcolor%3A%23a03196%7D%2Eansi%2Dcyan%2Dfg%7Bcolor%3A%2360c6c8%7D%2Eansi%2Dcyan%2Dbg%7Bbackground%2Dcolor%3A%2360c6c8%7D%2Eansi%2Dcyan%2Dintense%2Dcyan%2C%2Eansi%2Dbright%2Dcyan%2Dfg%7Bcolor%3A%23258f8f%7D%2Eansi%2Dcyan%2Dintense%2Dcyan%2C%2Eansi%2Dbright%2Dcyan%2Dbg%7Bbackground%2Dcolor%3A%23258f8f%7D%2Eansi%2Dwhite%2Dfg%7Bcolor%3A%23c5c1b4%7D%2Eansi%2Dwhite%2Dbg%7Bbackground%2Dcolor%3A%23c5c1b4%7D%2Eansi%2Dwhite%2Dintense%2Dwhite%2C%2Eansi%2Dbright%2Dwhite%2Dfg%7Bcolor%3A%23a1a6b2%7D%2Eansi%2Dwhite%2Dintense%2Dwhite%2C%2Eansi%2Dbright%2Dwhite%2Dbg%7Bbackground%2Dcolor%3A%23a1a6b2%7D%2Eansi%2Ddefault%2Dinverse%2Dfg%7Bcolor%3A%23fff%7D%2Eansi%2Ddefault%2Dinverse%2Dbg%7Bbackground%2Dcolor%3A%23000%7D%2Eansi%2Dbold%7Bfont%2Dweight%3Abold%7D%2Eansi%2Dunderline%7Btext%2Ddecoration%3Aunderline%7D%3Aroot%7B%2D%2Dquarto%2Dbody%2Dbg%3A%20%23ffffff%3B%2D%2Dquarto%2Dbody%2Dcolor%3A%20%23000%3B%2D%2Dquarto%2Dtext%2Dmuted%3A%20%234d4d4d%3B%2D%2Dquarto%2Dborder%2Dcolor%3A%20rgb%28255%2C%20255%2C%20255%29%3B%2D%2Dquarto%2Dborder%2Dwidth%3A%201px%3B%2D%2Dquarto%2Dborder%2Dradius%3A%204px%7Dtable%2Egt%5Ftable%7Bcolor%3Avar%28%2D%2Dquarto%2Dbody%2Dcolor%29%3Bfont%2Dsize%3A1em%3Bwidth%3A100%25%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bborder%2Dtop%2Dwidth%3Ainherit%3Bborder%2Dbottom%2Dwidth%3Ainherit%3Bborder%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20th%2Egt%5Fcolumn%5Fspanner%5Fouter%7Bcolor%3Avar%28%2D%2Dquarto%2Dbody%2Dcolor%29%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bborder%2Dtop%2Dwidth%3Ainherit%3Bborder%2Dbottom%2Dwidth%3Ainherit%3Bborder%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20th%2Egt%5Fcol%5Fheading%7Bcolor%3Avar%28%2D%2Dquarto%2Dbody%2Dcolor%29%3Bfont%2Dweight%3Abold%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%7Dtable%2Egt%5Ftable%20thead%2Egt%5Fcol%5Fheadings%7Bborder%2Dbottom%3A1px%20solid%20currentColor%3Bborder%2Dtop%2Dwidth%3Ainherit%3Bborder%2Dtop%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20thead%2Egt%5Fcol%5Fheadings%3Anot%28%3Afirst%2Dchild%29%7Bborder%2Dtop%2Dwidth%3A1px%3Bborder%2Dtop%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20td%2Egt%5Frow%7Bborder%2Dbottom%2Dwidth%3A1px%3Bborder%2Dbottom%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%3Bborder%2Dtop%2Dwidth%3A0px%7Dtable%2Egt%5Ftable%20tbody%2Egt%5Ftable%5Fbody%7Bborder%2Dtop%2Dwidth%3A1px%3Bborder%2Dbottom%2Dwidth%3A1px%3Bborder%2Dbottom%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%3Bborder%2Dtop%2Dcolor%3AcurrentColor%7Ddiv%2Ecolumns%7Bdisplay%3Ainitial%3Bgap%3Ainitial%7Ddiv%2Ecolumn%7Bdisplay%3Ainline%2Dblock%3Boverflow%2Dx%3Ainitial%3Bvertical%2Dalign%3Atop%3Bwidth%3A50%25%7D%2Ecode%2Dannotation%2Dtip%2Dcontent%7Bword%2Dwrap%3Abreak%2Dword%7D%2Ecode%2Dannotation%2Dcontainer%2Dhidden%7Bdisplay%3Anone%20%21important%7Ddl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%7Bdisplay%3Agrid%3Bgrid%2Dtemplate%2Dcolumns%3Amin%2Dcontent%20auto%7Ddl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dt%7Bgrid%2Dcolumn%3A1%7Ddl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dd%7Bgrid%2Dcolumn%3A2%7Dpre%2EsourceCode%2Ecode%2Dannotation%2Dcode%7Bpadding%2Dright%3A0%7Dcode%2EsourceCode%20%2Ecode%2Dannotation%2Danchor%7Bz%2Dindex%3A100%3Bposition%3Arelative%3Bfloat%3Aright%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%7Dinput%5Btype%3Dcheckbox%5D%7Bmargin%2Dright%3A%2E5ch%7D%3Aroot%7B%2D%2Dmermaid%2Dbg%2Dcolor%3A%20%23ffffff%3B%2D%2Dmermaid%2Dedge%2Dcolor%3A%20%23999%3B%2D%2Dmermaid%2Dnode%2Dfg%2Dcolor%3A%20%23000%3B%2D%2Dmermaid%2Dfg%2Dcolor%3A%20%23000%3B%2D%2Dmermaid%2Dfg%2Dcolor%2D%2Dlighter%3A%20%231a1a1a%3B%2D%2Dmermaid%2Dfg%2Dcolor%2D%2Dlightest%3A%20%23333333%3B%2D%2Dmermaid%2Dfont%2Dfamily%3A%20Inter%2C%20sans%2Dserif%3B%2D%2Dmermaid%2Dlabel%2Dbg%2Dcolor%3A%20%23ffffff%3B%2D%2Dmermaid%2Dlabel%2Dfg%2Dcolor%3A%20%23468%3B%2D%2Dmermaid%2Dnode%2Dbg%2Dcolor%3A%20rgba%2868%2C%20102%2C%20136%2C%200%2E1%29%3B%2D%2Dmermaid%2Dnode%2Dfg%2Dcolor%3A%20%23000%7D%40media%20print%7B%3Aroot%7Bfont%2Dsize%3A11pt%7D%23quarto%2Dsidebar%2C%23TOC%2C%2Enav%2Dpage%7Bdisplay%3Anone%7D%2Epage%2Dcolumns%20%2Econtent%7Bgrid%2Dcolumn%2Dstart%3Apage%2Dstart%7D%2Efixed%2Dtop%7Bposition%3Arelative%7D%2Epanel%2Dcaption%2C%2Efigure%2Dcaption%2Cfigcaption%7Bcolor%3A%23666%7D%7D%2Ecode%2Dcopy%2Dbutton%7Bposition%3Aabsolute%3Btop%3A0%3Bright%3A0%3Bborder%3A0%3Bmargin%2Dtop%3A5px%3Bmargin%2Dright%3A5px%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bz%2Dindex%3A3%7D%2Ecode%2Dcopy%2Dbutton%3Afocus%7Boutline%3Anone%7D%2Ecode%2Dcopy%2Dbutton%2Dtooltip%7Bfont%2Dsize%3A%2E75em%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%3E%2Ebi%3A%3Abefore%7Bdisplay%3Ainline%2Dblock%3Bheight%3A1rem%3Bwidth%3A1rem%3Bcontent%3A%22%22%3Bvertical%2Dalign%3A%2D0%2E125em%3Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2898%2C%20114%2C%20164%29%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4%201%2E5H3a2%202%200%200%200%2D2%202V14a2%202%200%200%200%202%202h10a2%202%200%200%200%202%2D2V3%2E5a2%202%200%200%200%2D2%2D2h%2D1v1h1a1%201%200%200%201%201%201V14a1%201%200%200%201%2D1%201H3a1%201%200%200%201%2D1%2D1V3%2E5a1%201%200%200%201%201%2D1h1v%2D1z%22%2F%3E%3Cpath%20d%3D%22M9%2E5%201a%2E5%2E5%200%200%201%20%2E5%2E5v1a%2E5%2E5%200%200%201%2D%2E5%2E5h%2D3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5v%2D1a%2E5%2E5%200%200%201%20%2E5%2D%2E5h3zm%2D3%2D1A1%2E5%201%2E5%200%200%200%205%201%2E5v1A1%2E5%201%2E5%200%200%200%206%2E5%204h3A1%2E5%201%2E5%200%200%200%2011%202%2E5v%2D1A1%2E5%201%2E5%200%200%200%209%2E5%200h%2D3z%22%2F%3E%3C%2Fsvg%3E%27%29%3Bbackground%2Drepeat%3Ano%2Drepeat%3Bbackground%2Dsize%3A1rem%201rem%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%2Dchecked%3E%2Ebi%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2898%2C%20114%2C%20164%29%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13%2E854%203%2E646a%2E5%2E5%200%200%201%200%20%2E708l%2D7%207a%2E5%2E5%200%200%201%2D%2E708%200l%2D3%2E5%2D3%2E5a%2E5%2E5%200%201%201%20%2E708%2D%2E708L6%2E5%2010%2E293l6%2E646%2D6%2E647a%2E5%2E5%200%200%201%20%2E708%200z%22%2F%3E%3C%2Fsvg%3E%27%29%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%3Ahover%3E%2Ebi%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2880%2C%20250%2C%20123%29%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4%201%2E5H3a2%202%200%200%200%2D2%202V14a2%202%200%200%200%202%202h10a2%202%200%200%200%202%2D2V3%2E5a2%202%200%200%200%2D2%2D2h%2D1v1h1a1%201%200%200%201%201%201V14a1%201%200%200%201%2D1%201H3a1%201%200%200%201%2D1%2D1V3%2E5a1%201%200%200%201%201%2D1h1v%2D1z%22%2F%3E%3Cpath%20d%3D%22M9%2E5%201a%2E5%2E5%200%200%201%20%2E5%2E5v1a%2E5%2E5%200%200%201%2D%2E5%2E5h%2D3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5v%2D1a%2E5%2E5%200%200%201%20%2E5%2D%2E5h3zm%2D3%2D1A1%2E5%201%2E5%200%200%200%205%201%2E5v1A1%2E5%201%2E5%200%200%200%206%2E5%204h3A1%2E5%201%2E5%200%200%200%2011%202%2E5v%2D1A1%2E5%201%2E5%200%200%200%209%2E5%200h%2D3z%22%2F%3E%3C%2Fsvg%3E%27%29%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%2Dchecked%3Ahover%3E%2Ebi%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2880%2C%20250%2C%20123%29%22%20%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13%2E854%203%2E646a%2E5%2E5%200%200%201%200%20%2E708l%2D7%207a%2E5%2E5%200%200%201%2D%2E708%200l%2D3%2E5%2D3%2E5a%2E5%2E5%200%201%201%20%2E708%2D%2E708L6%2E5%2010%2E293l6%2E646%2D6%2E647a%2E5%2E5%200%200%201%20%2E708%200z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Epanel%2Dtabset%20%5Brole%3Dtablist%5D%7Bborder%2Dbottom%3A1px%20solid%20%23fff%3Blist%2Dstyle%3Anone%3Bmargin%3A0%3Bpadding%3A0%3Bwidth%3A100%25%7D%2Epanel%2Dtabset%20%5Brole%3Dtablist%5D%20%2A%7B%2Dwebkit%2Dbox%2Dsizing%3Aborder%2Dbox%3Bbox%2Dsizing%3Aborder%2Dbox%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtablist%5D%20li%7Bdisplay%3Ainline%2Dblock%7D%7D%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%7Bborder%3A1px%20solid%20rgba%280%2C0%2C0%2C0%29%3Bborder%2Dtop%2Dcolor%3A%23fff%3Bdisplay%3Ablock%3Bpadding%3A%2E5em%201em%3Btext%2Ddecoration%3Anone%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%7Bborder%2Dtop%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bdisplay%3Ainline%2Dblock%3Bmargin%2Dbottom%3A%2D1px%7D%7D%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%5Baria%2Dselected%3Dtrue%5D%7Bbackground%2Dcolor%3A%23fff%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%5Baria%2Dselected%3Dtrue%5D%7Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bborder%3A1px%20solid%20%23fff%3Bborder%2Dbottom%2Dcolor%3A%23fff%7D%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%3Ahover%3Anot%28%5Baria%2Dselected%3Dtrue%5D%29%7Bborder%3A1px%20solid%20%23fff%7D%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%7Bmargin%2Dbottom%3A0%3Bpadding%2Dbottom%3A2px%3Bpadding%2Dtop%3A2px%3Bpadding%2Dleft%3A%2E7em%3Bborder%3Avar%28%2D%2Dquarto%2Dborder%2Dwidth%29%20solid%20var%28%2D%2Dquarto%2Dborder%2Dcolor%29%3Bborder%2Dradius%3Avar%28%2D%2Dquarto%2Dborder%2Dradius%29%3Bborder%2Dbottom%3A0%3Bborder%2Dbottom%2Dleft%2Dradius%3A0%25%3Bborder%2Dbottom%2Dright%2Dradius%3A0%25%7D%2Ecode%2Dwith%2Dfilename%20div%2EsourceCode%2C%2Ereveal%20%2Ecode%2Dwith%2Dfilename%20div%2EsourceCode%7Bmargin%2Dtop%3A0%3Bborder%2Dtop%2Dleft%2Dradius%3A0%25%3Bborder%2Dtop%2Dright%2Dradius%3A0%25%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%20pre%7Bmargin%2Dbottom%3A0%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%7Bbackground%2Dcolor%3Argba%28219%2C219%2C219%2C%2E8%29%7D%2Equarto%2Ddark%20%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%7Bbackground%2Dcolor%3A%23555%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%20strong%7Bfont%2Dweight%3A400%7D%2Ereveal%2Ecenter%20%2Eslide%20aside%2C%2Ereveal%2Ecenter%20%2Eslide%20div%2Easide%7Bposition%3Ainitial%7Dsection%2Ehas%2Dlight%2Dbackground%2Csection%2Ehas%2Dlight%2Dbackground%20h1%2Csection%2Ehas%2Dlight%2Dbackground%20h2%2Csection%2Ehas%2Dlight%2Dbackground%20h3%2Csection%2Ehas%2Dlight%2Dbackground%20h4%2Csection%2Ehas%2Dlight%2Dbackground%20h5%2Csection%2Ehas%2Dlight%2Dbackground%20h6%7Bcolor%3A%23222%7Dsection%2Ehas%2Dlight%2Dbackground%20a%2Csection%2Ehas%2Dlight%2Dbackground%20a%3Ahover%7Bcolor%3A%232a76dd%7Dsection%2Ehas%2Dlight%2Dbackground%20code%7Bcolor%3A%234758ab%7Dsection%2Ehas%2Ddark%2Dbackground%2Csection%2Ehas%2Ddark%2Dbackground%20h1%2Csection%2Ehas%2Ddark%2Dbackground%20h2%2Csection%2Ehas%2Ddark%2Dbackground%20h3%2Csection%2Ehas%2Ddark%2Dbackground%20h4%2Csection%2Ehas%2Ddark%2Dbackground%20h5%2Csection%2Ehas%2Ddark%2Dbackground%20h6%7Bcolor%3A%23fff%7Dsection%2Ehas%2Ddark%2Dbackground%20a%2Csection%2Ehas%2Ddark%2Dbackground%20a%3Ahover%7Bcolor%3A%2342affa%7Dsection%2Ehas%2Ddark%2Dbackground%20code%7Bcolor%3A%23ffa07a%7D%23title%2Dslide%2Cdiv%2Ereveal%20div%2Eslides%20section%2Equarto%2Dtitle%2Dblock%7Btext%2Dalign%3Acenter%7D%23title%2Dslide%20%2Esubtitle%2Cdiv%2Ereveal%20div%2Eslides%20section%2Equarto%2Dtitle%2Dblock%20%2Esubtitle%7Bmargin%2Dbottom%3A2%2E5rem%7D%2Ereveal%20%2Eslides%7Btext%2Dalign%3Aleft%7D%2Ereveal%20%2Etitle%2Dslide%20h1%7Bfont%2Dsize%3A1%2E35em%7D%2Ereveal%5Bdata%2Dnavigation%2Dmode%3Dlinear%5D%20%2Etitle%2Dslide%20h1%7Bfont%2Dsize%3A2%2E5em%7D%2Ereveal%20div%2EsourceCode%7Bborder%3A1px%20solid%20%23fff%3Bborder%2Dradius%3A4px%7D%2Ereveal%20pre%7Bwidth%3A100%25%3Bbox%2Dshadow%3Anone%3Bbackground%2Dcolor%3Argba%284%2C4%2C27%2C%2E7607843137%29%3Bborder%3Anone%3Bmargin%3A0%3Bfont%2Dsize%3A%2E55em%7D%2Ereveal%20%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%20pre%7Bbackground%2Dcolor%3Aunset%7D%2Ereveal%20code%7Bcolor%3A%23530aa7%3Bbackground%2Dcolor%3A%23fff%3Bwhite%2Dspace%3Apre%2Dwrap%7D%2Ereveal%20pre%2EsourceCode%20code%7Bbackground%2Dcolor%3Argba%284%2C4%2C27%2C%2E7607843137%29%3Bpadding%3A6px%209px%3Bmax%2Dheight%3A500px%3Bwhite%2Dspace%3Apre%7D%2Ereveal%20pre%20code%7Bbackground%2Dcolor%3A%23fff%3Bcolor%3A%23000%7D%2Ereveal%20%2Ecolumn%2Doutput%2Dlocation%7Bdisplay%3Aflex%3Balign%2Ditems%3Astretch%7D%2Ereveal%20%2Ecolumn%2Doutput%2Dlocation%20%2Ecolumn%3Afirst%2Dof%2Dtype%20div%2EsourceCode%7Bheight%3A100%25%3Bbackground%2Dcolor%3Argba%284%2C4%2C27%2C%2E7607843137%29%7D%2Ereveal%20blockquote%7Bdisplay%3Ablock%3Bposition%3Arelative%3Bcolor%3A%234d4d4d%3Bwidth%3Aunset%3Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%20auto%3Bpadding%3A%2E625rem%201%2E75rem%3Bborder%2Dleft%3A%2E25rem%20solid%20%234d4d4d%3Bfont%2Dstyle%3Anormal%3Bbackground%3Anone%3Bbox%2Dshadow%3Anone%7D%2Ereveal%20blockquote%20p%3Afirst%2Dchild%2C%2Ereveal%20blockquote%20p%3Alast%2Dchild%7Bdisplay%3Ablock%7D%2Ereveal%20%2Eslide%20aside%2C%2Ereveal%20%2Eslide%20div%2Easide%7Bposition%3Aabsolute%3Bbottom%3A20px%3Bfont%2Dsize%3A0%2E7em%3Bcolor%3A%234d4d4d%7D%2Ereveal%20%2Eslide%20sup%7Bfont%2Dsize%3A0%2E7em%7D%2Ereveal%20%2Eslide%2Escrollable%20aside%2C%2Ereveal%20%2Eslide%2Escrollable%20div%2Easide%7Bposition%3Arelative%3Bmargin%2Dtop%3A1em%7D%2Ereveal%20%2Eslide%20aside%20%2Easide%2Dfootnotes%7Bmargin%2Dbottom%3A0%7D%2Ereveal%20%2Eslide%20aside%20%2Easide%2Dfootnotes%20li%3Afirst%2Dof%2Dtype%7Bmargin%2Dtop%3A0%7D%2Ereveal%20%2Elayout%2Dsidebar%7Bdisplay%3Aflex%3Bwidth%3A100%25%3Bmargin%2Dtop%3A%2E8em%7D%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dsidebar%7Bwidth%3A270px%7D%2Ereveal%20%2Elayout%2Dsidebar%2Dleft%20%2Epanel%2Dsidebar%7Bmargin%2Dright%3Acalc%280%2E5em%2A2%29%7D%2Ereveal%20%2Elayout%2Dsidebar%2Dright%20%2Epanel%2Dsidebar%7Bmargin%2Dleft%3Acalc%280%2E5em%2A2%29%7D%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dfill%2C%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dcenter%2C%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dtabset%7Bflex%3A1%7D%2Ereveal%20%2Epanel%2Dinput%2C%2Ereveal%20%2Epanel%2Dsidebar%7Bfont%2Dsize%3A%2E5em%3Bpadding%3A%2E5em%3Bborder%2Dstyle%3Asolid%3Bborder%2Dcolor%3A%23fff%3Bborder%2Dwidth%3A1px%3Bborder%2Dradius%3A4px%3Bbackground%2Dcolor%3A%23f8f9fa%7D%2Ereveal%20%2Epanel%2Dsidebar%20%3Afirst%2Dchild%2C%2Ereveal%20%2Epanel%2Dfill%20%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%7D%2Ereveal%20%2Epanel%2Dsidebar%20%3Alast%2Dchild%2C%2Ereveal%20%2Epanel%2Dfill%20%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7D%2Epanel%2Dinput%3Ediv%2C%2Epanel%2Dinput%3Ediv%3Ediv%7Bvertical%2Dalign%3Amiddle%3Bpadding%2Dright%3A1em%7D%2Ereveal%20p%2C%2Ereveal%20%2Eslides%20section%2C%2Ereveal%20%2Eslides%20section%3Esection%7Bline%2Dheight%3A1%2E3%7D%2Ereveal%2Esmaller%20%2Eslides%20section%2C%2Ereveal%20%2Eslides%20section%2Esmaller%2C%2Ereveal%20%2Eslides%20section%20%2Ecallout%7Bfont%2Dsize%3A0%2E7em%7D%2Ereveal%2Esmaller%20%2Eslides%20section%20section%7Bfont%2Dsize%3Ainherit%7D%2Ereveal%2Esmaller%20%2Eslides%20h1%2C%2Ereveal%20%2Eslides%20section%2Esmaller%20h1%7Bfont%2Dsize%3Acalc%282%2E5em%2F0%2E7%29%7D%2Ereveal%2Esmaller%20%2Eslides%20h2%2C%2Ereveal%20%2Eslides%20section%2Esmaller%20h2%7Bfont%2Dsize%3Acalc%281%2E35em%2F0%2E7%29%7D%2Ereveal%2Esmaller%20%2Eslides%20h3%2C%2Ereveal%20%2Eslides%20section%2Esmaller%20h3%7Bfont%2Dsize%3Acalc%281%2E1em%2F0%2E7%29%7D%2Ereveal%20%2Ecolumns%3E%2Ecolumn%3E%3Anot%28ul%2Col%29%7Bmargin%2Dleft%3A%2E25em%3Bmargin%2Dright%3A%2E25em%7D%2Ereveal%20%2Ecolumns%3E%2Ecolumn%3Afirst%2Dchild%3E%3Anot%28ul%2Col%29%7Bmargin%2Dright%3A%2E5em%3Bmargin%2Dleft%3A0%7D%2Ereveal%20%2Ecolumns%3E%2Ecolumn%3Alast%2Dchild%3E%3Anot%28ul%2Col%29%7Bmargin%2Dright%3A0%3Bmargin%2Dleft%3A%2E5em%7D%2Ereveal%20%2Eslide%2Dnumber%7Bcolor%3A%2303c563%3Bbackground%2Dcolor%3A%23fff%7D%2Ereveal%20%2Efooter%7Bcolor%3A%234d4d4d%7D%2Ereveal%20%2Efooter%20a%7Bcolor%3A%2302934a%7D%2Ereveal%20%2Efooter%2Ehas%2Ddark%2Dbackground%7Bcolor%3A%23fff%7D%2Ereveal%20%2Efooter%2Ehas%2Ddark%2Dbackground%20a%7Bcolor%3A%237bc6fa%7D%2Ereveal%20%2Efooter%2Ehas%2Dlight%2Dbackground%7Bcolor%3A%23505050%7D%2Ereveal%20%2Efooter%2Ehas%2Dlight%2Dbackground%20a%7Bcolor%3A%236a9bdd%7D%2Ereveal%20%2Eslide%2Dnumber%7Bcolor%3A%234d4d4d%7D%2Ereveal%20%2Eslide%2Dnumber%2Ehas%2Ddark%2Dbackground%7Bcolor%3A%23fff%7D%2Ereveal%20%2Eslide%2Dnumber%2Ehas%2Dlight%2Dbackground%7Bcolor%3A%23505050%7D%2Ereveal%20%2Eslide%20figure%3Efigcaption%2C%2Ereveal%20%2Eslide%20img%2Estretch%2Bp%2Ecaption%2C%2Ereveal%20%2Eslide%20img%2Er%2Dstretch%2Bp%2Ecaption%7Bfont%2Dsize%3A0%2E7em%7D%40media%20screen%20and%20%28min%2Dwidth%3A%20500px%29%7B%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Dleft%7Bleft%3A%2E2em%7D%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Dright%7Bright%3A%2E2em%7D%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Dup%7Btop%3A%2E4em%7D%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Ddown%7Bbottom%3A2%2E3em%7D%7D%2Etippy%2Dbox%5Bdata%2Dtheme%7E%3Dlight%2Dborder%5D%7Bbackground%2Dcolor%3A%23fff%3Bcolor%3A%23000%3Bborder%2Dradius%3A4px%3Bborder%3Asolid%201px%20%234d4d4d%3Bfont%2Dsize%3A%2E6em%7D%2Etippy%2Dbox%5Bdata%2Dtheme%7E%3Dlight%2Dborder%5D%20%2Etippy%2Darrow%7Bcolor%3A%234d4d4d%7D%2Etippy%2Dbox%5Bdata%2Dplacement%5E%3Dbottom%5D%3E%2Etippy%2Dcontent%7Bpadding%3A7px%2010px%3Bz%2Dindex%3A1%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Dsimple%20%2Ecallout%2Dbody%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Ddefault%20%2Ecallout%2Dbody%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Dsimple%20div%2Ecallout%2Dtitle%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Ddefault%20div%2Ecallout%2Dtitle%7Bfont%2Dsize%3Ainherit%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Ddefault%20%2Ecallout%2Dicon%3A%3Abefore%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Dsimple%20%2Ecallout%2Dicon%3A%3Abefore%7Bheight%3A2rem%3Bwidth%3A2rem%3Bbackground%2Dsize%3A2rem%202rem%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dtitled%20%2Ecallout%2Dtitle%20p%7Bmargin%2Dtop%3A%2E5em%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dtitled%20%2Ecallout%2Dicon%3A%3Abefore%7Bmargin%2Dtop%3A1rem%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dtitled%20%2Ecallout%2Dbody%3E%2Ecallout%2Dcontent%3E%3Alast%2Dchild%7Bmargin%2Dbottom%3A1rem%7D%2Ereveal%20%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%7Bpadding%3A%2E25em%20%2E7em%7D%2Ereveal%20%2Eslide%2Dmenu%2Dbutton%20%2Efa%2Dbars%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%282%2C%20147%2C%2074%29%22%20class%3D%22bi%20bi%2Dlist%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%2Drule%3D%22evenodd%22%20d%3D%22M2%2E5%2012a%2E5%2E5%200%200%201%20%2E5%2D%2E5h10a%2E5%2E5%200%200%201%200%201H3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5zm0%2D4a%2E5%2E5%200%200%201%20%2E5%2D%2E5h10a%2E5%2E5%200%200%201%200%201H3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5zm0%2D4a%2E5%2E5%200%200%201%20%2E5%2D%2E5h10a%2E5%2E5%200%200%201%200%201H3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Ereveal%20%2Eslide%2Dchalkboard%2Dbuttons%20%2Efa%2Deasel2%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%282%2C%20147%2C%2074%29%22%20class%3D%22bi%20bi%2Deasel2%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%2Drule%3D%22evenodd%22%20d%3D%22M8%200a%2E5%2E5%200%200%201%20%2E447%2E276L8%2E81%201h4%2E69A1%2E5%201%2E5%200%200%201%2015%202%2E5V11h%2E5a%2E5%2E5%200%200%201%200%201h%2D2%2E86l%2E845%203%2E379a%2E5%2E5%200%200%201%2D%2E97%2E242L12%2E11%2014H3%2E89l%2D%2E405%201%2E621a%2E5%2E5%200%200%201%2D%2E97%2D%2E242L3%2E36%2012H%2E5a%2E5%2E5%200%200%201%200%2D1H1V2%2E5A1%2E5%201%2E5%200%200%201%202%2E5%201h4%2E691l%2E362%2D%2E724A%2E5%2E5%200%200%201%208%200ZM2%2011h12V2%2E5a%2E5%2E5%200%200%200%2D%2E5%2D%2E5h%2D11a%2E5%2E5%200%200%200%2D%2E5%2E5V11Zm9%2E61%201H4%2E39l%2D%2E25%201h7%2E72l%2D%2E25%2D1Z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Ereveal%20%2Eslide%2Dchalkboard%2Dbuttons%20%2Efa%2Dbrush%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%282%2C%20147%2C%2074%29%22%20class%3D%22bi%20bi%2Dbrush%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M15%2E825%2E12a%2E5%2E5%200%200%201%20%2E132%2E584c%2D1%2E53%203%2E43%2D4%2E743%208%2E17%2D7%2E095%2010%2E64a6%2E067%206%2E067%200%200%201%2D2%2E373%201%2E534c%2D%2E018%2E227%2D%2E06%2E538%2D%2E16%2E868%2D%2E201%2E659%2D%2E667%201%2E479%2D1%2E708%201%2E74a8%2E118%208%2E118%200%200%201%2D3%2E078%2E132%203%2E659%203%2E659%200%200%201%2D%2E562%2D%2E135%201%2E382%201%2E382%200%200%201%2D%2E466%2D%2E247%2E714%2E714%200%200%201%2D%2E204%2D%2E288%2E622%2E622%200%200%201%20%2E004%2D%2E443c%2E095%2D%2E245%2E316%2D%2E38%2E461%2D%2E452%2E394%2D%2E197%2E625%2D%2E453%2E867%2D%2E826%2E095%2D%2E144%2E184%2D%2E297%2E287%2D%2E472l%2E117%2D%2E198c%2E151%2D%2E255%2E326%2D%2E54%2E546%2D%2E848%2E528%2D%2E739%201%2E201%2D%2E925%201%2E746%2D%2E896%2E126%2E007%2E243%2E025%2E348%2E048%2E062%2D%2E172%2E142%2D%2E38%2E238%2D%2E608%2E261%2D%2E619%2E658%2D1%2E419%201%2E187%2D2%2E069%202%2E176%2D2%2E67%206%2E18%2D6%2E206%209%2E117%2D8%2E104a%2E5%2E5%200%200%201%20%2E596%2E04zM4%2E705%2011%2E912a1%2E23%201%2E23%200%200%200%2D%2E419%2D%2E1c%2D%2E246%2D%2E013%2D%2E573%2E05%2D%2E879%2E479%2D%2E197%2E275%2D%2E355%2E532%2D%2E5%2E777l%2D%2E105%2E177c%2D%2E106%2E181%2D%2E213%2E362%2D%2E32%2E528a3%2E39%203%2E39%200%200%201%2D%2E76%2E861c%2E69%2E112%201%2E736%2E111%202%2E657%2D%2E12%2E559%2D%2E139%2E843%2D%2E569%2E993%2D1%2E06a3%2E122%203%2E122%200%200%200%20%2E126%2D%2E75l%2D%2E793%2D%2E792zm1%2E44%2E026c%2E12%2D%2E04%2E277%2D%2E1%2E458%2D%2E183a5%2E068%205%2E068%200%200%200%201%2E535%2D1%2E1c1%2E9%2D1%2E996%204%2E412%2D5%2E57%206%2E052%2D8%2E631%2D2%2E59%201%2E927%2D5%2E566%204%2E66%2D7%2E302%206%2E792%2D%2E442%2E543%2D%2E795%201%2E243%2D1%2E042%201%2E826%2D%2E121%2E288%2D%2E214%2E54%2D%2E275%2E72v%2E001l%2E575%2E575zm%2D4%2E973%203%2E04%2E007%2D%2E005a%2E031%2E031%200%200%201%2D%2E007%2E004zm3%2E582%2D3%2E043%2E002%2E001h%2D%2E002z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Ereveal%20ol%5Btype%3Da%5D%7Blist%2Dstyle%2Dtype%3Alower%2Dalpha%7D%2Ereveal%20ol%5Btype%3Da%20s%5D%7Blist%2Dstyle%2Dtype%3Alower%2Dalpha%7D%2Ereveal%20ol%5Btype%3DA%20s%5D%7Blist%2Dstyle%2Dtype%3Aupper%2Dalpha%7D%2Ereveal%20ol%5Btype%3Di%5D%7Blist%2Dstyle%2Dtype%3Alower%2Droman%7D%2Ereveal%20ol%5Btype%3Di%20s%5D%7Blist%2Dstyle%2Dtype%3Alower%2Droman%7D%2Ereveal%20ol%5Btype%3DI%20s%5D%7Blist%2Dstyle%2Dtype%3Aupper%2Droman%7D%2Ereveal%20ol%5Btype%3D%221%22%5D%7Blist%2Dstyle%2Dtype%3Adecimal%7D%2Ereveal%20ul%2Etask%2Dlist%7Blist%2Dstyle%3Anone%7D%2Ereveal%20ul%2Etask%2Dlist%20li%20input%5Btype%3Dcheckbox%5D%7Bwidth%3A2em%3Bheight%3A2em%3Bmargin%3A0%201em%20%2E5em%20%2D1%2E6em%3Bvertical%2Dalign%3Amiddle%7Ddiv%2Ecell%2Doutput%2Ddisplay%20div%2Epagedtable%2Dwrapper%20table%2Etable%7Bfont%2Dsize%3A%2E6em%7D%2Ereveal%20%2Ecode%2Dannotation%2Dcontainer%2Dhidden%7Bdisplay%3Anone%7D%2Ereveal%20code%2EsourceCode%20button%2Ecode%2Dannotation%2Danchor%2C%2Ereveal%20code%2EsourceCode%20%2Ecode%2Dannotation%2Danchor%7Bfont%2Dfamily%3ASFMono%2DRegular%2CMenlo%2CMonaco%2CConsolas%2C%22Liberation%20Mono%22%2C%22Courier%20New%22%2Cmonospace%3Bcolor%3Avar%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%3Bborder%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bborder%2Dradius%3A50%25%3Bfont%2Dsize%3A%2E7em%3Bline%2Dheight%3A1%2E2em%3Bmargin%2Dtop%3A2px%3Buser%2Dselect%3Anone%3B%2Dwebkit%2Duser%2Dselect%3Anone%3B%2Dmoz%2Duser%2Dselect%3Anone%3B%2Dms%2Duser%2Dselect%3Anone%3B%2Do%2Duser%2Dselect%3Anone%7D%2Ereveal%20code%2EsourceCode%20button%2Ecode%2Dannotation%2Danchor%7Bcursor%3Apointer%7D%2Ereveal%20code%2EsourceCode%20a%2Ecode%2Dannotation%2Danchor%7Btext%2Dalign%3Acenter%3Bvertical%2Dalign%3Amiddle%3Btext%2Ddecoration%3Anone%3Bcursor%3Adefault%3Bheight%3A1%2E2em%3Bwidth%3A1%2E2em%7D%2Ereveal%20code%2EsourceCode%2Efragment%20a%2Ecode%2Dannotation%2Danchor%7Bleft%3Aauto%7D%2Ereveal%20%23code%2Dannotation%2Dline%2Dhighlight%2Dgutter%7Bwidth%3A100%25%3Bborder%2Dtop%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bborder%2Dbottom%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bz%2Dindex%3A2%7D%2Ereveal%20%23code%2Dannotation%2Dline%2Dhighlight%7Bmargin%2Dleft%3A%2D8em%3Bwidth%3Acalc%28100%25%20%2B%204em%29%3Bborder%2Dtop%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bborder%2Dbottom%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bz%2Dindex%3A2%3Bmargin%2Dbottom%3A%2D2px%7D%2Ereveal%20code%2EsourceCode%20%2Ecode%2Dannotation%2Danchor%2Ecode%2Dannotation%2Dactive%7Bbackground%2Dcolor%3Avar%28%2D%2Dquarto%2Dhl%2Dnormal%2Dcolor%2C%20%23aaaaaa%29%3Bborder%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dnormal%2Dcolor%2C%20%23aaaaaa%29%201px%3Bcolor%3A%2304041b%3Bfont%2Dweight%3Abolder%7D%2Ereveal%20pre%2Ecode%2Dannotation%2Dcode%7Bpadding%2Dtop%3A0%3Bpadding%2Dbottom%3A0%7D%2Ereveal%20pre%2Ecode%2Dannotation%2Dcode%20code%7Bz%2Dindex%3A3%3Bpadding%2Dleft%3A0px%7D%2Ereveal%20dl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%7Bmargin%2Dleft%3A%2E1em%7D%2Ereveal%20dl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dt%7Bmargin%2Dtop%3A%2E65rem%3Bfont%2Dfamily%3ASFMono%2DRegular%2CMenlo%2CMonaco%2CConsolas%2C%22Liberation%20Mono%22%2C%22Courier%20New%22%2Cmonospace%3Bborder%3Asolid%20%23000%201px%3Bborder%2Dradius%3A50%25%3Bheight%3A1%2E3em%3Bwidth%3A1%2E3em%3Bline%2Dheight%3A1%2E3em%3Bfont%2Dsize%3A%2E5em%3Btext%2Dalign%3Acenter%3Bvertical%2Dalign%3Amiddle%3Btext%2Ddecoration%3Anone%7D%2Ereveal%20dl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dd%7Bmargin%2Dleft%3A%2E25em%7D%2Ereveal%20%2Escrollable%20ol%20li%3Afirst%2Dchild%3Anth%2Dlast%2Dchild%28n%2B10%29%2C%2Ereveal%20%2Escrollable%20ol%20li%3Afirst%2Dchild%3Anth%2Dlast%2Dchild%28n%2B10%29%7Eli%7Bmargin%2Dleft%3A1em%7Dhtml%2Eprint%2Dpdf%20%2Ereveal%20%2Eslides%20%2Epdf%2Dpage%3Alast%2Dchild%7Bpage%2Dbreak%2Dafter%3Aavoid%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%7Bdisplay%3Aflex%3Bjustify%2Dcontent%3Acenter%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%7Bpadding%2Dleft%3A%2E5em%3Bpadding%2Dright%3A%2E5em%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%2C%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%3Ahover%2C%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%3Avisited%2C%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%3Aactive%7Bcolor%3Ainherit%3Btext%2Ddecoration%3Anone%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Dauthor%2Dname%7Bmargin%2Dbottom%3A%2E1rem%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Dauthor%2Demail%7Bmargin%2Dtop%3A0px%3Bmargin%2Dbottom%3A%2E4em%3Bfont%2Dsize%3A%2E6em%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Dauthor%2Dorcid%20img%7Bmargin%2Dbottom%3A4px%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Daffiliation%7Bfont%2Dsize%3A%2E7em%3Bmargin%2Dtop%3A0px%3Bmargin%2Dbottom%3A8px%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Daffiliation%3Afirst%7Bmargin%2Dtop%3A12px%7D%2Ereveal%20a%7Bline%2Dheight%3A1%2E3em%7D%2Ereveal%20ul%7Blist%2Dstyle%2Dtype%3Anone%7D%2Ereveal%20ul%20li%3A%3Abefore%7Bcontent%3A%22%E2%80%93%22%3Bcolor%3A%2302934a%3Bfont%2Dweight%3Abold%3Bdisplay%3Ainline%2Dblock%3Bwidth%3A1em%3Bmargin%2Dleft%3A%2D1em%7Dcode%7Bfont%2Dsize%3A1%2E1em%7D%2Ereveal%20div%2EsourceCode%7Bborder%3Anone%3Bborder%2Dradius%3A5px%3Bmargin%2Dbottom%3A10px%20%21important%3Bmargin%2Dtop%3A10px%20%21important%3Bpadding%3A0px%7D%2Ereveal%20pre%20code%7Bborder%3Anone%3Bbackground%2Dcolor%3Argba%28223%2C218%2C218%2C%2E9843137255%29%3Bcolor%3Argba%285%2C3%2C100%2C%2E8156862745%29%3Bpadding%3A20px%7D%2Epath%7Bbackground%2Dcolor%3A%23f2f2f2%3Bpadding%3A2px%206px%3Bborder%2Dradius%3A4px%3Bfont%2Dfamily%3Amonospace%7D%2Efootnote%2Dpin%7Bposition%3Aabsolute%3Bbottom%3A1%2E2rem%3Bleft%3A1%2E2rem%3Bright%3A1%2E2rem%3Bfont%2Dsize%3A1%2E3rem%3Bcolor%3A%236b7280%7D%2Ereveal%20h1%2C%2Ereveal%20h2%2C%2Ereveal%20h3%2C%2Ereveal%20h6%7Bmargin%3A0%200%2020px%200%3Bcolor%3A%2302934a%7D%2Ereveal%20h2%7Bmargin%3A0%200%2050px%200%3Bcolor%3A%23000%7D%2Ereveal%20h3%7Bmargin%3A0%200%2010px%200%3Bcolor%3A%2302934a%7D%2Ereveal%20h4%7Bmargin%3A50px%200%201px%200%3Bcolor%3A%236b7280%7D%2Ereveal%20h5%7Bmargin%3A50px%200%201px%200%3Bcolor%3A%2302934a%7D%2Einverse%7Bbackground%2Dcolor%3A%2302934a%3Bcolor%3A%23d6d6d6%3Btext%2Dshadow%3A0%200%2020px%20%23333%3Btext%2Dalign%3Acenter%7D%2Einverse%20h1%2C%2Einverse%20h2%2C%2Einverse%20h3%2C%2Einverse%20p%7Bfont%2Dsize%3A40px%3Bfont%2Dweight%3Abold%3Bmargin%3A350px%3Bposition%3Acenter%7D%2Einverse%5Bdata%2Dbackground%2Dimage%5D%7Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%20%21important%7D%2Einverse%20%2Equarto%2Dslide%2Dnumber%7Bdisplay%3Anone%7Dul%20ul%7Blist%2Dstyle%2Dtype%3Acircle%20%21important%7Dul%20ul%20ul%7Blist%2Dstyle%2Dtype%3Adisc%20%21important%7Dul%20ul%20li%3A%3Abefore%7Bcontent%3Anone%20%21important%7Dul%20ul%20ul%20li%3A%3Abefore%7Bcontent%3Anone%20%21important%7D%2Ereveal%20blockquote%7Bfont%2Dsize%3A%2E75em%3Bborder%2Dleft%3A3px%20solid%20%236b7280%3Bbackground%3Anone%3Bbox%2Dshadow%3Anone%3Bpadding%3A4px%2012px%3Bcolor%3A%236b7280%7D%2Ereveal%20%2EExample%7Bbackground%2Dcolor%3A%23f0faf4%3Bborder%2Dleft%3A4px%20solid%20%2302934a%3Bborder%2Dradius%3A6px%3Bpadding%3A12px%2016px%2012px%2016px%3Bmargin%3A10px%200%3Bposition%3Arelative%7D%2Ereveal%20%2EExample%3A%3Abefore%7Bcontent%3A%22%F0%9F%93%96%20Example%22%3Bdisplay%3Ablock%3Bfont%2Dweight%3A700%3Bfont%2Dsize%3A%2E85em%3Bcolor%3A%2302934a%3Btext%2Dtransform%3Auppercase%3Bletter%2Dspacing%3A%2E05em%3Bmargin%2Dbottom%3A6px%7D%2Ereveal%20%2Ehas%2Ddark%2Dbackground%20code%7Bcolor%3A%23c9b1ff%3Bbackground%2Dcolor%3Argba%28255%2C255%2C255%2C%2E12%29%7D%2Ereveal%20%2Ehas%2Ddark%2Dbackground%20%2Epath%7Bbackground%2Dcolor%3Argba%28255%2C255%2C255%2C%2E18%29%3Bcolor%3A%23f0f0f0%7D%0A" rel="stylesheet">
+  <link href="data:text/css,%40import%22%2E%2Ffonts%2Fleague%2Dgothic%2Fleague%2Dgothic%2Ecss%22%3B%40import%22https%3A%2F%2Ffonts%2Egoogleapis%2Ecom%2Fcss%3Ffamily%3DLato%3A400%2C700%2C400italic%2C700italic%22%3B%40import%22https%3A%2F%2Ffonts%2Egoogleapis%2Ecom%2Fcss%3Ffamily%3DOpen%2BSans%22%3B%40import%22https%3A%2F%2Ffonts%2Egoogleapis%2Ecom%2Fcss2%3Ffamily%3DSource%2BSans%2BPro%3Awght%40400%3B600%3B700%26family%3DPoppins%3Awght%40500%3B600%3B700%26display%3Dswap%22%3B%40import%22%2E%2Ffonts%2Fsource%2Dsans%2Dpro%2Fsource%2Dsans%2Dpro%2Ecss%22%3B%2Egreen%2Dbold%7Bcolor%3Agreen%3Bfont%2Dweight%3Abold%7D%3Aroot%7B%2D%2Dr%2Dbackground%2Dcolor%3A%20%23ffffff%3B%2D%2Dr%2Dmain%2Dfont%3A%20Inter%2C%20sans%2Dserif%3B%2D%2Dr%2Dmain%2Dfont%2Dsize%3A%2040px%3B%2D%2Dr%2Dmain%2Dcolor%3A%20%23000%3B%2D%2Dr%2Dblock%2Dmargin%3A%2024px%3B%2D%2Dr%2Dheading%2Dmargin%3A%200%200%2024px%200%3B%2D%2Dr%2Dheading%2Dfont%3A%20Poppins%3B%2D%2Dr%2Dheading%2Dcolor%3A%20%2302934a%3B%2D%2Dr%2Dheading%2Dline%2Dheight%3A%201%2E2%3B%2D%2Dr%2Dheading%2Dletter%2Dspacing%3A%20normal%3B%2D%2Dr%2Dheading%2Dtext%2Dtransform%3A%20none%3B%2D%2Dr%2Dheading%2Dtext%2Dshadow%3A%20none%3B%2D%2Dr%2Dheading%2Dfont%2Dweight%3A%20600%3B%2D%2Dr%2Dheading1%2Dtext%2Dshadow%3A%20none%3B%2D%2Dr%2Dheading1%2Dsize%3A%202%2E5em%3B%2D%2Dr%2Dheading2%2Dsize%3A%201%2E35em%3B%2D%2Dr%2Dheading3%2Dsize%3A%201%2E1em%3B%2D%2Dr%2Dheading4%2Dsize%3A%201em%3B%2D%2Dr%2Dcode%2Dfont%3A%20SFMono%2DRegular%2C%20Menlo%2C%20Monaco%2C%20Consolas%2C%20Liberation%20Mono%2C%20Courier%20New%2C%20monospace%3B%2D%2Dr%2Dlink%2Dcolor%3A%20%2302934a%3B%2D%2Dr%2Dlink%2Dcolor%2Ddark%3A%20%23014824%3B%2D%2Dr%2Dlink%2Dcolor%2Dhover%3A%20%2303c563%3B%2D%2Dr%2Dselection%2Dbackground%2Dcolor%3A%20%2302934a%3B%2D%2Dr%2Dselection%2Dcolor%3A%20%23ffffff%7D%2Ereveal%2Dviewport%7Bbackground%3A%23fff%3Bbackground%2Dcolor%3Avar%28%2D%2Dr%2Dbackground%2Dcolor%29%7D%2Ereveal%7Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dmain%2Dfont%29%3Bfont%2Dsize%3Avar%28%2D%2Dr%2Dmain%2Dfont%2Dsize%29%3Bfont%2Dweight%3Anormal%3Bcolor%3Avar%28%2D%2Dr%2Dmain%2Dcolor%29%7D%2Ereveal%20%3A%3Aselection%7Bcolor%3Avar%28%2D%2Dr%2Dselection%2Dcolor%29%3Bbackground%3Avar%28%2D%2Dr%2Dselection%2Dbackground%2Dcolor%29%3Btext%2Dshadow%3Anone%7D%2Ereveal%20%3A%3A%2Dmoz%2Dselection%7Bcolor%3Avar%28%2D%2Dr%2Dselection%2Dcolor%29%3Bbackground%3Avar%28%2D%2Dr%2Dselection%2Dbackground%2Dcolor%29%3Btext%2Dshadow%3Anone%7D%2Ereveal%20%2Eslides%20section%2C%2Ereveal%20%2Eslides%20section%3Esection%7Bline%2Dheight%3A1%2E3%3Bfont%2Dweight%3Ainherit%7D%2Ereveal%20h1%2C%2Ereveal%20h2%2C%2Ereveal%20h3%2C%2Ereveal%20h4%2C%2Ereveal%20h5%2C%2Ereveal%20h6%7Bmargin%3Avar%28%2D%2Dr%2Dheading%2Dmargin%29%3Bcolor%3Avar%28%2D%2Dr%2Dheading%2Dcolor%29%3Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dheading%2Dfont%29%3Bfont%2Dweight%3Avar%28%2D%2Dr%2Dheading%2Dfont%2Dweight%29%3Bline%2Dheight%3Avar%28%2D%2Dr%2Dheading%2Dline%2Dheight%29%3Bletter%2Dspacing%3Avar%28%2D%2Dr%2Dheading%2Dletter%2Dspacing%29%3Btext%2Dtransform%3Avar%28%2D%2Dr%2Dheading%2Dtext%2Dtransform%29%3Btext%2Dshadow%3Avar%28%2D%2Dr%2Dheading%2Dtext%2Dshadow%29%3Bword%2Dwrap%3Abreak%2Dword%7D%2Ereveal%20h1%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading1%2Dsize%29%7D%2Ereveal%20h2%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading2%2Dsize%29%7D%2Ereveal%20h3%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading3%2Dsize%29%7D%2Ereveal%20h4%7Bfont%2Dsize%3Avar%28%2D%2Dr%2Dheading4%2Dsize%29%7D%2Ereveal%20h1%7Btext%2Dshadow%3Avar%28%2D%2Dr%2Dheading1%2Dtext%2Dshadow%29%7D%2Ereveal%20p%7Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%200%3Bline%2Dheight%3A1%2E3%7D%2Ereveal%20h1%3Alast%2Dchild%2C%2Ereveal%20h2%3Alast%2Dchild%2C%2Ereveal%20h3%3Alast%2Dchild%2C%2Ereveal%20h4%3Alast%2Dchild%2C%2Ereveal%20h5%3Alast%2Dchild%2C%2Ereveal%20h6%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7D%2Ereveal%20img%2C%2Ereveal%20video%2C%2Ereveal%20iframe%7Bmax%2Dwidth%3A95%25%3Bmax%2Dheight%3A95%25%7D%2Ereveal%20strong%2C%2Ereveal%20b%7Bfont%2Dweight%3Abold%7D%2Ereveal%20em%7Bfont%2Dstyle%3Aitalic%7D%2Ereveal%20ol%2C%2Ereveal%20dl%2C%2Ereveal%20ul%7Bdisplay%3Ainline%2Dblock%3Btext%2Dalign%3Aleft%3Bmargin%3A0%200%200%201em%7D%2Ereveal%20ol%7Blist%2Dstyle%2Dtype%3Adecimal%7D%2Ereveal%20ul%7Blist%2Dstyle%2Dtype%3Adisc%7D%2Ereveal%20ul%20ul%7Blist%2Dstyle%2Dtype%3Asquare%7D%2Ereveal%20ul%20ul%20ul%7Blist%2Dstyle%2Dtype%3Acircle%7D%2Ereveal%20ul%20ul%2C%2Ereveal%20ul%20ol%2C%2Ereveal%20ol%20ol%2C%2Ereveal%20ol%20ul%7Bdisplay%3Ablock%3Bmargin%2Dleft%3A40px%7D%2Ereveal%20dt%7Bfont%2Dweight%3Abold%7D%2Ereveal%20dd%7Bmargin%2Dleft%3A40px%7D%2Ereveal%20blockquote%7Bdisplay%3Ablock%3Bposition%3Arelative%3Bwidth%3A70%25%3Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%20auto%3Bpadding%3A5px%3Bfont%2Dstyle%3Aitalic%3Bbackground%3Argba%28255%2C255%2C255%2C%2E05%29%3Bbox%2Dshadow%3A0px%200px%202px%20rgba%280%2C0%2C0%2C%2E2%29%7D%2Ereveal%20blockquote%20p%3Afirst%2Dchild%2C%2Ereveal%20blockquote%20p%3Alast%2Dchild%7Bdisplay%3Ainline%2Dblock%7D%2Ereveal%20q%7Bfont%2Dstyle%3Aitalic%7D%2Ereveal%20pre%7Bdisplay%3Ablock%3Bposition%3Arelative%3Bwidth%3A90%25%3Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%20auto%3Btext%2Dalign%3Aleft%3Bfont%2Dsize%3A%2E55em%3Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dcode%2Dfont%29%3Bline%2Dheight%3A1%2E2em%3Bword%2Dwrap%3Abreak%2Dword%3Bbox%2Dshadow%3A0px%205px%2015px%20rgba%280%2C0%2C0%2C%2E15%29%7D%2Ereveal%20code%7Bfont%2Dfamily%3Avar%28%2D%2Dr%2Dcode%2Dfont%29%3Btext%2Dtransform%3Anone%3Btab%2Dsize%3A2%7D%2Ereveal%20pre%20code%7Bdisplay%3Ablock%3Bpadding%3A5px%3Boverflow%3Aauto%3Bmax%2Dheight%3A400px%3Bword%2Dwrap%3Anormal%7D%2Ereveal%20%2Ecode%2Dwrapper%7Bwhite%2Dspace%3Anormal%7D%2Ereveal%20%2Ecode%2Dwrapper%20code%7Bwhite%2Dspace%3Apre%7D%2Ereveal%20table%7Bmargin%3Aauto%3Bborder%2Dcollapse%3Acollapse%3Bborder%2Dspacing%3A0%7D%2Ereveal%20table%20th%7Bfont%2Dweight%3Abold%7D%2Ereveal%20table%20th%2C%2Ereveal%20table%20td%7Btext%2Dalign%3Aleft%3Bpadding%3A%2E2em%20%2E5em%20%2E2em%20%2E5em%3Bborder%2Dbottom%3A1px%20solid%7D%2Ereveal%20table%20th%5Balign%3Dcenter%5D%2C%2Ereveal%20table%20td%5Balign%3Dcenter%5D%7Btext%2Dalign%3Acenter%7D%2Ereveal%20table%20th%5Balign%3Dright%5D%2C%2Ereveal%20table%20td%5Balign%3Dright%5D%7Btext%2Dalign%3Aright%7D%2Ereveal%20table%20tbody%20tr%3Alast%2Dchild%20th%2C%2Ereveal%20table%20tbody%20tr%3Alast%2Dchild%20td%7Bborder%2Dbottom%3Anone%7D%2Ereveal%20sup%7Bvertical%2Dalign%3Asuper%3Bfont%2Dsize%3Asmaller%7D%2Ereveal%20sub%7Bvertical%2Dalign%3Asub%3Bfont%2Dsize%3Asmaller%7D%2Ereveal%20small%7Bdisplay%3Ainline%2Dblock%3Bfont%2Dsize%3A%2E6em%3Bline%2Dheight%3A1%2E2em%3Bvertical%2Dalign%3Atop%7D%2Ereveal%20small%20%2A%7Bvertical%2Dalign%3Atop%7D%2Ereveal%20img%7Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%200%7D%2Ereveal%20a%7Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%3Btext%2Ddecoration%3Anone%3Btransition%3Acolor%20%2E15s%20ease%7D%2Ereveal%20a%3Ahover%7Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%2Dhover%29%3Btext%2Dshadow%3Anone%3Bborder%3Anone%7D%2Ereveal%20%2Eroll%20span%3Aafter%7Bcolor%3A%23fff%3Bbackground%3Avar%28%2D%2Dr%2Dlink%2Dcolor%2Ddark%29%7D%2Ereveal%20%2Er%2Dframe%7Bborder%3A4px%20solid%20var%28%2D%2Dr%2Dmain%2Dcolor%29%3Bbox%2Dshadow%3A0%200%2010px%20rgba%280%2C0%2C0%2C%2E15%29%7D%2Ereveal%20a%20%2Er%2Dframe%7Btransition%3Aall%20%2E15s%20linear%7D%2Ereveal%20a%3Ahover%20%2Er%2Dframe%7Bborder%2Dcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%3Bbox%2Dshadow%3A0%200%2020px%20rgba%280%2C0%2C0%2C%2E55%29%7D%2Ereveal%20%2Econtrols%7Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%7D%2Ereveal%20%2Eprogress%7Bbackground%3Argba%280%2C0%2C0%2C%2E2%29%3Bcolor%3Avar%28%2D%2Dr%2Dlink%2Dcolor%29%7D%40media%20print%7B%2Ebackgrounds%7Bbackground%2Dcolor%3Avar%28%2D%2Dr%2Dbackground%2Dcolor%29%7D%7D%2Etop%2Dright%7Bposition%3Aabsolute%3Btop%3A1em%3Bright%3A1em%7D%2Evisually%2Dhidden%7Bborder%3A0%3Bclip%3Arect%280%200%200%200%29%3Bheight%3Aauto%3Bmargin%3A0%3Boverflow%3Ahidden%3Bpadding%3A0%3Bposition%3Aabsolute%3Bwidth%3A1px%3Bwhite%2Dspace%3Anowrap%7D%2Ehidden%7Bdisplay%3Anone%20%21important%7D%2Ezindex%2Dbottom%7Bz%2Dindex%3A%2D1%20%21important%7Dfigure%2Efigure%7Bdisplay%3Ablock%7D%2Equarto%2Dlayout%2Dpanel%7Bmargin%2Dbottom%3A1em%7D%2Equarto%2Dlayout%2Dpanel%3Efigure%7Bwidth%3A100%25%7D%2Equarto%2Dlayout%2Dpanel%3Efigure%3Efigcaption%2C%2Equarto%2Dlayout%2Dpanel%3E%2Epanel%2Dcaption%7Bmargin%2Dtop%3A10pt%7D%2Equarto%2Dlayout%2Dpanel%3E%2Etable%2Dcaption%7Bmargin%2Dtop%3A0px%7D%2Etable%2Dcaption%20p%7Bmargin%2Dbottom%3A%2E5em%7D%2Equarto%2Dlayout%2Drow%7Bdisplay%3Aflex%3Bflex%2Ddirection%3Arow%3Balign%2Ditems%3Aflex%2Dstart%7D%2Equarto%2Dlayout%2Dvalign%2Dtop%7Balign%2Ditems%3Aflex%2Dstart%7D%2Equarto%2Dlayout%2Dvalign%2Dbottom%7Balign%2Ditems%3Aflex%2Dend%7D%2Equarto%2Dlayout%2Dvalign%2Dcenter%7Balign%2Ditems%3Acenter%7D%2Equarto%2Dlayout%2Dcell%7Bposition%3Arelative%3Bmargin%2Dright%3A20px%7D%2Equarto%2Dlayout%2Dcell%3Alast%2Dchild%7Bmargin%2Dright%3A0%7D%2Equarto%2Dlayout%2Dcell%20figure%2C%2Equarto%2Dlayout%2Dcell%3Ep%7Bmargin%3A%2E2em%7D%2Equarto%2Dlayout%2Dcell%20img%7Bmax%2Dwidth%3A100%25%7D%2Equarto%2Dlayout%2Dcell%20%2Ehtml%2Dwidget%7Bwidth%3A100%25%20%21important%7D%2Equarto%2Dlayout%2Dcell%20div%20figure%20p%7Bmargin%3A0%7D%2Equarto%2Dlayout%2Dcell%20figure%7Bdisplay%3Ablock%3Bmargin%2Dinline%2Dstart%3A0%3Bmargin%2Dinline%2Dend%3A0%7D%2Equarto%2Dlayout%2Dcell%20table%7Bdisplay%3Ainline%2Dtable%7D%2Equarto%2Dlayout%2Dcell%2Dsubref%20figcaption%2Cfigure%20%2Equarto%2Dlayout%2Drow%20figure%20figcaption%7Btext%2Dalign%3Acenter%3Bfont%2Dstyle%3Aitalic%7D%2Equarto%2Dfigure%7Bposition%3Arelative%3Bmargin%2Dbottom%3A1em%7D%2Equarto%2Dfigure%3Efigure%7Bwidth%3A100%25%3Bmargin%2Dbottom%3A0%7D%2Equarto%2Dfigure%2Dleft%3Efigure%3Ep%2C%2Equarto%2Dfigure%2Dleft%3Efigure%3Ediv%7Btext%2Dalign%3Aleft%7D%2Equarto%2Dfigure%2Dcenter%3Efigure%3Ep%2C%2Equarto%2Dfigure%2Dcenter%3Efigure%3Ediv%7Btext%2Dalign%3Acenter%7D%2Equarto%2Dfigure%2Dright%3Efigure%3Ep%2C%2Equarto%2Dfigure%2Dright%3Efigure%3Ediv%7Btext%2Dalign%3Aright%7D%2Equarto%2Dfigure%3Efigure%3Ediv%2Ecell%2Dannotation%2C%2Equarto%2Dfigure%3Efigure%3Ediv%20code%7Btext%2Dalign%3Aleft%7Dfigure%3Ep%3Aempty%7Bdisplay%3Anone%7Dfigure%3Ep%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%3Bmargin%2Dbottom%3A0%7Dfigure%3Efigcaption%2Equarto%2Dfloat%2Dcaption%2Dbottom%7Bmargin%2Dbottom%3A%2E5em%7Dfigure%3Efigcaption%2Equarto%2Dfloat%2Dcaption%2Dtop%7Bmargin%2Dtop%3A%2E5em%7Ddiv%5Bid%5E%3Dtbl%2D%5D%7Bposition%3Arelative%7D%2Equarto%2Dfigure%3E%2Eanchorjs%2Dlink%7Bposition%3Aabsolute%3Btop%3A%2E6em%3Bright%3A%2E5em%7Ddiv%5Bid%5E%3Dtbl%2D%5D%3E%2Eanchorjs%2Dlink%7Bposition%3Aabsolute%3Btop%3A%2E7em%3Bright%3A%2E3em%7D%2Equarto%2Dfigure%3Ahover%3E%2Eanchorjs%2Dlink%2Cdiv%5Bid%5E%3Dtbl%2D%5D%3Ahover%3E%2Eanchorjs%2Dlink%2Ch2%3Ahover%3E%2Eanchorjs%2Dlink%2Ch3%3Ahover%3E%2Eanchorjs%2Dlink%2Ch4%3Ahover%3E%2Eanchorjs%2Dlink%2Ch5%3Ahover%3E%2Eanchorjs%2Dlink%2Ch6%3Ahover%3E%2Eanchorjs%2Dlink%2C%2Ereveal%2Danchorjs%2Dlink%3E%2Eanchorjs%2Dlink%7Bopacity%3A1%7D%23title%2Dblock%2Dheader%7Bmargin%2Dblock%2Dend%3A1rem%3Bposition%3Arelative%3Bmargin%2Dtop%3A%2D1px%7D%23title%2Dblock%2Dheader%20%2Eabstract%7Bmargin%2Dblock%2Dstart%3A1rem%7D%23title%2Dblock%2Dheader%20%2Eabstract%20%2Eabstract%2Dtitle%7Bfont%2Dweight%3A600%7D%23title%2Dblock%2Dheader%20a%7Btext%2Ddecoration%3Anone%7D%23title%2Dblock%2Dheader%20%2Eauthor%2C%23title%2Dblock%2Dheader%20%2Edate%2C%23title%2Dblock%2Dheader%20%2Edoi%7Bmargin%2Dblock%2Dend%3A%2E2rem%7D%23title%2Dblock%2Dheader%20%2Equarto%2Dtitle%2Dblock%3Ediv%7Bdisplay%3Aflex%7D%23title%2Dblock%2Dheader%20%2Equarto%2Dtitle%2Dblock%3Ediv%3Eh1%7Bflex%2Dgrow%3A1%7D%23title%2Dblock%2Dheader%20%2Equarto%2Dtitle%2Dblock%3Ediv%3Ebutton%7Bflex%2Dshrink%3A0%3Bheight%3A2%2E25rem%3Bmargin%2Dtop%3A0%7Dtr%2Eheader%3Eth%3Ep%3Alast%2Dof%2Dtype%7Bmargin%2Dbottom%3A0px%7Dtable%2Ctable%2Etable%7Bmargin%2Dtop%3A%2E5rem%3Bmargin%2Dbottom%3A%2E5rem%7Dcaption%2C%2Etable%2Dcaption%7Bpadding%2Dtop%3A%2E5rem%3Bpadding%2Dbottom%3A%2E5rem%3Btext%2Dalign%3Acenter%7Dfigure%2Equarto%2Dfloat%2Dtbl%20figcaption%2Equarto%2Dfloat%2Dcaption%2Dtop%7Bmargin%2Dtop%3A%2E5rem%3Bmargin%2Dbottom%3A%2E25rem%3Btext%2Dalign%3Acenter%7Dfigure%2Equarto%2Dfloat%2Dtbl%20figcaption%2Equarto%2Dfloat%2Dcaption%2Dbottom%7Bpadding%2Dtop%3A%2E25rem%3Bmargin%2Dbottom%3A%2E5rem%3Btext%2Dalign%3Acenter%7D%2Eutterances%7Bmax%2Dwidth%3Anone%3Bmargin%2Dleft%3A%2D8px%7Diframe%7Bmargin%2Dbottom%3A1em%7Ddetails%7Bmargin%2Dbottom%3A1em%7Ddetails%5Bshow%5D%7Bmargin%2Dbottom%3A0%7Ddetails%3Esummary%7Bcolor%3A%234d4d4d%7Ddetails%3Esummary%3Ep%3Aonly%2Dchild%7Bdisplay%3Ainline%7Dpre%2EsourceCode%2Ccode%2EsourceCode%7Bposition%3Arelative%7Ddd%20code%3Anot%28%2EsourceCode%29%2Cp%20code%3Anot%28%2EsourceCode%29%7Bwhite%2Dspace%3Apre%2Dwrap%7Dcode%7Bwhite%2Dspace%3Apre%7D%40media%20print%7Bcode%7Bwhite%2Dspace%3Apre%2Dwrap%7D%7Dpre%3Ecode%7Bdisplay%3Ablock%7Dpre%3Ecode%2EsourceCode%7Bwhite%2Dspace%3Apre%7Dpre%3Ecode%2EsourceCode%3Espan%3Ea%3Afirst%2Dchild%3A%3Abefore%7Btext%2Ddecoration%3Anone%7Dpre%2Ecode%2Doverflow%2Dwrap%3Ecode%2EsourceCode%7Bwhite%2Dspace%3Apre%2Dwrap%7Dpre%2Ecode%2Doverflow%2Dscroll%3Ecode%2EsourceCode%7Bwhite%2Dspace%3Apre%7Dcode%20a%3Aany%2Dlink%7Bcolor%3Ainherit%3Btext%2Ddecoration%3Anone%7Dcode%20a%3Ahover%7Bcolor%3Ainherit%3Btext%2Ddecoration%3Aunderline%7Dul%2Etask%2Dlist%7Bpadding%2Dleft%3A1em%7D%5Bdata%2Dtippy%2Droot%5D%7Bdisplay%3Ainline%2Dblock%7D%2Etippy%2Dcontent%20%2Efootnote%2Dback%7Bdisplay%3Anone%7D%2Efootnote%2Dback%7Bmargin%2Dleft%3A%2E2em%7D%2Etippy%2Dcontent%7Boverflow%2Dx%3Aauto%7D%2Equarto%2Dembedded%2Dsource%2Dcode%7Bdisplay%3Anone%7D%2Equarto%2Dunresolved%2Dref%7Bfont%2Dweight%3A600%7D%2Equarto%2Dcover%2Dimage%7Bmax%2Dwidth%3A35%25%3Bfloat%3Aright%3Bmargin%2Dleft%3A30px%7D%2Ecell%2Doutput%2Ddisplay%20%2Ewidget%2Dsubarea%7Bmargin%2Dbottom%3A1em%7D%2Ecell%2Doutput%2Ddisplay%3Anot%28%2Eno%2Doverflow%2Dx%29%2C%2Eknitsql%2Dtable%3Anot%28%2Eno%2Doverflow%2Dx%29%7Boverflow%2Dx%3Aauto%7D%2Epanel%2Dinput%7Bmargin%2Dbottom%3A1em%7D%2Epanel%2Dinput%3Ediv%2C%2Epanel%2Dinput%3Ediv%3Ediv%7Bdisplay%3Ainline%2Dblock%3Bvertical%2Dalign%3Atop%3Bpadding%2Dright%3A12px%7D%2Epanel%2Dinput%3Ep%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7D%2Elayout%2Dsidebar%7Bmargin%2Dbottom%3A1em%7D%2Elayout%2Dsidebar%20%2Etab%2Dcontent%7Bborder%3Anone%7D%2Etab%2Dcontent%3E%2Epage%2Dcolumns%2Eactive%7Bdisplay%3Agrid%7Ddiv%2EsourceCode%3Eiframe%7Bwidth%3A100%25%3Bheight%3A300px%3Bmargin%2Dbottom%3A%2D0%2E5em%7Da%7Btext%2Dunderline%2Doffset%3A3px%7Ddiv%2Eansi%2Descaped%2Doutput%7Bfont%2Dfamily%3Amonospace%3Bdisplay%3Ablock%7D%2Eansi%2Dblack%2Dfg%7Bcolor%3A%233e424d%7D%2Eansi%2Dblack%2Dbg%7Bbackground%2Dcolor%3A%233e424d%7D%2Eansi%2Dblack%2Dintense%2Dblack%2C%2Eansi%2Dbright%2Dblack%2Dfg%7Bcolor%3A%23282c36%7D%2Eansi%2Dblack%2Dintense%2Dblack%2C%2Eansi%2Dbright%2Dblack%2Dbg%7Bbackground%2Dcolor%3A%23282c36%7D%2Eansi%2Dred%2Dfg%7Bcolor%3A%23e75c58%7D%2Eansi%2Dred%2Dbg%7Bbackground%2Dcolor%3A%23e75c58%7D%2Eansi%2Dred%2Dintense%2Dred%2C%2Eansi%2Dbright%2Dred%2Dfg%7Bcolor%3A%23b22b31%7D%2Eansi%2Dred%2Dintense%2Dred%2C%2Eansi%2Dbright%2Dred%2Dbg%7Bbackground%2Dcolor%3A%23b22b31%7D%2Eansi%2Dgreen%2Dfg%7Bcolor%3A%2300a250%7D%2Eansi%2Dgreen%2Dbg%7Bbackground%2Dcolor%3A%2300a250%7D%2Eansi%2Dgreen%2Dintense%2Dgreen%2C%2Eansi%2Dbright%2Dgreen%2Dfg%7Bcolor%3A%23007427%7D%2Eansi%2Dgreen%2Dintense%2Dgreen%2C%2Eansi%2Dbright%2Dgreen%2Dbg%7Bbackground%2Dcolor%3A%23007427%7D%2Eansi%2Dyellow%2Dfg%7Bcolor%3A%23ddb62b%7D%2Eansi%2Dyellow%2Dbg%7Bbackground%2Dcolor%3A%23ddb62b%7D%2Eansi%2Dyellow%2Dintense%2Dyellow%2C%2Eansi%2Dbright%2Dyellow%2Dfg%7Bcolor%3A%23b27d12%7D%2Eansi%2Dyellow%2Dintense%2Dyellow%2C%2Eansi%2Dbright%2Dyellow%2Dbg%7Bbackground%2Dcolor%3A%23b27d12%7D%2Eansi%2Dblue%2Dfg%7Bcolor%3A%23208ffb%7D%2Eansi%2Dblue%2Dbg%7Bbackground%2Dcolor%3A%23208ffb%7D%2Eansi%2Dblue%2Dintense%2Dblue%2C%2Eansi%2Dbright%2Dblue%2Dfg%7Bcolor%3A%230065ca%7D%2Eansi%2Dblue%2Dintense%2Dblue%2C%2Eansi%2Dbright%2Dblue%2Dbg%7Bbackground%2Dcolor%3A%230065ca%7D%2Eansi%2Dmagenta%2Dfg%7Bcolor%3A%23d160c4%7D%2Eansi%2Dmagenta%2Dbg%7Bbackground%2Dcolor%3A%23d160c4%7D%2Eansi%2Dmagenta%2Dintense%2Dmagenta%2C%2Eansi%2Dbright%2Dmagenta%2Dfg%7Bcolor%3A%23a03196%7D%2Eansi%2Dmagenta%2Dintense%2Dmagenta%2C%2Eansi%2Dbright%2Dmagenta%2Dbg%7Bbackground%2Dcolor%3A%23a03196%7D%2Eansi%2Dcyan%2Dfg%7Bcolor%3A%2360c6c8%7D%2Eansi%2Dcyan%2Dbg%7Bbackground%2Dcolor%3A%2360c6c8%7D%2Eansi%2Dcyan%2Dintense%2Dcyan%2C%2Eansi%2Dbright%2Dcyan%2Dfg%7Bcolor%3A%23258f8f%7D%2Eansi%2Dcyan%2Dintense%2Dcyan%2C%2Eansi%2Dbright%2Dcyan%2Dbg%7Bbackground%2Dcolor%3A%23258f8f%7D%2Eansi%2Dwhite%2Dfg%7Bcolor%3A%23c5c1b4%7D%2Eansi%2Dwhite%2Dbg%7Bbackground%2Dcolor%3A%23c5c1b4%7D%2Eansi%2Dwhite%2Dintense%2Dwhite%2C%2Eansi%2Dbright%2Dwhite%2Dfg%7Bcolor%3A%23a1a6b2%7D%2Eansi%2Dwhite%2Dintense%2Dwhite%2C%2Eansi%2Dbright%2Dwhite%2Dbg%7Bbackground%2Dcolor%3A%23a1a6b2%7D%2Eansi%2Ddefault%2Dinverse%2Dfg%7Bcolor%3A%23fff%7D%2Eansi%2Ddefault%2Dinverse%2Dbg%7Bbackground%2Dcolor%3A%23000%7D%2Eansi%2Dbold%7Bfont%2Dweight%3Abold%7D%2Eansi%2Dunderline%7Btext%2Ddecoration%3Aunderline%7D%3Aroot%7B%2D%2Dquarto%2Dbody%2Dbg%3A%20%23ffffff%3B%2D%2Dquarto%2Dbody%2Dcolor%3A%20%23000%3B%2D%2Dquarto%2Dtext%2Dmuted%3A%20%234d4d4d%3B%2D%2Dquarto%2Dborder%2Dcolor%3A%20rgb%28255%2C%20255%2C%20255%29%3B%2D%2Dquarto%2Dborder%2Dwidth%3A%201px%3B%2D%2Dquarto%2Dborder%2Dradius%3A%204px%7Dtable%2Egt%5Ftable%7Bcolor%3Avar%28%2D%2Dquarto%2Dbody%2Dcolor%29%3Bfont%2Dsize%3A1em%3Bwidth%3A100%25%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bborder%2Dtop%2Dwidth%3Ainherit%3Bborder%2Dbottom%2Dwidth%3Ainherit%3Bborder%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20th%2Egt%5Fcolumn%5Fspanner%5Fouter%7Bcolor%3Avar%28%2D%2Dquarto%2Dbody%2Dcolor%29%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bborder%2Dtop%2Dwidth%3Ainherit%3Bborder%2Dbottom%2Dwidth%3Ainherit%3Bborder%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20th%2Egt%5Fcol%5Fheading%7Bcolor%3Avar%28%2D%2Dquarto%2Dbody%2Dcolor%29%3Bfont%2Dweight%3Abold%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%7Dtable%2Egt%5Ftable%20thead%2Egt%5Fcol%5Fheadings%7Bborder%2Dbottom%3A1px%20solid%20currentColor%3Bborder%2Dtop%2Dwidth%3Ainherit%3Bborder%2Dtop%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20thead%2Egt%5Fcol%5Fheadings%3Anot%28%3Afirst%2Dchild%29%7Bborder%2Dtop%2Dwidth%3A1px%3Bborder%2Dtop%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%7Dtable%2Egt%5Ftable%20td%2Egt%5Frow%7Bborder%2Dbottom%2Dwidth%3A1px%3Bborder%2Dbottom%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%3Bborder%2Dtop%2Dwidth%3A0px%7Dtable%2Egt%5Ftable%20tbody%2Egt%5Ftable%5Fbody%7Bborder%2Dtop%2Dwidth%3A1px%3Bborder%2Dbottom%2Dwidth%3A1px%3Bborder%2Dbottom%2Dcolor%3Avar%28%2D%2Dquarto%2Dborder%2Dcolor%29%3Bborder%2Dtop%2Dcolor%3AcurrentColor%7Ddiv%2Ecolumns%7Bdisplay%3Ainitial%3Bgap%3Ainitial%7Ddiv%2Ecolumn%7Bdisplay%3Ainline%2Dblock%3Boverflow%2Dx%3Ainitial%3Bvertical%2Dalign%3Atop%3Bwidth%3A50%25%7D%2Ecode%2Dannotation%2Dtip%2Dcontent%7Bword%2Dwrap%3Abreak%2Dword%7D%2Ecode%2Dannotation%2Dcontainer%2Dhidden%7Bdisplay%3Anone%20%21important%7Ddl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%7Bdisplay%3Agrid%3Bgrid%2Dtemplate%2Dcolumns%3Amin%2Dcontent%20auto%7Ddl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dt%7Bgrid%2Dcolumn%3A1%7Ddl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dd%7Bgrid%2Dcolumn%3A2%7Dpre%2EsourceCode%2Ecode%2Dannotation%2Dcode%7Bpadding%2Dright%3A0%7Dcode%2EsourceCode%20%2Ecode%2Dannotation%2Danchor%7Bz%2Dindex%3A100%3Bposition%3Arelative%3Bfloat%3Aright%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%7Dinput%5Btype%3Dcheckbox%5D%7Bmargin%2Dright%3A%2E5ch%7D%3Aroot%7B%2D%2Dmermaid%2Dbg%2Dcolor%3A%20%23ffffff%3B%2D%2Dmermaid%2Dedge%2Dcolor%3A%20%23999%3B%2D%2Dmermaid%2Dnode%2Dfg%2Dcolor%3A%20%23000%3B%2D%2Dmermaid%2Dfg%2Dcolor%3A%20%23000%3B%2D%2Dmermaid%2Dfg%2Dcolor%2D%2Dlighter%3A%20%231a1a1a%3B%2D%2Dmermaid%2Dfg%2Dcolor%2D%2Dlightest%3A%20%23333333%3B%2D%2Dmermaid%2Dfont%2Dfamily%3A%20Inter%2C%20sans%2Dserif%3B%2D%2Dmermaid%2Dlabel%2Dbg%2Dcolor%3A%20%23ffffff%3B%2D%2Dmermaid%2Dlabel%2Dfg%2Dcolor%3A%20%23468%3B%2D%2Dmermaid%2Dnode%2Dbg%2Dcolor%3A%20rgba%2868%2C%20102%2C%20136%2C%200%2E1%29%3B%2D%2Dmermaid%2Dnode%2Dfg%2Dcolor%3A%20%23000%7D%40media%20print%7B%3Aroot%7Bfont%2Dsize%3A11pt%7D%23quarto%2Dsidebar%2C%23TOC%2C%2Enav%2Dpage%7Bdisplay%3Anone%7D%2Epage%2Dcolumns%20%2Econtent%7Bgrid%2Dcolumn%2Dstart%3Apage%2Dstart%7D%2Efixed%2Dtop%7Bposition%3Arelative%7D%2Epanel%2Dcaption%2C%2Efigure%2Dcaption%2Cfigcaption%7Bcolor%3A%23666%7D%7D%2Ecode%2Dcopy%2Dbutton%7Bposition%3Aabsolute%3Btop%3A0%3Bright%3A0%3Bborder%3A0%3Bmargin%2Dtop%3A5px%3Bmargin%2Dright%3A5px%3Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bz%2Dindex%3A3%7D%2Ecode%2Dcopy%2Dbutton%3Afocus%7Boutline%3Anone%7D%2Ecode%2Dcopy%2Dbutton%2Dtooltip%7Bfont%2Dsize%3A%2E75em%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%3E%2Ebi%3A%3Abefore%7Bdisplay%3Ainline%2Dblock%3Bheight%3A1rem%3Bwidth%3A1rem%3Bcontent%3A%22%22%3Bvertical%2Dalign%3A%2D0%2E125em%3Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2898%2C%20114%2C%20164%29%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4%201%2E5H3a2%202%200%200%200%2D2%202V14a2%202%200%200%200%202%202h10a2%202%200%200%200%202%2D2V3%2E5a2%202%200%200%200%2D2%2D2h%2D1v1h1a1%201%200%200%201%201%201V14a1%201%200%200%201%2D1%201H3a1%201%200%200%201%2D1%2D1V3%2E5a1%201%200%200%201%201%2D1h1v%2D1z%22%2F%3E%3Cpath%20d%3D%22M9%2E5%201a%2E5%2E5%200%200%201%20%2E5%2E5v1a%2E5%2E5%200%200%201%2D%2E5%2E5h%2D3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5v%2D1a%2E5%2E5%200%200%201%20%2E5%2D%2E5h3zm%2D3%2D1A1%2E5%201%2E5%200%200%200%205%201%2E5v1A1%2E5%201%2E5%200%200%200%206%2E5%204h3A1%2E5%201%2E5%200%200%200%2011%202%2E5v%2D1A1%2E5%201%2E5%200%200%200%209%2E5%200h%2D3z%22%2F%3E%3C%2Fsvg%3E%27%29%3Bbackground%2Drepeat%3Ano%2Drepeat%3Bbackground%2Dsize%3A1rem%201rem%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%2Dchecked%3E%2Ebi%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2898%2C%20114%2C%20164%29%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13%2E854%203%2E646a%2E5%2E5%200%200%201%200%20%2E708l%2D7%207a%2E5%2E5%200%200%201%2D%2E708%200l%2D3%2E5%2D3%2E5a%2E5%2E5%200%201%201%20%2E708%2D%2E708L6%2E5%2010%2E293l6%2E646%2D6%2E647a%2E5%2E5%200%200%201%20%2E708%200z%22%2F%3E%3C%2Fsvg%3E%27%29%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%3Ahover%3E%2Ebi%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2880%2C%20250%2C%20123%29%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4%201%2E5H3a2%202%200%200%200%2D2%202V14a2%202%200%200%200%202%202h10a2%202%200%200%200%202%2D2V3%2E5a2%202%200%200%200%2D2%2D2h%2D1v1h1a1%201%200%200%201%201%201V14a1%201%200%200%201%2D1%201H3a1%201%200%200%201%2D1%2D1V3%2E5a1%201%200%200%201%201%2D1h1v%2D1z%22%2F%3E%3Cpath%20d%3D%22M9%2E5%201a%2E5%2E5%200%200%201%20%2E5%2E5v1a%2E5%2E5%200%200%201%2D%2E5%2E5h%2D3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5v%2D1a%2E5%2E5%200%200%201%20%2E5%2D%2E5h3zm%2D3%2D1A1%2E5%201%2E5%200%200%200%205%201%2E5v1A1%2E5%201%2E5%200%200%200%206%2E5%204h3A1%2E5%201%2E5%200%200%200%2011%202%2E5v%2D1A1%2E5%201%2E5%200%200%200%209%2E5%200h%2D3z%22%2F%3E%3C%2Fsvg%3E%27%29%7Dpre%2EsourceCode%3Ahover%3E%2Ecode%2Dcopy%2Dbutton%2Dchecked%3Ahover%3E%2Ebi%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%2880%2C%20250%2C%20123%29%22%20%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13%2E854%203%2E646a%2E5%2E5%200%200%201%200%20%2E708l%2D7%207a%2E5%2E5%200%200%201%2D%2E708%200l%2D3%2E5%2D3%2E5a%2E5%2E5%200%201%201%20%2E708%2D%2E708L6%2E5%2010%2E293l6%2E646%2D6%2E647a%2E5%2E5%200%200%201%20%2E708%200z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Epanel%2Dtabset%20%5Brole%3Dtablist%5D%7Bborder%2Dbottom%3A1px%20solid%20%23fff%3Blist%2Dstyle%3Anone%3Bmargin%3A0%3Bpadding%3A0%3Bwidth%3A100%25%7D%2Epanel%2Dtabset%20%5Brole%3Dtablist%5D%20%2A%7B%2Dwebkit%2Dbox%2Dsizing%3Aborder%2Dbox%3Bbox%2Dsizing%3Aborder%2Dbox%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtablist%5D%20li%7Bdisplay%3Ainline%2Dblock%7D%7D%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%7Bborder%3A1px%20solid%20rgba%280%2C0%2C0%2C0%29%3Bborder%2Dtop%2Dcolor%3A%23fff%3Bdisplay%3Ablock%3Bpadding%3A%2E5em%201em%3Btext%2Ddecoration%3Anone%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%7Bborder%2Dtop%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bdisplay%3Ainline%2Dblock%3Bmargin%2Dbottom%3A%2D1px%7D%7D%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%5Baria%2Dselected%3Dtrue%5D%7Bbackground%2Dcolor%3A%23fff%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%5Baria%2Dselected%3Dtrue%5D%7Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%3Bborder%3A1px%20solid%20%23fff%3Bborder%2Dbottom%2Dcolor%3A%23fff%7D%7D%40media%28min%2Dwidth%3A%2030em%29%7B%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%3Ahover%3Anot%28%5Baria%2Dselected%3Dtrue%5D%29%7Bborder%3A1px%20solid%20%23fff%7D%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%7Bmargin%2Dbottom%3A0%3Bpadding%2Dbottom%3A2px%3Bpadding%2Dtop%3A2px%3Bpadding%2Dleft%3A%2E7em%3Bborder%3Avar%28%2D%2Dquarto%2Dborder%2Dwidth%29%20solid%20var%28%2D%2Dquarto%2Dborder%2Dcolor%29%3Bborder%2Dradius%3Avar%28%2D%2Dquarto%2Dborder%2Dradius%29%3Bborder%2Dbottom%3A0%3Bborder%2Dbottom%2Dleft%2Dradius%3A0%25%3Bborder%2Dbottom%2Dright%2Dradius%3A0%25%7D%2Ecode%2Dwith%2Dfilename%20div%2EsourceCode%2C%2Ereveal%20%2Ecode%2Dwith%2Dfilename%20div%2EsourceCode%7Bmargin%2Dtop%3A0%3Bborder%2Dtop%2Dleft%2Dradius%3A0%25%3Bborder%2Dtop%2Dright%2Dradius%3A0%25%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%20pre%7Bmargin%2Dbottom%3A0%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%7Bbackground%2Dcolor%3Argba%28219%2C219%2C219%2C%2E8%29%7D%2Equarto%2Ddark%20%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%7Bbackground%2Dcolor%3A%23555%7D%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%20strong%7Bfont%2Dweight%3A400%7D%2Ereveal%2Ecenter%20%2Eslide%20aside%2C%2Ereveal%2Ecenter%20%2Eslide%20div%2Easide%7Bposition%3Ainitial%7Dsection%2Ehas%2Dlight%2Dbackground%2Csection%2Ehas%2Dlight%2Dbackground%20h1%2Csection%2Ehas%2Dlight%2Dbackground%20h2%2Csection%2Ehas%2Dlight%2Dbackground%20h3%2Csection%2Ehas%2Dlight%2Dbackground%20h4%2Csection%2Ehas%2Dlight%2Dbackground%20h5%2Csection%2Ehas%2Dlight%2Dbackground%20h6%7Bcolor%3A%23222%7Dsection%2Ehas%2Dlight%2Dbackground%20a%2Csection%2Ehas%2Dlight%2Dbackground%20a%3Ahover%7Bcolor%3A%232a76dd%7Dsection%2Ehas%2Dlight%2Dbackground%20code%7Bcolor%3A%234758ab%7Dsection%2Ehas%2Ddark%2Dbackground%2Csection%2Ehas%2Ddark%2Dbackground%20h1%2Csection%2Ehas%2Ddark%2Dbackground%20h2%2Csection%2Ehas%2Ddark%2Dbackground%20h3%2Csection%2Ehas%2Ddark%2Dbackground%20h4%2Csection%2Ehas%2Ddark%2Dbackground%20h5%2Csection%2Ehas%2Ddark%2Dbackground%20h6%7Bcolor%3A%23fff%7Dsection%2Ehas%2Ddark%2Dbackground%20a%2Csection%2Ehas%2Ddark%2Dbackground%20a%3Ahover%7Bcolor%3A%2342affa%7Dsection%2Ehas%2Ddark%2Dbackground%20code%7Bcolor%3A%23ffa07a%7D%23title%2Dslide%2Cdiv%2Ereveal%20div%2Eslides%20section%2Equarto%2Dtitle%2Dblock%7Btext%2Dalign%3Acenter%7D%23title%2Dslide%20%2Esubtitle%2Cdiv%2Ereveal%20div%2Eslides%20section%2Equarto%2Dtitle%2Dblock%20%2Esubtitle%7Bmargin%2Dbottom%3A2%2E5rem%7D%2Ereveal%20%2Eslides%7Btext%2Dalign%3Aleft%7D%2Ereveal%20%2Etitle%2Dslide%20h1%7Bfont%2Dsize%3A1%2E35em%7D%2Ereveal%5Bdata%2Dnavigation%2Dmode%3Dlinear%5D%20%2Etitle%2Dslide%20h1%7Bfont%2Dsize%3A2%2E5em%7D%2Ereveal%20div%2EsourceCode%7Bborder%3A1px%20solid%20%23fff%3Bborder%2Dradius%3A4px%7D%2Ereveal%20pre%7Bwidth%3A100%25%3Bbox%2Dshadow%3Anone%3Bbackground%2Dcolor%3Argba%284%2C4%2C27%2C%2E7607843137%29%3Bborder%3Anone%3Bmargin%3A0%3Bfont%2Dsize%3A%2E55em%7D%2Ereveal%20%2Ecode%2Dwith%2Dfilename%20%2Ecode%2Dwith%2Dfilename%2Dfile%20pre%7Bbackground%2Dcolor%3Aunset%7D%2Ereveal%20code%7Bcolor%3A%23530aa7%3Bbackground%2Dcolor%3A%23fff%3Bwhite%2Dspace%3Apre%2Dwrap%7D%2Ereveal%20pre%2EsourceCode%20code%7Bbackground%2Dcolor%3Argba%284%2C4%2C27%2C%2E7607843137%29%3Bpadding%3A6px%209px%3Bmax%2Dheight%3A500px%3Bwhite%2Dspace%3Apre%7D%2Ereveal%20pre%20code%7Bbackground%2Dcolor%3A%23fff%3Bcolor%3A%23000%7D%2Ereveal%20%2Ecolumn%2Doutput%2Dlocation%7Bdisplay%3Aflex%3Balign%2Ditems%3Astretch%7D%2Ereveal%20%2Ecolumn%2Doutput%2Dlocation%20%2Ecolumn%3Afirst%2Dof%2Dtype%20div%2EsourceCode%7Bheight%3A100%25%3Bbackground%2Dcolor%3Argba%284%2C4%2C27%2C%2E7607843137%29%7D%2Ereveal%20blockquote%7Bdisplay%3Ablock%3Bposition%3Arelative%3Bcolor%3A%234d4d4d%3Bwidth%3Aunset%3Bmargin%3Avar%28%2D%2Dr%2Dblock%2Dmargin%29%20auto%3Bpadding%3A%2E625rem%201%2E75rem%3Bborder%2Dleft%3A%2E25rem%20solid%20%234d4d4d%3Bfont%2Dstyle%3Anormal%3Bbackground%3Anone%3Bbox%2Dshadow%3Anone%7D%2Ereveal%20blockquote%20p%3Afirst%2Dchild%2C%2Ereveal%20blockquote%20p%3Alast%2Dchild%7Bdisplay%3Ablock%7D%2Ereveal%20%2Eslide%20aside%2C%2Ereveal%20%2Eslide%20div%2Easide%7Bposition%3Aabsolute%3Bbottom%3A20px%3Bfont%2Dsize%3A0%2E7em%3Bcolor%3A%234d4d4d%7D%2Ereveal%20%2Eslide%20sup%7Bfont%2Dsize%3A0%2E7em%7D%2Ereveal%20%2Eslide%2Escrollable%20aside%2C%2Ereveal%20%2Eslide%2Escrollable%20div%2Easide%7Bposition%3Arelative%3Bmargin%2Dtop%3A1em%7D%2Ereveal%20%2Eslide%20aside%20%2Easide%2Dfootnotes%7Bmargin%2Dbottom%3A0%7D%2Ereveal%20%2Eslide%20aside%20%2Easide%2Dfootnotes%20li%3Afirst%2Dof%2Dtype%7Bmargin%2Dtop%3A0%7D%2Ereveal%20%2Elayout%2Dsidebar%7Bdisplay%3Aflex%3Bwidth%3A100%25%3Bmargin%2Dtop%3A%2E8em%7D%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dsidebar%7Bwidth%3A270px%7D%2Ereveal%20%2Elayout%2Dsidebar%2Dleft%20%2Epanel%2Dsidebar%7Bmargin%2Dright%3Acalc%280%2E5em%2A2%29%7D%2Ereveal%20%2Elayout%2Dsidebar%2Dright%20%2Epanel%2Dsidebar%7Bmargin%2Dleft%3Acalc%280%2E5em%2A2%29%7D%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dfill%2C%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dcenter%2C%2Ereveal%20%2Elayout%2Dsidebar%20%2Epanel%2Dtabset%7Bflex%3A1%7D%2Ereveal%20%2Epanel%2Dinput%2C%2Ereveal%20%2Epanel%2Dsidebar%7Bfont%2Dsize%3A%2E5em%3Bpadding%3A%2E5em%3Bborder%2Dstyle%3Asolid%3Bborder%2Dcolor%3A%23fff%3Bborder%2Dwidth%3A1px%3Bborder%2Dradius%3A4px%3Bbackground%2Dcolor%3A%23f8f9fa%7D%2Ereveal%20%2Epanel%2Dsidebar%20%3Afirst%2Dchild%2C%2Ereveal%20%2Epanel%2Dfill%20%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%7D%2Ereveal%20%2Epanel%2Dsidebar%20%3Alast%2Dchild%2C%2Ereveal%20%2Epanel%2Dfill%20%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7D%2Epanel%2Dinput%3Ediv%2C%2Epanel%2Dinput%3Ediv%3Ediv%7Bvertical%2Dalign%3Amiddle%3Bpadding%2Dright%3A1em%7D%2Ereveal%20p%2C%2Ereveal%20%2Eslides%20section%2C%2Ereveal%20%2Eslides%20section%3Esection%7Bline%2Dheight%3A1%2E3%7D%2Ereveal%2Esmaller%20%2Eslides%20section%2C%2Ereveal%20%2Eslides%20section%2Esmaller%2C%2Ereveal%20%2Eslides%20section%20%2Ecallout%7Bfont%2Dsize%3A0%2E7em%7D%2Ereveal%2Esmaller%20%2Eslides%20section%20section%7Bfont%2Dsize%3Ainherit%7D%2Ereveal%2Esmaller%20%2Eslides%20h1%2C%2Ereveal%20%2Eslides%20section%2Esmaller%20h1%7Bfont%2Dsize%3Acalc%282%2E5em%2F0%2E7%29%7D%2Ereveal%2Esmaller%20%2Eslides%20h2%2C%2Ereveal%20%2Eslides%20section%2Esmaller%20h2%7Bfont%2Dsize%3Acalc%281%2E35em%2F0%2E7%29%7D%2Ereveal%2Esmaller%20%2Eslides%20h3%2C%2Ereveal%20%2Eslides%20section%2Esmaller%20h3%7Bfont%2Dsize%3Acalc%281%2E1em%2F0%2E7%29%7D%2Ereveal%20%2Ecolumns%3E%2Ecolumn%3E%3Anot%28ul%2Col%29%7Bmargin%2Dleft%3A%2E25em%3Bmargin%2Dright%3A%2E25em%7D%2Ereveal%20%2Ecolumns%3E%2Ecolumn%3Afirst%2Dchild%3E%3Anot%28ul%2Col%29%7Bmargin%2Dright%3A%2E5em%3Bmargin%2Dleft%3A0%7D%2Ereveal%20%2Ecolumns%3E%2Ecolumn%3Alast%2Dchild%3E%3Anot%28ul%2Col%29%7Bmargin%2Dright%3A0%3Bmargin%2Dleft%3A%2E5em%7D%2Ereveal%20%2Eslide%2Dnumber%7Bcolor%3A%2303c563%3Bbackground%2Dcolor%3A%23fff%7D%2Ereveal%20%2Efooter%7Bcolor%3A%234d4d4d%7D%2Ereveal%20%2Efooter%20a%7Bcolor%3A%2302934a%7D%2Ereveal%20%2Efooter%2Ehas%2Ddark%2Dbackground%7Bcolor%3A%23fff%7D%2Ereveal%20%2Efooter%2Ehas%2Ddark%2Dbackground%20a%7Bcolor%3A%237bc6fa%7D%2Ereveal%20%2Efooter%2Ehas%2Dlight%2Dbackground%7Bcolor%3A%23505050%7D%2Ereveal%20%2Efooter%2Ehas%2Dlight%2Dbackground%20a%7Bcolor%3A%236a9bdd%7D%2Ereveal%20%2Eslide%2Dnumber%7Bcolor%3A%234d4d4d%7D%2Ereveal%20%2Eslide%2Dnumber%2Ehas%2Ddark%2Dbackground%7Bcolor%3A%23fff%7D%2Ereveal%20%2Eslide%2Dnumber%2Ehas%2Dlight%2Dbackground%7Bcolor%3A%23505050%7D%2Ereveal%20%2Eslide%20figure%3Efigcaption%2C%2Ereveal%20%2Eslide%20img%2Estretch%2Bp%2Ecaption%2C%2Ereveal%20%2Eslide%20img%2Er%2Dstretch%2Bp%2Ecaption%7Bfont%2Dsize%3A0%2E7em%7D%40media%20screen%20and%20%28min%2Dwidth%3A%20500px%29%7B%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Dleft%7Bleft%3A%2E2em%7D%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Dright%7Bright%3A%2E2em%7D%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Dup%7Btop%3A%2E4em%7D%2Ereveal%20%2Econtrols%5Bdata%2Dcontrols%2Dlayout%3Dedges%5D%20%2Enavigate%2Ddown%7Bbottom%3A2%2E3em%7D%7D%2Etippy%2Dbox%5Bdata%2Dtheme%7E%3Dlight%2Dborder%5D%7Bbackground%2Dcolor%3A%23fff%3Bcolor%3A%23000%3Bborder%2Dradius%3A4px%3Bborder%3Asolid%201px%20%234d4d4d%3Bfont%2Dsize%3A%2E6em%7D%2Etippy%2Dbox%5Bdata%2Dtheme%7E%3Dlight%2Dborder%5D%20%2Etippy%2Darrow%7Bcolor%3A%234d4d4d%7D%2Etippy%2Dbox%5Bdata%2Dplacement%5E%3Dbottom%5D%3E%2Etippy%2Dcontent%7Bpadding%3A7px%2010px%3Bz%2Dindex%3A1%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Dsimple%20%2Ecallout%2Dbody%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Ddefault%20%2Ecallout%2Dbody%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Dsimple%20div%2Ecallout%2Dtitle%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Ddefault%20div%2Ecallout%2Dtitle%7Bfont%2Dsize%3Ainherit%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Ddefault%20%2Ecallout%2Dicon%3A%3Abefore%2C%2Ereveal%20%2Ecallout%2Ecallout%2Dstyle%2Dsimple%20%2Ecallout%2Dicon%3A%3Abefore%7Bheight%3A2rem%3Bwidth%3A2rem%3Bbackground%2Dsize%3A2rem%202rem%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dtitled%20%2Ecallout%2Dtitle%20p%7Bmargin%2Dtop%3A%2E5em%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dtitled%20%2Ecallout%2Dicon%3A%3Abefore%7Bmargin%2Dtop%3A1rem%7D%2Ereveal%20%2Ecallout%2Ecallout%2Dtitled%20%2Ecallout%2Dbody%3E%2Ecallout%2Dcontent%3E%3Alast%2Dchild%7Bmargin%2Dbottom%3A1rem%7D%2Ereveal%20%2Epanel%2Dtabset%20%5Brole%3Dtab%5D%7Bpadding%3A%2E25em%20%2E7em%7D%2Ereveal%20%2Eslide%2Dmenu%2Dbutton%20%2Efa%2Dbars%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%282%2C%20147%2C%2074%29%22%20class%3D%22bi%20bi%2Dlist%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%2Drule%3D%22evenodd%22%20d%3D%22M2%2E5%2012a%2E5%2E5%200%200%201%20%2E5%2D%2E5h10a%2E5%2E5%200%200%201%200%201H3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5zm0%2D4a%2E5%2E5%200%200%201%20%2E5%2D%2E5h10a%2E5%2E5%200%200%201%200%201H3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5zm0%2D4a%2E5%2E5%200%200%201%20%2E5%2D%2E5h10a%2E5%2E5%200%200%201%200%201H3a%2E5%2E5%200%200%201%2D%2E5%2D%2E5z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Ereveal%20%2Eslide%2Dchalkboard%2Dbuttons%20%2Efa%2Deasel2%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%282%2C%20147%2C%2074%29%22%20class%3D%22bi%20bi%2Deasel2%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%2Drule%3D%22evenodd%22%20d%3D%22M8%200a%2E5%2E5%200%200%201%20%2E447%2E276L8%2E81%201h4%2E69A1%2E5%201%2E5%200%200%201%2015%202%2E5V11h%2E5a%2E5%2E5%200%200%201%200%201h%2D2%2E86l%2E845%203%2E379a%2E5%2E5%200%200%201%2D%2E97%2E242L12%2E11%2014H3%2E89l%2D%2E405%201%2E621a%2E5%2E5%200%200%201%2D%2E97%2D%2E242L3%2E36%2012H%2E5a%2E5%2E5%200%200%201%200%2D1H1V2%2E5A1%2E5%201%2E5%200%200%201%202%2E5%201h4%2E691l%2E362%2D%2E724A%2E5%2E5%200%200%201%208%200ZM2%2011h12V2%2E5a%2E5%2E5%200%200%200%2D%2E5%2D%2E5h%2D11a%2E5%2E5%200%200%200%2D%2E5%2E5V11Zm9%2E61%201H4%2E39l%2D%2E25%201h7%2E72l%2D%2E25%2D1Z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Ereveal%20%2Eslide%2Dchalkboard%2Dbuttons%20%2Efa%2Dbrush%3A%3Abefore%7Bbackground%2Dimage%3Aurl%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22rgb%282%2C%20147%2C%2074%29%22%20class%3D%22bi%20bi%2Dbrush%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M15%2E825%2E12a%2E5%2E5%200%200%201%20%2E132%2E584c%2D1%2E53%203%2E43%2D4%2E743%208%2E17%2D7%2E095%2010%2E64a6%2E067%206%2E067%200%200%201%2D2%2E373%201%2E534c%2D%2E018%2E227%2D%2E06%2E538%2D%2E16%2E868%2D%2E201%2E659%2D%2E667%201%2E479%2D1%2E708%201%2E74a8%2E118%208%2E118%200%200%201%2D3%2E078%2E132%203%2E659%203%2E659%200%200%201%2D%2E562%2D%2E135%201%2E382%201%2E382%200%200%201%2D%2E466%2D%2E247%2E714%2E714%200%200%201%2D%2E204%2D%2E288%2E622%2E622%200%200%201%20%2E004%2D%2E443c%2E095%2D%2E245%2E316%2D%2E38%2E461%2D%2E452%2E394%2D%2E197%2E625%2D%2E453%2E867%2D%2E826%2E095%2D%2E144%2E184%2D%2E297%2E287%2D%2E472l%2E117%2D%2E198c%2E151%2D%2E255%2E326%2D%2E54%2E546%2D%2E848%2E528%2D%2E739%201%2E201%2D%2E925%201%2E746%2D%2E896%2E126%2E007%2E243%2E025%2E348%2E048%2E062%2D%2E172%2E142%2D%2E38%2E238%2D%2E608%2E261%2D%2E619%2E658%2D1%2E419%201%2E187%2D2%2E069%202%2E176%2D2%2E67%206%2E18%2D6%2E206%209%2E117%2D8%2E104a%2E5%2E5%200%200%201%20%2E596%2E04zM4%2E705%2011%2E912a1%2E23%201%2E23%200%200%200%2D%2E419%2D%2E1c%2D%2E246%2D%2E013%2D%2E573%2E05%2D%2E879%2E479%2D%2E197%2E275%2D%2E355%2E532%2D%2E5%2E777l%2D%2E105%2E177c%2D%2E106%2E181%2D%2E213%2E362%2D%2E32%2E528a3%2E39%203%2E39%200%200%201%2D%2E76%2E861c%2E69%2E112%201%2E736%2E111%202%2E657%2D%2E12%2E559%2D%2E139%2E843%2D%2E569%2E993%2D1%2E06a3%2E122%203%2E122%200%200%200%20%2E126%2D%2E75l%2D%2E793%2D%2E792zm1%2E44%2E026c%2E12%2D%2E04%2E277%2D%2E1%2E458%2D%2E183a5%2E068%205%2E068%200%200%200%201%2E535%2D1%2E1c1%2E9%2D1%2E996%204%2E412%2D5%2E57%206%2E052%2D8%2E631%2D2%2E59%201%2E927%2D5%2E566%204%2E66%2D7%2E302%206%2E792%2D%2E442%2E543%2D%2E795%201%2E243%2D1%2E042%201%2E826%2D%2E121%2E288%2D%2E214%2E54%2D%2E275%2E72v%2E001l%2E575%2E575zm%2D4%2E973%203%2E04%2E007%2D%2E005a%2E031%2E031%200%200%201%2D%2E007%2E004zm3%2E582%2D3%2E043%2E002%2E001h%2D%2E002z%22%2F%3E%3C%2Fsvg%3E%27%29%7D%2Ereveal%20ol%5Btype%3Da%5D%7Blist%2Dstyle%2Dtype%3Alower%2Dalpha%7D%2Ereveal%20ol%5Btype%3Da%20s%5D%7Blist%2Dstyle%2Dtype%3Alower%2Dalpha%7D%2Ereveal%20ol%5Btype%3DA%20s%5D%7Blist%2Dstyle%2Dtype%3Aupper%2Dalpha%7D%2Ereveal%20ol%5Btype%3Di%5D%7Blist%2Dstyle%2Dtype%3Alower%2Droman%7D%2Ereveal%20ol%5Btype%3Di%20s%5D%7Blist%2Dstyle%2Dtype%3Alower%2Droman%7D%2Ereveal%20ol%5Btype%3DI%20s%5D%7Blist%2Dstyle%2Dtype%3Aupper%2Droman%7D%2Ereveal%20ol%5Btype%3D%221%22%5D%7Blist%2Dstyle%2Dtype%3Adecimal%7D%2Ereveal%20ul%2Etask%2Dlist%7Blist%2Dstyle%3Anone%7D%2Ereveal%20ul%2Etask%2Dlist%20li%20input%5Btype%3Dcheckbox%5D%7Bwidth%3A2em%3Bheight%3A2em%3Bmargin%3A0%201em%20%2E5em%20%2D1%2E6em%3Bvertical%2Dalign%3Amiddle%7Ddiv%2Ecell%2Doutput%2Ddisplay%20div%2Epagedtable%2Dwrapper%20table%2Etable%7Bfont%2Dsize%3A%2E6em%7D%2Ereveal%20%2Ecode%2Dannotation%2Dcontainer%2Dhidden%7Bdisplay%3Anone%7D%2Ereveal%20code%2EsourceCode%20button%2Ecode%2Dannotation%2Danchor%2C%2Ereveal%20code%2EsourceCode%20%2Ecode%2Dannotation%2Danchor%7Bfont%2Dfamily%3ASFMono%2DRegular%2CMenlo%2CMonaco%2CConsolas%2C%22Liberation%20Mono%22%2C%22Courier%20New%22%2Cmonospace%3Bcolor%3Avar%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%3Bborder%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bborder%2Dradius%3A50%25%3Bfont%2Dsize%3A%2E7em%3Bline%2Dheight%3A1%2E2em%3Bmargin%2Dtop%3A2px%3Buser%2Dselect%3Anone%3B%2Dwebkit%2Duser%2Dselect%3Anone%3B%2Dmoz%2Duser%2Dselect%3Anone%3B%2Dms%2Duser%2Dselect%3Anone%3B%2Do%2Duser%2Dselect%3Anone%7D%2Ereveal%20code%2EsourceCode%20button%2Ecode%2Dannotation%2Danchor%7Bcursor%3Apointer%7D%2Ereveal%20code%2EsourceCode%20a%2Ecode%2Dannotation%2Danchor%7Btext%2Dalign%3Acenter%3Bvertical%2Dalign%3Amiddle%3Btext%2Ddecoration%3Anone%3Bcursor%3Adefault%3Bheight%3A1%2E2em%3Bwidth%3A1%2E2em%7D%2Ereveal%20code%2EsourceCode%2Efragment%20a%2Ecode%2Dannotation%2Danchor%7Bleft%3Aauto%7D%2Ereveal%20%23code%2Dannotation%2Dline%2Dhighlight%2Dgutter%7Bwidth%3A100%25%3Bborder%2Dtop%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bborder%2Dbottom%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bz%2Dindex%3A2%7D%2Ereveal%20%23code%2Dannotation%2Dline%2Dhighlight%7Bmargin%2Dleft%3A%2D8em%3Bwidth%3Acalc%28100%25%20%2B%204em%29%3Bborder%2Dtop%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bborder%2Dbottom%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dco%2Dcolor%29%201px%3Bz%2Dindex%3A2%3Bmargin%2Dbottom%3A%2D2px%7D%2Ereveal%20code%2EsourceCode%20%2Ecode%2Dannotation%2Danchor%2Ecode%2Dannotation%2Dactive%7Bbackground%2Dcolor%3Avar%28%2D%2Dquarto%2Dhl%2Dnormal%2Dcolor%2C%20%23aaaaaa%29%3Bborder%3Asolid%20var%28%2D%2Dquarto%2Dhl%2Dnormal%2Dcolor%2C%20%23aaaaaa%29%201px%3Bcolor%3A%2304041b%3Bfont%2Dweight%3Abolder%7D%2Ereveal%20pre%2Ecode%2Dannotation%2Dcode%7Bpadding%2Dtop%3A0%3Bpadding%2Dbottom%3A0%7D%2Ereveal%20pre%2Ecode%2Dannotation%2Dcode%20code%7Bz%2Dindex%3A3%3Bpadding%2Dleft%3A0px%7D%2Ereveal%20dl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%7Bmargin%2Dleft%3A%2E1em%7D%2Ereveal%20dl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dt%7Bmargin%2Dtop%3A%2E65rem%3Bfont%2Dfamily%3ASFMono%2DRegular%2CMenlo%2CMonaco%2CConsolas%2C%22Liberation%20Mono%22%2C%22Courier%20New%22%2Cmonospace%3Bborder%3Asolid%20%23000%201px%3Bborder%2Dradius%3A50%25%3Bheight%3A1%2E3em%3Bwidth%3A1%2E3em%3Bline%2Dheight%3A1%2E3em%3Bfont%2Dsize%3A%2E5em%3Btext%2Dalign%3Acenter%3Bvertical%2Dalign%3Amiddle%3Btext%2Ddecoration%3Anone%7D%2Ereveal%20dl%2Ecode%2Dannotation%2Dcontainer%2Dgrid%20dd%7Bmargin%2Dleft%3A%2E25em%7D%2Ereveal%20%2Escrollable%20ol%20li%3Afirst%2Dchild%3Anth%2Dlast%2Dchild%28n%2B10%29%2C%2Ereveal%20%2Escrollable%20ol%20li%3Afirst%2Dchild%3Anth%2Dlast%2Dchild%28n%2B10%29%7Eli%7Bmargin%2Dleft%3A1em%7Dhtml%2Eprint%2Dpdf%20%2Ereveal%20%2Eslides%20%2Epdf%2Dpage%3Alast%2Dchild%7Bpage%2Dbreak%2Dafter%3Aavoid%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%7Bdisplay%3Aflex%3Bjustify%2Dcontent%3Acenter%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%7Bpadding%2Dleft%3A%2E5em%3Bpadding%2Dright%3A%2E5em%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%2C%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%3Ahover%2C%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%3Avisited%2C%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20a%3Aactive%7Bcolor%3Ainherit%3Btext%2Ddecoration%3Anone%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Dauthor%2Dname%7Bmargin%2Dbottom%3A%2E1rem%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Dauthor%2Demail%7Bmargin%2Dtop%3A0px%3Bmargin%2Dbottom%3A%2E4em%3Bfont%2Dsize%3A%2E6em%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Dauthor%2Dorcid%20img%7Bmargin%2Dbottom%3A4px%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Daffiliation%7Bfont%2Dsize%3A%2E7em%3Bmargin%2Dtop%3A0px%3Bmargin%2Dbottom%3A8px%7D%2Ereveal%20%2Equarto%2Dtitle%2Dblock%20%2Equarto%2Dtitle%2Dauthors%20%2Equarto%2Dtitle%2Dauthor%20%2Equarto%2Dtitle%2Daffiliation%3Afirst%7Bmargin%2Dtop%3A12px%7D%2Ereveal%20a%7Bline%2Dheight%3A1%2E3em%7D%2Ereveal%20ul%7Blist%2Dstyle%2Dtype%3Anone%7D%2Ereveal%20ul%20li%3A%3Abefore%7Bcontent%3A%22%E2%80%93%22%3Bcolor%3A%2302934a%3Bfont%2Dweight%3Abold%3Bdisplay%3Ainline%2Dblock%3Bwidth%3A1em%3Bmargin%2Dleft%3A%2D1em%7Dcode%7Bfont%2Dsize%3A1%2E1em%7D%2Ereveal%20div%2EsourceCode%7Bborder%3Anone%3Bborder%2Dradius%3A5px%3Bmargin%2Dbottom%3A10px%20%21important%3Bmargin%2Dtop%3A10px%20%21important%3Bpadding%3A0px%7D%2Ereveal%20pre%20code%7Bborder%3Anone%3Bbackground%2Dcolor%3Argba%28223%2C218%2C218%2C%2E9843137255%29%3Bcolor%3Argba%285%2C3%2C100%2C%2E8156862745%29%3Bpadding%3A20px%7D%2Epath%7Bbackground%2Dcolor%3A%23f2f2f2%3Bpadding%3A2px%206px%3Bborder%2Dradius%3A4px%3Bfont%2Dfamily%3Amonospace%7D%2Efootnote%2Dpin%7Bposition%3Aabsolute%3Bbottom%3A1%2E2rem%3Bleft%3A1%2E2rem%3Bright%3A1%2E2rem%3Bfont%2Dsize%3A1%2E3rem%3Bcolor%3A%236b7280%7D%2Ereveal%20h1%2C%2Ereveal%20h2%2C%2Ereveal%20h3%2C%2Ereveal%20h6%7Bmargin%3A0%200%2020px%200%3Bcolor%3A%2302934a%7D%2Ereveal%20h2%7Bmargin%3A0%200%2050px%200%3Bcolor%3A%23000%7D%2Ereveal%20h3%7Bmargin%3A0%200%2010px%200%3Bcolor%3A%2302934a%7D%2Ereveal%20h4%7Bmargin%3A50px%200%201px%200%3Bcolor%3A%236b7280%7D%2Ereveal%20h5%7Bmargin%3A50px%200%201px%200%3Bcolor%3A%2302934a%7D%2Einverse%7Bbackground%2Dcolor%3A%2302934a%3Bcolor%3A%23d6d6d6%3Btext%2Dshadow%3A0%200%2020px%20%23333%3Btext%2Dalign%3Acenter%7D%2Einverse%20h1%2C%2Einverse%20h2%2C%2Einverse%20h3%2C%2Einverse%20p%7Bfont%2Dsize%3A40px%3Bfont%2Dweight%3Abold%3Bmargin%3A350px%3Bposition%3Acenter%7D%2Einverse%5Bdata%2Dbackground%2Dimage%5D%7Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%29%20%21important%7D%2Einverse%20%2Equarto%2Dslide%2Dnumber%7Bdisplay%3Anone%7Dul%20ul%7Blist%2Dstyle%2Dtype%3Acircle%20%21important%7Dul%20ul%20ul%7Blist%2Dstyle%2Dtype%3Adisc%20%21important%7Dul%20ul%20li%3A%3Abefore%7Bcontent%3Anone%20%21important%7Dul%20ul%20ul%20li%3A%3Abefore%7Bcontent%3Anone%20%21important%7D%2Ereveal%20blockquote%7Bfont%2Dsize%3A%2E75em%3Bborder%2Dleft%3A3px%20solid%20%236b7280%3Bbackground%3Anone%3Bbox%2Dshadow%3Anone%3Bpadding%3A4px%2012px%3Bcolor%3A%236b7280%7D%2Ereveal%20%2EExample%7Bbackground%2Dcolor%3A%23f0faf4%3Bborder%2Dleft%3A4px%20solid%20%2302934a%3Bborder%2Dradius%3A6px%3Bpadding%3A12px%2016px%2012px%2016px%3Bmargin%3A10px%200%3Bposition%3Arelative%7D%2Ereveal%20%2EExample%3A%3Abefore%7Bcontent%3A%22%F0%9F%93%96%20Example%22%3Bdisplay%3Ablock%3Bfont%2Dweight%3A700%3Bfont%2Dsize%3A%2E85em%3Bcolor%3A%2302934a%3Btext%2Dtransform%3Auppercase%3Bletter%2Dspacing%3A%2E05em%3Bmargin%2Dbottom%3A6px%7D%0A" rel="stylesheet">
   <style type="text/css">.reveal
 div.sourceCode
 pre
@@ -1153,7 +1218,7 @@ margin-right: 0; }
   <!-- 30px margin below the title -->
 
   <!-- Subtitle -->
-    <p class="subtitle" style="text-align: left; font-size: 40px; margin: 0 0 25px 0;font-weight:bold; color:#6b7280;">Lecture 2: Summary</p>
+    <p class="subtitle" style="text-align: left; font-size: 40px; margin: 0 0 25px 0;font-weight:bold; color:#6b7280;">Lecture 10: Building &amp; Using a Database</p>
   <!-- 25px margin below the subtitle -->
   
   <!-- Authors -->
@@ -1175,189 +1240,632 @@ margin-right: 0; }
 
   <!-- Date -->
     <p style="text-align: left; margin: 2px 0 0 0;color:#6b7280;"> <!-- 2px margin above the date -->
-    <span>2026-02-27</span>
+    <span>2026-05-01</span>
   </p>
   </section>
-<section id="the-terminal" class="slide level2">
-<h2>The Terminal</h2>
+<section id="goals-for-today" class="slide level2">
+<h2>Goals for today</h2>
+<h4 id="in-this-lecture-we-will">In this lecture, we will:</h4>
 <ul>
-<li>A text-based interface to interact with your computer</li>
-<li>Mac uses <strong>bash</strong> (Terminal), Windows uses <strong>Command Prompt</strong> or <strong>PowerShell</strong>. In this course, we focus on <strong>bash</strong> and <strong>command prompt</strong> commands.</li>
-<li>All commands operate relative to your current working directory. Always know where you are!</li>
-<li>Paths: <strong>absolute</strong> (<code>C:/Users/Bilbo/Documents/</code>) vs <strong>relative</strong> (<code>../Documents/</code>)</li>
+<li>recap the schema and queries from last week</li>
+<li>combine tables with <code>JOIN</code> (inner and left)</li>
+<li>write aggregate queries: <code>GROUP BY</code>, <code>COUNT</code>, <code>AVG</code>, <code>HAVING</code></li>
+<li>build reusable subqueries with <code>WITH</code> — CTEs</li>
+<li>understand the ETL pipeline and CI/CD automation</li>
 </ul>
 </section>
-<section id="the-terminal-1" class="slide level2">
-<h2>The Terminal</h2>
-<table style="width:95%; font-size:0.7em;">
+<section>
+<section id="refresher" class="title-slide slide level1 center">
+<h1>Refresher</h1>
+
+</section>
+<section id="the-schema-we-built-last-week" class="slide level2">
+<h2>The schema we built last week</h2>
+<p>Three tables form a <strong>star schema</strong> — facts in the centre, dimensions around it.</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
-<tr>
-<th>
-Action
-</th>
-<th>
-bash (Mac)
-</th>
-<th>
-Command Prompt (Windows)
-</th>
+<tr class="header">
+<th>Table</th>
+<th>Columns</th>
+<th>Role</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-Show current directory
-</td>
-<td>
-<code>pwd</code>
-</td>
-<td>
-<code>cd</code> (without arguments)
-</td>
+<tr class="odd">
+<td><code>countries</code></td>
+<td><code>country_id</code> PK, <code>iso3</code>, <code>name</code>, <code>region</code>, <code>income_group</code></td>
+<td>dimension</td>
 </tr>
-<tr>
-<td>
-List files
-</td>
-<td>
-<code>ls</code>
-</td>
-<td>
-<code>dir</code>
-</td>
+<tr class="even">
+<td><code>indicators</code></td>
+<td><code>indicator_id</code> PK, <code>code</code>, <code>name</code>, <code>unit</code></td>
+<td>dimension</td>
 </tr>
-<tr>
-<td>
-Navigate
-</td>
-<td>
-<code>cd &lt;path&gt;</code>
-</td>
-<td>
-<code>cd &lt;path&gt;</code>
-</td>
-</tr>
-<tr>
-<td>
-Create directory
-</td>
-<td>
-<code>mkdir</code>
-</td>
-<td>
-<code>mkdir</code>
-</td>
-</tr>
-<tr>
-<td>
-Write text to file
-</td>
-<td>
-<code>echo “text” &gt; file</code>
-</td>
-<td>
-<code>echo text &gt; file</code>
-</td>
-</tr>
-<tr>
-<td>
-Home shortcut
-</td>
-<td>
-<code>~</code> (e.g. <code>cd ~/Documents</code>)
-</td>
-<td>
--
-</td>
-</tr>
-<tr>
-<td>
-Current directory shortcut
-</td>
-<td>
-<code>.</code>
-</td>
-<td>
-<code>.</code>
-</td>
-</tr>
-<tr>
-<td>
-Parent directory shortcut
-</td>
-<td>
-<code>..</code>
-</td>
-<td>
-<code>..</code>
-</td>
+<tr class="odd">
+<td><code>observations</code></td>
+<td><code>country_id</code> FK, <code>indicator_id</code> FK, <code>year</code>, <code>value</code></td>
+<td>fact</td>
 </tr>
 </tbody>
 </table>
+<div style="margin-top: 0.5em;">
+
+</div>
+<p><code>observations</code> holds one row per country × indicator × year. Its two foreign keys link to <code>countries</code> and <code>indicators</code>.</p>
 </section>
-<section id="using-visual-code" class="slide level2">
-<h2>Using Visual Code</h2>
-<h4 id="the-ide">The IDE</h4>
-<ul>
-<li><strong>VS Code</strong> is our IDE: code editor + terminal + extensions in one tool</li>
-<li>Always open VS Code <strong>from your project directory</strong> (<code>code .</code>)</li>
-<li>Install extensions: Python, Pylance, Ruff, Jupyter</li>
-</ul>
-</section>
-<section id="python-environments" class="slide level2">
-<h2>Python &amp; Environments</h2>
-<h4 id="why-python">Why Python?</h4>
-<ul>
-<li>Readable, versatile, widely used in data science, economics, and AI</li>
-<li>Coming from R: watch out for <strong>0-based indexing</strong> and <strong>indentation</strong></li>
-</ul>
-</section>
-<section id="python-environments-1" class="slide level2">
-<h2>Python &amp; Environments</h2>
-<h4 id="virtual-environments-with-uv">Virtual Environments with <code>uv</code></h4>
-<ul>
-<li>Each project gets its own <strong>isolated environment</strong> (its own “kitchen”)</li>
-<li>Never install packages globally, always use environments!</li>
-<li>Key commands:</li>
-</ul>
-<table style="width:80%; font-size:0.8em;">
+<section id="queries-you-already-know" class="slide level2">
+<h2>Queries you already know</h2>
+<p>A basic query returns raw observations — but only numeric IDs:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   country_id, <span class="dt">year</span>, <span class="fu">value</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     observations</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>    <span class="dt">year</span> <span class="op">=</span> <span class="dv">2020</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">value</span> <span class="kw">DESC</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span>    <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 0.5em;">
+
+</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>country_id</th>
+<th>year</th>
+<th>value</th>
+</tr>
+</thead>
 <tbody>
-<tr>
-<td>
-<code>uv init –python 3.14.1</code>
-</td>
-<td>
-Create a new project
-</td>
+<tr class="odd">
+<td>6</td>
+<td>2020</td>
+<td>103 247</td>
 </tr>
-<tr>
-<td>
-<code>uv add pandas numpy</code>
-</td>
-<td>
-Add packages
-</td>
+<tr class="even">
+<td>23</td>
+<td>2020</td>
+<td>98 812</td>
 </tr>
-<tr>
-<td>
-<code>uv run main.py</code>
-</td>
-<td>
-Run a script in the environment
-</td>
-</tr>
-<tr>
-<td>
-<code>uv sync</code>
-</td>
-<td>
-Install dependencies from lock file
-</td>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
 </tr>
 </tbody>
 </table>
+<div style="margin-top: 0.5em;">
+
+</div>
+<blockquote>
+<p><strong>Problem:</strong> <code>country_id = 6</code> tells you nothing. To get the name, you need to look it up in <code>countries</code> — that is what <code>JOIN</code> does.</p>
+</blockquote>
+</section></section>
+<section>
+<section id="aggregation" class="title-slide slide level1 center">
+<h1>Aggregation</h1>
+
+</section>
+<section id="group-by-summarize-by-category" class="slide level2">
+<h2>GROUP BY — summarize by category</h2>
+<p><code>GROUP BY</code> collapses rows that share a value into a single summary row.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   region,</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>         <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n_countries</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     countries</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> region</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> n_countries <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
 <ul>
-<li>Key files: <code>.python-version</code>, <code>pyproject.toml</code>, <code>uv.lock</code>, <code>.venv/</code></li>
+<li><strong><code>GROUP BY</code></strong> splits rows into groups</li>
+<li>The aggregate function (<code>COUNT</code>, <code>AVG</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>) runs <strong>once per group</strong></li>
+<li><code>SELECT</code> can only contain: the <code>GROUP BY</code> columns, or aggregate expressions (⚠️ typical error)</li>
+</ul>
+</section>
+<section id="group-by-common-aggregate-functions" class="slide level2">
+<h2>GROUP BY — common aggregate functions</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>What it computes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>COUNT(*)</code></td>
+<td>Number of rows in the group</td>
+</tr>
+<tr class="even">
+<td><code>AVG(col)</code></td>
+<td>Mean value</td>
+</tr>
+<tr class="odd">
+<td><code>SUM(col)</code></td>
+<td>Total</td>
+</tr>
+<tr class="even">
+<td><code>MIN(col)</code> / <code>MAX(col)</code></td>
+<td>Extremes</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="having-filter-on-groups" class="slide level2">
+<h2>HAVING — filter on groups</h2>
+<p><code>WHERE</code> filters <strong>rows</strong> (before grouping). <code>HAVING</code> filters <strong>groups</strong> (after grouping).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   region,</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>         <span class="fu">COUNT</span>(<span class="op">*</span>)       <span class="kw">AS</span> n_countries,</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="fu">AVG</span>(gdp_usd)   <span class="kw">AS</span> avg_gdp</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     countries</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> region</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span>   <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;=</span> <span class="dv">3</span></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> avg_gdp <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="where-row-level-filter"><code>WHERE</code> — row-level filter</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- only include European rows before grouping</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> region <span class="op">=</span> <span class="st">&#39;Europe&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<h4 id="having-group-level-filter"><code>HAVING</code> — group-level filter</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- only keep groups with 3+ countries</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;=</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div style="margin-top: 1em;">
+
+</div>
+<blockquote>
+<p><strong>Rule:</strong> If the condition uses an aggregate (<code>COUNT</code>, <code>AVG</code>, …), it goes in <code>HAVING</code>. Everything else goes in <code>WHERE</code>.</p>
+</blockquote>
+</section></section>
+<section>
+<section id="joins" class="title-slide slide level1 center">
+<h1>Joins</h1>
+
+</section>
+<section id="join-combining-tables" class="slide level2">
+<h2>JOIN — combining tables</h2>
+<p>Bring columns from two tables together by matching keys.</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   c.name,</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>         i.name  <span class="kw">AS</span> <span class="kw">indicator</span>,</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>         o.<span class="dt">year</span>,</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>         o.<span class="fu">value</span></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     observations  o</span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span>     countries     c  <span class="kw">ON</span> o.country_id   <span class="op">=</span> c.country_id</span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span>     indicators    i  <span class="kw">ON</span> o.indicator_id <span class="op">=</span> i.indicator_id</span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>    i.code  <span class="op">=</span> <span class="st">&#39;NY.GDP.PCAP.CD&#39;</span></span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span>    o.<span class="dt">year</span>  <span class="op">=</span> <span class="dv">2020</span></span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> o.<span class="fu">value</span> <span class="kw">DESC</span></span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span>    <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 0.5em;">
+
+</div>
+<ul>
+<li><code>JOIN ... ON</code> — the matching condition (the foreign key relationship)</li>
+<li><code>o</code>, <code>c</code>, <code>i</code> are <strong>table aliases</strong> — shorthand written after the table name</li>
+<li>You can chain multiple <code>JOIN</code>s to reach all the dimensions you need</li>
+</ul>
+<div style="margin-top: 0.5em;">
+
+</div>
+<blockquote>
+<p><strong>Note:</strong> A plain <code>JOIN</code> is an <code>INNER JOIN</code> — it only returns rows where the key exists in <strong>both</strong> tables.</p>
+</blockquote>
+</section>
+<section id="left-join-keeping-unmatched-rows" class="slide level2">
+<h2>LEFT JOIN — keeping unmatched rows</h2>
+<p>What if some countries have no observation for 2020?</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   c.name,</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>         o.<span class="dt">year</span>,</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>         o.<span class="fu">value</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     countries    c</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> observations o <span class="kw">ON</span> c.country_id   <span class="op">=</span> o.country_id</span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">AND</span> o.indicator_id <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">AND</span> o.<span class="dt">year</span> <span class="op">=</span> <span class="dv">2020</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> o.<span class="fu">value</span> <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 0.5em;">
+
+</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>name</th>
+<th>year</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Luxembourg</td>
+<td>2020</td>
+<td>103 247</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>Eritrea</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 0.5em;">
+
+</div>
+<ul>
+<li><code>LEFT JOIN</code> keeps <strong>every row from the left table</strong>, filling <code>NULL</code> for missing right-side values</li>
+<li>Useful to find gaps: <code>WHERE o.value IS NULL</code> returns countries with no data for that year</li>
+</ul>
+<div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p><code>RIGHT JOIN</code> mirrors this (keep all right rows). <code>FULL JOIN</code> keeps all rows from both sides. In practice, <code>LEFT JOIN</code> covers most cases.</p>
+</div>
+</section>
+<section id="the-full-query-order" class="slide level2">
+<h2>The full query order</h2>
+<p>SQL clauses must appear in this order:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   <span class="op">..</span>.          <span class="co">-- 5. choose output columns</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     <span class="op">..</span>.          <span class="co">-- 1. which table(s)</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span>     <span class="op">..</span>. <span class="kw">ON</span> <span class="op">..</span>.   <span class="co">-- 2. combine tables</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>    <span class="op">..</span>.          <span class="co">-- 3. filter rows</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="op">..</span>.          <span class="co">-- 4. group rows</span></span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span>   <span class="op">..</span>.          <span class="co">-- 5. filter groups</span></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="op">..</span>.          <span class="co">-- 6. sort</span></span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span>    <span class="op">..</span>.          <span class="co">-- 7. truncate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 1em;">
+
+</div>
+<div class="fragment">
+<!-- -->
+<h5 id="the-database-executes-from-join-where-group-by-having-select-order-by-limit.">The database executes FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT.</h5>
+</div>
+<div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p>The numbers show execution order, not writing order. <code>SELECT</code> is written first but evaluated fifth — which is why you cannot use a <code>SELECT</code> alias in a <code>WHERE</code> clause.</p>
+</div>
+</section></section>
+<section>
+<section id="ctes" class="title-slide slide level1 center">
+<h1>CTEs</h1>
+
+</section>
+<section id="with-reusable-subqueries" class="slide level2">
+<h2>WITH — reusable subqueries</h2>
+<p>A <strong>Common Table Expression</strong> names an intermediate result so you can reference it like a table.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> gdp_2020 <span class="kw">AS</span> (</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span>   c.name,</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>             c.region,</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>             o.<span class="fu">value</span>   <span class="kw">AS</span> gdp_per_capita</span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span>     observations  o</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">JOIN</span>     countries     c  <span class="kw">ON</span> o.country_id   <span class="op">=</span> c.country_id</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">JOIN</span>     indicators    i  <span class="kw">ON</span> o.indicator_id <span class="op">=</span> i.indicator_id</span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span>    i.code <span class="op">=</span> <span class="st">&#39;NY.GDP.PCAP.CD&#39;</span></span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a>      <span class="kw">AND</span>    o.<span class="dt">year</span> <span class="op">=</span> <span class="dv">2020</span></span>
+<span id="cb9-10"><a aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb9-11"><a aria-hidden="true" tabindex="-1"></a>region_avg <span class="kw">AS</span> (</span>
+<span id="cb9-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span>   region,</span>
+<span id="cb9-13"><a aria-hidden="true" tabindex="-1"></a>             <span class="fu">ROUND</span>(<span class="fu">AVG</span>(gdp_per_capita), <span class="dv">0</span>) <span class="kw">AS</span> avg_gdp</span>
+<span id="cb9-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span>     gdp_2020</span>
+<span id="cb9-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">GROUP</span> <span class="kw">BY</span> region</span>
+<span id="cb9-16"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-17"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> region_avg</span>
+<span id="cb9-18"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> avg_gdp <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 0.5em;">
+
+</div>
+<ul>
+<li>Chain as many CTEs as you need, separated by commas</li>
+<li>Each CTE can reference the ones defined before it</li>
+<li>Replaces nested subqueries — same result, much more readable</li>
+</ul>
+</section></section>
+<section>
+<section id="a-glimpse-of-devops" class="title-slide slide level1 center">
+<h1>A glimpse of DevOps</h1>
+
+</section>
+<section id="from-raw-data-to-analysis-the-etl-pipeline" class="slide level2">
+<h2>From raw data to analysis — the ETL pipeline</h2>
+<p>What you did today is the standard pattern used in industry. It has a name.</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<h4 id="extract">1. Extract</h4>
+<h5 id="source-systems">Source systems</h5>
+<p>Raw data lives in <strong>production databases</strong> (Oracle, PostgreSQL), APIs, or flat files. You extract a snapshot — either full or only rows that changed since the last run.</p>
+<pre><code>Oracle      → export
+FRED API    → fetch
+WDI CSV     → read</code></pre>
+</div><div class="column" style="width:33%;">
+<h4 id="transform">2. Transform</h4>
+<h5 id="python-pandas">Python / pandas</h5>
+<p>The raw data is messy: wrong format, missing IDs, wide tables. You reshape, clean, and assign proper keys so the data fits a relational schema.</p>
+<pre><code>wide → long (melt)
+assign integer IDs
+drop nulls
+validate types</code></pre>
+</div><div class="column" style="width:33%;">
+<h4 id="load">3. Load</h4>
+<h5 id="analytical-store">Analytical store</h5>
+<p>The clean data lands in an <strong>OLAP database</strong> — DuckDB for research, Snowflake / BigQuery / Redshift in industry. Analysts query this, never the production system.</p>
+<pre><code>CREATE TABLE
+INSERT FROM csv
+→ query forever</code></pre>
+</div></div>
+<div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p>Your exercise today: WDI CSVs → pandas ETL → <code>wdi_mini.db</code>. In industry: Oracle (OLTP) → nightly ETL job → data warehouse (OLAP) → analyst queries. Same concept, different scale.</p>
+</div>
+<aside class="notes">
+<p>Key point to make verbally: why not just query Oracle directly for analytics? 1. Analytical queries (full table scans, heavy aggregations) compete with live transactions — you slow down the production system. 2. Oracle is row-oriented — slow for AVG(salary) GROUP BY department over 50M rows. 3. You often need to join data from multiple source systems (Oracle + Salesforce + flat files) — the warehouse is the integration layer.</p>
+<p>The ETL pipeline separates the write-optimised production system from the read-optimised analytical store. The nightly job means analysts always work on yesterday’s data — acceptable for most reporting, and it keeps production safe.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="cicd-making-your-pipeline-run-automatically" class="slide level2">
+<h2>CI/CD — making your pipeline run automatically</h2>
+<p>You just built a data pipeline: <strong>CSV → Python → DuckDB → analysis.</strong></p>
+<p>The question is: <em>how do you make sure it keeps working every time you or a teammate changes something?</em></p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="the-problem-without-cicd">The problem without CI/CD</h4>
+<ul>
+<li>You change a column name in <code>build_exercise_db.py</code></li>
+<li>A teammate runs the old version — their DB breaks</li>
+<li>Nobody notices until the presentation</li>
+</ul>
+<h4 id="the-solution-automate-the-check">The solution: automate the check</h4>
+<p><strong>CI/CD</strong> — Continuous Integration / Continuous Delivery — runs your pipeline automatically on every <code>git push</code> and tells you immediately if something broke.</p>
+</div><div class="column" style="width:50%;">
+<h4 id="three-concepts">Three concepts</h4>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Trigger</strong></td>
+<td><em>When</em> to run — on every push, on a schedule</td>
+</tr>
+<tr class="even">
+<td><strong>Environment</strong></td>
+<td><em>Where</em> to run — a clean machine in the cloud</td>
+</tr>
+<tr class="odd">
+<td><strong>Steps</strong></td>
+<td><em>What</em> to run — install, build, test</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 1em;">
+
+</div>
+<p>The result: a green ✅ or red ❌ next to every commit on GitHub.</p>
+</div></div>
+<div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p>The file that defines all of this lives in your repo at <code>.github/workflows/build.yml</code> — 20 lines of YAML. See the course repo for a working example.</p>
+</div>
+</section>
+<section id="the-course-in-one-picture" class="slide level2">
+<h2>The course in one picture</h2>
+<p>Every tool you learned this semester has a role in the same pipeline.</p>
+
+<img role="img" data-src="../../assets/img/lecture_10/course_arc.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p>Data layers: DuckDB, Pandas. Infrastructure layers: Python functions &amp; OOP, Git. Each builds on the last.</p>
+</div>
+</section></section>
+<section>
+<section id="going-further" class="title-slide slide level1 added-by-claude center">
+<h1>Going further</h1>
+<div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p>These slides were added as essential topics not yet covered in the course.</p>
+</div>
+</section>
+<section id="null-the-missing-value" class="slide level2 added-by-claude">
+<h2>NULL — the missing value</h2>
+<p><code>NULL</code> means <em>unknown</em> — it is not zero, not an empty string, not false.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- Wrong: this silently drops all NULL rows</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="fu">value</span> <span class="op">!=</span> <span class="dv">100</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- Correct</span></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="fu">value</span> <span class="op">!=</span> <span class="dv">100</span> <span class="kw">OR</span> <span class="fu">value</span> <span class="kw">IS</span> <span class="kw">NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 0.5em;">
+
+</div>
+<p>Three things to know:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pattern</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>IS NULL</code> / <code>IS NOT NULL</code></td>
+<td>Test for missing values</td>
+</tr>
+<tr class="even">
+<td><code>COALESCE(value, 0)</code></td>
+<td>Replace NULL with a fallback</td>
+</tr>
+<tr class="odd">
+<td><code>COUNT(col)</code> vs <code>COUNT(*)</code></td>
+<td><code>COUNT(col)</code> ignores NULLs; <code>COUNT(*)</code> counts all rows</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- Countries missing GDP data in 2020</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   c.name</span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     countries    c</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> observations o <span class="kw">ON</span> c.country_id   <span class="op">=</span> o.country_id</span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">AND</span> o.indicator_id <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">AND</span> o.<span class="dt">year</span> <span class="op">=</span> <span class="dv">2020</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>    o.<span class="fu">value</span> <span class="kw">IS</span> <span class="kw">NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p>NULL propagates: <code>NULL + 1</code>, <code>NULL = NULL</code>, <code>NULL != NULL</code> are all NULL. The only safe test is <code>IS NULL</code>.</p>
+</div>
+</section>
+<section id="update-and-delete" class="slide level2 added-by-claude">
+<h2>UPDATE and DELETE</h2>
+<p>Two DML statements that complete the picture alongside <code>INSERT</code>.</p>
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="update-modify-existing-rows">UPDATE — modify existing rows</h4>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- Fix a typo in the countries table</span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> countries</span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span>    name <span class="op">=</span> <span class="st">&#39;Ivory Coast&#39;</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  iso3 <span class="op">=</span> <span class="st">&#39;CIV&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- Rescale all values for one indicator</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> observations</span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span>    <span class="fu">value</span> <span class="op">=</span> <span class="fu">value</span> <span class="op">/</span> <span class="dv">1000</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  indicator_id <span class="op">=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Always include a <code>WHERE</code> clause — without it, <strong>every row</strong> is updated.</p>
+</div><div class="column" style="width:50%;">
+<h4 id="delete-remove-rows">DELETE — remove rows</h4>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">-- Remove a country and its observations</span></span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> observations</span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  country_id <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> countries</span>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  country_id <span class="op">=</span> <span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Order matters: delete child rows (observations) before parent rows (countries) — or the foreign key will reject it.</p>
+</div></div>
+</section>
+<section id="window-functions-lag-and-lead" class="slide level2 added-by-claude">
+<h2>Window functions — LAG and LEAD</h2>
+<p>Window functions compute a value <strong>across related rows</strong> without collapsing them into groups.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>   c.name,</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>         o.<span class="dt">year</span>,</span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>         o.<span class="fu">value</span>                                           <span class="kw">AS</span> gdp,</span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>         <span class="fu">LAG</span>(o.<span class="fu">value</span>)  <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> c.name</span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>                             <span class="kw">ORDER</span> <span class="kw">BY</span> o.<span class="dt">year</span>)             <span class="kw">AS</span> gdp_prev_year,</span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>         <span class="fu">ROUND</span>(<span class="fl">100.0</span> <span class="op">*</span> (o.<span class="fu">value</span> <span class="op">-</span> <span class="fu">LAG</span>(o.<span class="fu">value</span>) <span class="kw">OVER</span> (</span>
+<span id="cb18-7"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">PARTITION</span> <span class="kw">BY</span> c.name <span class="kw">ORDER</span> <span class="kw">BY</span> o.<span class="dt">year</span>))</span>
+<span id="cb18-8"><a aria-hidden="true" tabindex="-1"></a>               <span class="op">/</span> <span class="fu">LAG</span>(o.<span class="fu">value</span>) <span class="kw">OVER</span> (</span>
+<span id="cb18-9"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">PARTITION</span> <span class="kw">BY</span> c.name <span class="kw">ORDER</span> <span class="kw">BY</span> o.<span class="dt">year</span>), <span class="dv">2</span>)</span>
+<span id="cb18-10"><a aria-hidden="true" tabindex="-1"></a>                                                          <span class="kw">AS</span> growth_pct</span>
+<span id="cb18-11"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>     observations  o</span>
+<span id="cb18-12"><a aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span>     countries     c  <span class="kw">ON</span> o.country_id   <span class="op">=</span> c.country_id</span>
+<span id="cb18-13"><a aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span>     indicators    i  <span class="kw">ON</span> o.indicator_id <span class="op">=</span> i.indicator_id</span>
+<span id="cb18-14"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>    i.code <span class="op">=</span> <span class="st">&#39;NY.GDP.PCAP.CD&#39;</span></span>
+<span id="cb18-15"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> c.name, o.<span class="dt">year</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top: 0.5em;">
+
+</div>
+<ul>
+<li><code>PARTITION BY</code> — restart the window for each country (like <code>GROUP BY</code>, but rows stay separate)</li>
+<li><code>ORDER BY</code> inside <code>OVER</code> — defines the sequence within each partition</li>
+<li><code>LAG(col, n)</code> — value from <code>n</code> rows back; <code>LEAD(col, n)</code> — value from <code>n</code> rows ahead</li>
+<li><code>ROW_NUMBER()</code> — sequential rank within each partition</li>
+</ul>
+<div class="absolute" style="font-size: 0.75em; color: gray;bottom: 20px; ">
+<p>Other useful window functions: <code>RANK()</code>, <code>DENSE_RANK()</code>, <code>SUM(...) OVER (...)</code> for running totals.</p>
+</div>
+</section></section>
+<section>
+<section id="looking-ahead" class="title-slide slide level1 center">
+<h1>Looking ahead</h1>
+
+</section>
+<section id="what-we-covered-today" class="slide level2">
+<h2>What we covered today</h2>
+<div style="margin-top: 0.5em;">
+
+</div>
+<ul>
+<li><strong>Aggregation:</strong> <code>GROUP BY</code>, <code>COUNT</code>, <code>AVG</code>, <code>SUM</code>, <code>HAVING</code></li>
+<li><strong>JOINs:</strong> <code>INNER JOIN</code> and <code>LEFT JOIN</code> to combine tables on foreign keys</li>
+<li><strong>CTEs:</strong> <code>WITH</code> to build readable, reusable subqueries</li>
+<li><strong>ETL:</strong> the industry pattern behind what you built in E09</li>
+<li><strong>CI/CD:</strong> automating your pipeline with GitHub Actions</li>
+</ul>
+<div style="margin-top: 1em;">
+
+</div>
+</section>
+<section id="what-comes-next" class="slide level2">
+<h2>What comes next</h2>
+<p>The group project uses exactly these tools. As your analysis grows:</p>
+<ul>
+<li>Add tables to extend the schema</li>
+<li>Use <code>JOIN</code> to combine your data with external datasets</li>
+<li>Use <code>GROUP BY</code> + pandas for visualization</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> DuckDB’s documentation at <a href="https://duckdb.org/docs">duckdb.org/docs</a> is excellent — use it when you hit an unfamiliar function or type.</p>
+</blockquote>
+</section>
+<section id="sources" class="slide level2">
+<h2>Sources</h2>
+<ul>
+<li>Simon Aubury &amp; Ned Letcher, <a href="https://github.com/PacktPublishing/Getting-Started-with-DuckDB"><em>Getting Started with DuckDB</em></a> (Packt, 2024)</li>
+<li>Marco Venturini, <em>Data Handling: Databases</em> (HSG, 2025) — DDL, constraints, ER diagrams</li>
+<li>DuckDB documentation: https://duckdb.org/docs/</li>
+</ul>
+</section></section>
+<section>
+<section id="self-study" class="title-slide slide level1 center">
+<h1>Self-study</h1>
+
+</section>
+<section id="going-further-1" class="slide level2">
+<h2>Going further</h2>
+<div class="Example absolute" style="font-size: 0.8em;bottom: 20px; ">
+<ul>
+<li><a href="https://duckdb.org/docs/sql/statements/create_table">DuckDB — CREATE TABLE reference</a></li>
+<li><a href="https://duckdb.org/docs/data/overview">DuckDB — Importing data</a></li>
+<li><a href="https://github.com/PacktPublishing/Getting-Started-with-DuckDB">Getting Started with DuckDB — companion notebooks</a></li>
+</ul>
+</div>
+<p>If you want to go further before the group project:</p>
+<ul>
+<li>Work through Chapter 3 of Aubury &amp; Letcher: aggregation, joins, CTEs</li>
+<li>Try creating a second table that references the first with a foreign key</li>
+<li>Explore your project dataset: what queries would answer your research question?</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
@@ -1365,7 +1873,7 @@ Install dependencies from lock file
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -2531,7 +3039,7 @@ window.QuartoSupport = function () {
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/ASallin\.github\.io\/BEcon_4222_Introduction_Programming\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
