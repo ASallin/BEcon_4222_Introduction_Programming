@@ -279,12 +279,15 @@ LIMIT    n                  -- truncate output (optional)
 :::
 
 
-## The role of databases in your research project
+## The role of databases in your group project 🧑‍🎓👩‍🎓
 
-- Principle: **all data flows from the database**: your scripts should read from the database, not from raw files.
-- Simulate a "firm" or "organization" environment where the data is shared to analysts through queries.
-- All your analyses are based on the same cleaned and transformed data, and you can easily update your results when new data comes in by simply reloading the database.
+- Principle: **all data flows from the database**. Your scripts should read from the database, not from raw files.
+- Simulate a "firm" or "organization" environment where the data is shared to analysts (you 🫵) through queries.
 
+#### Advantages
+- All your analyses are based on the same cleaned and transformed data (consistency)
+- You can easily update your results when new data comes in by simply reloading the database.
+- ...
 
 
 # Queries

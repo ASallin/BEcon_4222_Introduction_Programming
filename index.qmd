@@ -138,14 +138,23 @@ Course syllabus, schedule, and administrative information.
 ::: {.grid}
 
 ::: {.g-col-6}
+### 🗃️ Week 9: Relational Databases
+
+**Lectures:**
+- [Lecture 9: Databases & SQL](course_materials/week_09/09_databases.qmd)
+- [Demo script: countries & trade flows](course_materials/week_09/demo_countries_trade.py)
+
+**Exercises:**
+- [Exercise 9: Relational Databases](exercise_sessions/week_09/E09_RelationalDB.qmd)
+- [FRED data (Parquet)](exercise_sessions/week_09/fred_cache.parquet)
+:::
+
+::: {.g-col-6}
 ### 🗄️ Week 10: SQL Queries
 
 **Lectures:**
 - [Lecture 10: Queries](course_materials/week_10/10_queries.qmd)
 - [Script: build_cepii_db.py](course_materials/week_10/build_cepii_db.py)
-
-**Exercises:**
-- [Exercise 10: Building a Database](course_materials/week_10/E10_building.qmd)
 :::
 
 :::

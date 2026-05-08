@@ -94,9 +94,6 @@ website:
             file: course_materials/week_10/10_queries.qmd
           - text: "Script: build_cepii_db.py"
             file: course_materials/week_10/build_cepii_db.py
-          - text: "---"
-          - text: "Exercise 10: Building a Database"
-            file: course_materials/week_10/E10_building.qmd
       - text: "Admin"
         menu:
           - text: "Syllabus"
