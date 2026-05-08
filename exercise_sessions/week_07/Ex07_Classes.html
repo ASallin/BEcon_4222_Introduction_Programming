@@ -5178,7 +5178,7 @@ window.Quarto = {
 </header>
 
 
-<div id="0b8d17f0" class="cell" data-execution_count="1">
+<div id="448990be" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -5213,7 +5213,7 @@ Solution: Country Class
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="96583f9e" class="cell" data-execution_count="2">
+<div id="a5f56806" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Country:</span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-9-3"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, population, gdp_per_capita):</span>
@@ -5264,7 +5264,7 @@ Test your code
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="4ca6cf63" class="cell" data-execution_count="3">
+<div id="2bbe4992" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two instances</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>switzerland <span class="op">=</span> Country(name<span class="op">=</span><span class="st">&#39;Switzerland&#39;</span>, population<span class="op">=</span><span class="fl">8.7</span>, gdp_per_capita<span class="op">=</span><span class="dv">87000</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>germany <span class="op">=</span> Country(name<span class="op">=</span><span class="st">&#39;Germany&#39;</span>, population<span class="op">=</span><span class="fl">84.0</span>, gdp_per_capita<span class="op">=</span><span class="dv">54000</span>)</span>
@@ -5322,7 +5322,7 @@ Solution: Create the Solow Class
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="b3a43adf" class="cell" data-execution_count="4">
+<div id="ed1ba499" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solow:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n<span class="op">=</span><span class="fl">0.05</span>,      <span class="co"># population growth rate</span></span>
@@ -5348,7 +5348,7 @@ Tuple unpacking
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can assign attributes one by one, which is more explicit and easier to read, or use tuple unpacking to assign all of them in a single line for more compact code — both produce exactly the same result.</p>
-<div id="59699766" class="cell" data-execution_count="5">
+<div id="f03eb84e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without unpacking (recommended for clarity):</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.n     <span class="op">=</span> n</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.s     <span class="op">=</span> s</span>
@@ -5381,7 +5381,7 @@ Test your code
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c135e0d6" class="cell" data-execution_count="6">
+<div id="44e3cf75" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create an instance with default values and check attribute A</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>economy <span class="op">=</span> Solow()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Default A: </span><span class="sc">{</span>economy<span class="sc">.</span>A<span class="sc">}</span><span class="ss">&quot;</span>)        <span class="co"># Expected: 2.0</span></span>
@@ -5418,7 +5418,7 @@ Solution: add <code>update()</code> method
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="55b63678" class="cell" data-execution_count="7">
+<div id="f1346c3e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="annotated-cell-16"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-16-1"><a href="#annotated-cell-16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solow:</span>
 <span id="annotated-cell-16-2"><a href="#annotated-cell-16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-16-3"><a href="#annotated-cell-16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n<span class="op">=</span><span class="fl">0.05</span>,      <span class="co"># population growth rate</span></span>
@@ -5470,7 +5470,7 @@ Test your code
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="47dc3e83" class="cell" data-execution_count="8">
+<div id="d48cef02" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a new instance</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>economy <span class="op">=</span> Solow()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5521,7 +5521,7 @@ Solution: add <code>find_steady_state()</code> method
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="e8e2df92" class="cell" data-execution_count="9">
+<div id="1a4080bf" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="annotated-cell-19"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-19-1"><a href="#annotated-cell-19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solow:</span>
 <span id="annotated-cell-19-2"><a href="#annotated-cell-19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-19-3"><a href="#annotated-cell-19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n<span class="op">=</span><span class="fl">0.05</span>,      <span class="co"># population growth rate</span></span>
@@ -5616,7 +5616,7 @@ Solution: add <code>self.steady_state</code> and adjust <code>find_steady_state(
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="84bd6879" class="cell" data-execution_count="10">
+<div id="5ee64f34" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="annotated-cell-20"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-20-1"><a href="#annotated-cell-20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solow:</span>
 <span id="annotated-cell-20-2"><a href="#annotated-cell-20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-20-3"><a href="#annotated-cell-20-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n<span class="op">=</span><span class="fl">0.05</span>,      <span class="co"># population growth rate</span></span>
@@ -5696,7 +5696,7 @@ Test your code
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="3163fffd" class="cell" data-execution_count="11">
+<div id="474fce5a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a new instance</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>economy <span class="op">=</span> Solow(k<span class="op">=</span><span class="fl">2.0</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5735,7 +5735,7 @@ Solution: add <code>generate_sequence</code> method
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="60b30e86" class="cell" data-execution_count="12">
+<div id="387e76ce" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="annotated-cell-23"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-23-1"><a href="#annotated-cell-23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solow:</span>
 <span id="annotated-cell-23-2"><a href="#annotated-cell-23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-23-3"><a href="#annotated-cell-23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n<span class="op">=</span><span class="fl">0.05</span>,      <span class="co"># population growth rate</span></span>
@@ -5845,7 +5845,7 @@ Test your code
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="42bda61f" class="cell" data-execution_count="13">
+<div id="1cf4df2d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a new instance</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>economy <span class="op">=</span> Solow()</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5890,7 +5890,7 @@ Solution: Visualization
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="542f30ac" class="cell" data-execution_count="14">
+<div id="8d3396ec" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="annotated-cell-26"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-26-1"><a href="#annotated-cell-26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create two instances with different initial capital stocks</span></span>
 <span id="annotated-cell-26-2"><a href="#annotated-cell-26-2" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> Solow(k<span class="op">=</span><span class="fl">1.0</span>)</span>
 <span id="annotated-cell-26-3"><a href="#annotated-cell-26-3" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> Solow(k<span class="op">=</span><span class="fl">8.0</span>)</span>
@@ -6000,7 +6000,7 @@ Solution: Visualization
 <hr>
 <p><strong>Step 1 — Load and sort the data</strong></p>
 <p>Load the data <code>data/pwt_data_ex7.csv</code>. Growth rates are computed as changes between consecutive rows, so the data must be in chronological order within each country before we do anything else.</p>
-<div id="28420eb9" class="cell" data-execution_count="15">
+<div id="d6c89485" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/pwt_data_ex7.csv&quot;</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values([<span class="st">&#39;Country&#39;</span>, <span class="st">&#39;year&#39;</span>])</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6111,7 +6111,7 @@ Solution: Visualization
 <hr>
 <p><strong>Step 2 — Compute annual growth rates</strong></p>
 <p><code>.pct_change()</code> computes the percentage change relative to the previous row. We call it inside <code>.groupby(&#39;Country&#39;)</code> so that the calculation restarts at the beginning of each country’s time series — without grouping, the first observation of every country after the first would be compared against the last observation of the previous country, which makes no sense.</p>
-<div id="a13f5d37" class="cell" data-execution_count="16">
+<div id="1d2cea05" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;g_y&#39;</span>] <span class="op">=</span> df.groupby(<span class="st">&#39;Country&#39;</span>)[<span class="st">&#39;rgdpna&#39;</span>].pct_change()  <span class="co"># GDP growth</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;g_k&#39;</span>] <span class="op">=</span> df.groupby(<span class="st">&#39;Country&#39;</span>)[<span class="st">&#39;rnna&#39;</span>].pct_change()    <span class="co"># Capital growth</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;g_l&#39;</span>] <span class="op">=</span> df.groupby(<span class="st">&#39;Country&#39;</span>)[<span class="st">&#39;emp&#39;</span>].pct_change()     <span class="co"># Labour growth</span></span>
@@ -6177,7 +6177,7 @@ Solution: Visualization
 <p><strong>Step 3 — Estimate the capital share <span class="math inline">\(\alpha\)</span></strong></p>
 <p>We treat capital share as constant within a country and estimate it from the data. Since <code>labsh</code> (the labour share) is already in the dataset, the capital share for any given year is simply <span class="math inline">\(1 - \texttt{labsh}\)</span>. We then average this across all years for each country to get a single representative value of <span class="math inline">\(\alpha\)</span>.</p>
 <p>The key tool here is <code>.transform(&#39;mean&#39;)</code>. Unlike <code>.agg(&#39;mean&#39;)</code>, which would collapse the DataFrame to one row per country, <code>.transform(&#39;mean&#39;)</code> <em>broadcasts</em> the country-level mean back to every row of that country. This keeps the DataFrame at its original length so we can use <code>alpha</code> row-by-row in the formula below.</p>
-<div id="f244f3d6" class="cell" data-execution_count="17">
+<div id="5e5bdc30" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Annual capital share (one value per row)</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;one_minus_labsh&#39;</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> df[<span class="st">&#39;labsh&#39;</span>]</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6250,7 +6250,7 @@ Solution: Visualization
 <hr>
 <p><strong>Step 4 — Compute TFP growth (the Solow residual)</strong></p>
 <p>With growth rates and <span class="math inline">\(\alpha\)</span> in hand, the Solow residual formula translates directly into a single line:</p>
-<div id="03f6a881" class="cell" data-execution_count="18">
+<div id="1c078512" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;g_tfp&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;g_y&#39;</span>] <span class="op">-</span> (df[<span class="st">&#39;alpha&#39;</span>] <span class="op">*</span> df[<span class="st">&#39;g_k&#39;</span>] <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> df[<span class="st">&#39;alpha&#39;</span>]) <span class="op">*</span> df[<span class="st">&#39;g_l&#39;</span>])</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">&#39;Country&#39;</span>, <span class="st">&#39;g_y&#39;</span>, <span class="st">&#39;g_k&#39;</span>, <span class="st">&#39;g_l&#39;</span>, <span class="st">&#39;alpha&#39;</span>, <span class="st">&#39;g_tfp&#39;</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -6324,7 +6324,7 @@ Solution: Visualization
 <hr>
 <p><strong>Step 5 — Build the country-level summary table</strong></p>
 <p>Year-by-year figures are noisy. We collapse to country-level averages and compute the weighted contributions of capital and labour — how much of GDP growth each factor accounts for on average.</p>
-<div id="59eb168f" class="cell" data-execution_count="19">
+<div id="eac20e31" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average all growth variables across years, for each country</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> df.groupby(<span class="st">&#39;Country&#39;</span>)[[<span class="st">&#39;g_y&#39;</span>, <span class="st">&#39;g_k&#39;</span>, <span class="st">&#39;g_l&#39;</span>, <span class="st">&#39;alpha&#39;</span>, <span class="st">&#39;g_tfp&#39;</span>]].mean()</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6418,7 +6418,7 @@ Solution: Visualization
 <hr>
 <p><strong>Step 6 — Visualize the decomposition</strong></p>
 <p>We wrap the chart in a function so we can reuse it for any selection of countries without repeating code. The chart is a stacked bar chart: each bar’s total height equals average GDP growth, split into the three components.</p>
-<div id="ddd27e0d" class="cell" data-execution_count="20">
+<div id="5f516dc9" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_growth_decomposition(countries, summary_df):</span>
 <span id="annotated-cell-7-2"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Plot the growth decomposition as a stacked bar chart.&quot;&quot;&quot;</span></span>
 <span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6451,7 +6451,7 @@ Solution: Visualization
 </dl>
 </div>
 </div>
-<div id="ae9cc327" class="cell" data-execution_count="21">
+<div id="8566f3f5" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_growth_decomposition(countries<span class="op">=</span>[<span class="st">&#39;Switzerland&#39;</span>, <span class="st">&#39;United States&#39;</span>], summary_df <span class="op">=</span> summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -6525,7 +6525,7 @@ Solution 2.1: Create a growth accounting class
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="3aa28b75" class="cell" data-execution_count="22">
+<div id="14d65abf" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="annotated-cell-27"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-27-1"><a href="#annotated-cell-27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GrowthAccountingAnalyzer:</span>
 <span id="annotated-cell-27-2"><a href="#annotated-cell-27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-27-3"><a href="#annotated-cell-27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
@@ -6574,7 +6574,7 @@ Test your Code
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="6d78effb" class="cell" data-execution_count="23">
+<div id="a5953b3c" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create an instance</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>analyzer <span class="op">=</span> GrowthAccountingAnalyzer()</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyzer.data)             <span class="co"># Expected: None — the data hasn&#39;t been loaded yet</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6582,7 +6582,7 @@ Test your Code
 <pre><code>None</code></pre>
 </div>
 </div>
-<div id="3ed43ed2" class="cell" data-execution_count="24">
+<div id="ca09b4ca" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Load the data and check again</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>analyzer.read_data(<span class="st">&#39;data/pwt_data_ex7.csv&#39;</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>analyzer.data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6714,7 +6714,7 @@ Solution 2.2: Add method <code>prepare_data(self)</code>
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="932fb1e7" class="cell" data-execution_count="25">
+<div id="786ebd6c" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GrowthAccountingAnalyzer:</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
@@ -6760,7 +6760,7 @@ Test your Code
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="7aa0d9ca" class="cell" data-execution_count="26">
+<div id="55967bf2" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>analyzer <span class="op">=</span> GrowthAccountingAnalyzer()</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>analyzer.read_data(<span class="st">&#39;data/pwt_data_ex7.csv&#39;</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>analyzer.prepare_data()</span>
@@ -6933,7 +6933,7 @@ Solution 2.3: Create the Country Summary Table
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="6845eac6" class="cell" data-execution_count="27">
+<div id="985d399a" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="annotated-cell-33"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-33-1"><a href="#annotated-cell-33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GrowthAccountingAnalyzer:</span>
 <span id="annotated-cell-33-2"><a href="#annotated-cell-33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-33-3"><a href="#annotated-cell-33-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
@@ -7008,7 +7008,7 @@ Test your Code
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="10f1f703" class="cell" data-execution_count="28">
+<div id="654449e1" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>analyzer <span class="op">=</span> GrowthAccountingAnalyzer()</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>analyzer.read_data(<span class="st">&#39;data/pwt_data_ex7.csv&#39;</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>analyzer.prepare_data()</span>
@@ -7122,7 +7122,7 @@ Solution 2.4: Visualize the Growth Decomposition
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="7d88dc4b" class="cell" data-execution_count="29">
+<div id="20d14d8d" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GrowthAccountingAnalyzer:</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
@@ -7198,7 +7198,7 @@ Test your Code
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="79b60a55" class="cell" data-execution_count="30">
+<div id="35b80078" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>analyzer <span class="op">=</span> GrowthAccountingAnalyzer()</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>analyzer.read_data(<span class="st">&#39;data/pwt_data_ex7.csv&#39;</span>)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>analyzer.prepare_data()</span>
@@ -7339,7 +7339,7 @@ Solution 2.6: Making the Class Easier to Use
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="e8ab7274" class="cell" data-execution_count="31">
+<div id="d181171d" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="annotated-cell-37"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-37-1"><a href="#annotated-cell-37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GrowthAccountingAnalyzer:</span>
 <span id="annotated-cell-37-2"><a href="#annotated-cell-37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-37-3"><a href="#annotated-cell-37-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, filepath):</span>
@@ -7443,7 +7443,7 @@ Test your Code
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="3cfdcddb" class="cell" data-execution_count="32">
+<div id="97d38e75" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data is now loaded at instantiation — no separate read_data() call needed</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>analyzer <span class="op">=</span> GrowthAccountingAnalyzer(<span class="st">&#39;data/pwt_data_ex7.csv&#39;</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7453,7 +7453,7 @@ Test your Code
 <pre><code>Please call prepare_data() before create_country_summary().</code></pre>
 </div>
 </div>
-<div id="ea5f77cb" class="cell" data-execution_count="33">
+<div id="1027b42f" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now run the full pipeline correctly</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>analyzer <span class="op">=</span> GrowthAccountingAnalyzer(<span class="st">&#39;data/pwt_data_ex7.csv&#39;</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>analyzer.prepare_data()</span>

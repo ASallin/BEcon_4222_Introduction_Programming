@@ -5209,7 +5209,7 @@ window.Quarto = {
 </style>
 <p>This class is the second part of our introduction to working with data in Python. In this session, you will learn how to handle missing data, how to work with time series data, and how to create more polished figures. You will also see how to write reusable functions that help you produce clear and consistent visualizations.</p>
 <p>Import the libraries that you’ll need for this class:</p>
-<div id="a3e206a3" class="cell" data-execution_count="1">
+<div id="8ea0fd64" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5234,7 +5234,7 @@ window.Quarto = {
 <li>Download the dataset “unrate_data.csv” and save it in the <code>data</code> folder</li>
 <li>Create a pandas DataFrame <code>df</code> by reading the data</li>
 </ul>
-<div id="a1909add" class="cell" data-execution_count="2">
+<div id="091e8ff7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/unrate_data.csv&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -5353,7 +5353,7 @@ window.Quarto = {
 </ul></li>
 <li>By adding <code>.sum()</code> after the call, you can count exactly how many observations are missing in each column. (<em>Note: This works because Python treats True as 1 and False as 0 during math operations!</em>)</li>
 </ul>
-<div id="df6b7000" class="cell" data-execution_count="3">
+<div id="8369f12c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values per column</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -5379,7 +5379,7 @@ dtype: int64</code></pre>
 <li><code>.all(...)</code> returns <code>True</code> if <em>all</em> values in that row are missing</li>
 </ul>
 <p>Example: Find the rows of the unemployment data (in <code>df</code>) that have any missing values</p>
-<div id="f124aae4" class="cell" data-execution_count="4">
+<div id="f7333075" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)        <span class="co"># one True/False per row</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>missing_rows <span class="op">=</span> df[mask]             <span class="co"># keep only rows with any missing values</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>missing_rows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5425,7 +5425,7 @@ dtype: int64</code></pre>
 </div>
 <p>Looking at the output above, you should notice that October 2025 is missing its unemployment data. <em>Why?</em></p>
 <p>The unemployment rate comes from the BLS Current Population Survey (CPS) (“household survey”). During the Oct 1–Nov 12, 2025 federal shutdown, CPS operations were suspended during the period when October data would have been collected, and BLS says October 2025 CPS data were not collected and were not collected retroactively — so there is no official unemployment rate estimate for October 2025.</p>
-<div id="85f8101d" class="cell" data-execution_count="5">
+<div id="96c014c9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the last few rows to see the gap surrounded by valid data</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -5542,7 +5542,7 @@ dtype: int64</code></pre>
 <section id="dropna" class="level4">
 <h4 class="anchored" data-anchor-id="dropna">1. <code>dropna()</code></h4>
 <p>By default, calling <code>df.dropna()</code> will remove any row that contains at least one missing value (<code>NaN</code>). This is useful if you are running a regression and need a complete set of variables for every observation.</p>
-<div id="2d0364ea" class="cell" data-execution_count="6">
+<div id="8a6c7caa" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop all rows that have at least one missing value</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>test_df <span class="op">=</span> df.dropna()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>test_df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5654,7 +5654,7 @@ dtype: int64</code></pre>
 <li><code>axis=1</code>: Drops columns that contain missing values</li>
 </ul></li>
 </ul>
-<div id="fcbe4dfa" class="cell" data-execution_count="7">
+<div id="0c341b5a" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop all columns that contain missing data</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>test_df <span class="op">=</span> df.dropna(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>test_df.head()  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5701,7 +5701,7 @@ dtype: int64</code></pre>
 <h4 class="anchored" data-anchor-id="filling">2. Filling</h4>
 <p>The second strategy for handling missing values is Filling. Instead of deleting observations, this approach replaces <code>NaN</code> values with specific data points to keep the timeline continuous. For economists, this is particularly useful when dealing with “sticky” variables or when you want to avoid breaking the sequence of a time series.</p>
 <p>To explore different ways of filling we create a test dataframe <code>test_df</code> with the unemployment rate of florida:</p>
-<div id="936d86b3" class="cell" data-execution_count="8">
+<div id="43287359" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a test dataframe test_df to try different methods</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>test_df <span class="op">=</span> df.loc[:,[<span class="st">&#39;date&#39;</span>, <span class="st">&#39;u_florida&#39;</span>]]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>test_df.tail()      <span class="co"># show tail, that&#39;s where the missing value is in this example</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5752,7 +5752,7 @@ dtype: int64</code></pre>
 <ul>
 <li>Forward Fill (<code>.ffill()</code>): This takes the last valid observation and carries it forward to fill the gap. It is best for variables that stay constant until a new update, such as interest rates or policy targets.</li>
 </ul>
-<div id="247e37e9" class="cell" data-execution_count="9">
+<div id="3bad9e96" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Forward Fill: Carry the last known unemployment rate forward</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>test_df[<span class="st">&#39;unrate_ffill&#39;</span>] <span class="op">=</span> test_df[<span class="st">&#39;u_florida&#39;</span>].ffill()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>test_df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5809,7 +5809,7 @@ dtype: int64</code></pre>
 <ul>
 <li>Backward Fill (<code>.bfill()</code>): This takes the next valid observation and pulls it backward. This is less common but can be used when a value is assumed to be in effect leading up to an event.</li>
 </ul>
-<div id="f394abda" class="cell" data-execution_count="10">
+<div id="ff588736" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Backward Fill: Use the next known rate to fill previous gaps</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>test_df[<span class="st">&#39;unrate_bfill&#39;</span>] <span class="op">=</span> test_df[<span class="st">&#39;u_florida&#39;</span>].bfill()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>test_df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5873,7 +5873,7 @@ dtype: int64</code></pre>
 <li><p><code>.fillna()</code>: This is the most flexible method, allowing you to replace all NaN values with a specific constant (like <code>0</code>) or a calculated value (like the <code>mean</code> of the column).</p>
 <p>Warning for Economists: Filling with 0 or the mean can significantly bias your results if the variable (like unemployment) naturally fluctuates over time.</p></li>
 </ul>
-<div id="076a30cb" class="cell" data-execution_count="11">
+<div id="4a98b84e" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Custom Fill: Replace all NaNs with a specific constant</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Useful if you want to treat missing values as a specific baseline</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>test_df[<span class="st">&#39;unrate_fixed&#39;</span>] <span class="op">=</span> test_df[<span class="st">&#39;u_florida&#39;</span>].fillna(<span class="fl">5.0</span>)</span>
@@ -5940,7 +5940,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="b4886609" class="cell" data-execution_count="12">
+<div id="4a4c0a18" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Statistical Fill: Replace NaNs with the average of the column</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>test_df[<span class="st">&#39;unrate_mean&#39;</span>] <span class="op">=</span> test_df[<span class="st">&#39;u_florida&#39;</span>].fillna(test_df[<span class="st">&#39;u_florida&#39;</span>].mean())</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>test_df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6021,7 +6021,7 @@ dtype: int64</code></pre>
 <li><code>method=&#39;time&#39;</code>: Similar to linear, but it accounts for the actual time between observations. This is crucial if your dates are not evenly spaced (e.g., jumping from a Monday to a Friday).</li>
 <li><code>method=&#39;polynomial&#39;</code> or <code>&#39;spline&#39;</code>: These create curved lines. Use these only if you have a strong theoretical reason to believe the data follows a complex curve rather than a steady trend.</li>
 </ul>
-<div id="820ca1b0" class="cell" data-execution_count="13">
+<div id="9d4d83aa" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear interpolation </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>test_df[<span class="st">&#39;unrate_interp&#39;</span>] <span class="op">=</span> test_df[<span class="st">&#39;u_florida&#39;</span>].interpolate(method<span class="op">=</span><span class="st">&#39;linear&#39;</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>test_df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6107,7 +6107,7 @@ dtype: int64</code></pre>
 <section id="working-with-dates-in-pandas-datetime" class="level3">
 <h3 class="anchored" data-anchor-id="working-with-dates-in-pandas-datetime">Working with dates in pandas <code>datetime</code></h3>
 <p>What is the datatype of ‘date’?</p>
-<div id="4f2b28e0" class="cell" data-execution_count="14">
+<div id="a41eb7a8" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">&#39;date&#39;</span>].dtype)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>str</code></pre>
@@ -6127,7 +6127,7 @@ dtype: int64</code></pre>
 <p>For example, strings are just text, so pandas compares them alphabetically, not as calendar dates.</p>
 <p><strong>What is <code>datetime</code>?</strong> <br> A datetime object represents a real point in time (date, and optionally time of day). In pandas, dates are usually stored with the type: <code>datetime64[us]</code>. <br> Once a column is converted to datetime, pandas understands it as time data and gives you powerful time-series tools.</p>
 <p><strong>Converting to datetime</strong> <br> We use the <code>pd.to_datetime()</code> function to transform our date column.</p>
-<div id="e08839fb" class="cell" data-execution_count="15">
+<div id="0a753156" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Convert the column to datetime</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;date&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;date&#39;</span>])</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6167,7 +6167,7 @@ dtype: int64</code></pre>
 </ul>
 </div>
 <p>Here’s an example of a format that would not be recognised automatically:</p>
-<div id="172d7bf7" class="cell" data-execution_count="16">
+<div id="973e1ffa" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with a bad date format for illustration</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_bad_format <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;date_str&quot;</span>: [<span class="st">&quot;2020|03|01&quot;</span>, <span class="st">&quot;2020|04|01&quot;</span>, <span class="st">&quot;2020|05|01&quot;</span>]</span>
@@ -6204,10 +6204,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>Let’s try to transform “date_str” to <code>datetime</code>:, you’ll get an Error:</p>
-<div id="370ed341" class="cell" data-execution_count="18">
+<div id="4e07473e" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df_bad_format[<span class="st">&quot;date&quot;</span>] <span class="op">=</span> pd.to_datetime(df_bad_format[<span class="st">&quot;date_str&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\aurel\AppData\Local\Temp\ipykernel_25768\3620236814.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<pre><code>C:\Users\aurel\AppData\Local\Temp\ipykernel_16396\3620236814.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df_bad_format[&quot;date&quot;] = pd.to_datetime(df_bad_format[&quot;date_str&quot;])</code></pre>
 </div>
 <div class="cell-output cell-output-error">
@@ -6218,7 +6218,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>You get an Error: pandas doesn’t understand this format. But you can let pandas know what the format is using <code>format = &quot;%Y|%m|%d&quot;</code> which tells it that the format of the column is a string, first a 4-digit year, separated by <code>|</code>, then the month as a number, separated by <code>|</code> again, then the day as a number.</p>
-<div id="c2fd0065" class="cell" data-execution_count="19">
+<div id="b4e438cb" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df_bad_format[<span class="st">&quot;date&quot;</span>] <span class="op">=</span> pd.to_datetime(df_bad_format[<span class="st">&quot;date_str&quot;</span>], <span class="bu">format</span><span class="op">=</span><span class="st">&quot;%Y|%m|</span><span class="sc">%d</span><span class="st">&quot;</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df_bad_format</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -6265,7 +6265,7 @@ dtype: int64</code></pre>
 <li><code>df[&#39;date&#39;].dt.weekday</code>: 0 for Monday, 6 for Sunday</li>
 <li><code>.dt.month_name()</code>: month name (January, February, …)</li>
 </ul>
-<div id="f73cbb64" class="cell" data-execution_count="20">
+<div id="d773e1b5" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Extract year and month</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&quot;year&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;date&quot;</span>].dt.year</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&quot;month&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;date&quot;</span>].dt.month</span>
@@ -6333,7 +6333,7 @@ dtype: int64</code></pre>
 </div>
 <p>This adds new columns that are often useful for grouping or filtering.</p>
 <p>For example: Calculate the average unemployment rate <code>unrate_nsa</code> (not seasonally adjusted) for each month and you’ll see a clear seasonal pattern:</p>
-<div id="008df6c8" class="cell" data-execution_count="21">
+<div id="20a6cba2" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the average unemployment rate for each month</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>monthly_avg <span class="op">=</span> df.groupby(<span class="st">&#39;month&#39;</span>)[<span class="st">&#39;unrate_nsa&#39;</span>].mean()</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>monthly_avg <span class="op">=</span> monthly_avg.reset_index()</span>
@@ -6417,7 +6417,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="abfd0280" class="cell" data-execution_count="22">
+<div id="235e768a" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="fl">4.5</span>))</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data (x = the month index, y = the average rates)</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>plt.plot(monthly_avg[<span class="st">&#39;month&#39;</span>], monthly_avg[<span class="st">&#39;unrate_nsa&#39;</span>], marker<span class="op">=</span><span class="st">&#39;o&#39;</span>)</span>
@@ -6440,7 +6440,7 @@ dtype: int64</code></pre>
 <section id="setting-date-as-the-index-datetimeindex" class="level3">
 <h3 class="anchored" data-anchor-id="setting-date-as-the-index-datetimeindex">Setting date as the index <code>DateTimeIndex</code></h3>
 <p>For time series, it is very common to use the date column as the index (<code>.set_index()</code>). When setting the index, it is best practice to sort immediately (<code>.sort_index()</code>).</p>
-<div id="02a5e996" class="cell" data-execution_count="23">
+<div id="b063a837" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the date as the index AND sort it chronologically</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.set_index(<span class="st">&#39;date&#39;</span>).sort_index()</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6586,7 +6586,7 @@ Note
 <li>rolling windows (moving averages)</li>
 <li>plotting with a proper time axis</li>
 </ul>
-<div id="99685695" class="cell" data-execution_count="24">
+<div id="7a571bd0" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(df.index))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;pandas.DatetimeIndex&#39;&gt;</code></pre>
@@ -6594,7 +6594,7 @@ Note
 </div>
 <p><strong>Easy Filtering</strong></p>
 <p>With a <code>DateTimeIndex</code>, pandas lets you filter very naturally:</p>
-<div id="8e156c3a" class="cell" data-execution_count="25">
+<div id="92212426" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select everything from 2015 to the end of 2019</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>pre_pandemic <span class="op">=</span> df.loc[<span class="st">&quot;2015&quot;</span>:<span class="st">&quot;2019&quot;</span>]</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>pre_pandemic.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6718,7 +6718,7 @@ Note
 </div>
 </div>
 <p>When slicing with dates in <code>.loc[]</code>, Pandas is smart enough to understand various formats like “2020-01-01”, “January 2020”, or “2020/01”.</p>
-<div id="3a3d0d45" class="cell" data-execution_count="26">
+<div id="53265b37" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a specific window (e.g., the Great Recession)</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>great_recession <span class="op">=</span> df.loc[<span class="st">&quot;December 2007&quot;</span>:<span class="st">&quot;2009-06&quot;</span>]</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>great_recession.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6846,7 +6846,7 @@ Note
 <h3 class="anchored" data-anchor-id="frequency">Frequency</h3>
 <p>When your DataFrame has a <code>DatetimeIndex</code>, it can store a “frequency” attribute. This tells Pandas that the data isn’t just a list of random dates, but a structured sequence with a specific pulse (like the first day of every month).</p>
 <p>You can check the frequency of your index using <code>df.index.freq</code>.</p>
-<div id="d9696847" class="cell" data-execution_count="27">
+<div id="f385eca0" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the frequency of our unemployment data</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.index.freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -6865,7 +6865,7 @@ Note
 <li><code>&#39;YS&#39;</code>: Year Start</li>
 </ul>
 <p>If your data is monthly but the frequency is not set, you can “enforce” it.</p>
-<div id="78e3bf6d" class="cell" data-execution_count="28">
+<div id="c712b561" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.asfreq(<span class="st">&#39;MS&#39;</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.index.freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -6874,7 +6874,7 @@ Note
 </div>
 <p>This is a great way to check for missing observations: if you tell Pandas the data should be monthly (MS) and a month is missing, it will create a new row with NaN for that date, alerting you to the gap.</p>
 <p>Example: Try to set the frequency to daily and observe what happens</p>
-<div id="04d3177d" class="cell" data-execution_count="29">
+<div id="d76dbf40" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> df.copy()</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> test.asfreq(<span class="st">&#39;D&#39;</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>test.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -7009,7 +7009,7 @@ Note
 <li>the index is sorted</li>
 </ul>
 </div>
-<div id="4f1715b4" class="cell" data-execution_count="30">
+<div id="631ebcd6" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Before you resample:</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that the index is correct:</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(df.index))</span>
@@ -7032,7 +7032,7 @@ Note
 </ul>
 </div>
 <p>Example: Annual average unemployment</p>
-<div id="25df6f6a" class="cell" data-execution_count="31">
+<div id="4bc7341d" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample from Monthly (MS) to Year Start (YS)</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We take the mean to get the average unemployment rate for each year</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>annual_unrate <span class="op">=</span> df[<span class="st">&#39;unrate&#39;</span>].resample(<span class="st">&#39;YS&#39;</span>).mean()</span>
@@ -7048,7 +7048,7 @@ Freq: YS-JAN, Name: unrate, dtype: float64</code></pre>
 </div>
 </div>
 <p>Because we’re resampling one column it will return a pandas Series and not a DataFrame (that’s why the output looks the way it does). If you want a DataFrame instead just add <code>.to_frame()</code> in the end or select the colum with double brackets <code>[[&#39;unrate&#39;]]</code>.</p>
-<div id="b7167fe5" class="cell" data-execution_count="32">
+<div id="5ef6bf38" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1: Resample from Monthly (MS) to Year Start (YS) and make it a dataframe</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>annual_unrate <span class="op">=</span> df[<span class="st">&#39;unrate&#39;</span>].resample(<span class="st">&#39;YS&#39;</span>).mean().to_frame()</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7116,7 +7116,7 @@ Pandas Refresher: Series vs. DataFrame
 </div>
 <p>You can resample multiple columns, or the entire dataframe. Before you do so check if it makes sense.</p>
 <p>Example: Resample the entire dataframe</p>
-<div id="0454e0f1" class="cell" data-execution_count="33">
+<div id="41162223" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>annual_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">&#39;month_name&#39;</span>]).resample(<span class="st">&#39;YS&#39;</span>).mean()</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>annual_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
@@ -7241,7 +7241,7 @@ Pandas Refresher: Series vs. DataFrame
 <li><code>.ffill()</code>: Carry the last known value forward.</li>
 <li><code>.interpolate()</code>: Estimate the values between points (creates a smoother line).</li>
 </ul>
-<div id="ba449f8d" class="cell" data-execution_count="34">
+<div id="f73371e2" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>monthly_estimate <span class="op">=</span> annual_unrate.resample(<span class="st">&#39;MS&#39;</span>).interpolate(method<span class="op">=</span><span class="st">&#39;linear&#39;</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>monthly_estimate.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
@@ -7354,7 +7354,7 @@ Warning
 </ul>
 <p><code>.shift()</code> moves the values relative to the index; it does not change the dates themselves.</p>
 <p>Example:</p>
-<div id="50ff5237" class="cell" data-execution_count="35">
+<div id="7722b495" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a lag: &#39;unrate_prev&#39; will show the previous month&#39;s value</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;unrate_prev&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;unrate&#39;</span>].shift(<span class="dv">1</span>)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a lead: &#39;unrate_next&#39; will show the next month&#39;s value</span></span>
@@ -7422,7 +7422,7 @@ Warning
 <h4 class="anchored" data-anchor-id="calculating-differences">Calculating Differences</h4>
 <p>Once you have a lagged value, you can calculate the change in the unemployment rate, the difference between the unemployment rate in one month and the unemployment rate in the previous month.</p>
 <p>There’s a simpler way that does exactly the same: <code>.diff()</code>.</p>
-<div id="55bddf8b" class="cell" data-execution_count="36">
+<div id="d1dc4700" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate difference using the lagged unemployment rate:</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;unrate_diff&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;unrate&#39;</span>] <span class="op">-</span> df[<span class="st">&#39;unrate&#39;</span>].shift(<span class="dv">1</span>)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7489,7 +7489,7 @@ Warning
 <li>Month-over-Month (MoM): <code>df[&#39;unrate&#39;].pct_change(1)</code></li>
 <li>Year-over-Year (YoY): <code>df[&#39;unrate&#39;].pct_change(12)</code> (since our data is monthly, a 12-period shift looks back exactly one year).</li>
 </ul>
-<div id="a8064878" class="cell" data-execution_count="37">
+<div id="9ece31ee" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;unrate_mom_pct&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;unrate&#39;</span>].pct_change(<span class="dv">1</span>) <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;unrate_yoy_pct&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;unrate&#39;</span>].pct_change(<span class="dv">12</span>) <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">&#39;unrate&#39;</span>, <span class="st">&#39;unrate_mom_pct&#39;</span>, <span class="st">&#39;unrate_yoy_pct&#39;</span>]].head(<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -7659,7 +7659,7 @@ Percentage Points vs. Percent Change
 <p>In empirical macroeconomics and finance, you will frequently see researchers use log differences instead of standard percentage changes. The log difference is calculated as the natural logarithm of the current value minus the natural logarithm of the previous value: <span class="math inline">\(\ln(y_t​)−\ln(y_{t−1}​)\)</span>. It’s an approximation for the growth rate of a variable <span class="math inline">\(y\)</span> that works well as long as the growth rate is small.</p>
 <p>To calculate logarithms, we need a new library: NumPy (Numerical Python). NumPy is the foundational math and array library in Python- We will use NumPy’s <code>np.log()</code> function.</p>
 <p>Example: Create a new variable <code>unrate_log_diff</code> as the log difference of the unemployment rate <code>unrate</code> by taking the logarithm first and then the first difference:</p>
-<div id="81dd40d3" class="cell" data-execution_count="38">
+<div id="393fe977" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Take the natural log of the column</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Chain the .diff() method to calculate the period-to-period change</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;unrate_log_diff&#39;</span>] <span class="op">=</span> np.log(df[<span class="st">&#39;unrate&#39;</span>]).diff()</span>
@@ -7736,7 +7736,7 @@ Percentage Points vs. Percent Change
 <li><code>center</code>: (Optional) If True, the average is assigned to the middle of the window rather than the end.</li>
 </ul>
 <p>Example:</p>
-<div id="fa232dda" class="cell" data-execution_count="39">
+<div id="43361abb" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate a 12-month rolling average</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This smooths out seasonal &quot;wiggles&quot; to show the yearly trend</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;unrate_12m_avg&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;unrate&#39;</span>].rolling(window<span class="op">=</span><span class="dv">12</span>).mean()</span>
@@ -7843,7 +7843,7 @@ Percentage Points vs. Percent Change
 </div>
 </div>
 </div>
-<div id="a86284bc" class="cell" data-execution_count="40">
+<div id="9f68e58c" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the figure and axis</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7877,7 +7877,7 @@ Percentage Points vs. Percent Change
 <section id="step-1-start-with-a-clean-basic-line-plot" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-start-with-a-clean-basic-line-plot">Step 1: Start with a clean basic line plot</h4>
 <p>We begin with a simple line plot of the unemployment rate over time. This is the foundation for the final figure: first we plot the series, then we add a title and axis labels so the chart is easy to read.</p>
-<div id="459b7378" class="cell" data-execution_count="41">
+<div id="32389a80" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>plt.plot(df.index, df[<span class="st">&quot;unrate&quot;</span>])</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7923,7 +7923,7 @@ Percentage Points vs. Percent Change
 <li><code>alpha</code>: Controls transparency (0 to 1). A lower alpha (like 0.3) makes the grid subtle so it doesn’t distract from the data.</li>
 </ul>
 </div>
-<div id="706244b1" class="cell" data-execution_count="42">
+<div id="20167990" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot with styling options</span></span>
@@ -7965,7 +7965,7 @@ Percentage Points vs. Percent Change
 <li><code>plt.axhspan(ymin, ymax, ...)</code>: shade a horizontal region (between two values on the y-axis)</li>
 </ul>
 </div>
-<div id="95e4ff4b" class="cell" data-execution_count="43">
+<div id="d04fe1ab" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Main line</span></span>
@@ -7995,7 +7995,7 @@ Percentage Points vs. Percent Change
 </div>
 <p><strong>Optional: store recession dates in a list (cleaner)</strong></p>
 <p>If you want cleaner code, you can store recession periods in a list and loop over them:</p>
-<div id="1c37bffa" class="cell" data-execution_count="44">
+<div id="458e53d1" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>recessions <span class="op">=</span> [</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;1980-01-01&quot;</span>, <span class="st">&quot;1980-07-01&quot;</span>),</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;1981-07-01&quot;</span>, <span class="st">&quot;1982-11-01&quot;</span>),</span>
@@ -8005,7 +8005,7 @@ Percentage Points vs. Percent Change
 <span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;2020-02-01&quot;</span>, <span class="st">&quot;2020-04-01&quot;</span>),</span>
 <span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7c23a57c" class="cell" data-execution_count="45">
+<div id="043fcb18" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>plt.plot(df.index, df[<span class="st">&quot;unrate&quot;</span>], color<span class="op">=</span><span class="st">&quot;navy&quot;</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -8041,7 +8041,7 @@ Percentage Points vs. Percent Change
 <li><code>.max()</code> to get the highest value</li>
 <li><code>.idxmax()</code> to get the date where that maximum occurs</li>
 </ul>
-<div id="aaf716d9" class="cell" data-execution_count="46">
+<div id="90b71c1f" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the data for the annotation</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Select a window around the COVID period</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>covid_window <span class="op">=</span> df.loc[<span class="st">&quot;2019-11-01&quot;</span>:<span class="st">&quot;2021-12-01&quot;</span>, <span class="st">&quot;unrate&quot;</span>]</span>
@@ -8058,7 +8058,7 @@ Percentage Points vs. Percent Change
 </div>
 </div>
 <p>We then use <code>plt.annotate(...)</code> to add a text label and arrow to the plot. The basic syntax is:</p>
-<div id="74251cf3" class="cell" data-execution_count="47">
+<div id="964c54e6" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Syntax for annotation, use this in your figure</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>plt.annotate(</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Text to display&quot;</span>,</span>
@@ -8079,7 +8079,7 @@ Percentage Points vs. Percent Change
 <li><code>fontsize=</code>: controls the text size</li>
 </ul>
 <p>You do <strong>not</strong> need to memorize all of these annotation arguments. In practice, it is very common to start with a basic annotation and then adjust the position/style by trial and error — and this is exactly the kind of thing AI tools can help with a lot (for example, suggesting better offsets, alignment, or arrow styles).</p>
-<div id="0a63a9ff" class="cell" data-execution_count="48">
+<div id="23a24d3a" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Create the plot</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>plt.plot(df.index, df[<span class="st">&quot;unrate&quot;</span>], color<span class="op">=</span><span class="st">&quot;navy&quot;</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
@@ -8128,7 +8128,7 @@ Exporting Your Figure for Papers and Presentations
 <div class="callout-body-container callout-body">
 <p>Once you have built a publication-ready chart, you will likely want to save it to include in a thesis, report, or slide deck. You can export your plot using <code>plt.savefig()</code>.</p>
 <p><strong>Crucial Warning:</strong> You must call <code>plt.savefig()</code> <em>before</em> you call <code>plt.show()</code>. If you call it after, Matplotlib clears the canvas and will just save a blank white image!</p>
-<div id="04e87508" class="cell" data-execution_count="49">
+<div id="a17e37a8" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a high-resolution PNG to your computer</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>plt.savefig(</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;unemployment_covid_peak.png&quot;</span>,</span>
@@ -8151,7 +8151,7 @@ Exporting Your Figure for Papers and Presentations
 <h3 class="anchored" data-anchor-id="put-the-plotting-code-into-a-function">Put the plotting code into a function</h3>
 <p>We start by wrapping our existing plotting code in a function. For now, the function will reproduce exactly the same figure as before and only take one argument: the DataFrame df.</p>
 <p>This is the first step toward making the code reusable. Once the plot works inside a function, we can add more options (such as choosing a different unemployment series or turning shading/annotations on and off).</p>
-<div id="0d2ed27c" class="cell" data-execution_count="50">
+<div id="061ad650" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_unemployment(df):</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inside the function we paste the code we used before to create the figure (everything that is relevant)</span></span>
@@ -8201,7 +8201,7 @@ Exporting Your Figure for Papers and Presentations
 <span id="cb59-47"><a href="#cb59-47" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>At every step of creating the function you should use it, to see if it actually works the way you intended:</p>
-<div id="16d9c77c" class="cell" data-execution_count="51">
+<div id="fe72a3de" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -8217,7 +8217,7 @@ Exporting Your Figure for Papers and Presentations
 <p>To make that possible, we will update the function so the user can choose which unemployment series (which column in the DataFrame) should be plotted.</p>
 <p><strong>Add a new argument to the function</strong></p>
 <p>The user should be able to choose the series, so we add an argument <code>series_name</code> to the function:</p>
-<div id="bba13fba" class="cell" data-execution_count="52">
+<div id="568e418d" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_unemployment(df, series_name):</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to create the figure</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -8231,7 +8231,7 @@ Exporting Your Figure for Papers and Presentations
 <li>(indirectly) in the chart title text (US unemployment rate)</li>
 </ul>
 <p>We replace the hard-coded column name with <code>series_name</code>.</p>
-<div id="f6bd38c0" class="cell" data-execution_count="53">
+<div id="c501e531" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="annotated-cell-51"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-51-1"><a href="#annotated-cell-51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_unemployment(df, series_name):</span>
 <span id="annotated-cell-51-2"><a href="#annotated-cell-51-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-51-3"><a href="#annotated-cell-51-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Data preparation for annotations:</span></span>
@@ -8294,7 +8294,7 @@ Exporting Your Figure for Papers and Presentations
 </div>
 </div>
 <p>Example:</p>
-<div id="4e986871" class="cell" data-execution_count="54">
+<div id="aad21e66" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df, <span class="st">&quot;u_alaska&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -8309,7 +8309,7 @@ Exporting Your Figure for Papers and Presentations
 <p>Now that the function can plot different unemployment series, we can make it even more flexible. Different users may want slightly different versions of the same figure — for example, some may want the recession shading, while others may prefer a cleaner plot without it. The same is true for the COVID peak annotation.</p>
 <p>We can handle this by adding optional arguments to the function, with default values set to True. This means the function will keep the current behavior unless the user explicitly turns something off.</p>
 <p><strong>The general idea: optional arguments with defaults</strong></p>
-<div id="3caa3c0b" class="cell" data-execution_count="55">
+<div id="028ecc65" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(arg1, option<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> option:</span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Option is on&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -8323,7 +8323,7 @@ Exporting Your Figure for Papers and Presentations
 <li><code>show_recessions=True</code></li>
 <li><code>show_annotation=True</code></li>
 </ul>
-<div id="bd451321" class="cell" data-execution_count="56">
+<div id="6c44749e" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="annotated-cell-54"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-54-1"><a href="#annotated-cell-54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_unemployment(df, series_name, </span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-54" data-target-annotation="1">1</button><span id="annotated-cell-54-2" class="code-annotation-target"><a href="#annotated-cell-54-2" aria-hidden="true" tabindex="-1"></a>                    show_recessions<span class="op">=</span><span class="va">True</span>, show_annotation<span class="op">=</span><span class="va">True</span>):</span>
 <span id="annotated-cell-54-3"><a href="#annotated-cell-54-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -8390,7 +8390,7 @@ Exporting Your Figure for Papers and Presentations
 </div>
 </div>
 <p>Example:</p>
-<div id="ec27b14b" class="cell" data-execution_count="57">
+<div id="7627913f" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot with default:</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df, <span class="st">&#39;unrate&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -8400,7 +8400,7 @@ Exporting Your Figure for Papers and Presentations
 </div>
 </div>
 </div>
-<div id="825e1b01" class="cell" data-execution_count="58">
+<div id="8bd53b9e" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot without annotation</span></span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df, <span class="st">&#39;unrate&#39;</span>, show_annotation<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -8425,7 +8425,7 @@ Exporting Your Figure for Papers and Presentations
 <li>if state is None, use “unrate”</li>
 <li>otherwise, map the state name (like “florida”) to the correct column name (like “u_florida”) using a dictionary</li>
 </ul>
-<div id="5454d3a2" class="cell" data-execution_count="59">
+<div id="6db3cd75" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="annotated-cell-57"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-57-1"><a href="#annotated-cell-57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_unemployment(df, state<span class="op">=</span><span class="va">None</span>, show_recessions<span class="op">=</span><span class="va">True</span>, show_annotation<span class="op">=</span><span class="va">True</span>): </span>
 <span id="annotated-cell-57-2"><a href="#annotated-cell-57-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-57-3"><a href="#annotated-cell-57-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Recession periods</span></span>
@@ -8510,7 +8510,7 @@ Exporting Your Figure for Papers and Presentations
 </div>
 </div>
 <p>Example:</p>
-<div id="de8d5640" class="cell" data-execution_count="60">
+<div id="96d16094" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df, state<span class="op">=</span><span class="st">&#39;texas&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -8523,7 +8523,7 @@ Exporting Your Figure for Papers and Presentations
 <section id="handling-bad-inputs-defensive-programming" class="level3">
 <h3 class="anchored" data-anchor-id="handling-bad-inputs-defensive-programming">Handling “Bad” Inputs (Defensive Programming)</h3>
 <p>If you want to create useful tools for others (including your future self), you should think about what happens if a user provides an input that your function doesn’t recognize. For example, a user might want to plot the unemployment rate for Minnesota, but that state isn’t in our current dataset. If we just run the function as it is, Python will throw a confusing KeyError, and the user might not understand what the problem is or how to fix it.</p>
-<div id="ce717d78" class="cell" data-execution_count="61">
+<div id="7866ced0" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df, state<span class="op">=</span><span class="st">&#39;minnesota&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -8540,7 +8540,7 @@ Exporting Your Figure for Papers and Presentations
 <li>Provide a list of valid options so the user knows exactly what they can type.</li>
 <li>Stop immediately using a return statement, so it doesn’t try to create a broken plot.</li>
 </ul>
-<div id="128360bc" class="cell" data-execution_count="62">
+<div id="42e4a383" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="annotated-cell-60"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-60-1"><a href="#annotated-cell-60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_unemployment(df, state<span class="op">=</span><span class="va">None</span>, show_recessions<span class="op">=</span><span class="va">True</span>, show_annotation<span class="op">=</span><span class="va">True</span>): </span>
 <span id="annotated-cell-60-2"><a href="#annotated-cell-60-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="annotated-cell-60-3"><a href="#annotated-cell-60-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Recession periods</span></span>
@@ -8628,11 +8628,11 @@ Exporting Your Figure for Papers and Presentations
 </dl>
 </div>
 </div>
-<div id="f27477ac" class="cell" data-execution_count="63">
+<div id="f53fa9be" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This will work perfectly</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df, state<span class="op">=</span><span class="st">&#39;texas&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0a94ed71" class="cell" data-execution_count="64">
+<div id="667af845" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This will trigger the warning</span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>plot_unemployment(df, state<span class="op">=</span><span class="st">&#39;minnesota&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

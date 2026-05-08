@@ -5182,7 +5182,7 @@ border-top: 1px solid #ccc;
 </style>
 <p>In this exercise, we will practice working with real-world, imperfect data. We will cover how to identify and handle missing observations, use pandas’ DatetimeIndex to manage time series, and apply aggregation and resampling techniques. Along the way, we will apply these skills to practical economic scenarios,such as analyzing competitive dynamics in the tech sector, and conclude by building our own reusable Python tools.</p>
 <p><strong>Import Libraries</strong></p>
-<div id="f2560b0f" class="cell" data-execution_count="1">
+<div id="0684c67d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -5386,7 +5386,7 @@ Solution 0.1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="490c6d9a" class="cell" data-execution_count="2">
+<div id="dc9f1365" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 1: Data Loading and Inspection</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/firm_data_ex06.csv&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5515,7 +5515,7 @@ Solution 0.2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d8fcab5c" class="cell" data-execution_count="3">
+<div id="32efdeea" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 2: Find number of companies in the dataset</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>n_companies <span class="op">=</span> df[<span class="st">&#39;ticker&#39;</span>].nunique()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Unique Firms in Sample: </span><span class="sc">{</span>n_companies<span class="sc">}</span><span class="ss">&quot;</span>)</span>
@@ -5544,7 +5544,7 @@ Solution 0.3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="2fe84e39" class="cell" data-execution_count="4">
+<div id="e653e156" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 3: Count observations per firm</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .value_counts() tells us how many rows exist for each unique entry</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Observations per company:&quot;</span>)</span>
@@ -5581,7 +5581,7 @@ Solution 0.4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="0f16d4a5" class="cell" data-execution_count="5">
+<div id="dc716100" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 4: Check the calendar range</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: Because the dates are currently loaded as strings, pandas finds the </span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># min/max by sorting them alphabetically. This only works correctly if </span></span>
@@ -5623,7 +5623,7 @@ Solution 1.A.1: Overview
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d54aff42" class="cell" data-execution_count="6">
+<div id="cb6f33d1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;pandas.DataFrame&#39;&gt;
@@ -5663,7 +5663,7 @@ Solution 1.A.2: Quantification
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c57c1424" class="cell" data-execution_count="7">
+<div id="47e61b76" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .isna() returns True for missing values; .sum() counts those Trues</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>missing_counts <span class="op">=</span> df.isna().<span class="bu">sum</span>()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>missing_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5699,7 +5699,7 @@ Solution 1.A.3: Identify Firms with Missing Values
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="cc9f0861" class="cell" data-execution_count="8">
+<div id="2b71dc58" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>var_name <span class="op">=</span> <span class="st">&#39;assets&#39;</span>         <span class="co"># Change variable here to</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>missing_rows <span class="op">=</span> df[df[var_name].isna()]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>firms_nan <span class="op">=</span> missing_rows[<span class="st">&#39;comp_name&#39;</span>].unique().tolist()</span>
@@ -5736,7 +5736,7 @@ Solution 1.B.1: The Aggressive Approach
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="89797a5d" class="cell" data-execution_count="9">
+<div id="56c69f9b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use .dropna() to drop all rows where there are ANY missing </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df_dropped <span class="op">=</span> df.dropna()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5751,7 +5751,7 @@ Rows lost: 170</code></pre>
 </div>
 </div>
 <p>A less aggressive approach: Only drop if a SPECIFIC crucial variable is missing. For example if we can’t do our analysis if ‘assets’ is missing, but we don’t care if ‘rd_expense’ is then we could use the <code>subset</code> argument:</p>
-<div id="a369892e" class="cell" data-execution_count="10">
+<div id="97102200" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df_dropped_subset <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">&#39;assets&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -5772,7 +5772,7 @@ Solution 1.B.2: Economic Logic (Filling)
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="1256aab4" class="cell" data-execution_count="11">
+<div id="7f22ab40" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We assume no report equals no spending for this variable, use .fillna()</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;rd_filled&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;rd_expense&#39;</span>].fillna(<span class="dv">0</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5834,7 +5834,7 @@ Solution 1.B.2: Economic Logic (Filling)
 <ol start="3" type="1">
 <li><strong>The “Naive” Interpolation Trap:</strong> For missing values of ‘assets’ it might be sensible to interpolate linearly. Run the following code to create an interpolated column <code>&#39;assets_interp&#39;</code>:</li>
 </ol>
-<div id="18ef9c5b" class="cell" data-execution_count="12">
+<div id="5d946093" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;assets_interp&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;assets&#39;</span>].interpolate(method<span class="op">=</span><span class="st">&#39;linear&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -5853,7 +5853,7 @@ Solution 1.B.3: Naive Interpolation
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="5fe018ce" class="cell" data-execution_count="13">
+<div id="f8608c90" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create assets_interp according to the suggestion:</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;assets_interp&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;assets&#39;</span>].interpolate(method<span class="op">=</span><span class="st">&#39;linear&#39;</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5976,7 +5976,7 @@ Solution 1.B.4: The (almost) Correct Way
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="122dad73" class="cell" data-execution_count="14">
+<div id="9d4fa59d" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;assets_interp&#39;</span>] <span class="op">=</span> (</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    df.groupby(<span class="st">&#39;ticker&#39;</span>)[<span class="st">&#39;assets&#39;</span>]          <span class="co"># group by firm, pick column</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    .transform(                             <span class="co"># apply .transform</span></span>
@@ -6096,7 +6096,7 @@ The potential issue and how to fix it
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The dates in this dataframe happen to be sorted already, if they weren’t this code would run without an error but might draw a linear trend between two dates that don’t follow each other. For interpolation to work correctly we should sort the dataframe by ‘date’ (or by firms (via ticker for example <em>and</em> date)).</p>
-<div id="4b97682f" class="cell" data-execution_count="15">
+<div id="ce28e8de" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First step: Sort dataframe by firms and date!</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values([<span class="st">&#39;ticker&#39;</span>, <span class="st">&#39;date&#39;</span>])</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -6113,7 +6113,7 @@ The potential issue and how to fix it
 <li>Run <code>plot_firm_assets(&#39;GM&#39;)</code>. Looking at the plot, argue again whether interpolation is a sensible choice for filling the gaps.</li>
 </ul></li>
 </ol>
-<div id="c655404e" class="cell" data-execution_count="16">
+<div id="a70eca84" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_firm_assets(ticker_name):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Plots original vs. interpolated assets for a specific ticker.</span></span>
@@ -6155,7 +6155,7 @@ Example Tesla
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="adb14d45" class="cell" data-execution_count="17">
+<div id="415da5d8" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_firm_assets(<span class="st">&#39;TSLA&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -6194,7 +6194,7 @@ Example General Motors
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="2b0575e8" class="cell" data-execution_count="18">
+<div id="0f753948" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plot_firm_assets(<span class="st">&#39;GM&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -6261,7 +6261,7 @@ Solution 2.1: Datetime Conversion
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="85736077" class="cell" data-execution_count="19">
+<div id="c704dacb" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Convert to datetime</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">&#39;date&#39;</span>].dtype)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;date&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;date&#39;</span>]) </span>
@@ -6286,7 +6286,7 @@ Solution 2.2: Setting the Index
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="92bd7f14" class="cell" data-execution_count="20">
+<div id="78aa1be3" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Set as index</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.set_index(<span class="st">&#39;date&#39;</span>) </span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Index Type: </span><span class="sc">{</span><span class="bu">type</span>(df.index)<span class="sc">}</span><span class="ss">&quot;</span>) </span>
@@ -6536,7 +6536,7 @@ Solution 2.3: Slicing Historical Windows
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="77686783" class="cell" data-execution_count="21">
+<div id="6ae84cf7" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First sort the index </span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: DatetimeIndex allows us to slice by year strings directly</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Is the index sorted? </span><span class="sc">{</span>df<span class="sc">.</span>index<span class="sc">.</span>is_monotonic_increasing<span class="sc">}</span><span class="ss">&quot;</span>)</span>
@@ -6716,7 +6716,7 @@ Solution 3.1: Annual Revenue
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="fb808f1b" class="cell" data-execution_count="22">
+<div id="0a89dd38" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Total Annual Revenue</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We use &#39;YE&#39; for Year-End to resample</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregation method .sum()</span></span>
@@ -6747,7 +6747,7 @@ Solution 3.2: Advanced Aggregation
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="24debf27" class="cell" data-execution_count="23">
+<div id="93c4656c" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define which math to apply to which column</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>df_annual <span class="op">=</span> df.groupby(<span class="st">&#39;ticker&#39;</span>).resample(<span class="st">&#39;YE&#39;</span>).agg({</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;revenue&#39;</span>: <span class="st">&#39;sum&#39;</span>,</span>
@@ -6831,7 +6831,7 @@ Solution 3.3: Handling the MultiIndex
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="572a2e12" class="cell" data-execution_count="24">
+<div id="9e782441" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtask A: Selection</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># On a MultiIndex (Ticker, Date), .loc picks the first level by default</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>aapl_annual <span class="op">=</span> df_annual.loc[<span class="st">&#39;AAPL&#39;</span>]</span>
@@ -6896,7 +6896,7 @@ Solution 3.3: Handling the MultiIndex
 </div>
 </div>
 </div>
-<div id="021986ea" class="cell" data-execution_count="25">
+<div id="2abbb7b7" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtask B: Full Reset</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This turns everything into a &#39;flat&#39; table, ideal for plotting or exporting to CSV</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>df_flat <span class="op">=</span> df_annual.reset_index()</span>
@@ -6963,7 +6963,7 @@ Solution 3.3: Handling the MultiIndex
 </div>
 </div>
 </div>
-<div id="b630929a" class="cell" data-execution_count="26">
+<div id="dd50c68c" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtask C: Partial Reset</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This moves the &#39;ticker&#39; to a column but keeps the &#39;date&#39; as the index</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>df_partial_reset <span class="op">=</span> df_annual.reset_index(level<span class="op">=</span><span class="st">&#39;ticker&#39;</span>)</span>
@@ -7074,7 +7074,7 @@ Solution 4.1: Revenue Growth Analysis
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="5fd4af3c" class="cell" data-execution_count="27">
+<div id="1b57172a" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To calculate YoY growth correctly in a panel, we must group by ticker.</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This prevents &#39;leaking&#39; data between different firms.</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A lag of 4 is used for quarterly data to compare the same quarter across years.</span></span>
@@ -7237,7 +7237,7 @@ Solution 4.2: Baseline Visualization
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="a204a99b" class="cell" data-execution_count="28">
+<div id="3422b48b" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Filter the data</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>nvda <span class="op">=</span> df[df[<span class="st">&#39;ticker&#39;</span>] <span class="op">==</span> <span class="st">&#39;NVDA&#39;</span>]</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>intc <span class="op">=</span> df[df[<span class="st">&#39;ticker&#39;</span>] <span class="op">==</span> <span class="st">&#39;INTC&#39;</span>]</span>
@@ -7296,7 +7296,7 @@ Solution 4.3: Refining the Aesthetics
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="f47b2eb8" class="cell" data-execution_count="29">
+<div id="3caa698c" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>nvda <span class="op">=</span> df[df[<span class="st">&#39;ticker&#39;</span>] <span class="op">==</span> <span class="st">&#39;NVDA&#39;</span>]</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>intc <span class="op">=</span> df[df[<span class="st">&#39;ticker&#39;</span>] <span class="op">==</span> <span class="st">&#39;INTC&#39;</span>]</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7352,7 +7352,7 @@ Solution 4.4: Adding Context
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="a8698e87" class="cell" data-execution_count="30">
+<div id="a21cc907" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>nvda <span class="op">=</span> df[df[<span class="st">&#39;ticker&#39;</span>] <span class="op">==</span> <span class="st">&#39;NVDA&#39;</span>]</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>intc <span class="op">=</span> df[df[<span class="st">&#39;ticker&#39;</span>] <span class="op">==</span> <span class="st">&#39;INTC&#39;</span>]</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -7446,7 +7446,7 @@ Solution 5.1: Create a Reusable Plotting Function
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="0051e33b" class="cell" data-execution_count="31">
+<div id="cfe04110" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="annotated-cell-43"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-43-1"><a href="#annotated-cell-43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_growth(df, ticker_1, ticker_2):</span>
 <span id="annotated-cell-43-2"><a href="#annotated-cell-43-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Filter the data</span></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-43" data-target-annotation="1">1</button><span id="annotated-cell-43-3" class="code-annotation-target"><a href="#annotated-cell-43-3" aria-hidden="true" tabindex="-1"></a>    firm_a <span class="op">=</span> df[df[<span class="st">&#39;ticker&#39;</span>] <span class="op">==</span> ticker_1]</span>
@@ -7488,7 +7488,7 @@ Solution 5.1: Create a Reusable Plotting Function
 </dl>
 </div>
 </div>
-<div id="debd34a0" class="cell" data-execution_count="32">
+<div id="0efbd73c" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function, use different tickers e.g. apple and google</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>compare_growth(df, <span class="st">&#39;AAPL&#39;</span>, <span class="st">&#39;GOOGL&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
